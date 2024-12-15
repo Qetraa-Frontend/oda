@@ -1,23 +1,39 @@
 {
-  "name": "oda",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.0"
-  },
-  "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.0",
-    "@eslint/eslintrc": "^3"
-  }
+    "name": "oda",
+    "version": "0.1.0",
+    "private": true,
+    "author": "qetraa",
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "lint:fix": "eslint --fix --ext .js,.jsx,.tsx,.ts ."
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "dependencies": {
+        "next": "15.1.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "eslint": "8.53.0",
+        "eslint-config-airbnb": "19.0.4",
+        "eslint-config-next": "14.2.6",
+        "eslint-plugin-destructuring-newline": "0.0.2",
+        "eslint-plugin-import": "2.29.0",
+        "eslint-plugin-jsx-a11y": "6.8.0",
+        "eslint-plugin-react": "7.33.2",
+        "eslint-plugin-react-hooks": "4.6.0",
+        "eslint-plugin-simple-import-sort": "10.0.0",
+        "eslint-plugin-sort-destructure-keys": "1.5.0",
+        "eslint-plugin-sort-keys-fix": "1.1.2",
+        "postcss": "^8",
+        "tailwindcss": "^3.4.1"
+    }
 }
