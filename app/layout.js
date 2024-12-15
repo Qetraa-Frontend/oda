@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Albert_Sans } from "next/font/google";
 
+import Footer from "@/app/components/shared/footer";
 import Navbar from "@/app/components/shared/navbar";
 
 const albertSans = Albert_Sans({
@@ -19,7 +20,8 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className={`${albertSans.variable} ${albertSans.variable} antialiased`}>
                 <Navbar />
-                {children}
+                <main>{children}</main>
+                <Footer />
             </body>
         </html>
     );

@@ -119,7 +119,6 @@ export default function Navbar() {
                                             width={25}
                                             priority
                                         />
-                                        {" "}
                                         <span className="sr-only">Search</span>
                                     </Button>
                                 </DropdownMenuTrigger>
@@ -158,7 +157,6 @@ export default function Navbar() {
                                         width={25}
                                         priority
                                     />
-                                    {" "}
                                     <span className="sr-only">Toggle Navigation Menu</span>
                                 </Button>
                             </SheetTrigger>
@@ -179,7 +177,6 @@ export default function Navbar() {
                                     width={25}
                                     priority
                                 />
-                                {" "}
                                 <span className="sr-only">Close</span>
                             </SheetClose>
                             <div className="container mx-auto flex items-center justify-between px-4 md:px-6 mt-6 mb-8">
@@ -195,109 +192,137 @@ export default function Navbar() {
                             </div>
                             <div className="container mx-auto md:flex items-center justify-between px-4 md:px-6">
                                 <div>
-                                    <span className="text-gray-500 mb-8 inline-block text-4xl font-medium">Quick Links</span>
-                                    <div className="flex flex-col gap-8 mt-2">
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/"
-                                            prefetch={false}
-                                        >
-                                            Home
-                                        </Link>
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/about-us"
-                                            prefetch={false}
-                                        >
-                                            About Us
-                                        </Link>
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/why-oda"
-                                            prefetch={false}
-                                        >
-                                            Why Oda
-                                        </Link>
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="contact-us"
-                                            prefetch={false}
-                                        >
-                                            Contact Us
-                                        </Link>
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/successful-stories"
-                                            prefetch={false}
-                                        >
-                                            Successful Stories
-                                        </Link>
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/oda-ambassador"
-                                            prefetch={false}
-                                        >
-                                            Oda Ambassador
-                                        </Link>
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/news-and-events"
-                                            prefetch={false}
-                                        >
-                                            News & Events
-                                        </Link>
-                                    </div>
+                                    <span className="text-gray-500 mb-8 inline-block text-lg md:text-4xl font-medium">Quick Links</span>
+                                    <ul className="flex flex-col gap-8 mt-2">
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/"
+                                                prefetch={false}
+                                            >
+                                                Home
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/about-us"
+                                                prefetch={false}
+                                            >
+                                                About Us
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/why-oda"
+                                                prefetch={false}
+                                            >
+                                                Why Oda
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="contact-us"
+                                                prefetch={false}
+                                            >
+                                                Contact Us
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/successful-stories"
+                                                prefetch={false}
+                                            >
+                                                Successful Stories
+                                            </Link>
+                                        </li>
+
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/oda-ambassador"
+                                                prefetch={false}
+                                            >
+                                                Oda Ambassador
+                                            </Link>
+                                        </li>
+
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/news-and-events"
+                                                prefetch={false}
+                                            >
+                                                News & Events
+                                            </Link>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div>
-                                    <div className="flex flex-col gap-8 mt-8 md:mt-20">
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/our-merchants"
-                                            prefetch={false}
-                                        >
-                                            Our Merchants
-                                        </Link>
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/our-partners"
-                                            prefetch={false}
-                                        >
-                                            Our Partners
-                                        </Link>
-                                        <Link
-                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                            href="/faqs"
-                                            prefetch={false}
-                                        >
-                                            FAQs
-                                        </Link>
+                                    <ul className="flex flex-col gap-8 mt-8 md:mt-20">
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/our-merchants"
+                                                prefetch={false}
+                                            >
+                                                Our Merchants
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/our-partners"
+                                                prefetch={false}
+                                            >
+                                                Our Partners
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                href="/faqs"
+                                                prefetch={false}
+                                            >
+                                                FAQs
+                                            </Link>
+                                        </li>
                                         <div>
-                                            <span className="text-gray-500 mb-2 mt-8 inline-block text-4xl font-medium">Our Services</span>
-                                            <div className="flex flex-col gap-8 mt-4">
-                                                <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                                    href="/locate-your-home"
-                                                    prefetch={false}
-                                                >
-                                                    Locate Your Home
-                                                </Link>
-                                                <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                                    href="/build-your-kit"
-                                                    prefetch={false}
-                                                >
-                                                    Build Your Kit
-                                                </Link>
-                                                <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
-                                                    href="/need-facelift"
-                                                    prefetch={false}
-                                                >
-                                                    Need a Facelift
-                                                </Link>
-                                            </div>
+                                            <span className="text-gray-500 mb-2 mt-8 inline-block text-lg md:text-4xl font-medium">Our Services</span>
+                                            <ul className="flex flex-col gap-8 mt-4">
+                                                <li>
+                                                    <Link
+                                                        className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                        href="/locate-your-home"
+                                                        prefetch={false}
+                                                    >
+                                                        Locate Your Home
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                        href="/build-your-kit"
+                                                        prefetch={false}
+                                                    >
+                                                        Build Your Kit
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="text-xl md:text-5xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                                        href="/need-facelift"
+                                                        prefetch={false}
+                                                    >
+                                                        Need a Facelift
+                                                    </Link>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
                         </SheetContent>
