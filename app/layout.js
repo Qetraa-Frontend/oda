@@ -18,9 +18,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${albertSans.variable} ${albertSans.variable} antialiased`}>
+            <body className={`${albertSans.variable} ${albertSans.variable} antialiased overflow-x-hidden`}>
                 <Navbar />
-                <main>{children}</main>
+                <main className="min-h-screen font-[family-name:var(--font-albert-sans)]">
+                    {children}
+                </main>
                 <Footer />
             </body>
         </html>

@@ -14,7 +14,7 @@ export default function Footer() {
         <footer
             className="pt-56 pb-10 px-4 md:px-6"
             style={{
-                backgroundImage: "url(/footer.png)",
+                backgroundImage: "url(/images/footer.png)",
                 minHeight: 802,
             }}
         >
@@ -25,7 +25,7 @@ export default function Footer() {
                             alt="oda_logo"
                             className="mt-5"
                             height={63}
-                            src="/logo_2.png"
+                            src="/images/logo_2.png"
                             width={183}
                             priority
                         />
@@ -214,7 +214,7 @@ export default function Footer() {
                                 <Image
                                     alt="google_play"
                                     height={65}
-                                    src="/google_play.png"
+                                    src="/images/google_play.png"
                                     width={180}
                                     priority
                                 />
@@ -226,7 +226,7 @@ export default function Footer() {
                                 <Image
                                     alt="apple_store"
                                     height={65}
-                                    src="/apple_store.png"
+                                    src="/images/apple_store.png"
                                     width={180}
                                     priority
                                 />

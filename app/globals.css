@@ -33,6 +33,7 @@ body {
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
+        --font-albert-sans: "Albert Sans", Arial, Helvetica, sans-serif;
     }
   .dark {
         --background: 240 10% 3.9%;
@@ -59,6 +60,7 @@ body {
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
+        --font-albert-sans: "Albert Sans", Arial, Helvetica, sans-serif;
     }
 }
 
@@ -71,4 +73,60 @@ body {
     }
 }
 
-button { box-shadow: none!important; }
+div[role="dialog"] > button:first-child { display: none; }
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 140px;
+    top: 300px;
+}
+
+.swiper-slide {
+    max-width: 277px;
+    height: 150px!important;
+    transition: border 0.3s ease;
+    cursor: pointer!important;
+}
+
+.swiper-slide img {
+    border-radius: 8px;
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.swiper-slide-active {
+    border: 2px solid #fff;
+    border-radius: 8px;
+}
+
+.swiper-wrapper {
+    margin-left: 14px;
+}
+
+.swiper-pagination {
+    position: absolute;
+    left: -4px!important;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 3%!important;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    margin: 5px 0;
+    background-color: #fff!important;
+    opacity: 0.7;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #fff;
+    opacity: 1;
+}
