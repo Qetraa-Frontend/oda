@@ -13,13 +13,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import {
-    Sheet, SheetClose, SheetContent, SheetTrigger,
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetTrigger,
 } from "@/components/ui/sheet";
 
 export default function Navbar() {
     return (
         <header className="absolute top-0 z-50 w-full border-none">
-            <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+            <div className="container mx-auto flex h-40 items-center justify-between px-4 md:px-6">
                 <Link
                     className="flex items-center gap-2"
                     href="#"
@@ -27,7 +30,6 @@ export default function Navbar() {
                 >
                     <Image
                         alt="oda_logo"
-                        className="mt-5"
                         height={63}
                         src="/images/logo.png"
                         width={183}

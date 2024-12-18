@@ -77,15 +77,15 @@ div[role="dialog"] > button:first-child { display: none; }
 
 .swiper {
     width: 100%;
-    height: 100%;
+    height: 140px!important;
     position: relative;
     left: 140px;
-    top: 300px;
+    top: 655px;
 }
 
 .swiper-slide {
     max-width: 277px;
-    height: 150px!important;
+    height: 140px!important;
     transition: border 0.3s ease;
     cursor: pointer!important;
 }
@@ -103,6 +103,7 @@ div[role="dialog"] > button:first-child { display: none; }
 
 .swiper-wrapper {
     margin-left: 14px;
+    height: 140px!important;
 }
 
 .swiper-pagination {
@@ -113,7 +114,7 @@ div[role="dialog"] > button:first-child { display: none; }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    height: 140px!important;
     width: 3%!important;
 }
 
