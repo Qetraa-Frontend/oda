@@ -46,12 +46,12 @@ export default function HomeBuildKit() {
                     ease: "easeIn",
                 }}
             >
-                <h3 className="font-bold text-3xl md:text-5xl uppercase !leading-relaxed h-20 md:h-40">
+                <h2 className="font-bold text-3xl md:text-5xl uppercase !leading-relaxed h-20 md:h-40">
                     Build your Kit with
                     <br className="hidden xl:block" />
                     {" "}
                     <span className="font-bold text-3xl md:text-5xl uppercase text-primary">oda</span>
-                </h3>
+                </h2>
                 <p className="font-normal text-xl md:text-3xl py-8 md:py-16">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
                 <Link
                     className="text-lg md:text-2xl font-medium relative top-6 md:top-12"

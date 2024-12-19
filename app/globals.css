@@ -131,3 +131,13 @@ div[role="dialog"] > button:first-child { display: none; }
     background-color: #fff;
     opacity: 1;
 }
+
+.gradient-container {
+    background: linear-gradient(to right, #C8E36F 36%, white 20%);
+}
+
+@media (max-width: 768px) {
+    .gradient-container {
+        background: white;
+    }
+}
