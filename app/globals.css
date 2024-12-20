@@ -109,7 +109,6 @@ div[role="dialog"] > button:first-child { display: none; }
 .swiper-pagination {
     position: absolute;
     left: -4px!important;
-    top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
@@ -130,6 +129,12 @@ div[role="dialog"] > button:first-child { display: none; }
 .swiper-pagination-bullet-active {
     background-color: #fff;
     opacity: 1;
+}
+
+@media (max-width: 1280px) {
+    .swiper-slide {
+        height: 100px!important;
+    }
 }
 
 .gradient-container {

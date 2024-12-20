@@ -14,6 +14,29 @@ export default function HomeHero() {
 
     const [isMobileSize, setIsMobileSize] = useState(false);
 
+    const slides = [
+        {
+            alt: "slide_1",
+            id: 1,
+            imageSrc: "/images/pages/home/hero_1.png",
+        },
+        {
+            alt: "slide_2",
+            id: 2,
+            imageSrc: "/images/pages/home/hero_2.png",
+        },
+        {
+            alt: "slide_3",
+            id: 3,
+            imageSrc: "/images/pages/home/hero_3.png",
+        },
+        {
+            alt: "slide_4",
+            id: 4,
+            imageSrc: "/images/pages/home/hero_4.png",
+        },
+    ];
+
     useEffect(
         () => {
             const mediaQuery = window.matchMedia("(max-width: 768px)"); // eslint-disable-line
@@ -97,38 +120,20 @@ export default function HomeHero() {
                         loop
                         onSlideChange={(swiperInstance) => setActiveSlideIndex(swiperInstance.realIndex)}
                     >
-                        <SwiperSlide>
-                            <Image
-                                alt="slide_1"
-                                height={196}
-                                src="/images/pages/home/hero_1.png"
-                                width={277}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt="slide_2"
-                                height={196}
-                                src="/images/pages/home/hero_2.png"
-                                width={277}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt="slide_3"
-                                height={196}
-                                src="/images/pages/home/hero_3.png"
-                                width={277}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt="slide_4"
-                                height={196}
-                                src="/images/pages/home/hero_4.png"
-                                width={277}
-                            />
-                        </SwiperSlide>
+                        {slides.map(({
+                            alt,
+                            id,
+                            imageSrc,
+                        }) => (
+                            <SwiperSlide key={id}>
+                                <Image
+                                    alt={alt}
+                                    height={196}
+                                    src={imageSrc}
+                                    width={277}
+                                />
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </div>

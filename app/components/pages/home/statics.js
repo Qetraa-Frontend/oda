@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 export default function HomeStatics() {
     return (
         <div
-            className="bg-cover bg-no-repeat bg-top"
+            className="bg-cover bg-no-repeat bg-top w-screen"
             style={{ backgroundImage: "url(/images/pages/home/statics.png)" }}
         >
             <div className="container px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 min-h-80 py-20 md:py-0">
