@@ -29,9 +29,8 @@ export default function HomeBuildKit() {
                 }}
             >
                 <Image
-                    alt="Build Kit"
+                    alt="build_kit"
                     height={677}
-                    layout="responsive"
                     src="/images/pages/home/build_kit.png"
                     width={564}
                 />

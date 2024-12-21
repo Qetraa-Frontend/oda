@@ -92,7 +92,7 @@ export default function WorkScopes() {
                                     title,
                                 }, index) => (
                                     <li // eslint-disable-line
-                                        className={id === currentScope ? "active mx-0 my-2 p-1 cursor-pointer font-bold text-3xl text-black max-w-44 transition-all duration-200 !font-nanum-myeongjo" : "mx-0 my-2 p-1 cursor-pointer font-normal text-3xl text-black opacity-50 max-w-44 transition-all duration-200 !font-nanum-myeongjo"}
+                                        className={id === currentScope ? "active mx-0 my-2 p-1 cursor-pointer font-bold text-3xl text-black max-w-44 transition-all duration-1000 !font-nanum-myeongjo" : "mx-0 my-2 p-1 cursor-pointer font-normal text-3xl text-black opacity-50 max-w-44 transition-all duration-1000 !font-nanum-myeongjo"}
                                         key={id}
                                         onClick={() => handleScopeChange(index)}
                                     >
@@ -160,7 +160,7 @@ export default function WorkScopes() {
                                                 onClick={() => (currentScope === 8 ? {} : handleScopeChange(currentIndex + 1))}
                                             />
                                         </div>
-                                        <span className="font-bold text-2xl md:text-4xl transition-all duration-100">{currentScope}</span>
+                                        <span className="font-bold text-2xl md:text-4xl transition-all duration-1000">{currentScope}</span>
                                     </div>
                                 </div>
                             </motion.div>

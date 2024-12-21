@@ -3,8 +3,6 @@
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function HomeOurPartners() {
     const ref = useRef(null);
@@ -15,8 +13,8 @@ export default function HomeOurPartners() {
     );
 
     return (
-        <div className="pt-11">
-            <div className="mb-24">
+        <div className="pt-5 md:pt-11">
+            <div className="mb-12 md:mb-24">
                 <h2 className="font-semibold text-4xl md:text-6xl text-white !leading-normal">
                     Our
                     <br className="hidden xl:block" />
@@ -33,7 +31,7 @@ export default function HomeOurPartners() {
                     ease: "easeInOut",
                 }}
             >
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 justify-items-center md:justify-items-start">
                     <div className="col-span-1 md:col-span-4">
                         <Image
                             alt="partner_1"

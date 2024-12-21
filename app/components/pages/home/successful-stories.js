@@ -55,7 +55,7 @@ export default function HomeSuccessfulStories() {
 
     return (
         <div>
-            <div className="mb-24">
+            <div className="mb-12 md:mb-24">
                 <h2 className="font-semibold text-4xl md:text-6xl text-white !leading-normal">
                     Successful
                     <br className="hidden xl:block" />
@@ -96,13 +96,13 @@ export default function HomeSuccessfulStories() {
                                 <div className="group overflow-hidden rounded-lg">
                                     <Image
                                         alt={alt}
-                                        className="rounded-lg object-cover w-full h-[317px] transition-transform duration-500 group-hover:scale-150"
+                                        className="rounded-lg object-cover w-full h-[317px] transition-transform duration-1000 group-hover:scale-150"
                                         height={317}
                                         src={imageSrc}
                                         width={347}
                                     />
                                 </div>
-                                <h5 className="font-normal text-base md:text-xl text-white mt-4 !font-nanum-myeongjo">{title}</h5>
+                                <h5 className="font-normal text-base md:text-xl text-white mt-2 md:mt-4 !font-nanum-myeongjo">{title}</h5>
                             </div>
                         </SwiperSlide>
                     ))}

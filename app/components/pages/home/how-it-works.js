@@ -66,7 +66,7 @@ export default function HomeHowItWorks() {
                         imageSrc,
                     }) => (
                         <div
-                            className="col-span-1 md:col-span-3 transform transition-transform duration-500 hover:scale-110"
+                            className="col-span-1 md:col-span-3 transform transition-transform duration-1000 hover:scale-110"
                             key={id}
                         >
                             <Image

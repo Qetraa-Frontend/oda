@@ -103,7 +103,7 @@ export default function Footer() {
                     <span className="text-white mb-4 inline-block text-lg md:text-4xl font-medium">Quick Links</span>
                     <ul className="space-y-2 text-white">
                         <Link
-                            className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                            className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                             href="/"
                             prefetch={false}
                         >
@@ -111,7 +111,7 @@ export default function Footer() {
                         </Link>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/about-us"
                                 prefetch={false}
                             >
@@ -120,7 +120,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/why-oda"
                                 prefetch={false}
                             >
@@ -129,7 +129,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/built-your-kit"
                                 prefetch={false}
                             >
@@ -138,7 +138,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/successful-stories"
                                 prefetch={false}
                             >
@@ -147,7 +147,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/our-ambassador"
                                 prefetch={false}
                             >
@@ -156,7 +156,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/news-and-events"
                                 prefetch={false}
                             >
@@ -165,7 +165,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/contact-us"
                                 prefetch={false}
                             >
@@ -178,7 +178,7 @@ export default function Footer() {
                     <ul className="space-y-2 text-white">
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/our-merchants"
                                 prefetch={false}
                             >
@@ -187,7 +187,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/our-partners"
                                 prefetch={false}
                             >
@@ -196,7 +196,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-sm md:text-xl hover:text-primary transition-all duration-500 font-medium text-white"
+                                className="text-sm md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                 href="/faqs"
                                 prefetch={false}
                             >

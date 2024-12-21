@@ -167,6 +167,16 @@ div[role="dialog"] > button:first-child { display: none; }
     left: 48%!important;
 }
 
+@media (max-width: 1291px) {
+    .testimonials-slider .swiper-button-next {
+        left: 58%!important;
+    }
+
+    .testimonials-slider .swiper-button-prev {
+        left: 42%!important;
+    }
+}
+
 .stories-slider .swiper-button-prev {
     right: 55px!important;
 }
