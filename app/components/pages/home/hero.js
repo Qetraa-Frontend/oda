@@ -11,26 +11,26 @@ export default function HomeHero() {
 
     const [isMobileSize, setIsMobileSize] = useState(false);
 
-    const slides = [
+    const heroSlides = [
         {
             alt: "slide_1",
             id: 1,
-            imageSrc: "/images/pages/home/hero_1.png",
+            imageSrc: "/images/pages/home/hero/hero_1.png",
         },
         {
             alt: "slide_2",
             id: 2,
-            imageSrc: "/images/pages/home/hero_2.png",
+            imageSrc: "/images/pages/home/hero/hero_2.png",
         },
         {
             alt: "slide_3",
             id: 3,
-            imageSrc: "/images/pages/home/hero_3.png",
+            imageSrc: "/images/pages/home/hero/hero_3.png",
         },
         {
             alt: "slide_4",
             id: 4,
-            imageSrc: "/images/pages/home/hero_4.png",
+            imageSrc: "/images/pages/home/hero/hero_4.png",
         },
     ];
 
@@ -118,7 +118,7 @@ export default function HomeHero() {
                         loop
                         onSlideChange={(swiperInstance) => setActiveSlideIndex(swiperInstance.realIndex)}
                     >
-                        {slides.map(({
+                        {heroSlides.map(({
                             alt,
                             id,
                             imageSrc,

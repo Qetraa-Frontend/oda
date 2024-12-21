@@ -11,6 +11,7 @@ import HomeHowItWorks from "@/app/components/pages/home/how-it-works";
 import OurPartners from "@/app/components/pages/home/our-partners";
 import Statics from "@/app/components/pages/home/statics";
 import HomeSuccessfulStories from "@/app/components/pages/home/successful-stories";
+import HomeTestimonials from "@/app/components/pages/home/testimonials";
 import WorkScopes from "@/app/components/pages/home/work-scopes";
 
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
                     <div className="relative bottom-28 lg:bottom-56">
                         <HomeSuccessfulStories />
                         <OurPartners />
+                        <HomeTestimonials />
                     </div>
                 </div>
             </div>

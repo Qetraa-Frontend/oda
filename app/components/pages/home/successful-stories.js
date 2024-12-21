@@ -14,7 +14,7 @@ export default function HomeSuccessfulStories() {
         { once: true },
     );
 
-    const slides = [
+    const stories = [
         {
             alt: "story_1",
             id: 1,
@@ -76,6 +76,7 @@ export default function HomeSuccessfulStories() {
                     className="stories-slider"
                     modules={[Navigation]}
                     pagination={{ clickable: true }}
+                    slidesPerView={3}
                     spaceBetween={20}
                     breakpoints={{
                         1024: { slidesPerView: 3 },
@@ -84,7 +85,7 @@ export default function HomeSuccessfulStories() {
                     }}
                     navigation
                 >
-                    {slides.map(({
+                    {stories.map(({
                         alt,
                         id,
                         imageSrc,

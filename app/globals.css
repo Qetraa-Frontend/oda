@@ -140,8 +140,14 @@ div[role="dialog"] > button:first-child { display: none; }
     height: 525px;
 }
 
+.testimonials-slider .swiper-wrapper {
+    height: 420px;
+}
+
 .stories-slider .swiper-button-next,
-.stories-slider .swiper-button-prev {
+.stories-slider .swiper-button-prev,
+.testimonials-slider .swiper-button-next,
+.testimonials-slider .swiper-button-prev {
    position: absolute;
    top: 93%;
    right: 0!important;
@@ -153,18 +159,28 @@ div[role="dialog"] > button:first-child { display: none; }
    border-radius: 100%;
 }
 
+.testimonials-slider .swiper-button-next {
+    left: 52%!important;
+}
+
+.testimonials-slider .swiper-button-prev {
+    left: 48%!important;
+}
+
 .stories-slider .swiper-button-prev {
     right: 55px!important;
 }
 
-.stories-slider .swiper-button-next::after {
+.stories-slider .swiper-button-next::after,
+.testimonials-slider .swiper-button-next::after {
     content: '→';
     font-size: 25px;
     position: relative;
     bottom: 3px;
 }
 
-.stories-slider  .swiper-button-prev::after {
+.stories-slider  .swiper-button-prev::after,
+.testimonials-slider .swiper-button-prev::after {
     content: '←';
     font-size: 25px;
     position: relative;
