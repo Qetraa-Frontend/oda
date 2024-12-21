@@ -8,6 +8,7 @@ import HomeBuildKit from "@/app/components/pages/home/build-kit";
 import HomeDiscoverArtLiving from "@/app/components/pages/home/discover-art-living";
 import HomeHero from "@/app/components/pages/home/hero";
 import HomeHowItWorks from "@/app/components/pages/home/how-it-works";
+import OurPartners from "@/app/components/pages/home/our-partners";
 import Statics from "@/app/components/pages/home/statics";
 import HomeSuccessfulStories from "@/app/components/pages/home/successful-stories";
 import WorkScopes from "@/app/components/pages/home/work-scopes";
@@ -32,6 +33,7 @@ export default function Home() {
                     />
                     <div className="relative bottom-28 lg:bottom-56">
                         <HomeSuccessfulStories />
+                        <OurPartners />
                     </div>
                 </div>
             </div>

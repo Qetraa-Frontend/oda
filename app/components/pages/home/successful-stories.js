@@ -76,8 +76,12 @@ export default function HomeSuccessfulStories() {
                     className="stories-slider"
                     modules={[Navigation]}
                     pagination={{ clickable: true }}
-                    slidesPerView={3}
                     spaceBetween={20}
+                    breakpoints={{
+                        1024: { slidesPerView: 3 },
+                        480: { slidesPerView: 1 }, // eslint-disable-line
+                        768: { slidesPerView: 2 },
+                    }}
                     navigation
                 >
                     {slides.map(({
@@ -87,11 +91,11 @@ export default function HomeSuccessfulStories() {
                         title,
                     }) => (
                         <SwiperSlide key={id}>
-                            <div className="rounded-lg border-white border-[1px] p-4 w-[395] h-[431px]">
+                            <div className="rounded-lg border-white border-[1px] p-4 max:w-[395] h-[431px]">
                                 <div className="group overflow-hidden rounded-lg">
                                     <Image
                                         alt={alt}
-                                        className="rounded-lg object-cover w-full transition-transform duration-500 group-hover:scale-150"
+                                        className="rounded-lg object-cover w-full h-[317px] transition-transform duration-500 group-hover:scale-150"
                                         height={317}
                                         src={imageSrc}
                                         width={347}
