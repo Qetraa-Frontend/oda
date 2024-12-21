@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: "Albert Sans", Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
         --background: 0 0% 100%;
@@ -14,10 +10,10 @@ body {
         --card-foreground: 240 10% 3.9%;
         --popover: 0 0% 100%;
         --popover-foreground: 240 10% 3.9%;
-        --primary: 74, 67%, 66%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
+        --primary: 75, 75%, 74%;
+        --primary-foreground: 75, 75%, 74%;
+        --secondary: 73, 69%, 76%;
+        --secondary-foreground: 73, 69%, 76%;
         --muted: 240 4.8% 95.9%;
         --muted-foreground: 240 3.8% 46.1%;
         --accent: 240 4.8% 95.9%;
@@ -33,7 +29,8 @@ body {
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
-        --font-albert-sans: "Albert Sans", Arial, Helvetica, sans-serif;
+        --font-albert-sans: "Albert Sans";
+        --font-nanum-myeongjo: "Nanum Myeongjo";
     }
   .dark {
         --background: 240 10% 3.9%;
@@ -42,10 +39,10 @@ body {
         --card-foreground: 0 0% 98%;
         --popover: 240 10% 3.9%;
         --popover-foreground: 0 0% 98%;
-        --primary: 74, 67%, 66%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
+        --primary: 75, 75%, 74%;
+        --primary-foreground: 75, 75%, 74%;
+        --secondary: 73, 69%, 76%;
+        --secondary-foreground: 73, 69%, 76%;
         --muted: 240 3.7% 15.9%;
         --muted-foreground: 240 5% 64.9%;
         --accent: 240 3.7% 15.9%;
@@ -60,7 +57,8 @@ body {
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
-        --font-albert-sans: "Albert Sans", Arial, Helvetica, sans-serif;
+        --font-albert-sans: "Albert Sans";
+        --font-nanum-myeongjo: "Nanum Myeongjo";
     }
 }
 
@@ -71,6 +69,10 @@ body {
   body {
         @apply bg-background text-foreground;
     }
+}
+
+body {
+    font-family: "Albert Sans";
 }
 
 div[role="dialog"] > button:first-child { display: none; }
@@ -145,4 +147,20 @@ div[role="dialog"] > button:first-child { display: none; }
     .gradient-container {
         background: white;
     }
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(15deg);
+    }
+    25% {
+        transform: rotate(17deg);
+    }
+    75% {
+        transform: rotate(13deg);
+    }
+}
+
+.animate-wiggle:hover {
+    animation: wiggle 0.2s ease-in-out infinite;
 }

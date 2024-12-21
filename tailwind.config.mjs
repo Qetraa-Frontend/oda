@@ -10,6 +10,11 @@ export default {
     plugins: [require("tailwindcss-animate")],
     theme: {
         extend: {
+            animation: {
+                wiggle: "wiggle 0.2s ease-in-out infinite;",
+                wiggleBottom: "wiggleBottom 0.2s ease-in-out infinite;",
+                wiggleTop: "wiggleTop 0.2s ease-in-out infinite;",
+            },
             borderRadius: {
                 lg: "var(--radius)",
                 md: "calc(var(--radius) - 2px)",
@@ -59,6 +64,42 @@ export default {
             },
             fontFamily: {
                 "albert-sans": "var(--font-albert-sans)",
+                "nanum-myeongjo": "var(--font-nanum-myeongjo)",
+            },
+            keyframes: {
+                wiggle: {
+                    "0%, 100%": {
+                        transform: "translateX(0)",
+                    },
+                    "25%": {
+                        transform: "translateX(-4px)",
+                    },
+                    "75%": {
+                        transform: "translateX(4px)",
+                    },
+                },
+                wiggleBottom: {
+                    "0%, 100%": {
+                        rotate: "15deg",
+                    },
+                    "25%": {
+                        rotate: "17deg",
+                    },
+                    "75%": {
+                        rotate: "15deg",
+                    },
+                },
+                wiggleTop: {
+                    "0%, 100%": {
+                        rotate: "-15deg",
+                    },
+                    "25%": {
+                        rotate: "-17deg",
+                    },
+                    "75%": {
+                        rotate: "-15deg",
+                    },
+                },
             },
         },
     },

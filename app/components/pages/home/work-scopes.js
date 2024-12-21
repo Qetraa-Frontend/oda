@@ -130,7 +130,7 @@ export default function WorkScopes() {
                             >
                                 <Image
                                     alt={scopes[currentIndex].alt}
-                                    className="h-[854] md:w-1/2 object-cover"
+                                    className="h-[854px] md:w-1/2 object-cover"
                                     height={854}
                                     src={scopes[currentIndex].imageSrc}
                                     width={485}

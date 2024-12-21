@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import { Albert_Sans } from "next/font/google";
+import { Albert_Sans, Nanum_Myeongjo } from "next/font/google";
 
 import Footer from "@/app/components/shared/footer";
 import Navbar from "@/app/components/shared/navbar";
@@ -8,6 +8,12 @@ import Navbar from "@/app/components/shared/navbar";
 const albertSans = Albert_Sans({
     subsets: ["latin"],
     variable: "--font-albert-sans",
+});
+
+const nanumMyeongjo = Nanum_Myeongjo({
+    subsets: ["latin"],
+    variable: "--font-nanum-myeongjo",
+    weight: ["400", "700", "800"],
 });
 
 export const metadata = {
@@ -18,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${albertSans.variable} ${albertSans.variable} antialiased overflow-x-hidden`}>
+            <body className={`${albertSans.variable} ${nanumMyeongjo.variable} antialiased overflow-x-hidden`}>
                 <Navbar />
                 <main className="min-h-screen font-[family-name:var(--font-albert-sans)]">
                     {children}

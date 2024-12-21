@@ -82,7 +82,7 @@ export default function HomeHero() {
 
     return (
         <div
-            className="relative bg-cover bg-no-repeat bg-top h-[600px] md:h-[1022] w-[100vw] transition-all duration-1000"
+            className="relative bg-cover bg-no-repeat bg-top h-[600px] md:h-[1022px] w-[100vw] transition-all duration-1000"
             style={{ backgroundImage: `url(/images/pages/home/hero_${activeSlideIndex + 1}.png)` }}
         >
             <div className="absolute inset-0 bg-black bg-opacity-40" />
