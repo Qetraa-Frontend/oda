@@ -155,7 +155,7 @@ export default function Navbar() {
                             side="top"
                             style={{
                                 backgroundImage: "url(/images/pages/home/hero.png)",
-                                height: 1021,
+                                minHeight: 1021,
                             }}
                         >
                             <div className="absolute inset-0 bg-black bg-opacity-70" />

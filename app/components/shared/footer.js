@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer
-            className="pt-56 pb-10 px-4 md:px-6"
+            className="pt-56 pb-10 px-4 md:px-6 bg-cover bg-no-repeat bg-top"
             style={{
                 backgroundImage: "url(/images/footer.png)",
                 minHeight: 802,

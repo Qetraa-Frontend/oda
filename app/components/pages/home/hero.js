@@ -87,7 +87,7 @@ export default function HomeHero() {
         >
             <div className="absolute inset-0 bg-black bg-opacity-40" />
             <div className="relative z-40 container px-4 md:px-6 mx-auto h-full w-full grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
-                <div className="col-span-1 md:col-span-6 relative top-32 md:top-64">
+                <div className="col-span-1 md:col-span-6 relative top-44 md:top-64">
                     <h1 className="uppercase font-medium text-6xl md:text-8xl text-white">
                         Simplify
                         <br />

@@ -85,14 +85,14 @@ export default function WorkScopes() {
                 <div className="container px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-3">
                     <div className="col-span-1 bg-primary md:bg-transparent">
                         <div className="py-8 md:py-16 px-3 md:px-6">
-                            <h3 className="font-medium text-4xl md:text-6xl text-black mb-3 md:mb-6">Scope of Work</h3>
+                            <h2 className="font-medium text-4xl md:text-6xl text-black mb-3 md:mb-6">Scope of Work</h2>
                             <ul className="list-none p-0">
                                 {scopes.map(({
                                     id,
                                     title,
                                 }, index) => (
                                     <li // eslint-disable-line
-                                        className={id === currentScope ? "active mx-0 my-2 p-1 cursor-pointer font-bold text-3xl text-black max-w-44 transition-all duration-200" : "mx-0 my-2 p-1 cursor-pointer font-normal text-3xl text-black opacity-50 max-w-44 transition-all duration-200"}
+                                        className={id === currentScope ? "active mx-0 my-2 p-1 cursor-pointer font-bold text-3xl text-black max-w-44 transition-all duration-200 !font-nanum-myeongjo" : "mx-0 my-2 p-1 cursor-pointer font-normal text-3xl text-black opacity-50 max-w-44 transition-all duration-200 !font-nanum-myeongjo"}
                                         key={id}
                                         onClick={() => handleScopeChange(index)}
                                     >
@@ -137,7 +137,7 @@ export default function WorkScopes() {
                                 />
                                 <div className="w-full md:w-1/2 flex flex-col">
                                     <div>
-                                        <h4 className="font-medium text-4xl md:text-6xl">{scopes[currentIndex].title}</h4>
+                                        <h3 className="font-medium text-4xl md:text-6xl">{scopes[currentIndex].title}</h3>
                                         <p className="font-normal text-xl md:text-3xl text-gray-500 mt-3 md:mt-6">{scopes[currentIndex].description}</p>
                                     </div>
                                     <div className="flex justify-between items-center gap-4 md:gap-8 mt-24 md:mt-48 flex-wrap">
