@@ -1,8 +1,5 @@
 "use client";
 
-import "swiper/css";
-import "swiper/css/pagination";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -108,6 +105,7 @@ export default function HomeHero() {
                 </div>
                 <div className="col-span-1 md:col-span-6 hidden md:block">
                     <Swiper
+                        className="hero-slider"
                         modules={[Autoplay, Pagination]}
                         pagination={{ clickable: true }}
                         slidesPerView={3}

@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function HomeDiscoverArtLiving() {
     return (
-        <div className="bg-[#222] w-screen !font-nanum-myeongjo">
-            <div className="container px-4 md:px-6 mx-auto min-h-[600px] py-5 md:py-10">
+        <div className="bg-[#222] min-h-[600px] py-5 md:py-10 !font-nanum-myeongjo">
+            <div className="container px-4 md:px-6 mx-auto">
                 <div className="text-center text-white mb-12">
                     <h2 className="font-normal text-4xl md:text-6xl uppercase !leading-snug">
                         Discover the Art of Living

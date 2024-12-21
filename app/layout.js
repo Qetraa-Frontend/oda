@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className={`${albertSans.variable} ${nanumMyeongjo.variable} antialiased overflow-x-hidden`}>
                 <Navbar />
-                <main className="min-h-screen font-[family-name:var(--font-albert-sans)]">
+                <main className="min-h-screen font-albert-sans">
                     {children}
                 </main>
                 <Footer />

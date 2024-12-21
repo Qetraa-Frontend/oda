@@ -37,7 +37,7 @@ export default function Navbar() {
                     />
                     <span className="sr-only">Oda Logo</span>
                 </Link>
-                <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+                <nav className="hidden items-center gap-6 text-sm font-medium md:flex font-albert-sans">
                     <Link
                         className="text-xl font-normal text-white"
                         href="/"
@@ -117,16 +117,8 @@ export default function Navbar() {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-[300px] p-4">
                             <div className="relative">
-                                <Image
-                                    alt="search"
-                                    height={25}
-                                    src="/icons/search.svg"
-                                    width={25}
-                                    priority
-                                />
-                                {" "}
                                 <Input
-                                    className="pl-8 w-full"
+                                    className="w-full"
                                     placeholder="Search..."
                                     type="search"
                                 />
