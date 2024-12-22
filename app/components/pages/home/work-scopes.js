@@ -101,7 +101,7 @@ export default function WorkScopes() {
                                 ))}
                             </ul>
                             <Link
-                                className="text-lg md:text-2xl font-medium relative top-4 md:top-8 text-white underline"
+                                className="text-lg md:text-2xl font-medium inline-block mt-4 md:mt-8 text-white underline"
                                 href="/our-services"
                                 prefetch={false}
                             >

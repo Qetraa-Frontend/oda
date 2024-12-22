@@ -52,7 +52,7 @@ export default function HomeTestimonials() {
     return (
         <div className="pt-28 md:pt-60">
             <div className="mb-12 md:mb-24 text-center">
-                <h2 className="font-semibold text-3xl md:text-5xl text-white text-center">Testimonials</h2>
+                <h2 className="font-semibold text-3xl md:text-5xl text-white text-center mb-3 md:mb-6">Testimonials</h2>
                 <span className="font-normal text-lg md:text-2xl text-white">What they say about us</span>
             </div>
             <motion.div
@@ -90,7 +90,7 @@ export default function HomeTestimonials() {
                                         src={imageSrc}
                                         width={100}
                                     />
-                                    <h5 className="font-medium text-xl md:text-3xl text-white mt-2 md:mt-4">{name}</h5>
+                                    <h5 className="font-medium text-xl md:text-3xl text-white my-2 md:my-4">{name}</h5>
                                     <span className="font-medium text-lg md:text-2xl text-gray-400">{title}</span>
                                 </div>
                                 <div className="mt-5 md:mt-10">

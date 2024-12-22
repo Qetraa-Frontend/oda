@@ -39,15 +39,15 @@ export default function HomeNewsletter() {
                         width={633}
                     />
                 </div>
-                <div className="w-full md:w-1/2 bg-[#d9d9d9] !font-nanum-myeongjo flex flex-col justify-center items-center p-5 md:p-10">
-                    <h4 className="font-medium text-3xl md:text-[40px] uppercase mb-4 md:mb-8 lea">Get our Newsletter</h4>
-                    <p className="font-normal text-2xl md:text-4xl px-1 xl:px-12">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
+                <div className="w-full md:w-1/2 bg-[#d9d9d9] !font-nanum-myeongjo flex flex-col justify-center items-center gap-4 md:gap-8 p-5 md:p-10">
+                    <h4 className="font-normal text-3xl md:text-[40px] uppercase">Get our Newsletter</h4>
+                    <p className="font-light text-2xl md:text-4xl px-1 xl:px-12">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
                     <Link
-                        className="text-xl md:text-3xl font-medium relative top-4 md:top-8"
+                        className="text-xl md:text-3xl font-light"
                         href="/newsletter"
                         prefetch={false}
                     >
-                        <button className="bg-transparent hover:bg-black text-black hover:text-white py-2 px-8 border border-black hover:border-transparent rounded transition-all duration-1000 mb-4 xl:mb-0">Sign Up</button>
+                        <button className="bg-transparent hover:bg-black text-black hover:text-white py-1 md:py-2 px-4 md:px-8 border border-black hover:border-transparent rounded transition-all duration-1000">Sign Up</button>
                     </Link>
                 </div>
             </motion.div>

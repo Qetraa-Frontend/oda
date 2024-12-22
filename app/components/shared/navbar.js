@@ -24,8 +24,8 @@ export default function Navbar() {
         <header className="absolute top-0 z-50 w-full border-none">
             <div className="container mx-auto flex h-40 items-center justify-between px-4 md:px-6">
                 <Link
-                    className="flex items-center gap-2"
-                    href="#"
+                    className="flex items-center gap-1 md:gap-2"
+                    href="/"
                     prefetch={false}
                 >
                     <Image
@@ -37,23 +37,23 @@ export default function Navbar() {
                     />
                     <span className="sr-only">Oda Logo</span>
                 </Link>
-                <nav className="hidden items-center gap-6 text-sm font-medium md:flex font-albert-sans">
+                <nav className="hidden items-center gap-3 md:gap-6 text-xs md:text-sm font-medium md:flex font-albert-sans">
                     <Link
-                        className="text-xl font-normal text-white"
+                        className="text-base md:text-xl font-normal text-white"
                         href="/"
                         prefetch={false}
                     >
                         Home
                     </Link>
                     <DropdownMenu>
-                        <DropdownMenuTrigger className="flex items-center gap-1 text-xl font-normal text-white outline-none">
+                        <DropdownMenuTrigger className="flex items-center gap-1 text-base md:text-xl font-normal text-white outline-none">
                             Services
                             <ChevronDownIcon className="h-4 w-4" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                             <DropdownMenuItem>
                                 <Link
-                                    className="text-lg font-normal"
+                                    className="text-sm md:text-lg font-normal"
                                     href="/locate-your-home"
                                     prefetch={false}
                                 >
@@ -62,7 +62,7 @@ export default function Navbar() {
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <Link
-                                    className="text-lg font-normal"
+                                    className="text-sm md:text-lg font-normal"
                                     href="/book-your-kit"
                                     prefetch={false}
                                 >
@@ -71,7 +71,7 @@ export default function Navbar() {
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <Link
-                                    className="text-lg font-normal"
+                                    className="text-sm md:text-lg font-normal"
                                     href="/need-facelift"
                                     prefetch={false}
                                 >
@@ -81,15 +81,15 @@ export default function Navbar() {
                         </DropdownMenuContent>
                     </DropdownMenu>
                     <Link
-                        className="text-xl font-normal text-white"
+                        className="text-base md:text-xl font-normal text-white"
                         href="/about-us"
                         prefetch={false}
                     >
                         About Us
                     </Link>
                 </nav>
-                <div className="flex items-center gap-4">
-                    <div className="hidden items-center gap-2 text-sm font-medium md:flex cursor-pointer">
+                <div className="flex items-center gap-2 md:gap-4">
+                    <div className="hidden items-center gap-1 md:gap-2 text-xs md:text-sm font-medium md:flex cursor-pointer">
                         <Image
                             alt="whatsapp"
                             height={25}
@@ -146,7 +146,7 @@ export default function Navbar() {
                             className="bg-cover bg-no-repeat border-b-transparent"
                             side="top"
                             style={{
-                                backgroundImage: "url(/images/pages/home/hero.png)",
+                                backgroundImage: "url(/images/pages/home/hero/hero_1.png)",
                                 minHeight: 1021,
                             }}
                         >
@@ -162,10 +162,10 @@ export default function Navbar() {
                                     />
                                     <span className="sr-only">Close</span>
                                 </SheetClose>
-                                <div className="container mx-auto flex items-center justify-between px-4 md:px-6 mt-6 mb-8">
+                                <div className="container mx-auto flex items-center justify-between px-4 md:px-6 mt-3 md:mt-6 mb-4 md:mb-8">
                                     <Image
                                         alt="oda_logo"
-                                        className="mt-5"
+                                        className="mt-3 md:mt-6"
                                         height={63}
                                         src="/images/logo_2.png"
                                         width={183}
@@ -175,11 +175,11 @@ export default function Navbar() {
                                 </div>
                                 <div className="container mx-auto md:flex items-center justify-between px-4 md:px-6">
                                     <div>
-                                        <span className="text-gray-500 mb-8 inline-block text-lg md:text-4xl font-medium">Quick Links</span>
-                                        <ul className="flex flex-col gap-8 mt-2">
+                                        <span className="text-gray-500 mb-4 md:mb-8 inline-block text-2xl md:text-4xl font-medium">Quick Links</span>
+                                        <ul className="flex flex-col gap-4 md:gap-8 mt-1 md:mt-2">
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/"
                                                     prefetch={false}
                                                 >
@@ -188,7 +188,7 @@ export default function Navbar() {
                                             </li>
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/about-us"
                                                     prefetch={false}
                                                 >
@@ -197,7 +197,7 @@ export default function Navbar() {
                                             </li>
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/why-oda"
                                                     prefetch={false}
                                                 >
@@ -206,7 +206,7 @@ export default function Navbar() {
                                             </li>
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="contact-us"
                                                     prefetch={false}
                                                 >
@@ -215,7 +215,7 @@ export default function Navbar() {
                                             </li>
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/successful-stories"
                                                     prefetch={false}
                                                 >
@@ -224,7 +224,7 @@ export default function Navbar() {
                                             </li>
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/oda-ambassador"
                                                     prefetch={false}
                                                 >
@@ -234,7 +234,7 @@ export default function Navbar() {
 
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/news-and-events"
                                                     prefetch={false}
                                                 >
@@ -244,10 +244,10 @@ export default function Navbar() {
                                         </ul>
                                     </div>
                                     <div>
-                                        <ul className="flex flex-col gap-8 mt-8 md:mt-20">
+                                        <ul className="flex flex-col gap-4 md:gap-8 mt-10 md:mt-20">
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/our-merchants"
                                                     prefetch={false}
                                                 >
@@ -256,7 +256,7 @@ export default function Navbar() {
                                             </li>
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/our-partners"
                                                     prefetch={false}
                                                 >
@@ -265,7 +265,7 @@ export default function Navbar() {
                                             </li>
                                             <li>
                                                 <Link
-                                                    className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                     href="/faqs"
                                                     prefetch={false}
                                                 >
@@ -273,11 +273,11 @@ export default function Navbar() {
                                                 </Link>
                                             </li>
                                             <div>
-                                                <span className="text-gray-500 mb-2 mt-8 inline-block text-lg md:text-4xl font-medium">Our Services</span>
-                                                <ul className="flex flex-col gap-8 mt-4">
+                                                <span className="text-gray-500 mb-1 md:mb-2 mt-4 md:mt-8 inline-block text-2xl md:text-4xl font-medium">Our Services</span>
+                                                <ul className="flex flex-col gap-4 md:gap-8 mt-2 md:mt-4">
                                                     <li>
                                                         <Link
-                                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                            className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                             href="/locate-your-home"
                                                             prefetch={false}
                                                         >
@@ -286,7 +286,7 @@ export default function Navbar() {
                                                     </li>
                                                     <li>
                                                         <Link
-                                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                            className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                             href="/build-your-kit"
                                                             prefetch={false}
                                                         >
@@ -295,7 +295,7 @@ export default function Navbar() {
                                                     </li>
                                                     <li>
                                                         <Link
-                                                            className="text-xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                            className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
                                                             href="/need-facelift"
                                                             prefetch={false}
                                                         >
