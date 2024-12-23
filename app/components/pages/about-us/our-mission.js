@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-export default function AboutOurMission() {
+export default function AboutUsOurMission() {
     const ref = useRef(null);
 
     const isInView = useInView(

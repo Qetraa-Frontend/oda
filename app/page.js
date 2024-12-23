@@ -2,8 +2,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import Image from "next/image";
-
 import HomeBuildKit from "@/app/components/pages/home/build-kit";
 import HomeDiscoverArtLiving from "@/app/components/pages/home/discover-art-living";
 import HomeHero from "@/app/components/pages/home/hero";
@@ -26,13 +24,13 @@ export default function Home() {
             <HomeHowItWorks />
             <div className="bg-[#222] max-h-[2300px] xl:max-h-[2600px]">
                 <div className="container px-4 md:px-6 mx-auto">
-                    <Image
-                        alt="discover_oda"
-                        className="relative bottom-48 lg:bottom-96"
-                        height={560}
-                        src="/images/pages/home/discover_oda.png"
-                        width={1248}
-                    />
+                    <div
+                        className="relative bottom-48 lg:bottom-96 bg-cover bg-no-repeat bg-top rounded-xl min-h-[300px] md:min-h-[560px] max-w-[1248px] flex items-center justify-center"
+                        style={{ backgroundImage: "url(/images/pages/home/discover_oda.png)" }}
+                    >
+                        <div className="absolute inset-0 bg-black bg-opacity-20" />
+                        <h5 className="text-white font-normal text-3xl md:text-5xl text-center !font-nanum-myeongjo relative z-10">Discover The Art Of Living With Oda</h5>
+                    </div>
                     <div className="relative bottom-28 lg:bottom-56">
                         <HomeSuccessfulStories />
                         <OurPartners />

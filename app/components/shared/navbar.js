@@ -4,20 +4,20 @@ import { ChevronDownIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
+} from "@/app/ui/dropdown-menu";
+import { Input } from "@/app/ui/input";
 import {
     Sheet,
     SheetClose,
     SheetContent,
     SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/app/ui/sheet";
 
 export default function Navbar() {
     return (

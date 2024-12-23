@@ -30,13 +30,13 @@ export default function AboutUsBlocks() {
                 }}
             >
                 <div
-                    className="bg-cover bg-no-repeat bg-top col-span-1 md:col-span-8 min-h-[990px] rounded-lg"
+                    className="bg-cover bg-no-repeat bg-top col-span-1 md:col-span-8 min-h-[990px] rounded-xl"
                     style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_1.png)" }}
                 >
-                    <div className="text-white pt-16 lg:pt-36 pl-12 lg:pl-24 pr-5 lg:pr-10 !font-nanum-myeongjo">
-                        <p className="font-light text-2xl lg:text-4xl">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                    <div className="text-white pt-16 xl:pt-36 pl-12 xl:pl-24 pr-5 xl:pr-10 !font-nanum-myeongjo">
+                        <p className="font-light text-2xl xl:text-4xl">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
                         <Link
-                            className="text-lg lg:text-2xl font-light mt-10 md:mt-20 inline-block float-right"
+                            className="text-lg xl:text-2xl font-light mt-10 md:mt-20 inline-block float-right"
                             href="/read-brochure"
                             prefetch={false}
                         >
@@ -46,14 +46,14 @@ export default function AboutUsBlocks() {
                 </div>
                 <div className="col-span-1 md:col-span-4 min-h-[990px]">
                     <div
-                        className="bg-cover bg-no-repeat bg-top min-h-[567px] rounded-lg"
+                        className="bg-cover bg-no-repeat bg-top min-h-[567px] rounded-xl"
                         style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_2.png)" }}
                     >
-                        <div className="text-white pt-10 lg:pt-20 px-4 lg:px-12 !font-nanum-myeongjo">
-                            <h4 className="font-normal text-3xl lg:text-[40px] uppercase leading-tight">Get our Newsletter</h4>
-                            <p className="font-light text-2xl lg:text-4xl mt-4 md:mt-8">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
+                        <div className="text-white pt-10 xl:pt-20 px-4 xl:px-12 !font-nanum-myeongjo">
+                            <h4 className="font-normal text-3xl xl:text-[40px] uppercase leading-tight">Get our Newsletter</h4>
+                            <p className="font-light text-2xl xl:text-4xl mt-4 md:mt-8">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
                             <Link
-                                className="text-lg lg:text-2xl font-light mt-4 md:mt-8 inline-block"
+                                className="text-lg xl:text-2xl font-light mt-4 md:mt-8 inline-block"
                                 href="/sign-up"
                                 prefetch={false}
                             >
@@ -62,13 +62,13 @@ export default function AboutUsBlocks() {
                         </div>
                     </div>
                     <div
-                        className="bg-cover bg-no-repeat bg-top min-h-[410px] rounded-lg mt-1 md:mt-2"
+                        className="bg-cover bg-no-repeat bg-top min-h-[415px] rounded-xl mt-1 md:mt-2"
                         style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_3.png)" }}
                     >
-                        <div className="text-white pt-10 lg:pt-20 px-4 lg:px-12 !font-nanum-myeongjo">
-                            <h4 className="font-normal text-3xl lg:text-[40px] leading-tight">Can&apos;t Find Your Unit?</h4>
+                        <div className="text-white pt-10 xl:pt-20 px-4 xl:px-12 !font-nanum-myeongjo">
+                            <h4 className="font-normal text-3xl xl:text-[40px] leading-tight">Can&apos;t Find Your Unit?</h4>
                             <Link
-                                className="text-lg lg:text-2xl font-light mt-8 md:mt-16 inline-block"
+                                className="text-lg xl:text-2xl font-light mt-8 md:mt-16 inline-block"
                                 href="#"
                                 prefetch={false}
                             >

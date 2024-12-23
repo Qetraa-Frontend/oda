@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-export default function AboutOurVision() {
+export default function AboutUsOurVision() {
     const ref1 = useRef(null);
 
     const ref2 = useRef(null);
@@ -157,7 +157,7 @@ export default function AboutOurVision() {
                     >
                         <Image
                             alt={alt}
-                            className="h-[400px] md:h-[300px] lg:h-[400px] object-cover md:object-fill rounded-lg"
+                            className="h-[400px] md:h-[300px] lg:h-[400px] object-cover md:object-fill rounded-xl"
                             height={445}
                             src={imageSrc}
                             width={323}
