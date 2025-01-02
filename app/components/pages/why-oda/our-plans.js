@@ -208,10 +208,10 @@ export default function WhyOdaOurPlans() {
                                 } ${
                                     showChevron[`plan${id}`]
                                         ? "opacity-100"
-                                        : "opacity-0 pointer-events-none"
+                                        : "xl:opacity-0 pointer-events-none"
                                 }`}
                                 style={{
-                                    visibility: showChevron[`plan${id}`] ? "visible" : "hidden",
+                                    visibility: showChevron[`plan${id}`] ? "visible" : "xl:hidden",
                                 }}
                                 onClick={() => setShowFeatures({
                                     ...showFeatures,
@@ -278,10 +278,10 @@ export default function WhyOdaOurPlans() {
                                     } ${
                                         showChevron[`plan${id}`]
                                             ? "opacity-100"
-                                            : "opacity-0 pointer-events-none"
+                                            : "xl:opacity-0 pointer-events-none"
                                     }`}
                                     style={{
-                                        visibility: showChevron[`plan${id}`] ? "visible" : "hidden",
+                                        visibility: showChevron[`plan${id}`] ? "visible" : "xl:hidden",
                                     }}
                                     onClick={() => setShowFeatures({
                                         ...showFeatures,
