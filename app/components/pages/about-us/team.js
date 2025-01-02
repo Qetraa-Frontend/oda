@@ -23,9 +23,9 @@ export default function AboutUsOurVision() {
 
     return (
         <div className="bg-[#222] pt-20 md:pt-44 pb-40 md:pb-80">
-            <h2 className="font-bold text-3xl md:text-5xl text-center px-4 md:px-6 text-white">Meet The Team Behind The Works</h2>
+            <h2 className="font-bold text-3xl md:text-5xl text-center px-4 xl:px-0 text-white">Meet The Team Behind The Works</h2>
             <div
-                className="container px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 my-16 md:my-36"
+                className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 my-16 md:my-36"
                 ref={ref1}
             >
                 <motion.div
@@ -92,7 +92,7 @@ export default function AboutUsOurVision() {
                 </motion.div>
             </div>
             <div
-                className="container px-4 md:px-6 mx-auto grid grid-cols-1 sm:grid-cols-6 md:grid-cols-12 gap-8 md:gap-16 mt-20 md:mt-40"
+                className="container px-4 xl:px-0 mx-auto grid grid-cols-1 sm:grid-cols-6 md:grid-cols-12 gap-8 md:gap-16 mt-20 md:mt-40"
                 ref={ref2}
             >
                 {teamMembers.map(({

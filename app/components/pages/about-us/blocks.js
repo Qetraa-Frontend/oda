@@ -14,7 +14,7 @@ export default function AboutUsBlocks() {
 
     return (
         <div
-            className="container px-4 md:px-6 mx-auto min-h-[990px]"
+            className="container px-4 xl:px-0 mx-auto min-h-[990px]"
             ref={ref}
         >
             <motion.div

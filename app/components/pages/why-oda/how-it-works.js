@@ -16,7 +16,7 @@ export default function WhyOdaHowItWorks() {
     return (
         <div className="bg-[#222] pt-10 md:pt-20 pb-16 lg:pb-32">
             <div
-                className="container px-4 md:px-6 mx-auto"
+                className="container px-4 xl:px-0 mx-auto"
                 ref={ref}
             >
                 <motion.div

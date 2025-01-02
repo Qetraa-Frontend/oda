@@ -25,7 +25,7 @@ export default function WorkScopes() {
     return (
         <div className="py-20 md:py-40">
             <div className="gradient-container">
-                <div className="container px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-3">
+                <div className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-3">
                     <div className="col-span-1 bg-primary md:bg-transparent">
                         <div className="py-8 md:py-16 px-3 md:px-6">
                             <h2 className="font-medium text-4xl md:text-6xl text-black mb-3 md:mb-6">Scope of Work</h2>

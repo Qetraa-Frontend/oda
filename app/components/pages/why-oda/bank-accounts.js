@@ -16,7 +16,7 @@ export default function WhyOdaBankAccounts() {
 
     return (
         <div
-            className="container px-4 md:px-6 mx-auto pb-28 md:pb-60 pt-28 md:pt-52"
+            className="container px-4 xl:px-0 mx-auto pb-28 md:pb-60 pt-28 md:pt-52"
             ref={ref}
         >
             <motion.div

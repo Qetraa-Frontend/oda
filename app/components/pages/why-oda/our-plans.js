@@ -22,7 +22,7 @@ export default function WhyOdaOurPlans() {
 
     return (
         <div
-            className="container px-4 md:px-6 mx-auto pb-10 md:pb-20 pt-32 md:pt-60 bg-cover bg-no-repeat bg-top"
+            className="container px-4 xl:px-0 mx-auto pb-10 md:pb-20 pt-32 md:pt-60 bg-cover bg-no-repeat bg-top"
             style={{ backgroundImage: "url(/images/pages/why-oda/our-plans/plans_bg.png)" }}
         >
             <div className="mb-12 md:mb-24">

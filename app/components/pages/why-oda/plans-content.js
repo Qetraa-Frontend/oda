@@ -16,7 +16,7 @@ export default function WhyOdaPlansContent() {
     return (
         <div className="bg-[#222] pt-16 md:pt-32 pb-7 lg:pb-14">
             <div
-                className="container px-4 md:px-6 mx-auto"
+                className="container px-4 xl:px-0 mx-auto"
                 ref={ref}
             >
                 <div>

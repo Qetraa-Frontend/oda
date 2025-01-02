@@ -15,7 +15,7 @@ export default function HomeBuildKit() {
 
     return (
         <div
-            className="container px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 py-16 md:py-36"
+            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 py-16 md:py-36"
             ref={ref}
         >
             <motion.div

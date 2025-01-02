@@ -23,7 +23,7 @@ export default function Home() {
             <HomeDiscoverArtLiving />
             <HomeHowItWorks />
             <div className="bg-[#222] max-h-[2300px] xl:max-h-[2600px]">
-                <div className="container px-4 md:px-6 mx-auto">
+                <div className="container px-4 xl:px-0 mx-auto">
                     <div
                         className="relative bottom-48 lg:bottom-96 bg-cover bg-no-repeat bg-top rounded-xl min-h-[300px] md:min-h-[560px] max-w-[1248px] flex items-center justify-center"
                         style={{ backgroundImage: "url(/images/pages/home/discover_oda.png)" }}

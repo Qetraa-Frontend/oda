@@ -22,7 +22,7 @@ import {
 export default function Navbar() {
     return (
         <header className="absolute top-0 z-50 w-full border-none">
-            <div className="container mx-auto flex h-40 items-center justify-between px-4 md:px-6">
+            <div className="container mx-auto flex h-40 items-center justify-between px-4 xl:px-0">
                 <Link
                     className="flex items-center gap-1 md:gap-2"
                     href="/"
@@ -162,7 +162,7 @@ export default function Navbar() {
                                     />
                                     <span className="sr-only">Close</span>
                                 </SheetClose>
-                                <div className="container mx-auto flex items-center justify-between px-4 md:px-6 mt-3 md:mt-6 mb-4 md:mb-8">
+                                <div className="container mx-auto flex items-center justify-between px-4 xl:px-0 mt-3 md:mt-6 mb-4 md:mb-8">
                                     <Image
                                         alt="oda_logo"
                                         className="mt-3 md:mt-6"
@@ -173,7 +173,7 @@ export default function Navbar() {
                                     />
                                     <span className="sr-only">Oda Logo</span>
                                 </div>
-                                <div className="container mx-auto md:flex items-center justify-between px-4 md:px-6">
+                                <div className="container mx-auto md:flex items-center justify-between px-4 xl:px-0">
                                     <div>
                                         <span className="text-gray-500 mb-4 md:mb-8 inline-block text-2xl md:text-4xl font-medium">Quick Links</span>
                                         <ul className="flex flex-col gap-4 md:gap-8 mt-1 md:mt-2">

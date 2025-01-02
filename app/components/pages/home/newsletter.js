@@ -15,7 +15,7 @@ export default function HomeNewsletter() {
 
     return (
         <div
-            className="container px-4 md:px-6 mx-auto max-h-[536px]"
+            className="container px-4 xl:px-0 mx-auto max-h-[536px]"
             ref={ref}
         >
             <motion.div

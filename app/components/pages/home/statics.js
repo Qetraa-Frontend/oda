@@ -10,7 +10,7 @@ export default function HomeStatics() {
             className="bg-cover bg-no-repeat bg-top"
             style={{ backgroundImage: "url(/images/pages/home/statics.png)" }}
         >
-            <div className="container px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 min-h-80 py-20 md:py-0">
+            <div className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 min-h-80 py-20 md:py-0">
                 {statics.map(({
                     id,
                     title,

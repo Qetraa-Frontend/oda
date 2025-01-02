@@ -15,7 +15,7 @@ export default function AboutUsOurVision() {
     return (
         <div className="bg-[#222] py-8 md:py-16">
             <div
-                className="container px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16"
+                className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16"
                 ref={ref}
             >
                 <motion.div
