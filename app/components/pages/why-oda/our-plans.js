@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -221,12 +222,12 @@ export default function WhyOdaOurPlans() {
                                 <ChevronDown color="white" />
                             </span>
                             <div>
-                                <img
+                                <Image
                                     alt={alt}
                                     className="rounded-full mx-auto"
-                                    height="134"
+                                    height={134}
                                     src={imageSrc}
-                                    width="134"
+                                    width={134}
                                 />
                             </div>
                             <div>
@@ -292,12 +293,12 @@ export default function WhyOdaOurPlans() {
                                 </span>
 
                                 <div>
-                                    <img
+                                    <Image
                                         alt={plans[2].alt}
                                         className="rounded-full mx-auto"
-                                        height="134"
+                                        height={134}
                                         src={plans[2].imageSrc}
-                                        width="134"
+                                        width={134}
                                     />
                                 </div>
                                 <div>

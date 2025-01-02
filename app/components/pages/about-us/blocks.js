@@ -51,7 +51,7 @@ export default function AboutUsBlocks() {
                     >
                         <div className="text-white pt-10 xl:pt-20 px-4 xl:px-12 !font-nanum-myeongjo">
                             <h4 className="font-normal text-3xl xl:text-[40px] uppercase leading-tight">Get our Newsletter</h4>
-                            <p className="font-light text-2xl xl:text-4xl mt-4 md:mt-8">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
+                            <p className="font-light text-2xl xl:text-4xl mt-4 md:mt-8">Get a front row seat to our Oda launches and trends - directly to your inbox.</p>
                             <Link
                                 className="text-lg xl:text-2xl font-light mt-4 md:mt-8 inline-block"
                                 href="/sign-up"
