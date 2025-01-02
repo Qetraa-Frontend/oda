@@ -58,7 +58,7 @@ export default function HomeHero() {
 
     return (
         <Hero
-            backgroundImageSrc={`/images/pages/home/hero/hero_${activeSlideIndex + 1}.png`}
+            backgroundImageSrc={`/images/pages/home/hero/hero_${activeSlideIndex + 1}.webp`}
             buttonLink="/about-us"
             buttonText="Learn More"
             description="To a beautifully finished home with Oda’s expertly crafted packages."
@@ -86,6 +86,7 @@ export default function HomeHero() {
                             <Image
                                 alt={alt}
                                 height={196}
+                                loading="eager"
                                 src={imageSrc}
                                 width={277}
                             />

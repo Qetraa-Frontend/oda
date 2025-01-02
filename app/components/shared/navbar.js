@@ -31,9 +31,9 @@ export default function Navbar() {
                     <Image
                         alt="oda_logo"
                         height={63}
-                        src="/images/logo.png"
+                        loading="eager"
+                        src="/images/logo.webp"
                         width={183}
-                        priority
                     />
                     <span className="sr-only">Oda Logo</span>
                 </Link>
@@ -93,9 +93,9 @@ export default function Navbar() {
                         <Image
                             alt="whatsapp"
                             height={25}
+                            loading="eager"
                             src="/icons/whatsapp.svg"
                             width={25}
-                            priority
                         />
                     </div>
                     <DropdownMenu>
@@ -108,9 +108,9 @@ export default function Navbar() {
                                 <Image
                                     alt="search"
                                     height={25}
+                                    loading="eager"
                                     src="/icons/search.svg"
                                     width={25}
-                                    priority
                                 />
                                 <span className="sr-only">Search</span>
                             </Button>
@@ -135,9 +135,9 @@ export default function Navbar() {
                                 <Image
                                     alt="burger-menu"
                                     height={25}
+                                    loading="eager"
                                     src="/icons/burger-menu.svg"
                                     width={25}
-                                    priority
                                 />
                                 <span className="sr-only">Toggle Navigation Menu</span>
                             </Button>
@@ -146,7 +146,7 @@ export default function Navbar() {
                             className="bg-cover bg-no-repeat border-b-transparent"
                             side="top"
                             style={{
-                                backgroundImage: "url(/images/pages/home/hero/hero_1.png)",
+                                backgroundImage: "url(/images/pages/home/hero/hero_1.webp)",
                                 minHeight: 1021,
                             }}
                         >
@@ -156,9 +156,9 @@ export default function Navbar() {
                                     <Image
                                         alt="arrow-right"
                                         height={25}
+                                        loading="eager"
                                         src="/icons/arrow-right.svg"
                                         width={25}
-                                        priority
                                     />
                                     <span className="sr-only">Close</span>
                                 </SheetClose>
@@ -167,9 +167,9 @@ export default function Navbar() {
                                         alt="oda_logo"
                                         className="mt-3 md:mt-6"
                                         height={63}
-                                        src="/images/logo_2.png"
+                                        loading="eager"
+                                        src="/images/logo_2.webp"
                                         width={183}
-                                        priority
                                     />
                                     <span className="sr-only">Oda Logo</span>
                                 </div>

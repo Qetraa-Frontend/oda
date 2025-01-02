@@ -44,7 +44,8 @@ export default function AboutUsOurMission() {
                     <Image
                         alt="our_vision"
                         height={627}
-                        src="/images/pages/about-us/our_mission.png"
+                        loading="lazy"
+                        src="/images/pages/about-us/our_mission.webp"
                         width={683}
                     />
                 </motion.div>

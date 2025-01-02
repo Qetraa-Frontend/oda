@@ -31,7 +31,7 @@ export default function AboutUsBlocks() {
             >
                 <div
                     className="bg-cover bg-no-repeat bg-top col-span-1 md:col-span-8 min-h-[990px] rounded-xl"
-                    style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_1.png)" }}
+                    style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_1.webp)" }}
                 >
                     <div className="text-white pt-16 xl:pt-36 pl-12 xl:pl-24 pr-5 xl:pr-10 !font-nanum-myeongjo">
                         <p className="font-light text-2xl xl:text-4xl">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
@@ -47,7 +47,7 @@ export default function AboutUsBlocks() {
                 <div className="col-span-1 md:col-span-4 min-h-[990px]">
                     <div
                         className="bg-cover bg-no-repeat bg-top min-h-[567px] rounded-xl"
-                        style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_2.png)" }}
+                        style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_2.webp)" }}
                     >
                         <div className="text-white pt-10 xl:pt-20 px-4 xl:px-12 !font-nanum-myeongjo">
                             <h4 className="font-normal text-3xl xl:text-[40px] uppercase leading-tight">Get our Newsletter</h4>
@@ -63,7 +63,7 @@ export default function AboutUsBlocks() {
                     </div>
                     <div
                         className="bg-cover bg-no-repeat bg-top min-h-[415px] rounded-xl mt-1 md:mt-2"
-                        style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_3.png)" }}
+                        style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_3.webp)" }}
                     >
                         <div className="text-white pt-10 xl:pt-20 px-4 xl:px-12 !font-nanum-myeongjo">
                             <h4 className="font-normal text-3xl xl:text-[40px] leading-tight">Can&apos;t Find Your Unit?</h4>

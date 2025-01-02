@@ -26,7 +26,7 @@ export default function Home() {
                 <div className="container px-4 xl:px-0 mx-auto">
                     <div
                         className="relative bottom-48 lg:bottom-96 bg-cover bg-no-repeat bg-top rounded-xl min-h-[300px] md:min-h-[560px] max-w-[1248px] flex items-center justify-center"
-                        style={{ backgroundImage: "url(/images/pages/home/discover_oda.png)" }}
+                        style={{ backgroundImage: "url(/images/pages/home/discover_oda.webp)" }}
                     >
                         <div className="absolute inset-0 bg-black bg-opacity-20" />
                         <h5 className="text-white font-normal text-3xl md:text-5xl text-center !font-nanum-myeongjo relative z-10">Discover The Art Of Living With Oda</h5>

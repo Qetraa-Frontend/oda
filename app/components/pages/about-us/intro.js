@@ -30,7 +30,8 @@ export default function AboutUsIntro() {
                 <Image
                     alt="intro"
                     height={820}
-                    src="/images/pages/about-us/intro.png"
+                    loading="lazy"
+                    src="/images/pages/about-us/intro.webp"
                     width={650}
                 />
             </motion.div>

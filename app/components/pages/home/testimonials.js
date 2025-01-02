@@ -54,6 +54,7 @@ export default function HomeTestimonials() {
                                         alt={alt}
                                         className="mx-auto w-[100px] h-[100px] rounded-full"
                                         height={100}
+                                        loading="lazy"
                                         src={imageSrc}
                                         width={100}
                                     />

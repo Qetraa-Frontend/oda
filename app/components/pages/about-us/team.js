@@ -41,7 +41,8 @@ export default function AboutUsOurVision() {
                     <Image
                         alt="ceo"
                         height={445}
-                        src="/images/pages/about-us/team/ceo.png"
+                        loading="lazy"
+                        src="/images/pages/about-us/team/ceo.webp"
                         width={573}
                     />
                 </motion.div>
@@ -86,7 +87,8 @@ export default function AboutUsOurVision() {
                     <Image
                         alt="ceo"
                         height={445}
-                        src="/images/pages/about-us/team/ceo.png"
+                        loading="lazy"
+                        src="/images/pages/about-us/team/ceo.webp"
                         width={573}
                     />
                 </motion.div>
@@ -116,6 +118,7 @@ export default function AboutUsOurVision() {
                             alt={alt}
                             className="h-[400px] md:h-[300px] lg:h-[400px] object-cover md:object-fill rounded-xl"
                             height={445}
+                            loading="lazy"
                             src={imageSrc}
                             width={323}
                         />

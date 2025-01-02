@@ -31,7 +31,8 @@ export default function AboutUsOurVision() {
                     <Image
                         alt="our_vision"
                         height={627}
-                        src="/images/pages/about-us/our_vision.png"
+                        loading="lazy"
+                        src="/images/pages/about-us/our_vision.webp"
                         width={683}
                     />
                 </motion.div>

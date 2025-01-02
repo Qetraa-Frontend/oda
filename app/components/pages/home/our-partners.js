@@ -46,6 +46,7 @@ export default function HomeOurPartners() {
                             <Image
                                 alt={alt}
                                 height={235}
+                                loading="lazy"
                                 src={imageSrc}
                                 width={400}
                             />

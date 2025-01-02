@@ -31,7 +31,8 @@ export default function HomeBuildKit() {
                 <Image
                     alt="build_kit"
                     height={677}
-                    src="/images/pages/home/build_kit.png"
+                    loading="lazy"
+                    src="/images/pages/home/build_kit.webp"
                     width={564}
                 />
             </motion.div>

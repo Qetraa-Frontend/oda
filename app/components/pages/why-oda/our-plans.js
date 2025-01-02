@@ -23,7 +23,7 @@ export default function WhyOdaOurPlans() {
     return (
         <div
             className="container px-4 xl:px-0 mx-auto pb-10 md:pb-20 pt-32 md:pt-60 bg-cover bg-no-repeat bg-top"
-            style={{ backgroundImage: "url(/images/pages/why-oda/our-plans/plans_bg.png)" }}
+            style={{ backgroundImage: "url(/images/pages/why-oda/our-plans/plans_bg.webp)" }}
         >
             <div className="mb-12 md:mb-24">
                 <h2 className="font-bold text-4xl md:text-6xl mb-5 md:mb-10">Our Plans</h2>
@@ -75,6 +75,7 @@ export default function WhyOdaOurPlans() {
                                     alt={alt}
                                     className="rounded-full mx-auto"
                                     height={134}
+                                    loading="lazy"
                                     src={imageSrc}
                                     width={134}
                                 />
@@ -146,6 +147,7 @@ export default function WhyOdaOurPlans() {
                                         alt={plans2[2].alt}
                                         className="rounded-full mx-auto"
                                         height={134}
+                                        loading="lazy"
                                         src={plans2[2].imageSrc}
                                         width={134}
                                     />

@@ -75,6 +75,7 @@ export default function WorkScopes() {
                                     alt={workScopes[currentIndex].alt}
                                     className="h-[854px] md:w-1/2 object-cover"
                                     height={854}
+                                    loading="lazy"
                                     src={workScopes[currentIndex].imageSrc}
                                     width={485}
                                 />
@@ -89,6 +90,7 @@ export default function WorkScopes() {
                                                 alt="arrow_left"
                                                 className={currentScope === 1 ? "opacity-50" : "cursor-pointer"}
                                                 height={5}
+                                                loading="lazy"
                                                 src="/icons/long_arrow_left.svg"
                                                 width={78}
                                                 onClick={() => (currentScope === 0 ? {} : handleScopeChange(currentIndex - 1))}
@@ -98,6 +100,7 @@ export default function WorkScopes() {
                                                 alt="arrow_right"
                                                 className={currentScope === 8 ? "opacity-50" : "cursor-pointer"}
                                                 height={5}
+                                                loading="lazy"
                                                 src="/icons/long_arrow_right.svg"
                                                 width={78}
                                                 onClick={() => (currentScope === 8 ? {} : handleScopeChange(currentIndex + 1))}

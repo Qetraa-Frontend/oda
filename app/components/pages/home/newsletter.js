@@ -35,7 +35,8 @@ export default function HomeNewsletter() {
                         alt="news_letter"
                         className="h-full object-cover xl:object-fill"
                         height={536}
-                        src="/images/pages/home/news_letter.png"
+                        loading="lazy"
+                        src="/images/pages/home/news_letter.webp"
                         width={633}
                     />
                 </div>

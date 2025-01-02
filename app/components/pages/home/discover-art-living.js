@@ -23,7 +23,8 @@ export default function HomeDiscoverArtLiving() {
                             alt="art_1"
                             className="xl:relative top-10"
                             height={207}
-                            src="/images/pages/home/discover-art-living/art_1.png"
+                            loading="lazy"
+                            src="/images/pages/home/discover-art-living/art_1.webp"
                             width={207}
                         />
                     </div>
@@ -33,7 +34,8 @@ export default function HomeDiscoverArtLiving() {
                             alt="art_2"
                             className="xl:relative top-16"
                             height={200}
-                            src="/images/pages/home/discover-art-living/art_2.png"
+                            loading="lazy"
+                            src="/images/pages/home/discover-art-living/art_2.webp"
                             width={200}
                         />
                         <div className="w-36 h-36 bg-[#6F6458] rounded-full xl:relative left-20 top-8" />
@@ -43,7 +45,8 @@ export default function HomeDiscoverArtLiving() {
                         <Image
                             alt="art_3"
                             height={207}
-                            src="/images/pages/home/discover-art-living/art_3.png"
+                            loading="lazy"
+                            src="/images/pages/home/discover-art-living/art_3.webp"
                             width={207}
                         />
                         <span className="font-normal text-3xl md:text-5xl rounded-[200px] p-3 uppercase bg-secondary text-center w-fit xl:hover:animate-wiggle cursor-default xl:relative left-32 bottom-6">BOHO</span>
@@ -51,7 +54,8 @@ export default function HomeDiscoverArtLiving() {
                             alt="art_4"
                             className="xl:relative left-12 bottom-8"
                             height={159}
-                            src="/images/pages/home/discover-art-living/art_4.png"
+                            loading="lazy"
+                            src="/images/pages/home/discover-art-living/art_4.webp"
                             width={159}
                         />
                     </div>
@@ -60,14 +64,16 @@ export default function HomeDiscoverArtLiving() {
                             alt="art_5"
                             className="xl:relative right-20"
                             height={86}
-                            src="/images/pages/home/discover-art-living/art_5.png"
+                            loading="lazy"
+                            src="/images/pages/home/discover-art-living/art_5.webp"
                             width={86}
                         />
                         <Image
                             alt="art_6"
                             className="xl:relative right-6"
                             height={129}
-                            src="/images/pages/home/discover-art-living/art_6.png"
+                            loading="lazy"
+                            src="/images/pages/home/discover-art-living/art_6.webp"
                             width={129}
                         />
                         <div className="w-20 h-20 bg-secondary xl:relative top-20 left-12 rotate-[-17deg]" />
@@ -78,7 +84,8 @@ export default function HomeDiscoverArtLiving() {
                             alt="art_7"
                             className="xl:relative right-24"
                             height={207}
-                            src="/images/pages/home/discover-art-living/art_7.png"
+                            loading="lazy"
+                            src="/images/pages/home/discover-art-living/art_7.webp"
                             width={207}
                         />
                         <span className="font-light text-2xl md:text-4xl rounded-[100px] uppercase bg-secondary text-center w-fit px-3 rotate-[-17deg] xl:hover:animate-wiggleTop cursor-default xl:relative right-16 top-6 my-4 md:my-0">MODERN</span>

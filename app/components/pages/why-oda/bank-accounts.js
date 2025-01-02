@@ -65,6 +65,7 @@ export default function WhyOdaBankAccounts() {
                                         alt={alt || alt1}
                                         className="absolute right-4 top-4"
                                         height={imageHeight || imageHeight1}
+                                        loading="lazy"
                                         src={imageSrc || imageSrc1}
                                         width={imageWidth || imageWidth1}
                                     />
@@ -73,6 +74,7 @@ export default function WhyOdaBankAccounts() {
                                             alt={alt2}
                                             className="absolute left-4 top-4"
                                             height={imageHeight2}
+                                            loading="lazy"
                                             src={imageSrc2}
                                             width={imageWidth2}
                                         />

@@ -60,6 +60,7 @@ export default function HomeSuccessfulStories() {
                                         alt={alt}
                                         className="rounded-xl object-cover w-full h-[317px] transition-transform duration-1000 group-hover:scale-150"
                                         height={317}
+                                        loading="lazy"
                                         src={imageSrc}
                                         width={347}
                                     />

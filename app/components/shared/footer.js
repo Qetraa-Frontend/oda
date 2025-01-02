@@ -14,7 +14,7 @@ export default function Footer() {
         <footer
             className="pt-28 md:pt-56 pb-5 md:pb-10 px-4 xl:px-0 bg-cover bg-no-repeat bg-top"
             style={{
-                backgroundImage: "url(/images/footer.png)",
+                backgroundImage: "url(/images/footer.webp)",
                 minHeight: 802,
             }}
         >
@@ -25,9 +25,9 @@ export default function Footer() {
                             alt="oda_logo"
                             className="mt-3 md:mt-6"
                             height={63}
-                            src="/images/logo_2.png"
+                            loading="lazy"
+                            src="/images/logo_2.webp"
                             width={183}
-                            priority
                         />
                         <span className="sr-only">Oda Logo</span>
                     </div>
@@ -214,9 +214,9 @@ export default function Footer() {
                                 <Image
                                     alt="google_play"
                                     height={65}
-                                    src="/images/google_play.png"
+                                    loading="lazy"
+                                    src="/images/google_play.webp"
                                     width={180}
-                                    priority
                                 />
                             </Link>
                             <Link
@@ -226,9 +226,9 @@ export default function Footer() {
                                 <Image
                                     alt="apple_store"
                                     height={65}
-                                    src="/images/apple_store.png"
+                                    loading="lazy"
+                                    src="/images/apple_store.webp"
                                     width={180}
-                                    priority
                                 />
                             </Link>
                         </div>
