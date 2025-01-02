@@ -235,9 +235,12 @@ export default function WhyOdaFeatures() {
     );
 
     return (
-        <div className="container px-4 md:px-6 mx-auto pb-24 md:pb-52 pt-10 md:pt-20">
+        <div
+            className="container px-4 md:px-6 mx-auto pb-24 md:pb-52 pt-10 md:pt-20"
+            id="features"
+        >
             <div className="mb-24 md:mb-48">
-                <h2 className="font-bold text-4xl md:text-6xl">Compare All Feature</h2>
+                <h2 className="font-bold text-4xl md:text-6xl">Compare All Features</h2>
             </div>
             <div
                 className="overflow-visible relative"
