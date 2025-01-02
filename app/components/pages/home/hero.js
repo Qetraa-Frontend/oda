@@ -6,34 +6,12 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Hero from "@/app/components/shared/hero";
+import { heroSlides } from "@/app/data/home";
 
 export default function HomeHero() {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     const [isMobileSize, setIsMobileSize] = useState(false);
-
-    const heroSlides = [
-        {
-            alt: "slide_1",
-            id: 1,
-            imageSrc: "/images/pages/home/hero/hero_1.png",
-        },
-        {
-            alt: "slide_2",
-            id: 2,
-            imageSrc: "/images/pages/home/hero/hero_2.png",
-        },
-        {
-            alt: "slide_3",
-            id: 3,
-            imageSrc: "/images/pages/home/hero/hero_3.png",
-        },
-        {
-            alt: "slide_4",
-            id: 4,
-            imageSrc: "/images/pages/home/hero/hero_4.png",
-        },
-    ];
 
     useEffect(
         () => {

@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { plans2 } from "@/app/data/why-oda";
+
 export default function WhyOdaOurPlans() {
     const [showFeatures, setShowFeatures] = useState({
         plan1: false,
@@ -18,159 +20,6 @@ export default function WhyOdaOurPlans() {
         plan3: false,
     });
 
-    const plans = [
-        {
-            alt: "plan_1",
-            description: "The most affordable kit. This kit includes  everything you need to get things up  and running.",
-            features: [
-                {
-                    checksCount: 1,
-                    name: "Interior Walls",
-                },
-                {
-                    checksCount: 1,
-                    name: "Electricity, Internet, Network, Satellite AC, Heating & Shutters Infrastructure",
-                },
-                {
-                    checksCount: 1,
-                    name: "Interior Plumbing & Insulation",
-                },
-                {
-                    checksCount: 1,
-                    name: "Floating (Reception | Hallway)",
-                },
-                {
-                    checksCount: 1,
-                    name: "Gypsom Board",
-                },
-                {
-                    name: "Interior Wall Paint & Cladding",
-                    note: "Ceramic",
-                },
-                {
-                    name: "Flooring (Rooms)",
-                    note: "Ceramic",
-                },
-                {
-                    name: "Flooring (Bathrooms/Kitchen)",
-                    note: "Ceramic",
-                },
-                {
-                    name: "Stairs (including handrail & tempered glass)",
-                    note: "Local Marble",
-                },
-                {
-                    name: "Interior Doors",
-                    note: "Basic filling density",
-                },
-            ],
-            id: 1,
-            imageSrc: "/images/pages/why-oda/our-plans/plan_1.png",
-            price: 7500,
-            title: "Grand Design & Build Kit",
-        },
-        {
-            alt: "plan_2",
-            description: "A more elevated plan. This kit includes  everything you need to get things up.",
-            features: [
-                {
-                    checksCount: 1,
-                    name: "Interior Walls",
-                },
-                {
-                    checksCount: 2,
-                    name: "Electricity, Internet, Network, Satellite AC, Heating & Shutters Infrastructure",
-                },
-                {
-                    checksCount: 1,
-                    name: "Interior Plumbing & Insulation",
-                },
-                {
-                    checksCount: 1,
-                    name: "Floating (Reception | Hallway)",
-                },
-                {
-                    checksCount: 2,
-                    name: "Gypsom Board",
-                },
-                {
-                    name: "Interior Wall Paint & Cladding",
-                    note: "Porcelain",
-                },
-                {
-                    name: "Flooring (Rooms)",
-                    note: "Porcelain",
-                },
-                {
-                    name: "Flooring (Bathrooms/Kitchen)",
-                    note: "Ceramic",
-                },
-                {
-                    name: "Stairs (including handrail & tempered glass)",
-                    note: "Local Marble",
-                },
-                {
-                    name: "Interior Doors",
-                    note: "Medium filling density",
-                },
-            ],
-            id: 2,
-            imageSrc: "/images/pages/why-oda/our-plans/plan_2.png",
-            price: 9500,
-            title: "Prime Design & Build Kit",
-        },
-        {
-            alt: "plan_2",
-            description: "The most affordable kit. This kit includes  everything you need to get things up  and running.",
-            features: [
-                {
-                    checksCount: 1,
-                    name: "Interior Walls",
-                },
-                {
-                    checksCount: 3,
-                    name: "Electricity, Internet, Network, Satellite AC, Heating & Shutters Infrastructure",
-                },
-                {
-                    checksCount: 1,
-                    name: "Interior Plumbing & Insulation",
-                },
-                {
-                    checksCount: 2,
-                    name: "Floating (Reception | Hallway)",
-                },
-                {
-                    checksCount: 3,
-                    name: "Gypsom Board",
-                },
-                {
-                    name: "Interior Wall Paint & Cladding",
-                    note: "Imported Marble",
-                },
-                {
-                    name: "Flooring (Rooms)",
-                    note: "Local Marble",
-                },
-                {
-                    name: "Flooring (Bathrooms/Kitchen)",
-                    note: "Local Marble",
-                },
-                {
-                    name: "Stairs (including handrail & tempered glass)",
-                    note: "Local Marble",
-                },
-                {
-                    name: "Interior Doors",
-                    note: "Highest filling density",
-                },
-            ],
-            id: 3,
-            imageSrc: "/images/pages/why-oda/our-plans/plan_3.png",
-            price: 11500,
-            title: "Signature Design & Build Kit",
-        },
-    ];
-
     return (
         <div
             className="container px-4 md:px-6 mx-auto pb-10 md:pb-20 pt-32 md:pt-60 bg-cover bg-no-repeat bg-top"
@@ -181,7 +30,7 @@ export default function WhyOdaOurPlans() {
                 <span className="font-medium text-2xl md:text-4xl">Choose your desired pricing plan</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-8 xl:gap-16 justify-items-center xl:justify-items-start">
-                {plans.map(({
+                {plans2.map(({
                     alt,
                     description,
                     features,
@@ -294,28 +143,28 @@ export default function WhyOdaOurPlans() {
 
                                 <div>
                                     <Image
-                                        alt={plans[2].alt}
+                                        alt={plans2[2].alt}
                                         className="rounded-full mx-auto"
                                         height={134}
-                                        src={plans[2].imageSrc}
+                                        src={plans2[2].imageSrc}
                                         width={134}
                                     />
                                 </div>
                                 <div>
-                                    <h3 className="font-medium text-lg md:text-2xl mt-3 md:mt-6 mb-6 md:mb-12">{plans[2].title}</h3>
+                                    <h3 className="font-medium text-lg md:text-2xl mt-3 md:mt-6 mb-6 md:mb-12">{plans2[2].title}</h3>
                                     <div className="mb-6 md:mb-12">
                                         <span className="font-medium text-base md:text-xl mb-3 md:mb-6 block">Start From</span>
                                         <span className="font-normal text-lg md:text-2xl">
-                                            {plans[2].price}
+                                            {plans2[2].price}
                                             {" "}
                                             | M2
                                         </span>
                                     </div>
-                                    <p className="font-medium text-base md:text-xl !leading-loose">{plans[2].description}</p>
+                                    <p className="font-medium text-base md:text-xl !leading-loose">{plans2[2].description}</p>
                                 </div>
                                 <div className={`overflow-hidden transition-[max-height] duration-1000 ${showFeatures.plan3 ? "max-h-[1000px]" : "max-h-0"}`}>
                                     <ul className="mt-5 md:mt-10 mb-0 p-0 list-none !text-left">
-                                        {plans[2].features.map(({
+                                        {plans2[2].features.map(({
                                             checksCount,
                                             name,
                                             note,

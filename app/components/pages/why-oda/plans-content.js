@@ -3,6 +3,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+import { plansContent } from "@/app/data/why-oda";
+
 export default function WhyOdaPlansContent() {
     const ref = useRef(null);
 
@@ -10,39 +12,6 @@ export default function WhyOdaPlansContent() {
         ref,
         { once: true },
     );
-
-    const plansContent = [
-        {
-            description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
-            id: 1,
-            title: "Free Ready- Made Design",
-        },
-        {
-            description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
-            id: 2,
-            title: "Dedicated Project Manager",
-        },
-        {
-            description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
-            id: 3,
-            title: "Extended Equipment warrantry",
-        },
-        {
-            description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
-            id: 4,
-            title: "Discounted Add On Services",
-        },
-        {
-            description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
-            id: 5,
-            title: "Discounted Maintenance Plans",
-        },
-        {
-            description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
-            id: 6,
-            title: "Flexible Financing Options",
-        },
-    ];
 
     return (
         <div className="bg-[#222] pt-16 md:pt-32 pb-7 lg:pb-14">

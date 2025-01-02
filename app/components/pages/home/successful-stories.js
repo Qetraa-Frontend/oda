@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { stories } from "@/app/data/home";
+
 export default function HomeSuccessfulStories() {
     const ref = useRef(null);
 
@@ -13,45 +15,6 @@ export default function HomeSuccessfulStories() {
         ref,
         { once: true },
     );
-
-    const stories = [
-        {
-            alt: "story_1",
-            id: 1,
-            imageSrc: "/images/pages/home/successful-stories/story_1.png",
-            title: "Marakez | District 1",
-        },
-        {
-            alt: "story_2",
-            id: 2,
-            imageSrc: "/images/pages/home/successful-stories/story_2.png",
-            title: "Marakez | District 2",
-        },
-        {
-            alt: "story_3",
-            id: 3,
-            imageSrc: "/images/pages/home/successful-stories/story_3.png",
-            title: "Marakez | District 3",
-        },
-        {
-            alt: "story_4",
-            id: 4,
-            imageSrc: "/images/pages/home/successful-stories/story_4.png",
-            title: "Marakez | District 4",
-        },
-        {
-            alt: "story_5",
-            id: 5,
-            imageSrc: "/images/pages/home/successful-stories/story_5.png",
-            title: "Marakez | District 5",
-        },
-        {
-            alt: "story_6",
-            id: 6,
-            imageSrc: "/images/pages/home/successful-stories/story_6.png",
-            title: "Marakez | District 6",
-        },
-    ];
 
     return (
         <div>

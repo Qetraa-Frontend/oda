@@ -3,6 +3,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+import { steps } from "@/app/data/home";
+
 export default function HomeHowItWorks() {
     const ref = useRef(null);
 
@@ -10,33 +12,6 @@ export default function HomeHowItWorks() {
         ref,
         { once: true },
     );
-
-    const steps = [
-        {
-            alt: "step_1",
-            description: "Fill Up Your Cart",
-            id: 1,
-            imageSrc: "/images/pages/home/how-it-works/step_1.png",
-        },
-        {
-            alt: "step_2",
-            description: "Meet Your Designer",
-            id: 2,
-            imageSrc: "/images/pages/home/how-it-works/step_2.png",
-        },
-        {
-            alt: "step_3",
-            description: "Co-Create Your Designs",
-            id: 3,
-            imageSrc: "/images/pages/home/how-it-works/step_3.png",
-        },
-        {
-            alt: "step_4",
-            description: "We'll Take Care Of the Rest",
-            id: 4,
-            imageSrc: "/images/pages/home/how-it-works/step_4.png",
-        },
-    ];
 
     return (
         <div

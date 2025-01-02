@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
+import { departments, plans1 } from "@/app/data/why-oda";
+
 export default function WhyOdaFeatures() {
     const [currentPlan, setCurrentPlan] = useState(null);
 
@@ -13,202 +15,6 @@ export default function WhyOdaFeatures() {
         ref,
         { once: true },
     );
-
-    const plans = [
-        {
-            departments: [
-                {
-                    features: [
-                        {
-                            checksCount: 1,
-                            name: "Interior Walls",
-                        },
-                        {
-                            checksCount: 1,
-                            name: "Electricity, Internet, Network, Satellite AC, Heating & Shutters Infrastructure",
-                        },
-                        {
-                            checksCount: 1,
-                            name: "Interior Plumbing & Insulation",
-                        },
-                    ],
-                    title: "Foundation",
-                },
-                {
-                    features: [
-                        {
-                            checksCount: 1,
-                            name: "Floating (Reception | Hallway)",
-                        },
-                        {
-                            checksCount: 1,
-                            name: "Gypsom Board",
-                        },
-                        {
-                            name: "Interior Wall Paint & Cladding",
-                            note: "Ceramic",
-                        },
-                        {
-                            name: "Flooring (Rooms)",
-                            note: "Ceramic",
-                        },
-                        {
-                            name: "Flooring (Bathrooms/Kitchen)",
-                            note: "Ceramic",
-                        },
-                        {
-                            name: "Stairs (including handrail & tempered glass)",
-                            note: "Local Marble",
-                        },
-                        {
-                            name: "Interior Doors",
-                            note: "Basic filling density with local technical fiber board",
-                        },
-                    ],
-                    title: "Decoration",
-                },
-            ],
-            id: 1,
-            title: "Grand",
-        },
-        {
-            departments: [
-                {
-                    features: [
-                        {
-                            checksCount: 1,
-                            name: "Interior Walls",
-                        },
-                        {
-                            checksCount: 2,
-                            name: "Electricity, Internet, Network, Satellite AC, Heating & Shutters Infrastructure",
-                        },
-                        {
-                            checksCount: 1,
-                            name: "Interior Plumbing & Insulation",
-                        },
-                    ],
-                    title: "Foundation",
-                },
-                {
-                    features: [
-                        {
-                            checksCount: 1,
-                            name: "Floating (Reception | Hallway)",
-                        },
-                        {
-                            checksCount: 2,
-                            name: "Gypsom Board",
-                        },
-                        {
-                            name: "Interior Wall Paint & Cladding",
-                            note: "Porcelain/Local Marble/HDF",
-                        },
-                        {
-                            name: "Flooring (Rooms)",
-                            note: "Porcelain/HDF",
-                        },
-                        {
-                            name: "Flooring (Bathrooms/Kitchen)",
-                            note: "Ceramic",
-                        },
-                        {
-                            name: "Stairs (including handrail & tempered glass)",
-                            note: "Local Marble",
-                        },
-                        {
-                            name: "Interior Doors",
-                            note: "Medium filling density with wood board",
-                        },
-                    ],
-                    title: "Decoration",
-                },
-            ],
-            id: 2,
-            title: "Prime",
-        },
-        {
-            departments: [
-                {
-                    features: [
-                        {
-                            checksCount: 1,
-                            name: "Interior Walls",
-                        },
-                        {
-                            checksCount: 3,
-                            name: "Electricity, Internet, Network, Satellite AC, Heating & Shutters Infrastructure",
-                        },
-                        {
-                            checksCount: 1,
-                            name: "Interior Plumbing & Insulation",
-                        },
-                    ],
-                    title: "Foundation",
-                },
-                {
-                    features: [
-                        {
-                            checksCount: 2,
-                            name: "Floating (Reception | Hallway)",
-                        },
-                        {
-                            checksCount: 3,
-                            name: "Gypsom Board",
-                        },
-                        {
-                            name: "Interior Wall Paint & Cladding",
-                            note: "Imported Marble/HDF",
-                        },
-                        {
-                            name: "Flooring (Rooms)",
-                            note: "Local Marble/HDF imported",
-                        },
-                        {
-                            name: "Flooring (Bathrooms/Kitchen)",
-                            note: "Local Marble/Porcelain",
-                        },
-                        {
-                            name: "Stairs (including handrail & tempered glass)",
-                            note: "Local Marble/Oak Wood",
-                        },
-                        {
-                            name: "Interior Doors",
-                            note: "Highest filling density with oak board coating",
-                        },
-                    ],
-                    title: "Decoration",
-                },
-            ],
-            id: 3,
-            title: "Signature",
-        },
-    ];
-
-    const departments = [
-        {
-            features: [
-                "Interior Walls",
-                "Electricity, Internet, Network, Satellite AC, Heating & Shutters Infrastructure",
-                "Interior Plumbing & Insulation",
-            ],
-            id: 1,
-            title: "Foundation",
-        },
-        {
-            features: [
-                "Floating (Reception | Hallway)",
-                "Gypsom Board",
-                "Interior Wall Paint & Cladding",
-                "Flooring (Rooms)",
-                "Flooring (Bathrooms/Kitchen)",
-                "Stairs (including handrail & tempered glass)",
-                "Interior Doors",
-            ],
-            id: 2,
-            title: "Decoration",
-        },
-    ];
 
     useEffect(
         () => {
@@ -300,7 +106,7 @@ export default function WhyOdaFeatures() {
                         ease: "easeIn",
                     }}
                 >
-                    {plans.map(({
+                    {plans1.map(({
                         departments: planDepartments,
                         id,
                         title,
@@ -319,12 +125,12 @@ export default function WhyOdaFeatures() {
                                         <ChevronLeft
                                             className={`${currentPlan?.id === 1 || !currentPlan?.id ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
                                             size={30}
-                                            onClick={() => (currentPlan?.id !== 1 || !currentPlan?.id === 1) && setCurrentPlan(plans.find(({ id: planId }) => planId === (currentPlan?.id || 1) - 1))}
+                                            onClick={() => (currentPlan?.id !== 1 || !currentPlan?.id === 1) && setCurrentPlan(plans1.find(({ id: planId }) => planId === (currentPlan?.id || 1) - 1))}
                                         />
                                         <ChevronRight
-                                            className={`${currentPlan?.id === plans.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                            className={`${currentPlan?.id === plans1.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
                                             size={30}
-                                            onClick={() => currentPlan?.id !== plans.length && setCurrentPlan(plans.find(({ id: planId }) => planId === (currentPlan?.id || 1) + 1))}
+                                            onClick={() => currentPlan?.id !== plans1.length && setCurrentPlan(plans1.find(({ id: planId }) => planId === (currentPlan?.id || 1) + 1))}
                                         />
                                     </div>
                                     <span className="uppercase font-semibold text-lg md:text-2xl">{currentPlan?.title || title}</span>

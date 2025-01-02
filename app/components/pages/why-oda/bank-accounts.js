@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
+import { bankAccounts } from "@/app/data/why-oda";
+
 export default function WhyOdaBankAccounts() {
     const ref = useRef(null);
 
@@ -11,54 +13,6 @@ export default function WhyOdaBankAccounts() {
         ref,
         { once: true },
     );
-
-    const bankAccounts = [
-        {
-            alt: "oda",
-            id: 1,
-            imageHeight: 49,
-            imageSrc: "/images/pages/why-oda/bank-accounts/oda.png",
-            imageWidth: 123,
-            paymentProgram: "Pay directly with ODA & get instant  voucher cards.",
-            paymentSchedule: ["Flexible payments depending on  project duration."],
-            programId: "A",
-        },
-        {
-            alt: "beltone",
-            id: 2,
-            imageHeight: 48,
-            imageSrc: "/images/pages/why-oda/bank-accounts/beltone.png",
-            imageWidth: 159,
-            monthlyInstallment: "Pay installments up to 7 years in  installments.",
-            paymentSchedule: ["15% down payment.", "Financing up to 85% depending on  your chosen plan.", "Financing bundles for your home."],
-            programId: "B",
-        },
-        {
-            alt1: "contact",
-            alt2: "valu",
-            id: 3,
-            imageHeight1: 42,
-            imageHeight2: 35,
-            imageSrc1: "/images/pages/why-oda/bank-accounts/valu.png",
-            imageSrc2: "/images/pages/why-oda/bank-accounts/contact.png",
-            imageWidth1: 108,
-            imageWidth2: 73,
-            monthlyInstallment: "Pay installments up to 5 years in  installments.",
-            paymentSchedule: ["Flexible payments depending on  your chosen plan.", "Financing up to 2.7 million EGP."],
-            programId: "C",
-        },
-        {
-            alt: "paymob",
-            bankInstallment: "Pay installments with your  personal bank.",
-            description: "We'll Take Care Of the Rest",
-            id: 4,
-            imageHeight: 35,
-            imageSrc: "/images/pages/why-oda/bank-accounts/paymob.png",
-            imageWidth: 152,
-            paymentSchedule: ["Flexible payments depending on  your chosen plan."],
-            programId: "D",
-        },
-    ];
 
     return (
         <div

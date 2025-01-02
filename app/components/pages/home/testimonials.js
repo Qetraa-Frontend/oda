@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { testimonials } from "@/app/data/home";
+
 export default function HomeTestimonials() {
     const ref = useRef(null);
 
@@ -13,41 +15,6 @@ export default function HomeTestimonials() {
         ref,
         { once: true },
     );
-
-    const testimonials = [
-        {
-            alt: "testimonial_1",
-            description: "Physical space is often conceived in three linear dimensions, although modern physicists usually con",
-            id: 1,
-            imageSrc: "/images/pages/home/testimonials/person_1.png",
-            name: "Mohamed Yousry",
-            title: "Architecture",
-        },
-        {
-            alt: "testimonial_2",
-            description: "Physical space is often conceived in three linear dimensions, although modern physicists usually con",
-            id: 2,
-            imageSrc: "/images/pages/home/testimonials/person_2.png",
-            name: "Marko Samuel",
-            title: "Designer",
-        },
-        {
-            alt: "testimonial_3",
-            description: "Physical space is often conceived in three linear dimensions, although modern physicists usually con",
-            id: 3,
-            imageSrc: "/images/pages/home/testimonials/person_3.png",
-            name: "Adel Ahmed",
-            title: "Art Engineer",
-        },
-        {
-            alt: "testimonial_4",
-            description: "Physical space is often conceived in three linear dimensions, although modern physicists usually con",
-            id: 4,
-            imageSrc: "/images/pages/home/testimonials/person_4.png",
-            name: "Mohamed Sameh",
-            title: "Civil Engineer",
-        },
-    ];
 
     return (
         <div className="pt-28 md:pt-60">

@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
+import { partners } from "@/app/data/home";
+
 export default function HomeOurPartners() {
     const ref = useRef(null);
 
@@ -32,30 +34,23 @@ export default function HomeOurPartners() {
                 }}
             >
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 justify-items-center md:justify-items-start">
-                    <div className="col-span-1 md:col-span-4">
-                        <Image
-                            alt="partner_1"
-                            height={235}
-                            src="/images/pages/home/our-partners/partner_1.png"
-                            width={400}
-                        />
-                    </div>
-                    <div className="col-span-1 md:col-span-4">
-                        <Image
-                            alt="partner_2"
-                            height={235}
-                            src="/images/pages/home/our-partners/partner_2.png"
-                            width={400}
-                        />
-                    </div>
-                    <div className="col-span-1 md:col-span-4">
-                        <Image
-                            alt="partner_3"
-                            height={235}
-                            src="/images/pages/home/our-partners/partner_3.png"
-                            width={400}
-                        />
-                    </div>
+                    {partners.map(({
+                        alt,
+                        id,
+                        imageSrc,
+                    }) => (
+                        <div
+                            className="col-span-1 md:col-span-4"
+                            key={id}
+                        >
+                            <Image
+                                alt={alt}
+                                height={235}
+                                src={imageSrc}
+                                width={400}
+                            />
+                        </div>
+                    ))}
                 </div>
             </motion.div>
         </div>
