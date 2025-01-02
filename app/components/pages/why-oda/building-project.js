@@ -26,7 +26,7 @@ export default function WhyOdaBuildingProject() {
                 Project at a Time
             </h2>
             <video
-                className="w-full max-w-full min-h-[563px]"
+                className="w-full max-w-full xl:min-h-[563px]"
                 height="563"
                 ref={videoRef}
                 width="1061"

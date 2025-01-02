@@ -118,7 +118,7 @@ export default function WhyOdaFeatures() {
                         return (
                             (
                                 <div
-                                    className={`${id !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-xl text-center pt-8 px-2`}
+                                    className={`${id !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-xl text-center pt-8 px-2 hover:bg-primary transition-all duration-1000`}
                                     key={id}
                                 >
                                     <div className="xl:hidden absolute top-8 right-[2px] w-full flex justify-between">

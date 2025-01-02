@@ -1,16 +1,37 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { plansContent } from "@/app/data/why-oda";
 
 export default function WhyOdaPlansContent() {
+    const [isLg, setIsLg] = useState(window.innerWidth < 1279); // eslint-disable-line
+
     const ref = useRef(null);
 
     const isInView = useInView(
         ref,
         { once: true },
+    );
+
+    useEffect(
+        () => {
+            const handleResize = () => setIsLg(window.innerWidth < 1279); // eslint-disable-line
+
+            window.addEventListener( // eslint-disable-line
+                "resize",
+                handleResize,
+            );
+
+            return () => {
+                window.removeEventListener( // eslint-disable-line
+                    "resize",
+                    handleResize,
+                );
+            };
+        },
+        [],
     );
 
     return (
@@ -48,7 +69,7 @@ export default function WhyOdaPlansContent() {
                             <motion.div
                                 animate={isInView && { x: 0 }}
                                 className="col-span-1 xl:col-span-4 w-full min-h-[263px] p-2 md:p-4 relative"
-                                initial={{ x: id === 1 || id === 2 || id === 3 ? "100vw" : "-100vw" }}
+                                initial={{ x: isLg ? id === 1 || id === 2 || id === 5 || id === 6 ? "100vw" : "-100vw" : id === 1 || id === 2 || id === 3 ? "100vw" : "-100vw" }} // eslint-disable-line
                                 key={id}
                                 transition={{
                                     delay: 0,
