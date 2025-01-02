@@ -207,18 +207,3 @@ div[role="dialog"] > button:first-child { display: none; }
     }
 }
 
-@keyframes wiggle {
-    0%, 100% {
-        transform: rotate(15deg);
-    }
-    25% {
-        transform: rotate(17deg);
-    }
-    75% {
-        transform: rotate(13deg);
-    }
-}
-
-.animate-wiggle:hover {
-    animation: wiggle 0.2s ease-in-out infinite;
-}

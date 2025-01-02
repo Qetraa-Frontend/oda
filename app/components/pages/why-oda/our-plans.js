@@ -11,6 +11,12 @@ export default function WhyOdaOurPlans() {
         plan3: false,
     });
 
+    const [showChevron, setShowChevron] = useState({
+        plan1: false,
+        plan2: false,
+        plan3: false,
+    });
+
     const plans = [
         {
             alt: "plan_1",
@@ -166,7 +172,7 @@ export default function WhyOdaOurPlans() {
 
     return (
         <div
-            className="container px-4 md:px-6 mx-auto pb-20 md:pb-40 pt-32 md:pt-60 bg-cover bg-no-repeat bg-top"
+            className="container px-4 md:px-6 mx-auto pb-10 md:pb-20 pt-32 md:pt-60 bg-cover bg-no-repeat bg-top"
             style={{ backgroundImage: "url(/images/pages/why-oda/our-plans/plans_bg.png)" }}
         >
             <div className="mb-12 md:mb-24">
@@ -186,10 +192,27 @@ export default function WhyOdaOurPlans() {
                     <div
                         className={`col-span-1 xl:col-span-4 ${id === 3 ? "block sm:hidden xl:block" : ""}`}
                         key={id}
+                        onMouseEnter={() => setShowChevron({
+                            ...showChevron,
+                            [`plan${id}`]: true,
+                        })}
+                        onMouseLeave={() => setShowChevron({
+                            ...showChevron,
+                            [`plan${id}`]: false,
+                        })}
                     >
                         <div className={`${id === 2 ? "bg-primary" : "bg-white"} p-6 md:p-10 rounded-xl text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}>
                             <span
-                                className={`absolute bottom-6 right-6 bg-black p-2 rounded-full opacity-60 cursor-pointer transition-transform duration-500 ${showFeatures[`plan${id}`] ? "rotate-180" : "rotate-0"}`}
+                                className={`absolute bottom-6 right-6 bg-black p-2 rounded-full cursor-pointer transition-all duration-1000 ${
+                                    showFeatures[`plan${id}`] ? "rotate-180" : "rotate-0"
+                                } ${
+                                    showChevron[`plan${id}`]
+                                        ? "opacity-100"
+                                        : "opacity-0 pointer-events-none"
+                                }`}
+                                style={{
+                                    visibility: showChevron[`plan${id}`] ? "visible" : "hidden",
+                                }}
                                 onClick={() => setShowFeatures({
                                     ...showFeatures,
                                     [`plan${id}`]: !showFeatures[`plan${id}`],
@@ -250,14 +273,24 @@ export default function WhyOdaOurPlans() {
                                 key={3}
                             >
                                 <span
-                                    className={`absolute bottom-6 right-6 bg-black p-2 rounded-full opacity-60 cursor-pointer transition-transform duration-500 ${showFeatures.plan3 ? "rotate-180" : "rotate-0"}`}
+                                    className={`absolute bottom-6 right-6 bg-black p-2 rounded-full cursor-pointer transition-all duration-1000 ${
+                                        showFeatures[`plan${id}`] ? "rotate-180" : "rotate-0"
+                                    } ${
+                                        showChevron[`plan${id}`]
+                                            ? "opacity-100"
+                                            : "opacity-0 pointer-events-none"
+                                    }`}
+                                    style={{
+                                        visibility: showChevron[`plan${id}`] ? "visible" : "hidden",
+                                    }}
                                     onClick={() => setShowFeatures({
                                         ...showFeatures,
-                                        plan3: !showFeatures.plan3,
+                                        [`plan${id}`]: !showFeatures[`plan${id}`],
                                     })}
                                 >
                                     <ChevronDown color="white" />
                                 </span>
+
                                 <div>
                                     <img
                                         alt={plans[2].alt}
