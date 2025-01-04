@@ -9,6 +9,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+import { footerLinks } from "@/app/data/footer";
+
 export default function Footer() {
     return (
         <footer
@@ -112,107 +114,38 @@ export default function Footer() {
                 <div className="col-span-3">
                     <h6 className="font-medium text-2xl md:text-4xl text-white">Quick Links</h6>
                     <ul className="p-0 mt-[19px] md:mt-[38px] flex flex-col gap-1 md:gap-2">
-                        <Link
-                            className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                            href="/"
-                            prefetch={false}
-                        >
-                            Home
-                        </Link>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/about-us"
-                                prefetch={false}
-                            >
-                                About Us
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/why-oda"
-                                prefetch={false}
-                            >
-                                Why Oda
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/built-your-kit"
-                                prefetch={false}
-                            >
-                                Built Your Kit
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/successful-stories"
-                                prefetch={false}
-                            >
-                                Successful Stories
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/our-ambassador"
-                                prefetch={false}
-                            >
-                                Oda Ambassador
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/news-and-events"
-                                prefetch={false}
-                            >
-                                News & Events
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/contact-us"
-                                prefetch={false}
-                            >
-                                Contact Us
-                            </Link>
-                        </li>
+                        {footerLinks.leftColumn.map(({
+                            text,
+                            url,
+                        }) => (
+                            <li>
+                                <Link
+                                    className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
+                                    href={url}
+                                    prefetch={false}
+                                >
+                                    {text}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="col-span-3 mt-[35px] md:mt-[70px]">
                     <ul className="p-0 m-0 flex flex-col gap-1 md:gap-2">
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/our-merchants"
-                                prefetch={false}
-                            >
-                                Our Merchants
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/our-partners"
-                                prefetch={false}
-                            >
-                                Our Partners
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                href="/faqs"
-                                prefetch={false}
-                            >
-                                FAQs
-                            </Link>
-                        </li>
+                        {footerLinks.rightColumn.map(({
+                            text,
+                            url,
+                        }) => (
+                            <li>
+                                <Link
+                                    className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
+                                    href={url}
+                                    prefetch={false}
+                                >
+                                    {text}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                     <div className="mt-[21px] md:mt-[43px]">
                         <span className="mb-2 md:mb-4 inline-block font-medium text-xs md:text-base text-white">Download App</span>

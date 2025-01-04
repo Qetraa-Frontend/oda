@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { navbarLinks } from "@/app/data/navbar";
 import { Button } from "@/app/ui/button";
 import {
     DropdownMenu,
@@ -182,144 +183,59 @@ export default function Navbar() {
                                     <div className="flex items-center justify-between mt-6 md:mt-12">
                                         <div>
                                             <ul className="flex flex-col gap-5 md:gap-10">
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        Home
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/about-us"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        About Us
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/why-oda"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        Why Oda
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="contact-us"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        Contact Us
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/successful-stories"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        Successful Stories
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/oda-ambassador"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        Oda Ambassador
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/news-and-events"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        News & Events
-                                                    </Link>
-                                                </li>
+                                                {navbarLinks.leftColumn.map(({
+                                                    text,
+                                                    url,
+                                                }) => (
+                                                    <li>
+                                                        <Link
+                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                            href={url}
+                                                            prefetch={false}
+                                                            onClick={() => setSheetOpen(false)}
+                                                        >
+                                                            {text}
+                                                        </Link>
+                                                    </li>
+                                                ))}
                                             </ul>
                                         </div>
                                         <div>
                                             <ul className="flex flex-col gap-5 md:gap-10 mb-[33px] md:mb-[67px]">
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/our-merchants"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        Our Merchants
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/our-partners"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        Our Partners
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                        href="/faqs"
-                                                        prefetch={false}
-                                                        onClick={() => setSheetOpen(false)}
-                                                    >
-                                                        FAQs
-                                                    </Link>
-                                                </li>
+                                                {navbarLinks.rightColumn.top.map(({
+                                                    text,
+                                                    url,
+                                                }) => (
+                                                    <li>
+                                                        <Link
+                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                            href={url}
+                                                            prefetch={false}
+                                                            onClick={() => setSheetOpen(false)}
+                                                        >
+                                                            {text}
+                                                        </Link>
+                                                    </li>
+                                                ))}
                                             </ul>
                                             <div>
                                                 <span className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Our Services</span>
                                                 <ul className="flex flex-col gap-5 md:gap-10 mt-5 md:mt-10">
-                                                    <li>
-                                                        <Link
-                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                            href="/locate-your-home"
-                                                            prefetch={false}
-                                                            onClick={() => setSheetOpen(false)}
-                                                        >
-                                                            Locate Your Home
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                            href="/build-your-kit"
-                                                            prefetch={false}
-                                                            onClick={() => setSheetOpen(false)}
-                                                        >
-                                                            Build Your Kit
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
-                                                            href="/need-facelift"
-                                                            prefetch={false}
-                                                            onClick={() => setSheetOpen(false)}
-                                                        >
-                                                            Need a Facelift
-                                                        </Link>
-                                                    </li>
+                                                    {navbarLinks.rightColumn.services.map(({
+                                                        text,
+                                                        url,
+                                                    }) => (
+                                                        <li>
+                                                            <Link
+                                                                className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                                href={url}
+                                                                prefetch={false}
+                                                                onClick={() => setSheetOpen(false)}
+                                                            >
+                                                                {text}
+                                                            </Link>
+                                                        </li>
+                                                    ))}
                                                 </ul>
                                             </div>
                                         </div>
