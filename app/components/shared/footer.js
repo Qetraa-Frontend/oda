@@ -12,98 +12,108 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer
-            className="pt-28 md:pt-56 pb-5 md:pb-10 px-4 xl:px-0 bg-cover bg-no-repeat bg-top"
-            style={{
-                backgroundImage: "url(/images/footer.webp)",
-                minHeight: 802,
-            }}
+            className="pt-[133px] md:pt-[267px] pb-[39px] md:pb-[79px] px-4 xl:px-0 bg-cover bg-no-repeat bg-top"
+            style={{ backgroundImage: "url(/images/footer.webp)" }}
         >
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
                 <div className="col-span-6">
                     <div>
                         <Image
                             alt="oda_logo"
-                            className="mt-3 md:mt-6"
-                            height={63}
+                            height={108}
                             loading="lazy"
                             src="/images/logo_2.webp"
-                            width={183}
+                            width={283}
                         />
                         <span className="sr-only">Oda Logo</span>
                     </div>
-                    <p className="mt-2 md:mt-4 text-white text-base md:text-xl max-w-[400px]">
+                    <p className="mt-[7px] md:mt-[14px] font-medium text-white text-base md:text-xl max-w-[400px]">
                         We aim to change the concept of the finishing home by listening to
                         our customers who inspire us to stay ahead with innovative finishing
                         solutions & designs.
                     </p>
-                    <div className="mt-4 md:mt-8 flex items-center gap-2 md:gap-4 text-gray-300">
-                        <Mail size={20} />
-                        <Link
-                            href="mailto:shopcart_5@gmail.com"
-                            prefetch={false}
-                            target="_blank"
-                        >
-                            shopcart_5@gmail.com
-                        </Link>
-                    </div>
-                    <div className="mt-2 md:mt-4 flex items-center gap-2 md:gap-4 text-gray-300">
-                        <Phone size={20} />
-                        <Link
-                            href="tel:+20 111 2748 557"
-                            prefetch={false}
-                            target="_blank"
-                        >
-                            +20 111 2748 557
-                        </Link>
-                    </div>
-                    <div className="mt-2 md:mt-4 flex items-center gap-2 md:gap-4 text-gray-300">
-                        <Link
-                            href="#"
-                            prefetch={false}
-                            target="_blank"
-                        >
-                            <Youtube
+                    <div className="mt-[19px] md:mt-[38px] flex flex-col gap-[9px] md:gap-[18px]">
+                        <div className="flex items-center gap-1 md:gap-2">
+                            <Mail
                                 color="#fff"
-                                size={24}
+                                size={20}
                             />
-                        </Link>
-                        <Link
-                            href="#"
-                            prefetch={false}
-                            target="_blank"
-                        >
-                            <Instagram
+                            <Link
+                                className="font-normal text-white text-xs md:text-base"
+                                href="mailto:shopcart_5@gmail.com"
+                                prefetch={false}
+                                target="_blank"
+                            >
+                                shopcart_5@gmail.com
+                            </Link>
+                        </div>
+                        <div className="flex items-center gap-1 md:gap-2">
+                            <Phone
                                 color="#fff"
-                                size={24}
+                                size={20}
                             />
-                        </Link>
-                        <Link
-                            href="#"
-                            prefetch={false}
-                            target="_blank"
-                        >
-                            <Facebook
-                                color="#fff"
-                                size={24}
-                            />
-                        </Link>
-                        <Link
-                            href="#"
-                            prefetch={false}
-                            target="_blank"
-                        >
-                            <Twitter
-                                color="#fff"
-                                size={24}
-                            />
-                        </Link>
+                            <Link
+                                className="font-normal text-white text-xs md:text-base"
+                                href="tel:+20 111 2748 557"
+                                prefetch={false}
+                                target="_blank"
+                            >
+                                +20 111 2748 557
+                            </Link>
+                        </div>
+                        <div className="flex items-center gap-1 md:gap-2">
+                            <Link
+                                className="font-normal text-white text-xs md:text-base"
+                                href="#"
+                                prefetch={false}
+                                target="_blank"
+                            >
+                                <Youtube
+                                    color="#fff"
+                                    size={24}
+                                />
+                            </Link>
+                            <Link
+                                className="font-normal text-white text-xs md:text-base"
+                                href="#"
+                                prefetch={false}
+                                target="_blank"
+                            >
+                                <Instagram
+                                    color="#fff"
+                                    size={24}
+                                />
+                            </Link>
+                            <Link
+                                className="font-normal text-white text-xs md:text-base"
+                                href="#"
+                                prefetch={false}
+                                target="_blank"
+                            >
+                                <Facebook
+                                    color="#fff"
+                                    size={24}
+                                />
+                            </Link>
+                            <Link
+                                className="font-normal text-white text-xs md:text-base"
+                                href="#"
+                                prefetch={false}
+                                target="_blank"
+                            >
+                                <Twitter
+                                    color="#fff"
+                                    size={24}
+                                />
+                            </Link>
+                        </div>
                     </div>
                 </div>
-                <div className="col-span-3 mt-4 md:mt-8 ">
-                    <span className="text-white mb-2 md:mb-4 inline-block text-2xl md:text-4xl font-medium">Quick Links</span>
-                    <ul className="space-y-2 text-white">
+                <div className="col-span-3">
+                    <h6 className="font-medium text-2xl md:text-4xl text-white">Quick Links</h6>
+                    <ul className="p-0 mt-[19px] md:mt-[38px] flex flex-col gap-1 md:gap-2">
                         <Link
-                            className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                            className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                             href="/"
                             prefetch={false}
                         >
@@ -111,7 +121,7 @@ export default function Footer() {
                         </Link>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/about-us"
                                 prefetch={false}
                             >
@@ -120,7 +130,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/why-oda"
                                 prefetch={false}
                             >
@@ -129,7 +139,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/built-your-kit"
                                 prefetch={false}
                             >
@@ -138,7 +148,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/successful-stories"
                                 prefetch={false}
                             >
@@ -147,7 +157,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/our-ambassador"
                                 prefetch={false}
                             >
@@ -156,7 +166,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/news-and-events"
                                 prefetch={false}
                             >
@@ -165,7 +175,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/contact-us"
                                 prefetch={false}
                             >
@@ -174,11 +184,11 @@ export default function Footer() {
                         </li>
                     </ul>
                 </div>
-                <div className="col-span-3 mt-4 md:mt-8 ">
-                    <ul className="space-y-2 text-white">
+                <div className="col-span-3 mt-[35px] md:mt-[70px]">
+                    <ul className="p-0 m-0 flex flex-col gap-1 md:gap-2">
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/our-merchants"
                                 prefetch={false}
                             >
@@ -187,7 +197,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/our-partners"
                                 prefetch={false}
                             >
@@ -196,7 +206,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <Link
-                                className="text-base md:text-xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                 href="/faqs"
                                 prefetch={false}
                             >
@@ -204,9 +214,9 @@ export default function Footer() {
                             </Link>
                         </li>
                     </ul>
-                    <div className="mt-3 md:mt-6">
-                        <span className="text-white mb-1 md:mb-2 inline-block font-medium text-xs md:text-base">Download App</span>
-                        <div className="flex gap-2 md:gap-4 flex-col">
+                    <div className="mt-[21px] md:mt-[43px]">
+                        <span className="mb-2 md:mb-4 inline-block font-medium text-xs md:text-base text-white">Download App</span>
+                        <div className="flex gap-1 md:gap-2 flex-col">
                             <Link
                                 href="#"
                                 prefetch={false}

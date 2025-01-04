@@ -15,7 +15,7 @@ export default function HomeBuildKit() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 py-16 md:py-36"
+            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 pt-[73px] md:pt-[146px] pb-[75px] md:pb-[150px]"
             ref={ref}
         >
             <motion.div
@@ -38,7 +38,7 @@ export default function HomeBuildKit() {
             </motion.div>
             <motion.div
                 animate={isInView && { x: 0 }}
-                className="col-span-1 md:col-span-6"
+                className="col-span-1 md:col-span-6 md:mt-5"
                 initial={{ x: "100vw" }}
                 transition={{
                     delay: 0,
@@ -46,19 +46,21 @@ export default function HomeBuildKit() {
                     ease: "easeIn",
                 }}
             >
-                <h2 className="font-bold text-3xl md:text-5xl uppercase !leading-relaxed h-20 md:h-40">
-                    Build your Kit with
+                <h2 className="font-bold text-3xl md:text-5xl uppercase md:!leading-relaxed h-20 md:h-40">
+                    Build your Kit
+                    {" "}
+                    <span className="normal-case">With</span>
                     <br className="hidden xl:block" />
                     {" "}
                     <span className="font-bold text-3xl md:text-5xl uppercase text-primary">oda</span>
                 </h2>
-                <p className="font-normal text-xl md:text-3xl mt-8 md:mt-16">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                <p className="font-normal opacity-65 text-[22px] md:text-[32px] md:leading-[1.4] my-4 md:my-8 py-4 md:py-8">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
                 <Link
-                    className="text-lg md:text-2xl font-medium inline-block mt-6 md:mt-12"
+                    className="font-medium text-lg md:text-2xl inline-block"
                     href="/why-oda"
                     prefetch={false}
                 >
-                    <button className="bg-gray-200 text-black py-1 md:py-2 px-4 md:px-8 border border-black rounded">Learn More</button>
+                    <button className="bg-gray-200 bg-opacity-60 text-[#222] py-1 md:py-2 px-4 md:px-8 border border-[#222] rounded hover:bg-[#222] hover:text-white transition-all duration-1000">Learn More</button>
                 </Link>
             </motion.div>
         </div>

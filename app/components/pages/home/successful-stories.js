@@ -1,7 +1,9 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,7 +21,7 @@ export default function HomeSuccessfulStories() {
     return (
         <div>
             <div className="mb-12 md:mb-24">
-                <h2 className="font-semibold text-4xl md:text-6xl text-white !leading-normal">
+                <h2 className="font-semibold text-[41px] md:text-[65px] text-white !leading-normal">
                     Successful
                     <br className="hidden xl:block" />
                     {" "}
@@ -65,7 +67,16 @@ export default function HomeSuccessfulStories() {
                                         width={347}
                                     />
                                 </div>
-                                <h5 className="font-normal text-base md:text-xl text-white mt-2 md:mt-4 !font-nanum-myeongjo">{title}</h5>
+                                <div className="flex justify-between items-center mt-[14px] md:mt-7">
+                                    <h5 className="font-normal text-base md:text-xl text-white !font-nanum-myeongjo">{title}</h5>
+                                    <Link
+                                        className="rounded-full bg-black p-2"
+                                        href="/successfull-stories"
+                                        prefetch={false}
+                                    >
+                                        <ArrowRight color="white" />
+                                    </Link>
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}

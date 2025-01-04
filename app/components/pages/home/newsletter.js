@@ -15,12 +15,12 @@ export default function HomeNewsletter() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto max-h-[536px]"
+            className="container px-4 xl:px-0 mx-auto"
             ref={ref}
         >
             <motion.div
                 animate={isInView && { y: 0 }}
-                className="flex relative top-16 md:top-32"
+                className="flex relative top-[90px] md:top-[180px] max-h-[536px]"
                 initial={{ y: "100vh" }}
                 transition={{
                     damping: 10,
@@ -33,14 +33,14 @@ export default function HomeNewsletter() {
                 <div className="w-1/2 hidden md:block">
                     <Image
                         alt="news_letter"
-                        className="h-full object-cover xl:object-fill"
+                        className="h-full object-cover xl:object-fill w-full"
                         height={536}
                         loading="lazy"
                         src="/images/pages/home/news_letter.webp"
                         width={633}
                     />
                 </div>
-                <div className="w-full md:w-1/2 bg-[#d9d9d9] !font-nanum-myeongjo flex flex-col justify-center items-center gap-4 md:gap-8 p-5 md:p-10">
+                <div className="w-full md:w-1/2 bg-[#d9d9d9] !font-nanum-myeongjo flex flex-col justify-center items-center gap-4 md:gap-8 pt-[44px] md:pt-[88px] pb-[49px] md:pb-[98px] pr-[35px] md:pr-[71px] pl-[34px] md:pl-[69px] rounded-xl md:rounded-tl-[0px] md:rounded-bl-[0px] md:rounded-tr-xl md:rounded-br-xl">
                     <h4 className="font-normal text-3xl md:text-[40px] uppercase">Get our Newsletter</h4>
                     <p className="font-light text-2xl md:text-4xl px-1 xl:px-12">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
                     <Link

@@ -58,7 +58,7 @@ export default function WhyOdaFeatures() {
                     initial={{ x: "-100vw" }}
                     transition={{
                         delay: 0,
-                        duration: 1,
+                        duration: 2,
                         ease: "easeIn",
                     }}
                 >
@@ -102,7 +102,7 @@ export default function WhyOdaFeatures() {
                     initial={{ x: "100vw" }}
                     transition={{
                         delay: 0,
-                        duration: 1,
+                        duration: 2,
                         ease: "easeIn",
                     }}
                 >

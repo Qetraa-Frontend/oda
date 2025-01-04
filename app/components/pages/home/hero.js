@@ -67,12 +67,15 @@ export default function HomeHero() {
                     className="hero-slider"
                     modules={[Autoplay, Pagination]}
                     pagination={{ clickable: true }}
-                    slidesPerView={3}
                     spaceBetween={14}
                     speed={3000}
                     autoplay={{
                         delay: 2,
                         disableOnInteraction: true,
+                    }}
+                    breakpoints={{
+                        1024: { slidesPerView: 3 },
+                        768: { slidesPerView: 2 }, // eslint-disable-line
                     }}
                     loop
                     onSlideChange={(swiperInstance) => setActiveSlideIndex(swiperInstance.realIndex)}

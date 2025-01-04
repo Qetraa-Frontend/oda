@@ -23,19 +23,19 @@ export default function WorkScopes() {
     };
 
     return (
-        <div className="py-20 md:py-40">
+        <div className="py-20 lg:py-40">
             <div className="gradient-container">
-                <div className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-3">
-                    <div className="col-span-1 bg-primary md:bg-transparent">
-                        <div className="py-8 md:py-16 px-3 md:px-6">
-                            <h2 className="font-medium text-4xl md:text-6xl text-black mb-3 md:mb-6">Scope of Work</h2>
-                            <ul className="list-none p-0">
+                <div className="container px-4 xl:px-0 mx-auto grid grid-cols-1 lg:grid-cols-3">
+                    <div className="col-span-1 bg-primary lg:bg-transparent">
+                        <div className="py-[31px] lg:py-[62px] px-3 lg:px-6">
+                            <h2 className="font-medium text-[40px] lg:text-[64px] text-black leading-tight">Scope of Work</h2>
+                            <ul className="list-none p-0 max-w-44 flex flex-col gap-1 lg:gap-2 mt-3 lg:mt-6">
                                 {workScopes.map(({
                                     id,
                                     title,
                                 }, index) => (
                                     <li // eslint-disable-line
-                                        className={id === currentScope ? "active mx-0 my-2 p-1 cursor-pointer font-bold text-3xl text-black max-w-44 transition-all duration-1000 !font-nanum-myeongjo" : "mx-0 my-2 p-1 cursor-pointer font-normal text-3xl text-black opacity-50 max-w-44 transition-all duration-1000 !font-nanum-myeongjo"}
+                                        className={id === currentScope ? "active cursor-pointer py-1 lg:py-2 font-medium text-[18px] sm:text-[22px] lg:text-[32px] lg:leading-tight text-black transition-all duration-1000 !font-nanum-myeongjo" : "cursor-pointer py-1 lg:py-2 font-normal text-[18px] sm:text-[22px] lg:text-[32px] lg:leading-tight text-black opacity-50 transition-all duration-1000 !font-nanum-myeongjo"}
                                         key={id}
                                         onClick={() => handleScopeChange(index)}
                                     >
@@ -44,7 +44,7 @@ export default function WorkScopes() {
                                 ))}
                             </ul>
                             <Link
-                                className="text-lg md:text-2xl font-medium inline-block mt-4 md:mt-8 text-white underline"
+                                className="text-lg lg:text-2xl font-medium inline-block mt-3 lg:mt-6 py-[6px] lg:py-3 text-white underline"
                                 href="/our-services"
                                 prefetch={false}
                             >
@@ -52,10 +52,10 @@ export default function WorkScopes() {
                             </Link>
                         </div>
                     </div>
-                    <div className="relative col-span-1 md:col-span-2 overflow-hidden">
+                    <div className="relative col-span-1 lg:col-span-2">
                         <AnimatePresence mode="wait">
                             <motion.div
-                                className="flex justify-center items-center gap-4 flex-wrap md:flex-nowrap"
+                                className="flex flex-wrap lg:flex-nowrap gap-[23px] lg:gap-[47px]"
                                 key={currentScope}
                                 transition={{ duration: 0.5 }}
                                 animate={{
@@ -73,19 +73,19 @@ export default function WorkScopes() {
                             >
                                 <Image
                                     alt={workScopes[currentIndex].alt}
-                                    className="h-[854px] md:w-1/2 object-cover"
-                                    height={854}
+                                    className="h-[466px] lg:h-[932px] w-full lg:w-1/2 object-cover"
+                                    height={932}
                                     loading="lazy"
                                     src={workScopes[currentIndex].imageSrc}
                                     width={485}
                                 />
-                                <div className="w-full md:w-1/2 flex flex-col">
-                                    <div>
-                                        <h3 className="font-medium text-4xl md:text-6xl">{workScopes[currentIndex].title}</h3>
-                                        <p className="font-normal text-xl md:text-3xl text-gray-500 mt-3 md:mt-6">{workScopes[currentIndex].description}</p>
+                                <div className="flex flex-col">
+                                    <div className="lg:mt-[124px] lg:mb-[188px]">
+                                        <h3 className="font-medium text-[40px] lg:text-[64px]">{workScopes[currentIndex].title}</h3>
+                                        <p className="font-normal text-[22px] lg:text-[32px] text-gray-500 mt-3 lg:mt-6 mb-[30px] lg:mb-[60px]">{workScopes[currentIndex].description}</p>
                                     </div>
-                                    <div className="flex justify-between items-center gap-4 md:gap-8 mt-24 md:mt-48 flex-wrap">
-                                        <div className="flex items-center gap-2 md:gap-4">
+                                    <div className="flex justify-between items-center gap-4 lg:gap-8 flex-wrap">
+                                        <div className="flex items-center gap-2 lg:gap-4">
                                             <Image
                                                 alt="arrow_left"
                                                 className={currentScope === 1 ? "opacity-50" : "cursor-pointer"}
@@ -95,7 +95,7 @@ export default function WorkScopes() {
                                                 width={78}
                                                 onClick={() => (currentScope === 0 ? {} : handleScopeChange(currentIndex - 1))}
                                             />
-                                            <span>Swipe</span>
+                                            <span className="font-normal !font-nanum-myeongjo text-base lg:text-xl">Swipe</span>
                                             <Image
                                                 alt="arrow_right"
                                                 className={currentScope === 8 ? "opacity-50" : "cursor-pointer"}
@@ -106,7 +106,10 @@ export default function WorkScopes() {
                                                 onClick={() => (currentScope === 8 ? {} : handleScopeChange(currentIndex + 1))}
                                             />
                                         </div>
-                                        <span className="font-bold text-2xl md:text-4xl transition-all duration-1000">{currentScope}</span>
+                                        <span className="font-medium text-2xl lg:text-4xl transition-all duration-1000">
+                                            0
+                                            {currentScope}
+                                        </span>
                                     </div>
                                 </div>
                             </motion.div>

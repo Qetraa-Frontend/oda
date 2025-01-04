@@ -6,8 +6,9 @@ import Footer from "@/app/components/shared/footer";
 import Navbar from "@/app/components/shared/navbar";
 
 const albertSans = Albert_Sans({
-    subsets: ["latin"],
+    subsets: ["latin", "latin-ext"],
     variable: "--font-albert-sans",
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const nanumMyeongjo = Nanum_Myeongjo({

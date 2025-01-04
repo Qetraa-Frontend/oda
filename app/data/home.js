@@ -64,6 +64,21 @@ export const partners = [
         id: 3,
         imageSrc: "/images/pages/home/our-partners/partner_3.webp",
     },
+    {
+        alt: "partner_4",
+        id: 4,
+        imageSrc: "/images/pages/home/our-partners/partner_1.webp",
+    },
+    {
+        alt: "partner_5",
+        id: 5,
+        imageSrc: "/images/pages/home/our-partners/partner_2.webp",
+    },
+    {
+        alt: "partner_6",
+        id: 6,
+        imageSrc: "/images/pages/home/our-partners/partner_3.webp",
+    },
 ];
 
 export const statics = [
@@ -183,14 +198,14 @@ export const workScopes = [
         description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
         id: 3,
         imageSrc: "/images/pages/home/work-scopes/visualize.webp",
-        title: "Visualize",
+        title: "visualize",
     },
     {
         alt: "work_scope_4",
         description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
         id: 4,
         imageSrc: "/images/pages/home/work-scopes/workforce_management.webp",
-        title: "Workforce Management",
+        title: "Workforce management",
     },
     {
         alt: "work_scope_5",
@@ -204,7 +219,7 @@ export const workScopes = [
         description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
         id: 6,
         imageSrc: "/images/pages/home/work-scopes/furnishing.webp",
-        title: "Furnishing",
+        title: "furnishing",
     },
     {
         alt: "work_scope_7",

@@ -3,6 +3,7 @@
 import { ChevronDownIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import { Button } from "@/app/ui/button";
 import {
@@ -20,9 +21,11 @@ import {
 } from "@/app/ui/sheet";
 
 export default function Navbar() {
+    const [isSheetOpen, setSheetOpen] = useState(false);
+
     return (
-        <header className="absolute top-0 z-50 w-full border-none">
-            <div className="container mx-auto flex h-40 items-center justify-between px-4 xl:px-0">
+        <header className="absolute top-0 z-50 w-full h-[87px] md:h-[175px] border-none flex items-center">
+            <div className="container px-4 xl:px-0 mx-auto flex justify-between">
                 <Link
                     className="flex items-center gap-1 md:gap-2"
                     href="/"
@@ -37,23 +40,23 @@ export default function Navbar() {
                     />
                     <span className="sr-only">Oda Logo</span>
                 </Link>
-                <nav className="hidden items-center gap-3 md:gap-6 text-xs md:text-sm font-medium md:flex font-albert-sans">
+                <nav className="hidden items-center gap-3 md:gap-6 text-xs md:text-sm font-medium md:flex !font-albert-sans">
                     <Link
-                        className="text-base md:text-xl font-normal text-white"
+                        className="font-normal text-base md:text-xl text-white"
                         href="/"
                         prefetch={false}
                     >
                         Home
                     </Link>
                     <DropdownMenu>
-                        <DropdownMenuTrigger className="flex items-center gap-1 text-base md:text-xl font-normal text-white outline-none">
+                        <DropdownMenuTrigger className="flex items-center gap-1 font-normal text-base md:text-xl text-white outline-none">
                             Services
                             <ChevronDownIcon className="h-4 w-4" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                             <DropdownMenuItem>
                                 <Link
-                                    className="text-sm md:text-lg font-normal"
+                                    className="font-normal text-sm md:text-lg"
                                     href="/locate-your-home"
                                     prefetch={false}
                                 >
@@ -62,7 +65,7 @@ export default function Navbar() {
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <Link
-                                    className="text-sm md:text-lg font-normal"
+                                    className="font-normal text-sm md:text-lg"
                                     href="/book-your-kit"
                                     prefetch={false}
                                 >
@@ -71,7 +74,7 @@ export default function Navbar() {
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <Link
-                                    className="text-sm md:text-lg font-normal"
+                                    className="font-normal text-sm md:text-lg"
                                     href="/need-facelift"
                                     prefetch={false}
                                 >
@@ -81,7 +84,7 @@ export default function Navbar() {
                         </DropdownMenuContent>
                     </DropdownMenu>
                     <Link
-                        className="text-base md:text-xl font-normal text-white"
+                        className="font-normal text-base md:text-xl text-white"
                         href="/about-us"
                         prefetch={false}
                     >
@@ -89,7 +92,7 @@ export default function Navbar() {
                     </Link>
                 </nav>
                 <div className="flex items-center gap-2 md:gap-4">
-                    <div className="hidden items-center gap-1 md:gap-2 text-xs md:text-sm font-medium md:flex cursor-pointer">
+                    <div className="hidden items-center gap-1 md:gap-2 font-medium text-xs md:text-sm md:flex cursor-pointer">
                         <Image
                             alt="whatsapp"
                             height={25}
@@ -110,7 +113,7 @@ export default function Navbar() {
                                     height={25}
                                     loading="eager"
                                     src="/icons/search.svg"
-                                    width={25}
+                                    width={26}
                                 />
                                 <span className="sr-only">Search</span>
                             </Button>
@@ -125,7 +128,10 @@ export default function Navbar() {
                             </div>
                         </DropdownMenuContent>
                     </DropdownMenu>
-                    <Sheet>
+                    <Sheet
+                        open={isSheetOpen}
+                        onOpenChange={setSheetOpen}
+                    >
                         <SheetTrigger asChild>
                             <Button
                                 className="hover:bg-transparent cursor-pointer"
@@ -133,8 +139,8 @@ export default function Navbar() {
                                 variant="ghost"
                             >
                                 <Image
-                                    alt="burger-menu"
-                                    height={25}
+                                    alt="burger_menu"
+                                    height={8}
                                     loading="eager"
                                     src="/icons/burger-menu.svg"
                                     width={25}
@@ -143,168 +149,180 @@ export default function Navbar() {
                             </Button>
                         </SheetTrigger>
                         <SheetContent
-                            className="bg-cover bg-no-repeat border-b-transparent"
+                            className="bg-cover bg-no-repeat border-b-transparent p-0 min-h-[1021px]"
                             side="top"
-                            style={{
-                                backgroundImage: "url(/images/pages/home/hero/hero_1.webp)",
-                                minHeight: 1021,
-                            }}
+                            style={{ backgroundImage: "url(/images/pages/home/hero/hero_1.webp)" }}
                         >
-                            <div className="absolute inset-0 bg-black bg-opacity-70" />
-                            <div className="relative z-40">
-                                <SheetClose className="absolute top-4 right-4">
-                                    <Image
-                                        alt="arrow-right"
-                                        height={25}
-                                        loading="eager"
-                                        src="/icons/arrow-right.svg"
-                                        width={25}
-                                    />
-                                    <span className="sr-only">Close</span>
-                                </SheetClose>
-                                <div className="container mx-auto flex items-center justify-between px-4 xl:px-0 mt-3 md:mt-6 mb-4 md:mb-8">
-                                    <Image
-                                        alt="oda_logo"
-                                        className="mt-3 md:mt-6"
-                                        height={63}
-                                        loading="eager"
-                                        src="/images/logo_2.webp"
-                                        width={183}
-                                    />
-                                    <span className="sr-only">Oda Logo</span>
-                                </div>
-                                <div className="container mx-auto md:flex items-center justify-between px-4 xl:px-0">
+                            <div className="absolute inset-0 bg-black bg-opacity-90" />
+                            <div className="relative z-40 w-full min-h-[1021px]">
+                                <div className="container px-4 xl:px-0 mx-auto flex items-center justify-between mt-[25px] md:mt-[51px] mb-[22px] md:mb-[45px]">
                                     <div>
-                                        <span className="text-gray-500 mb-4 md:mb-8 inline-block text-2xl md:text-4xl font-medium">Quick Links</span>
-                                        <ul className="flex flex-col gap-4 md:gap-8 mt-1 md:mt-2">
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/"
-                                                    prefetch={false}
-                                                >
-                                                    Home
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/about-us"
-                                                    prefetch={false}
-                                                >
-                                                    About Us
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/why-oda"
-                                                    prefetch={false}
-                                                >
-                                                    Why Oda
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="contact-us"
-                                                    prefetch={false}
-                                                >
-                                                    Contact Us
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/successful-stories"
-                                                    prefetch={false}
-                                                >
-                                                    Successful Stories
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/oda-ambassador"
-                                                    prefetch={false}
-                                                >
-                                                    Oda Ambassador
-                                                </Link>
-                                            </li>
-
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/news-and-events"
-                                                    prefetch={false}
-                                                >
-                                                    News & Events
-                                                </Link>
-                                            </li>
-                                        </ul>
+                                        <Image
+                                            alt="oda_logo"
+                                            height={102}
+                                            loading="eager"
+                                            src="/images/logo_2.webp"
+                                            width={299}
+                                        />
+                                        <span className="sr-only">Oda Logo</span>
                                     </div>
-                                    <div>
-                                        <ul className="flex flex-col gap-4 md:gap-8 mt-10 md:mt-20">
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/our-merchants"
-                                                    prefetch={false}
-                                                >
-                                                    Our Merchants
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/our-partners"
-                                                    prefetch={false}
-                                                >
-                                                    Our Partners
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
-                                                    href="/faqs"
-                                                    prefetch={false}
-                                                >
-                                                    FAQs
-                                                </Link>
-                                            </li>
+                                    <SheetClose>
+                                        <Image
+                                            alt="arrow_right"
+                                            height={53}
+                                            loading="eager"
+                                            src="/icons/arrow-right.svg"
+                                            width={53}
+                                        />
+                                        <span className="sr-only">Close</span>
+                                    </SheetClose>
+                                </div>
+                                <div className="container px-4 xl:px-0 mx-auto !font-albert-sans">
+                                    <span className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Quick Links</span>
+                                    <div className="flex items-center justify-between mt-6 md:mt-12">
+                                        <div>
+                                            <ul className="flex flex-col gap-5 md:gap-10">
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        Home
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/about-us"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        About Us
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/why-oda"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        Why Oda
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="contact-us"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        Contact Us
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/successful-stories"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        Successful Stories
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/oda-ambassador"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        Oda Ambassador
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/news-and-events"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        News & Events
+                                                    </Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <ul className="flex flex-col gap-5 md:gap-10 mb-[33px] md:mb-[67px]">
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/our-merchants"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        Our Merchants
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/our-partners"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        Our Partners
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                        href="/faqs"
+                                                        prefetch={false}
+                                                        onClick={() => setSheetOpen(false)}
+                                                    >
+                                                        FAQs
+                                                    </Link>
+                                                </li>
+                                            </ul>
                                             <div>
-                                                <span className="text-gray-500 mb-1 md:mb-2 mt-4 md:mt-8 inline-block text-2xl md:text-4xl font-medium">Our Services</span>
-                                                <ul className="flex flex-col gap-4 md:gap-8 mt-2 md:mt-4">
+                                                <span className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Our Services</span>
+                                                <ul className="flex flex-col gap-5 md:gap-10 mt-5 md:mt-10">
                                                     <li>
                                                         <Link
-                                                            className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
                                                             href="/locate-your-home"
                                                             prefetch={false}
+                                                            onClick={() => setSheetOpen(false)}
                                                         >
                                                             Locate Your Home
                                                         </Link>
                                                     </li>
                                                     <li>
                                                         <Link
-                                                            className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
                                                             href="/build-your-kit"
                                                             prefetch={false}
+                                                            onClick={() => setSheetOpen(false)}
                                                         >
                                                             Build Your Kit
                                                         </Link>
                                                     </li>
                                                     <li>
                                                         <Link
-                                                            className="text-3xl md:text-5xl hover:text-primary transition-all duration-1000 font-medium text-white"
+                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
                                                             href="/need-facelift"
                                                             prefetch={false}
+                                                            onClick={() => setSheetOpen(false)}
                                                         >
                                                             Need a Facelift
                                                         </Link>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
