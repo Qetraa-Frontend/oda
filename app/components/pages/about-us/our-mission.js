@@ -13,9 +13,9 @@ export default function AboutUsOurMission() {
     );
 
     return (
-        <div className="bg-secondary-foreground py-8 md:py-16">
+        <div className="bg-secondary-foreground pt-[36px] md:pt-[72px] pb-[37px] md:pb-[74px]">
             <div
-                className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16"
+                className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-[47px] md:gap-[94px]"
                 ref={ref}
             >
                 <motion.div
@@ -29,7 +29,7 @@ export default function AboutUsOurMission() {
                     }}
                 >
                     <h2 className="font-bold text-3xl md:text-5xl uppercase">Our Mission</h2>
-                    <p className="font-normal text-xl md:text-3xl mt-6 md:mt-12">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                    <p className="font-normal text-[22px] md:text-[32px] mt-6 md:mt-12">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
                 </motion.div>
                 <motion.div
                     animate={isInView && { x: 0 }}

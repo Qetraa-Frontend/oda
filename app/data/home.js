@@ -24,27 +24,27 @@ export const heroSlides = [
 export const steps = [
     {
         alt: "step_1",
-        description: "Fill Up Your Cart",
         id: 1,
         imageSrc: "/images/pages/home/how-it-works/step_1.webp",
+        title: "Fill Up Your Cart",
     },
     {
         alt: "step_2",
-        description: "Meet Your Designer",
         id: 2,
         imageSrc: "/images/pages/home/how-it-works/step_2.webp",
+        title: "Meet Your Designer",
     },
     {
         alt: "step_3",
-        description: "Co-Create Your Designs",
         id: 3,
         imageSrc: "/images/pages/home/how-it-works/step_3.webp",
+        title: "Co-Create Your Designs",
     },
     {
         alt: "step_4",
-        description: "We'll Take Care Of the Rest",
         id: 4,
         imageSrc: "/images/pages/home/how-it-works/step_4.webp",
+        title: "We'll Take Care Of the Rest",
     },
 ];
 

@@ -49,19 +49,17 @@ export default function HomeTestimonials() {
                     }) => (
                         <SwiperSlide key={id}>
                             <div className="rounded-xl border-white border-[1px] p-2 md:p-4 max-w-[898px] text-center mx-auto">
-                                <div>
-                                    <Image
-                                        alt={alt}
-                                        className="mx-auto w-[100px] h-[100px] rounded-full"
-                                        height={100}
-                                        loading="lazy"
-                                        src={imageSrc}
-                                        width={100}
-                                    />
-                                    <div className="mt-[5px] md:mt-[10px]">
-                                        <h5 className="font-medium text-[22px] md:text-[32px] text-white">{name}</h5>
-                                        <span className="font-medium text-lg md:text-2xl text-gray-400">{title}</span>
-                                    </div>
+                                <Image
+                                    alt={alt}
+                                    className="mx-auto w-[100px] h-[100px] rounded-full"
+                                    height={100}
+                                    loading="lazy"
+                                    src={imageSrc}
+                                    width={100}
+                                />
+                                <div className="mt-[5px] md:mt-[10px]">
+                                    <h5 className="font-medium text-[22px] md:text-[32px] text-white mb-1 md:mb-2">{name}</h5>
+                                    <h6 className="font-medium text-lg md:text-2xl text-gray-400">{title}</h6>
                                 </div>
                                 <p className="font-normal text-lg md:text-2xl text-white mt-4 md:mt-8">{description}</p>
                             </div>

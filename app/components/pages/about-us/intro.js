@@ -14,7 +14,7 @@ export default function AboutUsIntro() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 py-16 md:py-36"
+            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-[31px] md:gap-[62px] pt-20 md:pt-40 pb-[72px] md:pb-36"
             ref={ref}
         >
             <motion.div
@@ -45,7 +45,7 @@ export default function AboutUsIntro() {
                     ease: "easeIn",
                 }}
             >
-                <p className="font-normal text-2xl md:text-4xl">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                <p className="font-normal text-[28px] md:text-[40px]">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
             </motion.div>
         </div>
     );

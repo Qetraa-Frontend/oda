@@ -16,7 +16,7 @@ export default function Hero({
             <div className="absolute inset-0 bg-black bg-opacity-40" />
             <div className="relative z-40 container px-4 xl:px-0 mx-auto h-full w-full grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
                 <div className="col-span-1 md:col-span-6 mt-[139px] md:mt-[278px]">
-                    <h1 className="uppercase font-medium text-6xl md:text-8xl text-white md:!leading-[.87]">{title}</h1>
+                    <h1 className="font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87]">{title}</h1>
                     <p className="font-medium text-lg md:text-2xl text-white mt-3 md:mt-6 max-w-[468px]">{description}</p>
                     <Link
                         className="font-medium text-lg md:text-2xl mt-12 md:mt-24 inline-block"

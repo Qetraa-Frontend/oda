@@ -15,7 +15,7 @@ export default function HomeBuildKit() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 pt-[73px] md:pt-[146px] pb-[75px] md:pb-[150px]"
+            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-[36px] md:gap-[72px] pt-[73px] md:pt-[146px] pb-[75px] md:pb-[150px]"
             ref={ref}
         >
             <motion.div
@@ -38,7 +38,7 @@ export default function HomeBuildKit() {
             </motion.div>
             <motion.div
                 animate={isInView && { x: 0 }}
-                className="col-span-1 md:col-span-6 md:mt-5"
+                className="col-span-1 md:col-span-6"
                 initial={{ x: "100vw" }}
                 transition={{
                     delay: 0,

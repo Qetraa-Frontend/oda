@@ -179,7 +179,7 @@ export default function Navbar() {
                                     </SheetClose>
                                 </div>
                                 <div className="container px-4 xl:px-0 mx-auto !font-albert-sans">
-                                    <span className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Quick Links</span>
+                                    <h6 className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Quick Links</h6>
                                     <div className="flex items-center justify-between mt-6 md:mt-12">
                                         <div>
                                             <ul className="flex flex-col gap-5 md:gap-10">
@@ -219,7 +219,7 @@ export default function Navbar() {
                                                 ))}
                                             </ul>
                                             <div>
-                                                <span className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Our Services</span>
+                                                <h6 className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Our Services</h6>
                                                 <ul className="flex flex-col gap-5 md:gap-10 mt-5 md:mt-10">
                                                     {navbarLinks.rightColumn.services.map(({
                                                         text,

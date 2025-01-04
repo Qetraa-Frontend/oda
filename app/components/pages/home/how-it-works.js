@@ -39,9 +39,9 @@ export default function HomeHowItWorks() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-8 justify-items-center xl:justify-items-start">
                     {steps.map(({
-                        description,
                         id,
                         imageSrc,
+                        title,
                     }) => (
                         <div
                             className="col-span-1 xl:col-span-3 transform transition-transform duration-1000 hover:scale-110 w-full max-w-[288px] h-[390px] relative bg-cover bg-no-repeat bg-top rounded-xl overflow-hidden"
@@ -49,12 +49,12 @@ export default function HomeHowItWorks() {
                             style={{ backgroundImage: `url(${imageSrc})` }}
                         >
                             <div className="absolute inset-0 bg-black bg-opacity-20" />
-                            <div className="text-white relative z-10 px-2 md:px-4 pb-3 md:pb-6 h-full flex flex-col justify-end">
-                                <span className="!font-nanum-myeongjo font-normal text-lg md:text-2xl">
+                            <div className="relative z-10 px-2 md:px-4 pb-3 md:pb-6 h-full flex flex-col justify-end">
+                                <span className="font-normal !font-nanum-myeongjo text-lg md:text-2xl text-white">
                                     0
                                     {id}
                                 </span>
-                                <h6 className="font-semibold text-lg md:text-2xl">{description}</h6>
+                                <h5 className="font-semibold text-lg md:text-2xl text-white">{title}</h5>
                             </div>
                         </div>
                     ))}
