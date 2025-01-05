@@ -184,10 +184,11 @@ export default function Navbar() {
                                         <div>
                                             <ul className="flex flex-col gap-5 md:gap-10">
                                                 {navbarLinks.leftColumn.map(({
+                                                    id,
                                                     text,
                                                     url,
                                                 }) => (
-                                                    <li>
+                                                    <li key={id}>
                                                         <Link
                                                             className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
                                                             href={url}
@@ -203,10 +204,11 @@ export default function Navbar() {
                                         <div>
                                             <ul className="flex flex-col gap-5 md:gap-10 mb-[33px] md:mb-[67px]">
                                                 {navbarLinks.rightColumn.top.map(({
+                                                    id,
                                                     text,
                                                     url,
                                                 }) => (
-                                                    <li>
+                                                    <li key={id}>
                                                         <Link
                                                             className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
                                                             href={url}
@@ -222,10 +224,11 @@ export default function Navbar() {
                                                 <h6 className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Our Services</h6>
                                                 <ul className="flex flex-col gap-5 md:gap-10 mt-5 md:mt-10">
                                                     {navbarLinks.rightColumn.services.map(({
+                                                        id,
                                                         text,
                                                         url,
                                                     }) => (
-                                                        <li>
+                                                        <li key={id}>
                                                             <Link
                                                                 className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
                                                                 href={url}

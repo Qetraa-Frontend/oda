@@ -18,8 +18,8 @@ export default function WhyOdaBuildingProject() {
     );
 
     return (
-        <div className="container px-4 xl:px-0 mx-auto pb-20 md:pb-44 pt-14 md:pt-28">
-            <h2 className="font-semibold text-4xl md:text-6xl uppercase text-center !leading-relaxed mb-12 md:mb-24">
+        <div className="container px-4 xl:px-0 mx-auto pb-[91px] md:pb-[181px] pt-14 md:pt-28">
+            <h2 className="font-semibold text-[32px] md:text-[56px] uppercase text-center !leading-normal mb-12 md:mb-24">
                 Building a Legacy, One
                 <br className="hidden lg:block" />
                 {" "}

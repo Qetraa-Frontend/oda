@@ -29,14 +29,12 @@ export default function HomeHowItWorks() {
                     type: "spring",
                 }}
             >
-                <div className="mb-[53px] md:mb-[107px]">
-                    <h2 className="font-medium text-3xl md:text-5xl text-center !leading-snug">
-                        <span className="opacity-80">How it works?</span>
-                        <br />
-                        {" "}
-                        <span className="font-medium text-[40px] md:text-[64px] uppercase">The 4 Steps</span>
-                    </h2>
-                </div>
+                <h2 className="font-medium text-3xl md:text-5xl text-center mb-[53px] md:mb-[107px] !leading-snug">
+                    <span className="opacity-80">How it works?</span>
+                    <br />
+                    {" "}
+                    <span className="font-medium text-[40px] md:text-[64px] uppercase">The 4 Steps</span>
+                </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-8 justify-items-center xl:justify-items-start">
                     {steps.map(({
                         id,
@@ -61,12 +59,12 @@ export default function HomeHowItWorks() {
                 </div>
             </motion.div>
             <div className="mt-20 md:mt-40">
-                <h2 className="font-semibold text-4xl md:text-6xl uppercase text-center !leading-relaxed">
+                <h3 className="font-semibold text-4xl md:text-6xl uppercase text-center !leading-relaxed">
                     Building a Legacy, One
                     <br className="hidden lg:block" />
                     {" "}
                     Project at a Time
-                </h2>
+                </h3>
             </div>
         </div>
     );

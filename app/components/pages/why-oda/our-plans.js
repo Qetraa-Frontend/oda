@@ -22,14 +22,14 @@ export default function WhyOdaOurPlans() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto pb-10 md:pb-20 pt-32 md:pt-60 bg-cover bg-no-repeat bg-top"
+            className="container px-4 xl:px-0 mx-auto pb-10 md:pb-20 pt-[120px] md:pt-60 bg-cover bg-no-repeat bg-top"
             style={{ backgroundImage: "url(/images/pages/why-oda/our-plans/plans_bg.webp)" }}
         >
             <div className="mb-12 md:mb-24">
-                <h2 className="font-bold text-4xl md:text-6xl mb-5 md:mb-10">Our Plans</h2>
-                <span className="font-medium text-2xl md:text-4xl">Choose your desired pricing plan</span>
+                <h2 className="font-bold text-[32px] md:text-[64px] mb-5 md:mb-10">Our Plans</h2>
+                <h3 className="font-medium text-2xl md:text-4xl">Choose your desired pricing plan</h3>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-8 xl:gap-16 justify-items-center xl:justify-items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 xl:gap-8 justify-items-center xl:justify-items-start mb-5 md:mb-10">
                 {plans2.map(({
                     alt,
                     description,
@@ -51,7 +51,7 @@ export default function WhyOdaOurPlans() {
                             [`plan${id}`]: false,
                         })}
                     >
-                        <div className={`${id === 2 ? "bg-primary" : "bg-white"} p-6 md:p-10 rounded-xl text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}>
+                        <div className={`${id === 2 ? "bg-primary" : "bg-white"} px-4 md:px-8 pt-[37px] md:pt-[74px] rounded-xl text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}>
                             <span
                                 className={`absolute bottom-6 right-6 bg-black p-2 rounded-full cursor-pointer transition-all duration-1000 ${
                                     showFeatures[`plan${id}`] ? "rotate-180" : "rotate-0"
@@ -70,20 +70,18 @@ export default function WhyOdaOurPlans() {
                             >
                                 <ChevronDown color="white" />
                             </span>
-                            <div>
-                                <Image
-                                    alt={alt}
-                                    className="rounded-full mx-auto"
-                                    height={134}
-                                    loading="lazy"
-                                    src={imageSrc}
-                                    width={134}
-                                />
-                            </div>
-                            <div>
-                                <h3 className="font-medium text-lg md:text-2xl mt-3 md:mt-6 mb-6 md:mb-12">{title}</h3>
-                                <div className="mb-6 md:mb-12">
-                                    <span className="font-medium text-base md:text-xl mb-3 md:mb-6 block">Start From</span>
+                            <Image
+                                alt={alt}
+                                className="rounded-full mx-auto"
+                                height={134}
+                                loading="lazy"
+                                src={imageSrc}
+                                width={134}
+                            />
+                            <div className="mt-3 md:mt-6">
+                                <h4 className="font-medium text-lg md:text-2xl">{title}</h4>
+                                <div className="my-6 md:my-12">
+                                    <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Start From</h5>
                                     <span className="font-normal text-lg md:text-2xl">
                                         {price}
                                         {" "}
@@ -92,27 +90,27 @@ export default function WhyOdaOurPlans() {
                                 </div>
                                 <p className="font-medium text-base md:text-xl !leading-loose">{description}</p>
                             </div>
-                            <div className={`overflow-hidden transition-[max-height] duration-1000 ${showFeatures[`plan${id}`] ? "max-h-[1000px]" : "max-h-0"}`}>
-                                <ul className="mt-5 md:mt-10 mb-0 p-0 list-none !text-left">
+                            <div className={`mt-6 md:mt-12 overflow-hidden transition-[max-height] duration-1000 ${showFeatures[`plan${id}`] ? "max-h-[1000px]" : "max-h-0"}`}>
+                                <ul className="m-0 p-0 list-none !text-left">
                                     {features.map(({
                                         checksCount,
                                         name,
                                         note,
-                                    }) => (
+                                    }, i) => (
                                         <li
-                                            className="flex justify-between items-center gap-1 md:gap-2 mb-5 md:mb-10"
-                                            key={name}
+                                            className="flex justify-between items-center gap-1 md:gap-2 mb-2 md:mb-4 py-2 md:py-4"
+                                            key={i} // eslint-disable-line
                                         >
-                                            <span className="font-normal text-sm md:text-lg">{name}</span>
+                                            <span className="font-normal text-base md:text-xl">{name}</span>
                                             {!note && (
-                                                <span className="flex gap-1 md:gap-2 !text-right">
+                                                <span className="flex gap-[2px] md:gap-1 !text-right">
                                                     {Array.from(
                                                         { length: checksCount },
                                                         (_, index) => index + 1,
-                                                    ).map(() => <Check key={Math.random()} />)}
+                                                    ).map((_, indx) => <Check key={indx} />)} {/* eslint-disable-line */}
                                                 </span>
                                             )}
-                                            {note && <span className="font-medium text-lg md:text-xl ml-2 !text-right">{note}</span>}
+                                            {note && <span className="font-medium text-xs md:text-base !text-right">{note}</span>}
                                         </li>
                                     ))}
                                 </ul>
@@ -120,7 +118,7 @@ export default function WhyOdaOurPlans() {
                         </div>
                         {id === 1 && (
                             <div
-                                className={`${id === 2 ? "bg-primary" : "bg-white"} hidden sm:block xl:hidden mt-8 p-6 md:p-10 rounded-xl text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}
+                                className={`${id === 2 ? "bg-primary" : "bg-white"} hidden sm:block xl:hidden mt-8 px-4 md:px-8 pt-[37px] md:pt-[74px] rounded-xl text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}
                                 key={3}
                             >
                                 <span
@@ -141,50 +139,47 @@ export default function WhyOdaOurPlans() {
                                 >
                                     <ChevronDown color="white" />
                                 </span>
-
-                                <div>
-                                    <Image
-                                        alt={plans2[2].alt}
-                                        className="rounded-full mx-auto"
-                                        height={134}
-                                        loading="lazy"
-                                        src={plans2[2].imageSrc}
-                                        width={134}
-                                    />
-                                </div>
-                                <div>
-                                    <h3 className="font-medium text-lg md:text-2xl mt-3 md:mt-6 mb-6 md:mb-12">{plans2[2].title}</h3>
-                                    <div className="mb-6 md:mb-12">
-                                        <span className="font-medium text-base md:text-xl mb-3 md:mb-6 block">Start From</span>
+                                <Image
+                                    alt={plans2[2].alt}
+                                    className="rounded-full mx-auto"
+                                    height={134}
+                                    loading="lazy"
+                                    src={plans2[2].imageSrc}
+                                    width={134}
+                                />
+                                <div className="mt-3 md:mt-6">
+                                    <h3 className="font-medium text-lg md:text-2xl">{title}</h3>
+                                    <div className="my-6 md:my-12">
+                                        <h6 className="font-medium text-base md:text-xl mb-3 md:mb-6">Start From</h6>
                                         <span className="font-normal text-lg md:text-2xl">
-                                            {plans2[2].price}
+                                            {price}
                                             {" "}
                                             | M2
                                         </span>
                                     </div>
-                                    <p className="font-medium text-base md:text-xl !leading-loose">{plans2[2].description}</p>
+                                    <p className="font-medium text-base md:text-xl !leading-loose">{description}</p>
                                 </div>
-                                <div className={`overflow-hidden transition-[max-height] duration-1000 ${showFeatures.plan3 ? "max-h-[1000px]" : "max-h-0"}`}>
-                                    <ul className="mt-5 md:mt-10 mb-0 p-0 list-none !text-left">
+                                <div className={`mt-6 md:mt-12 overflow-hidden transition-[max-height] duration-1000 ${showFeatures.plan3 ? "max-h-[1000px]" : "max-h-0"}`}>
+                                    <ul className="m-0 p-0 list-none !text-left">
                                         {plans2[2].features.map(({
                                             checksCount,
                                             name,
                                             note,
-                                        }) => (
+                                        }, i) => (
                                             <li
-                                                className="flex justify-between items-center gap-1 md:gap-2 mb-5 md:mb-10"
-                                                key={name}
+                                                className="flex justify-between items-center gap-1 md:gap-2 mb-2 md:mb-4 py-2 md:py-4"
+                                                key={i} // eslint-disable-line
                                             >
-                                                <span className="font-normal text-sm md:text-lg">{name}</span>
+                                                <span className="font-normal text-base md:text-xl">{name}</span>
                                                 {!note && (
-                                                    <span className="flex gap-1 md:gap-2 !text-right">
+                                                    <span className="flex gap-[2px] md:gap-1 !text-right">
                                                         {Array.from(
                                                             { length: checksCount },
                                                             (_, index) => index + 1,
-                                                        ).map(() => <Check key={Math.random()} />)}
+                                                        ).map((_, indx) => <Check key={indx} />)} {/* eslint-disable-line */}
                                                     </span>
                                                 )}
-                                                {note && <span className="font-medium text-lg md:text-xl ml-2 !text-right">{note}</span>}
+                                                {note && <span className="font-medium text-xs md:text-base !text-right">{note}</span>}
                                             </li>
                                         ))}
                                     </ul>
@@ -195,7 +190,7 @@ export default function WhyOdaOurPlans() {
                 ))}
             </div>
             <Link
-                className="text-lg md:text-2xl font-normal inline-block underline float-right mt-5 md:mt-10"
+                className="font-normal text-lg md:text-2xl underline float-right"
                 href="#features"
                 prefetch={false}
             >

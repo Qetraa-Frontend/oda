@@ -42,12 +42,10 @@ export default function WhyOdaFeatures() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto pb-24 md:pb-52 pt-10 md:pt-20"
+            className="container px-4 xl:px-0 mx-auto pb-[96px] md:pb-[193px] pt-[42px] md:pt-[84px]"
             id="features"
         >
-            <div className="mb-24 md:mb-48">
-                <h2 className="font-bold text-4xl md:text-6xl">Compare All Features</h2>
-            </div>
+            <h2 className="font-bold text-[40px] md:text-[64px] mb-[98px] md:mb-[197px]">Compare All Features</h2>
             <div
                 className="overflow-visible relative"
                 ref={ref}
@@ -71,7 +69,7 @@ export default function WhyOdaFeatures() {
                             <thead>
                                 <tr className="bg-primary h-20">
                                     <th
-                                        className="text-left font-semibold text-xl md:text-3xl px-2 md:px-4"
+                                        className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4"
                                         colSpan="3"
                                     >
                                         {title}
@@ -88,7 +86,7 @@ export default function WhyOdaFeatures() {
                                             className="font-normal text-lg md:text-2xl px-2 md:px-4"
                                             colSpan={3}
                                         >
-                                            <div className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words">{feature}</div>
+                                            <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block">{feature}</h5>
                                         </td>
                                     </tr>
                                 ))}
@@ -118,7 +116,7 @@ export default function WhyOdaFeatures() {
                         return (
                             (
                                 <div
-                                    className={`${id !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-xl text-center pt-8 px-2 hover:bg-primary transition-all duration-1000`}
+                                    className={`${id !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-xl text-center pt-8 px-4 md:px-8 hover:bg-primary transition-all duration-1000`}
                                     key={id}
                                 >
                                     <div className="xl:hidden absolute top-8 right-[2px] w-full flex justify-between">
@@ -133,60 +131,58 @@ export default function WhyOdaFeatures() {
                                             onClick={() => currentPlan?.id !== plans1.length && setCurrentPlan(plans1.find(({ id: planId }) => planId === (currentPlan?.id || 1) + 1))}
                                         />
                                     </div>
-                                    <span className="uppercase font-semibold text-lg md:text-2xl">{currentPlan?.title || title}</span>
+                                    <h5 className="font-semibold text-lg md:text-2xl uppercase">{currentPlan?.title || title}</h5>
                                     <div className="flex flex-col justify-center items-center relative top-24">
                                         {currentPlanDepartments[0].features.map(({
                                             checksCount,
-                                            name,
                                             note,
                                         }, i) => (
                                             <div
                                                 className={`flex items-center ${i === 1 ? "h-[114px] sm:h-20" : "h-20"}`}
-                                                key={name}
+                                                key={i} // eslint-disable-line
                                             >
                                                 {!note && (
-                                                    <span className="flex gap-1 md:gap-2">
+                                                    <span className="flex gap-[2px] md:gap-1">
                                                         {Array.from(
                                                             { length: checksCount },
                                                             (_, index) => index + 1,
-                                                        ).map(() => (
+                                                        ).map((_, indx) => (
                                                             <Check
                                                                 className="rounded-full border border-black p-1 md:p-2"
-                                                                key={Math.random()}
+                                                                key={indx} // eslint-disable-line
                                                                 size={35}
                                                             />
                                                         ))}
                                                     </span>
                                                 )}
-                                                {note && <span className="font-medium text-xs md:text-base">{note}</span>}
+                                                {note && <h6 className="font-medium text-xs md:text-base">{note}</h6>}
                                             </div>
                                         ))}
                                     </div>
                                     <div className="flex flex-col justify-center items-center relative top-44">
                                         {currentPlanDepartments[1].features.map(({
                                             checksCount,
-                                            name,
                                             note,
-                                        }) => (
+                                        }, i) => (
                                             <div
                                                 className="flex items-center h-20"
-                                                key={name}
+                                                key={i} // eslint-disable-line
                                             >
                                                 {!note && (
-                                                    <span className="flex gap-1 md:gap-2">
+                                                    <span className="flex gap-[2px] md:gap-1">
                                                         {Array.from(
                                                             { length: checksCount },
                                                             (_, index) => index + 1,
-                                                        ).map(() => (
+                                                        ).map((_, indx) => (
                                                             <Check
                                                                 className="rounded-full border border-black p-1 md:p-2"
-                                                                key={Math.random()}
+                                                                key={indx} // eslint-disable-line
                                                                 size={35}
                                                             />
                                                         ))}
                                                     </span>
                                                 )}
-                                                {note && <span className="font-medium text-xs md:text-base">{note}</span>}
+                                                {note && <h6 className="font-medium text-xs md:text-base">{note}</h6>}
                                             </div>
                                         ))}
                                     </div>

@@ -115,10 +115,11 @@ export default function Footer() {
                     <h6 className="font-medium text-2xl md:text-4xl text-white">Quick Links</h6>
                     <ul className="p-0 mt-[19px] md:mt-[38px] flex flex-col gap-1 md:gap-2">
                         {footerLinks.leftColumn.map(({
+                            id,
                             text,
                             url,
                         }) => (
-                            <li>
+                            <li key={id}>
                                 <Link
                                     className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                     href={url}
@@ -133,10 +134,11 @@ export default function Footer() {
                 <div className="col-span-3 mt-[35px] md:mt-[70px]">
                     <ul className="p-0 m-0 flex flex-col gap-1 md:gap-2">
                         {footerLinks.rightColumn.map(({
+                            id,
                             text,
                             url,
                         }) => (
-                            <li>
+                            <li key={id}>
                                 <Link
                                     className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                                     href={url}

@@ -22,7 +22,7 @@ export default function AboutUsOurVision() {
     );
 
     return (
-        <div className="bg-[#222] pt-20 md:pt-44 pb-40 md:pb-80">
+        <div className="bg-[#222] pt-[87px] md:pt-[175px] pb-[159px] md:pb-[319px]">
             <div className="container px-4 xl:px-0 mx-auto">
                 <h2 className="font-bold text-3xl md:text-5xl text-white text-center">Meet The Team Behind The Works</h2>
                 <div

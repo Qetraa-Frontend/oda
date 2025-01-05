@@ -5,7 +5,7 @@ export default function HomeDiscoverArtLiving() {
         <div className="bg-[#222] min-h-[1012px] py-[22px] md:py-11 !font-nanum-myeongjo">
             <div className="container px-4 xl:px-0 mx-auto">
                 <div className="text-center text-white mb-[23px] md:mb-[46px]">
-                    <h2 className="font-c text-[40px] md:text-[64px] uppercase !leading-snug">
+                    <h2 className="font-normal text-[40px] md:text-[64px] uppercase !leading-snug">
                         Discover the Art of Living
                         <br className="hidden xl:block" />
                         {" "}
