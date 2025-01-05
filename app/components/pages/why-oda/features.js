@@ -55,9 +55,11 @@ export default function WhyOdaFeatures() {
                     className="table-fixed w-full"
                     initial={{ x: "-100vw" }}
                     transition={{
-                        delay: 0,
+                        damping: 10,
                         duration: 2,
                         ease: "easeIn",
+                        stiffness: 50,
+                        type: "spring",
                     }}
                 >
                     {departments.map(({
@@ -99,9 +101,11 @@ export default function WhyOdaFeatures() {
                     className="flex flex-wrap gap-4 md:gap-8 justify-end absolute -top-20 right-0 w-full h-[1090px]"
                     initial={{ x: "100vw" }}
                     transition={{
-                        delay: 0,
+                        damping: 10,
                         duration: 2,
                         ease: "easeIn",
+                        stiffness: 50,
+                        type: "spring",
                     }}
                 >
                     {plans1.map(({

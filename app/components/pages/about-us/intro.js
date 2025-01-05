@@ -22,9 +22,11 @@ export default function AboutUsIntro() {
                 className="col-span-1 md:col-span-6"
                 initial={{ x: "-100vw" }}
                 transition={{
-                    delay: 0,
+                    damping: 10,
                     duration: 2,
                     ease: "easeIn",
+                    stiffness: 50,
+                    type: "spring",
                 }}
             >
                 <Image
@@ -40,9 +42,11 @@ export default function AboutUsIntro() {
                 className="col-span-1 md:col-span-6"
                 initial={{ x: "100vw" }}
                 transition={{
-                    delay: 0,
+                    damping: 10,
                     duration: 2,
                     ease: "easeIn",
+                    stiffness: 50,
+                    type: "spring",
                 }}
             >
                 <p className="font-normal text-[28px] md:text-[40px]">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>

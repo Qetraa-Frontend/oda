@@ -1,3 +1,5 @@
+"use client";
+
 import {
     Facebook,
     Instagram,
@@ -8,13 +10,18 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { footerLinks } from "@/app/data/footer";
 
 export default function Footer() {
+    const pathname = usePathname();
+
+    const isPageWithoutBottomImage = pathname === "/why-oda";
+
     return (
         <footer
-            className="pt-[133px] md:pt-[267px] pb-[39px] md:pb-[79px] px-4 xl:px-0 bg-cover bg-no-repeat bg-top"
+            className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] px-4 xl:px-0 bg-cover bg-no-repeat bg-top`}
             style={{ backgroundImage: "url(/images/footer.webp)" }}
         >
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">

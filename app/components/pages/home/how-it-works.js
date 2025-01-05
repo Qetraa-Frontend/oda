@@ -24,7 +24,7 @@ export default function HomeHowItWorks() {
                 transition={{
                     damping: 10,
                     duration: 2,
-                    ease: "easeInOut",
+                    ease: "easeIn",
                     stiffness: 50,
                     type: "spring",
                 }}

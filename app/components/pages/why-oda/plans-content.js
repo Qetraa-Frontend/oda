@@ -48,7 +48,7 @@ export default function WhyOdaPlansContent() {
                         transition={{
                             damping: 10,
                             duration: 2,
-                            ease: "easeInOut",
+                            ease: "easeIn",
                             stiffness: 50,
                             type: "spring",
                         }}
@@ -70,9 +70,11 @@ export default function WhyOdaPlansContent() {
                                 initial={{ x: isLg ? id === 1 || id === 2 || id === 5 || id === 6 ? "100vw" : "-100vw" : id === 1 || id === 2 || id === 3 ? "100vw" : "-100vw" }} // eslint-disable-line
                                 key={id}
                                 transition={{
-                                    delay: 0,
+                                    damping: 10,
                                     duration: 2,
                                     ease: "easeIn",
+                                    stiffness: 50,
+                                    type: "spring",
                                 }}
                             >
                                 <span className="font-light !font-nanum-myeongjo text-lg md:text-2xl py-2 px-3 rounded-full bg-primary absolute left-4 top-4">

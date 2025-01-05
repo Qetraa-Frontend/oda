@@ -23,9 +23,11 @@ export default function HomeBuildKit() {
                 className="col-span-1 md:col-span-6"
                 initial={{ x: "-100vw" }}
                 transition={{
-                    delay: 0,
+                    damping: 10,
                     duration: 2,
                     ease: "easeIn",
+                    stiffness: 50,
+                    type: "spring",
                 }}
             >
                 <Image
@@ -41,9 +43,11 @@ export default function HomeBuildKit() {
                 className="col-span-1 md:col-span-6"
                 initial={{ x: "100vw" }}
                 transition={{
-                    delay: 0,
+                    damping: 10,
                     duration: 2,
                     ease: "easeIn",
+                    stiffness: 50,
+                    type: "spring",
                 }}
             >
                 <h2 className="font-bold text-3xl md:text-5xl uppercase md:!leading-relaxed h-20 md:h-40">

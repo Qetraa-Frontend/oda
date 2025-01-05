@@ -35,9 +35,11 @@ export default function AboutUsOurVision() {
                             className="col-span-1 md:col-span-6"
                             initial={{ x: "-100vw" }}
                             transition={{
-                                delay: 0,
+                                damping: 10,
                                 duration: 2,
                                 ease: "easeIn",
+                                stiffness: 50,
+                                type: "spring",
                             }}
                         >
                             <Image
@@ -53,9 +55,11 @@ export default function AboutUsOurVision() {
                             className="col-span-1 md:col-span-6"
                             initial={{ x: "100vw" }}
                             transition={{
-                                delay: 0,
+                                damping: 10,
                                 duration: 2,
                                 ease: "easeIn",
+                                stiffness: 50,
+                                type: "spring",
                             }}
                         >
                             <h5 className="font-light !font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
@@ -69,9 +73,11 @@ export default function AboutUsOurVision() {
                             className="col-span-1 md:col-span-6"
                             initial={{ x: "-100vw" }}
                             transition={{
-                                delay: 0,
+                                damping: 10,
                                 duration: 2,
                                 ease: "easeIn",
+                                stiffness: 50,
+                                type: "spring",
                             }}
                         >
                             <h5 className="font-light !font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
@@ -83,9 +89,11 @@ export default function AboutUsOurVision() {
                             className="col-span-1 md:col-span-6"
                             initial={{ x: "100vw" }}
                             transition={{
-                                delay: 0,
+                                damping: 10,
                                 duration: 2,
                                 ease: "easeIn",
+                                stiffness: 50,
+                                type: "spring",
                             }}
                         >
                             <Image
@@ -115,8 +123,11 @@ export default function AboutUsOurVision() {
                             initial={{ opacity: 0 }}
                             key={id}
                             transition={{
+                                damping: 10,
                                 duration: 2,
-                                ease: "easeInOut",
+                                ease: "easeIn",
+                                stiffness: 50,
+                                type: "spring",
                             }}
                         >
                             <Image
