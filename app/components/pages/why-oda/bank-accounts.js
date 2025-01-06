@@ -21,12 +21,12 @@ export default function WhyOdaBankAccounts() {
         >
             <motion.div
                 animate={isInView && { y: 0 }}
-                initial={{ y: "100vh" }}
+                initial={{ y: "2000vh" }}
                 transition={{
                     damping: 10,
                     duration: 2,
                     ease: "easeIn",
-                    stiffness: 40,
+                    stiffness: 33,
                     type: "spring",
                 }}
             >
@@ -59,7 +59,7 @@ export default function WhyOdaBankAccounts() {
                             className="col-span-1 xl:col-span-3"
                             key={id}
                         >
-                            <div className="pb-[3px] md:pb-[7px] pt-2 md:pt-4 px-2 md:px-4 rounded-xl border-[#C9C9BE] border-2 w-full max-w-[288px] min-h-[300px] md:min-h-[425px] relative bg-[#C9C9BE] bg-opacity-30">
+                            <div className="pb-[3px] md:pb-[7px] pt-2 md:pt-4 px-2 md:px-4 rounded-lg border-[#C9C9BE] border-2 w-full max-w-[288px] min-h-[300px] md:min-h-[425px] relative bg-[#C9C9BE] bg-opacity-30">
                                 <div>
                                     <Image
                                         alt={alt || alt1}
@@ -81,7 +81,7 @@ export default function WhyOdaBankAccounts() {
                                     )}
                                 </div>
                                 <div className="mt-[70px]">
-                                    <span className="font-bold text-base md:text-xl w-fit rounded-xl p-1 md:p-2 border border-black">{`Program ${programId}`}</span>
+                                    <span className="font-bold text-base md:text-xl w-fit rounded-lg p-1 md:p-2 border border-black">{`Program ${programId}`}</span>
                                     {paymentProgram && (
                                         <div className="mt-3 md:mt-6">
                                             <h4 className="font-medium text-base md:text-xl mb-2 md:mb-4">

@@ -62,9 +62,9 @@ export default function AboutUsOurVision() {
                                 type: "spring",
                             }}
                         >
-                            <h5 className="font-light !font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
-                            <h6 className="font-light !font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
-                            <p className="font-light !font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facili.</p>
+                            <h5 className="font-[400] !font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
+                            <h6 className="font-[400] !font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
+                            <p className="font-[400] !font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facili.</p>
                         </motion.div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-10">
@@ -80,9 +80,9 @@ export default function AboutUsOurVision() {
                                 type: "spring",
                             }}
                         >
-                            <h5 className="font-light !font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
-                            <h6 className="font-light !font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
-                            <p className="font-light !font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facili.</p>
+                            <h5 className="font-[400] !font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
+                            <h6 className="font-[400]!font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
+                            <p className="font-[400] !font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facili.</p>
                         </motion.div>
                         <motion.div
                             animate={isInView1 && { x: 0 }}
@@ -132,7 +132,7 @@ export default function AboutUsOurVision() {
                         >
                             <Image
                                 alt={alt}
-                                className="h-[400px] md:h-[300px] lg:h-[400px] object-cover md:object-fill rounded-xl"
+                                className="h-[400px] md:h-[300px] lg:h-[400px] object-cover md:object-fill rounded-lg"
                                 height={445}
                                 loading="lazy"
                                 src={imageSrc}

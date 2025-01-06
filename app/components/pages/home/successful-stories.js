@@ -59,11 +59,11 @@ export default function HomeSuccessfulStories() {
                         title,
                     }) => (
                         <SwiperSlide key={id}>
-                            <div className="rounded-xl border-white border-[1px] p-4 max:w-[395] h-[431px]">
-                                <div className="group overflow-hidden rounded-xl">
+                            <div className="rounded-lg border-white border-[1px] p-4 max:w-[395] h-[431px]">
+                                <div className="group overflow-hidden rounded-lg">
                                     <Image
                                         alt={alt}
-                                        className="rounded-xl object-cover w-full h-[317px] transition-all duration-1000 group-hover:scale-150"
+                                        className="rounded-lg object-cover w-full h-[317px] transition-all duration-1000 group-hover:scale-150"
                                         height={317}
                                         loading="lazy"
                                         src={imageSrc}
@@ -71,7 +71,7 @@ export default function HomeSuccessfulStories() {
                                     />
                                 </div>
                                 <div className="flex justify-between items-center mt-[14px] md:mt-7">
-                                    <h5 className="font-normal text-base md:text-xl text-white !font-nanum-myeongjo">{title}</h5>
+                                    <h5 className="font-[700] text-base md:text-xl text-white !font-nanum-myeongjo">{title}</h5>
                                     <Link
                                         className="rounded-full bg-black p-2"
                                         href="/successfull-stories"

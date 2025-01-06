@@ -21,12 +21,12 @@ export default function HomeNewsletter() {
             <motion.div
                 animate={isInView && { y: 0 }}
                 className="flex relative top-[90px] md:top-[180px] max-h-[536px]"
-                initial={{ y: "100vh" }}
+                initial={{ y: "2000vh" }}
                 transition={{
                     damping: 10,
                     duration: 2,
                     ease: "easeIn",
-                    stiffness: 40,
+                    stiffness: 33,
                     type: "spring",
                 }}
             >
@@ -40,15 +40,15 @@ export default function HomeNewsletter() {
                         width={633}
                     />
                 </div>
-                <div className="w-full md:w-1/2 bg-[#d9d9d9] !font-nanum-myeongjo flex flex-col justify-center items-center gap-4 md:gap-8 pt-[44px] md:pt-[88px] pb-[49px] md:pb-[98px] pr-[35px] md:pr-[71px] pl-[34px] md:pl-[69px] rounded-xl md:rounded-tl-[0px] md:rounded-bl-[0px] md:rounded-tr-xl md:rounded-br-xl">
-                    <h4 className="font-normal text-3xl md:text-[40px] uppercase">Get our Newsletter</h4>
-                    <p className="font-light text-2xl md:text-4xl px-1 xl:px-12">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
+                <div className="w-full md:w-1/2 bg-[#d9d9d9] flex flex-col justify-center items-center gap-4 md:gap-8 pt-[44px] md:pt-[88px] pb-[49px] md:pb-[98px] pr-[35px] md:pr-[71px] pl-[34px] md:pl-[69px] rounded-lg md:rounded-tl-[0px] md:rounded-bl-[0px] md:rounded-tr-xl md:rounded-br-xl">
+                    <h4 className="font-[700] text-3xl md:text-[40px] !font-nanum-myeongjo uppercase">Get our Newsletter</h4>
+                    <p className="font-[400] text-2xl md:text-4xl !font-nanum-myeongjo px-1 xl:px-12">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
                     <Link
                         className="text-xl md:text-3xl font-light"
                         href="/newsletter"
                         prefetch={false}
                     >
-                        <button className="bg-transparent hover:bg-black text-black hover:text-white py-1 md:py-2 px-4 md:px-8 border border-black hover:border-transparent rounded-xl transition-all duration-1000">Sign Up</button>
+                        <button className="bg-transparent hover:bg-black text-black hover:text-white py-1 md:py-2 px-4 md:px-8 border border-black hover:border-transparent rounded-lg transition-all duration-1000">Sign Up</button>
                     </Link>
                 </div>
             </motion.div>

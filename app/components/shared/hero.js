@@ -61,11 +61,11 @@ export default function Hero({
                         <p className="font-medium text-lg md:text-2xl text-white mt-3 md:mt-6 max-w-[468px]">{description}</p>
                     </div>
                     <Link
-                        className="font-medium text-lg md:text-2xl bg-black bg-opacity-20 mt-12 md:mt-24 inline-block rounded-xl"
+                        className="mt-12 md:mt-24 inline-block"
                         href={buttonLink}
                         prefetch={false}
                     >
-                        <button className="bg-transparent text-white hover:text-primary py-1 md:py-2 px-4 md:px-8 border-0 border-b-[1px] border-white rounded-xl transition-all duration-1000">{buttonText}</button>
+                        <button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-black bg-opacity-20 bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8">{buttonText}</button>
                     </Link>
                 </div>
                 {otherData && <div className="col-span-1 lg:col-span-5 xl:col-span-6 hidden lg:block">{otherData}</div>}

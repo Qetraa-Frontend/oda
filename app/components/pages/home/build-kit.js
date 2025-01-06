@@ -52,11 +52,10 @@ export default function HomeBuildKit() {
                 </h2>
                 <p className="font-normal opacity-65 text-[22px] lg:text-[32px] lg:leading-[1.4] my-4 lg:my-8 py-4 lg:py-8">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
                 <Link
-                    className="font-medium text-lg lg:text-2xl inline-block"
                     href="/why-oda"
                     prefetch={false}
                 >
-                    <button className="bg-gray-200 bg-opacity-60 text-[#222] py-1 lg:py-2 px-4 lg:px-8 border-0 border-b-[1px] border-[#222] rounded-xl hover:bg-[#222] hover:text-white transition-all duration-1000">Learn More</button>
+                    <button className="font-medium text-lg lg:text-2xl text-[#222] hover:text-white bg-gray-200 bg-opacity-60 hover:bg-[#222] border-black border-r-[.5px] border-[1px] hover:border-white transition-all duration-1000 rounded-lg py-1 lg:py-2 px-4 lg:px-8">Learn More</button>
                 </Link>
             </motion.div>
         </div>

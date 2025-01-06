@@ -11,6 +11,7 @@ export default {
     theme: {
         extend: {
             animation: {
+                fade: "fade 3s ease-in-out infinite",
                 slideInFromBottom: "slideInFromBottom .5s linear .5s",
                 slideOutToTop: "slideOutToTop 1s linear",
                 wiggle: "wiggle 0.2s ease-in-out infinite;",
@@ -69,6 +70,10 @@ export default {
                 "nanum-myeongjo": "var(--font-nanum-myeongjo)",
             },
             keyframes: {
+                fade: {
+                    "0%": { opacity: "0" },
+                    "100%": { opacity: "1" },
+                },
                 slideInFromBottom: {
                     "0%": {
                         transform: "translateY(0%)",

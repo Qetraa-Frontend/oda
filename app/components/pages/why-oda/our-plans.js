@@ -51,7 +51,7 @@ export default function WhyOdaOurPlans() {
                             [`plan${id}`]: false,
                         })}
                     >
-                        <div className={`${id === 2 ? "bg-primary" : "bg-white"} px-4 md:px-8 pt-[37px] md:pt-[74px] rounded-xl text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}>
+                        <div className={`${id === 2 ? "bg-primary" : "bg-white"} px-4 md:px-8 pt-[37px] md:pt-[74px] rounded-lg text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}>
                             <span
                                 className={`absolute bottom-6 right-6 bg-black p-2 rounded-full cursor-pointer transition-all duration-1000 ${
                                     showFeatures[`plan${id}`] ? "rotate-180" : "rotate-0"
@@ -118,7 +118,7 @@ export default function WhyOdaOurPlans() {
                         </div>
                         {id === 1 && (
                             <div
-                                className={`${id === 2 ? "bg-primary" : "bg-white"} hidden sm:block xl:hidden mt-8 px-4 md:px-8 pt-[37px] md:pt-[74px] rounded-xl text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}
+                                className={`${id === 2 ? "bg-primary" : "bg-white"} hidden sm:block xl:hidden mt-8 px-4 md:px-8 pt-[37px] md:pt-[74px] rounded-lg text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}
                                 key={3}
                             >
                                 <span

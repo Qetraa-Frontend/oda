@@ -51,7 +51,7 @@ export default function HomeTestimonials() {
                         title,
                     }) => (
                         <SwiperSlide key={id}>
-                            <div className="rounded-xl border-white border-[1px] p-2 md:p-4 max-w-[898px] text-center mx-auto">
+                            <div className="rounded-lg border-white border-[1px] p-2 md:p-4 max-w-[898px] text-center mx-auto">
                                 <Image
                                     alt={alt}
                                     className="mx-auto w-[100px] h-[100px] rounded-full"

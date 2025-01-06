@@ -27,12 +27,12 @@ export default function HomeHowItWorks() {
         >
             <motion.div
                 animate={isInView && { y: 0 }}
-                initial={{ y: "100vh" }}
+                initial={{ y: "2000vh" }}
                 transition={{
                     damping: 10,
                     duration: 2,
                     ease: "easeIn",
-                    stiffness: 40,
+                    stiffness: 33,
                     type: "spring",
                 }}
             >
@@ -50,7 +50,7 @@ export default function HomeHowItWorks() {
                         title,
                     }) => (
                         <div
-                            className="col-span-1 xl:col-span-3 w-full max-w-[288px] h-[390px] relative bg-cover bg-no-repeat bg-center rounded-xl overflow-hidden"
+                            className="col-span-1 xl:col-span-3 w-full max-w-[288px] h-[390px] relative bg-cover bg-no-repeat bg-center rounded-lg overflow-hidden"
                             key={id}
                             style={{ backgroundImage: `url(${imageSrc})` }}
                             onMouseEnter={() => setShowDescriptions((prevState) => ({
@@ -65,11 +65,11 @@ export default function HomeHowItWorks() {
                             <div className={`absolute inset-0 bg-black ${showDescriptions?.[`description${id}`] ? "bg-opacity-60" : "bg-opacity-20"}`} />
                             <div className="relative z-10 px-2 md:px-4 pb-3 md:pb-6 h-full flex flex-col justify-end">
                                 <div className={`${showDescriptions?.[`description${id}`] ? "" : "flex flex-col justify-end absolute h-full w-[88%]"}`}>
-                                    <span className="font-normal !font-nanum-myeongjo text-lg md:text-2xl text-white">
+                                    <span className="font-[700] !font-nanum-myeongjo text-lg md:text-2xl text-white">
                                         0
                                         {id}
                                     </span>
-                                    <h5 className="font-semibold text-lg md:text-2xl text-white">{title}</h5>
+                                    <h5 className="font-[400] text-lg md:text-2xl text-white">{title}</h5>
                                 </div>
                                 <p className={`font-normal text-sm md:text-lg text-white mt-2 md:mt-4 transform ${showDescriptions?.[`description${id}`] ? "translate-y-0" : "translate-y-[200%]"} transition-all duration-200`}>{description}</p>
                             </div>
