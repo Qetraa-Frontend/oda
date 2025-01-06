@@ -197,6 +197,22 @@ div[role="dialog"] > button:first-child { display: none; }
     bottom: 3px;
 }
 
+.building-project-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.building-project-slider .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.building-project-slider .swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
 .gradient-container {
     background: linear-gradient(to right, #C8E36F 36%, white 20%);
 }

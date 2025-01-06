@@ -11,6 +11,8 @@ export default {
     theme: {
         extend: {
             animation: {
+                slideInFromBottom: "slideInFromBottom .5s linear .5s",
+                slideOutToTop: "slideOutToTop 1s linear",
                 wiggle: "wiggle 0.2s ease-in-out infinite;",
                 wiggleBottom: "wiggleBottom 0.2s ease-in-out infinite;",
                 wiggleTop: "wiggleTop 0.2s ease-in-out infinite;",
@@ -67,6 +69,28 @@ export default {
                 "nanum-myeongjo": "var(--font-nanum-myeongjo)",
             },
             keyframes: {
+                slideInFromBottom: {
+                    "0%": {
+                        transform: "translateY(0%)",
+                    },
+                    "50%": {
+                        transform: "translateY(-50%)",
+                    },
+                    "100%": { // eslint-disable-line
+                        transform: "translateY(-100%)",
+                    },
+                },
+                slideOutToTop: {
+                    "0%": {
+                        transform: "translateY(0)",
+                    },
+                    "50%": {
+                        transform: "translateY(-50%)",
+                    },
+                    "100%": { // eslint-disable-line
+                        transform: "translateY(-100%)",
+                    },
+                },
                 wiggle: {
                     "0%, 100%": {
                         transform: "translateX(0)",

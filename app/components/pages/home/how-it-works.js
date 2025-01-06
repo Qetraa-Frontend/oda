@@ -1,11 +1,18 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { steps } from "@/app/data/home";
 
 export default function HomeHowItWorks() {
+    const [showDescriptions, setShowDescriptions] = useState({
+        description1: false,
+        description2: false,
+        description3: false,
+        description4: false,
+    });
+
     const ref = useRef(null);
 
     const isInView = useInView(
@@ -15,7 +22,7 @@ export default function HomeHowItWorks() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto pt-20 md:pt-40 pb-[276px] lg:pb-[553px]"
+            className="container px-4 xl:px-0 mx-auto pt-20 md:pt-40 pb-[52px] lg:pb-[104px]"
             ref={ref}
         >
             <motion.div
@@ -25,7 +32,7 @@ export default function HomeHowItWorks() {
                     damping: 10,
                     duration: 2,
                     ease: "easeIn",
-                    stiffness: 50,
+                    stiffness: 40,
                     type: "spring",
                 }}
             >
@@ -37,35 +44,39 @@ export default function HomeHowItWorks() {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-8 justify-items-center xl:justify-items-start">
                     {steps.map(({
+                        description,
                         id,
                         imageSrc,
                         title,
                     }) => (
                         <div
-                            className="col-span-1 xl:col-span-3 transform transition-transform duration-1000 hover:scale-110 w-full max-w-[288px] h-[390px] relative bg-cover bg-no-repeat bg-top rounded-xl overflow-hidden"
+                            className="col-span-1 xl:col-span-3 w-full max-w-[288px] h-[390px] relative bg-cover bg-no-repeat bg-center rounded-xl overflow-hidden"
                             key={id}
                             style={{ backgroundImage: `url(${imageSrc})` }}
+                            onMouseEnter={() => setShowDescriptions((prevState) => ({
+                                ...prevState,
+                                [`description${id}`]: true,
+                            }))}
+                            onMouseLeave={() => setShowDescriptions((prevState) => ({
+                                ...prevState,
+                                [`description${id}`]: false,
+                            }))}
                         >
-                            <div className="absolute inset-0 bg-black bg-opacity-20" />
+                            <div className={`absolute inset-0 bg-black ${showDescriptions?.[`description${id}`] ? "bg-opacity-60" : "bg-opacity-20"}`} />
                             <div className="relative z-10 px-2 md:px-4 pb-3 md:pb-6 h-full flex flex-col justify-end">
-                                <span className="font-normal !font-nanum-myeongjo text-lg md:text-2xl text-white">
-                                    0
-                                    {id}
-                                </span>
-                                <h5 className="font-semibold text-lg md:text-2xl text-white">{title}</h5>
+                                <div className={`${showDescriptions?.[`description${id}`] ? "" : "flex flex-col justify-end absolute h-full w-[88%]"}`}>
+                                    <span className="font-normal !font-nanum-myeongjo text-lg md:text-2xl text-white">
+                                        0
+                                        {id}
+                                    </span>
+                                    <h5 className="font-semibold text-lg md:text-2xl text-white">{title}</h5>
+                                </div>
+                                <p className={`font-normal text-sm md:text-lg text-white mt-2 md:mt-4 transform ${showDescriptions?.[`description${id}`] ? "translate-y-0" : "translate-y-[200%]"} transition-all duration-200`}>{description}</p>
                             </div>
                         </div>
                     ))}
                 </div>
             </motion.div>
-            <div className="mt-20 md:mt-40">
-                <h3 className="font-semibold text-4xl md:text-6xl uppercase text-center !leading-relaxed">
-                    Building a Legacy, One
-                    <br className="hidden lg:block" />
-                    {" "}
-                    Project at a Time
-                </h3>
-            </div>
         </div>
     );
 }

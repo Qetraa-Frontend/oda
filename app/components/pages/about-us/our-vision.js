@@ -26,7 +26,7 @@ export default function AboutUsOurVision() {
                         damping: 10,
                         duration: 2,
                         ease: "easeIn",
-                        stiffness: 50,
+                        stiffness: 40,
                         type: "spring",
                     }}
                 >
@@ -46,7 +46,7 @@ export default function AboutUsOurVision() {
                         damping: 10,
                         duration: 2,
                         ease: "easeIn",
-                        stiffness: 50,
+                        stiffness: 40,
                         type: "spring",
                     }}
                 >

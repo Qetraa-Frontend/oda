@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,20 +11,20 @@ import { heroSlides } from "@/app/data/home";
 export default function HomeHero() {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
-    const [isMobileSize, setIsMobileSize] = useState(false);
+    const [isTabletSize, setIsTabletSize] = useState(false);
 
     useEffect(
         () => {
-            const mediaQuery = window.matchMedia("(max-width: 768px)"); // eslint-disable-line
+            const mediaQuery = window.matchMedia("(max-width: 1024px)"); // eslint-disable-line
 
-            const handleChange = (e) => setIsMobileSize(e.matches);
+            const handleChange = (e) => setIsTabletSize(e.matches);
 
             mediaQuery.addEventListener(
                 "change",
                 handleChange,
             );
 
-            setIsMobileSize(mediaQuery.matches);
+            setIsTabletSize(mediaQuery.matches);
 
             return () => mediaQuery.removeEventListener(
                 "change",
@@ -38,7 +38,7 @@ export default function HomeHero() {
         () => {
             let interval;
 
-            if (isMobileSize) {
+            if (isTabletSize) {
                 interval = setInterval(
                     () => {
                         setActiveSlideIndex((prevIndex) => (prevIndex + 1) % 4);
@@ -53,7 +53,7 @@ export default function HomeHero() {
 
             return () => clearInterval(interval);
         },
-        [isMobileSize],
+        [isTabletSize],
     );
 
     return (
@@ -68,7 +68,7 @@ export default function HomeHero() {
                     modules={[Autoplay, Pagination]}
                     pagination={{ clickable: true }}
                     spaceBetween={14}
-                    speed={3000}
+                    speed={6000}
                     autoplay={{
                         delay: 2,
                         disableOnInteraction: true,
@@ -98,15 +98,14 @@ export default function HomeHero() {
                 </Swiper>
             )}
             title={(
-                <>
-                    Simplify
-                    <br />
-                    {" "}
-                    Your
-                    <br />
-                    {" "}
-                    Journey
-                </>
+                <span
+                    dangerouslySetInnerHTML={{
+                        __html: heroSlides[activeSlideIndex].title.replace(
+                            /\\n/g,
+                            "<br />",
+                        ),
+                    }}
+                />
             )}
         />
     );

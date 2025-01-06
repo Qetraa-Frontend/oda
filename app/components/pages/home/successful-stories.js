@@ -36,7 +36,7 @@ export default function HomeSuccessfulStories() {
                     damping: 10,
                     duration: 2,
                     ease: "easeIn",
-                    stiffness: 50,
+                    stiffness: 40,
                     type: "spring",
                 }}
             >
@@ -63,7 +63,7 @@ export default function HomeSuccessfulStories() {
                                 <div className="group overflow-hidden rounded-xl">
                                     <Image
                                         alt={alt}
-                                        className="rounded-xl object-cover w-full h-[317px] transition-transform duration-1000 group-hover:scale-150"
+                                        className="rounded-xl object-cover w-full h-[317px] transition-all duration-1000 group-hover:scale-150"
                                         height={317}
                                         loading="lazy"
                                         src={imageSrc}

@@ -21,7 +21,7 @@ export default function Footer() {
 
     return (
         <footer
-            className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] px-4 xl:px-0 bg-cover bg-no-repeat bg-top`}
+            className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] px-4 xl:px-0 bg-cover bg-no-repeat bg-center`}
             style={{ backgroundImage: "url(/images/footer.webp)" }}
         >
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">

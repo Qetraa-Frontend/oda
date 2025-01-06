@@ -26,7 +26,7 @@ export default function WhyOdaHowItWorks() {
                         damping: 10,
                         duration: 2,
                         ease: "easeIn",
-                        stiffness: 50,
+                        stiffness: 40,
                         type: "spring",
                     }}
                 >
@@ -43,7 +43,7 @@ export default function WhyOdaHowItWorks() {
                             title,
                         }) => (
                             <div
-                                className="col-span-1 xl:col-span-3 transform transition-transform duration-1000 hover:scale-110 w-full max-w-[288px] h-[390px] relative bg-cover bg-no-repeat bg-top rounded-xl overflow-hidden"
+                                className="col-span-1 xl:col-span-3 transform transition-all duration-1000 hover:scale-110 w-full max-w-[288px] h-[390px] relative bg-cover bg-no-repeat bg-center rounded-xl overflow-hidden"
                                 key={id}
                                 style={{ backgroundImage: `url(${imageSrc})` }}
                             >

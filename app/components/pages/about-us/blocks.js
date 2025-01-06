@@ -25,12 +25,12 @@ export default function AboutUsBlocks() {
                     damping: 10,
                     duration: 2,
                     ease: "easeIn",
-                    stiffness: 50,
+                    stiffness: 40,
                     type: "spring",
                 }}
             >
                 <div
-                    className="bg-cover bg-no-repeat bg-top col-span-1 md:col-span-8 min-h-[990px] rounded-xl"
+                    className="bg-cover bg-no-repeat bg-center col-span-1 md:col-span-8 min-h-[990px] rounded-xl"
                     style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_1.webp)" }}
                 >
                     <div className="pt-[75px] xl:pt-[151px] pl-[46px] xl:pl-[92px] pr-[19px] xl:pr-[39px]">
@@ -40,13 +40,13 @@ export default function AboutUsBlocks() {
                             href="/read-brochure"
                             prefetch={false}
                         >
-                            <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded transition-all duration-1000">Read Brochure</button>
+                            <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded-xl transition-all duration-1000">Read Brochure</button>
                         </Link>
                     </div>
                 </div>
                 <div className="col-span-1 md:col-span-4 min-h-[990px]">
                     <div
-                        className="bg-cover bg-no-repeat bg-top min-h-[567px] rounded-xl"
+                        className="bg-cover bg-no-repeat bg-center min-h-[567px] rounded-xl"
                         style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_2.webp)" }}
                     >
                         <div className="pt-[41px] xl:pt-[83px] px-[26px] xl:px-[52px]">
@@ -56,12 +56,12 @@ export default function AboutUsBlocks() {
                                 href="/sign-up"
                                 prefetch={false}
                             >
-                                <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded transition-all duration-1000">Sign Up</button>
+                                <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded-xl transition-all duration-1000">Sign Up</button>
                             </Link>
                         </div>
                     </div>
                     <div
-                        className="bg-cover bg-no-repeat bg-top min-h-[415px] rounded-xl mt-1 md:mt-2"
+                        className="bg-cover bg-no-repeat bg-center min-h-[415px] rounded-xl mt-1 md:mt-2"
                         style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_3.webp)" }}
                     >
                         <div className="pt-[58px] xl:pt-[117px] px-[19px] xl:px-[39px]">
@@ -70,7 +70,7 @@ export default function AboutUsBlocks() {
                                 href="#"
                                 prefetch={false}
                             >
-                                <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded transition-all duration-1000">Download App</button>
+                                <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded-xl transition-all duration-1000">Download App</button>
                             </Link>
                         </div>
                     </div>

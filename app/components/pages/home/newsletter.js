@@ -26,7 +26,7 @@ export default function HomeNewsletter() {
                     damping: 10,
                     duration: 2,
                     ease: "easeIn",
-                    stiffness: 50,
+                    stiffness: 40,
                     type: "spring",
                 }}
             >
@@ -48,7 +48,7 @@ export default function HomeNewsletter() {
                         href="/newsletter"
                         prefetch={false}
                     >
-                        <button className="bg-transparent hover:bg-black text-black hover:text-white py-1 md:py-2 px-4 md:px-8 border border-black hover:border-transparent rounded transition-all duration-1000">Sign Up</button>
+                        <button className="bg-transparent hover:bg-black text-black hover:text-white py-1 md:py-2 px-4 md:px-8 border border-black hover:border-transparent rounded-xl transition-all duration-1000">Sign Up</button>
                     </Link>
                 </div>
             </motion.div>

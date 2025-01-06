@@ -3,45 +3,53 @@ export const heroSlides = [
         alt: "slide_1",
         id: 1,
         imageSrc: "/images/pages/home/hero/hero_1.webp",
+        title: "Simplify\\nYour\\nJourney",
     },
     {
         alt: "slide_2",
         id: 2,
         imageSrc: "/images/pages/home/hero/hero_2.webp",
+        title: "Build\\nYour Kit",
     },
     {
         alt: "slide_3",
         id: 3,
         imageSrc: "/images/pages/home/hero/hero_3.webp",
+        title: "Have a\\nHandsome\\nHome",
     },
     {
         alt: "slide_4",
         id: 4,
         imageSrc: "/images/pages/home/hero/hero_4.webp",
+        title: "Discover\\nArt Of\\nLiving",
     },
 ];
 
 export const steps = [
     {
         alt: "step_1",
+        description: "Choose one of our packages and customize it with additional elements from our add-ons packages. Add your selections to your cart on the Oda App.",
         id: 1,
         imageSrc: "/images/pages/home/how-it-works/step_1.webp",
         title: "Fill Up Your Cart",
     },
     {
         alt: "step_2",
+        description: "Choose one of our packages and customize it with additional elements from our add-ons packages. Add your selections to your cart on the Oda App.",
         id: 2,
         imageSrc: "/images/pages/home/how-it-works/step_2.webp",
         title: "Meet Your Designer",
     },
     {
         alt: "step_3",
+        description: "Choose one of our packages and customize it with additional elements from our add-ons packages. Add your selections to your cart on the Oda App.",
         id: 3,
         imageSrc: "/images/pages/home/how-it-works/step_3.webp",
         title: "Co-Create Your Designs",
     },
     {
         alt: "step_4",
+        description: "Choose one of our packages and customize it with additional elements from our add-ons packages. Add your selections to your cart on the Oda App.",
         id: 4,
         imageSrc: "/images/pages/home/how-it-works/step_4.webp",
         title: "We'll Take Care Of the Rest",
@@ -85,22 +93,22 @@ export const statics = [
     {
         id: 1,
         title: "Developers",
-        value: 11,
+        value: 22,
     },
     {
         id: 2,
         title: "Clients",
-        value: 20,
+        value: 150,
     },
     {
         id: 3,
         title: "Completed Unites",
-        value: 100,
+        value: 650,
     },
     {
         id: 4,
         title: "Employee",
-        value: 10,
+        value: 190,
     },
 ];
 
@@ -234,5 +242,26 @@ export const workScopes = [
         id: 8,
         imageSrc: "/images/pages/home/work-scopes/consultation.webp",
         title: "Consultation",
+    },
+];
+
+export const buildingProjectImages = [
+    {
+        alt: "building_project_1",
+        id: 1,
+        imageSrc: "/images/pages/home/building-project/building_project_1.webp",
+        title: "Discover the Art of Living Oda",
+    },
+    {
+        alt: "building_project_2",
+        id: 2,
+        imageSrc: "/images/pages/home/building-project/building_project_2.webp",
+        title: "Let's Grow Together",
+    },
+    {
+        alt: "building_project_3",
+        id: 3,
+        imageSrc: "/images/pages/home/building-project/building_project_3.webp",
+        title: "A Vision Formed Through Belief",
     },
 ];
