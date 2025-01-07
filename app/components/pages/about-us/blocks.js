@@ -18,11 +18,11 @@ export default function AboutUsBlocks() {
             ref={ref}
         >
             <motion.div
+                className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 relative top-[90px] md:top-[180px]"
                 animate={isInView && {
                     opacity: 1,
                     y: 0,
                 }}
-                className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 relative top-[71px] md:top-[142px]"
                 initial={{
                     opacity: 0,
                     y: "100vh",
@@ -40,13 +40,13 @@ export default function AboutUsBlocks() {
                     style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_1.webp)" }}
                 >
                     <div className="pt-[75px] xl:pt-[151px] pl-[46px] xl:pl-[92px] pr-[19px] xl:pr-[39px]">
-                        <p className="font-[700] !font-nanum-myeongjo text-[28px] xl:text-[40px] text-white mb-10 md:mb-20 !leading-none">Innovative concepts, unique designs, refined solutions inspired by you</p>
+                        <h4 className="font-[700] !font-nanum-myeongjo text-[28px] xl:text-[40px] text-white mb-10 md:mb-20 !leading-none">Innovative concepts, unique designs, refined solutions inspired by you</h4>
                         <Link
                             className="float-right"
                             href="/read-brochure"
                             prefetch={false}
                         >
-                            <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded-lg transition-all duration-1000">Read Brochure</button>
+                            <button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Read Brochure</button>
                         </Link>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ export default function AboutUsBlocks() {
                                 href="/sign-up"
                                 prefetch={false}
                             >
-                                <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded-lg transition-all duration-1000">Sign Up</button>
+                                <button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Sign Up</button>
                             </Link>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ export default function AboutUsBlocks() {
                                 href="#"
                                 prefetch={false}
                             >
-                                <button className="font-medium text-lg xl:text-2xl py-1 md:py-2 px-4 md:px-8 bg-transparent hover:bg-white text-white hover:text-black border border-white hover:border-transparent rounded-lg transition-all duration-1000">Download App</button>
+                                <button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Download App</button>
                             </Link>
                         </div>
                     </div>

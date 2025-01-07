@@ -27,11 +27,11 @@ export default function HomeDiscoverArtLiving() {
             ref={ref}
         >
             <motion.div
+                className="container px-4 xl:px-0 mx-auto"
                 animate={isInView && {
                     opacity: 1,
                     y: 0,
                 }}
-                className="container px-4 xl:px-0 mx-auto"
                 initial={{
                     opacity: 0,
                     y: "100vh",

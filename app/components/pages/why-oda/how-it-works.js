@@ -21,13 +21,13 @@ export default function WhyOdaHowItWorks() {
             >
                 <motion.div
                     animate={isInView && {
-                    opacity: 1,
-                    y: 0,
-                }}
+                        opacity: 1,
+                        y: 0,
+                    }}
                     initial={{
-                    opacity: 0,
-                    y: "100vh",
-                }}
+                        opacity: 0,
+                        y: "100vh",
+                    }}
                     transition={{
                         damping: 10,
                         duration: 2,

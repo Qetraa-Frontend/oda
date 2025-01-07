@@ -12,7 +12,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { navbarLinks } from "@/app/data/navbar";
-import { Button } from "@/app/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,

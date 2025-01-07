@@ -46,7 +46,7 @@ export default function AboutUsOurMission() {
                     }}
                 >
                     <Image
-                        alt="our_vision"
+                        alt="our_mission"
                         height={627}
                         loading="lazy"
                         src="/images/pages/about-us/our_mission.webp"
