@@ -50,11 +50,37 @@ export default function HomeNewsletter() {
                     <h4 className="font-[700] text-3xl md:text-[40px] !font-nanum-myeongjo uppercase">Get our Newsletter</h4>
                     <p className="font-[400] text-2xl md:text-4xl !font-nanum-myeongjo px-1 xl:px-12">Get afront row seat to our Oda launches and trends - directly to your inbox . </p>
                     <Link
-                        className="text-xl md:text-3xl font-light"
                         href="/newsletter"
                         prefetch={false}
                     >
-                        <button className="bg-transparent hover:bg-black text-black hover:text-white py-1 md:py-2 px-4 md:px-8 border border-black hover:border-transparent rounded-lg transition-all duration-1000">Sign Up</button>
+                        <div className="relative inline-block">
+                            <button
+                                className="font-[700] text-[22px] md:text-[32px] !font-nanum-myeongjo py-1 md:py-2 px-4 md:px-8 text-black rounded-lg border border-transparent"
+                                onMouseEnter={(e) => {
+                                    const borderDiv = e.currentTarget.nextSibling;
+
+                                    borderDiv.style.borderImage = "linear-gradient(90deg, hsl(var(--primary)) 0%, black 100%) 1";
+                                }}
+                                onMouseLeave={(e) => {
+                                    const borderDiv = e.currentTarget.nextSibling;
+
+                                    borderDiv.style.borderImage = "none";
+
+                                    borderDiv.style.borderColor = "black";
+                                }}
+                            >
+                                Sign Up
+                            </button>
+                            <div
+                                className="absolute inset-0 pointer-events-none rounded-md border-[2px] border-transparent transition-all duration-1000"
+                                style={{
+                                    WebkitMaskImage: "linear-gradient(90deg, black 70%, transparent 100%)",
+                                    borderColor: "black",
+                                    borderWidth: "2px",
+                                    maskImage: "linear-gradient(90deg, black 70%, transparent 100%)",
+                                }}
+                            />
+                        </div>
                     </Link>
                 </div>
             </motion.div>

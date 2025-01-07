@@ -55,7 +55,20 @@ export default function HomeBuildKit() {
                     href="/why-oda"
                     prefetch={false}
                 >
-                    <button className="font-medium text-lg lg:text-2xl text-[#222] hover:text-white bg-gray-200 bg-opacity-60 hover:bg-[#222] border-black border-r-[.5px] border-[1px] hover:border-white transition-all duration-1000 rounded-lg py-1 lg:py-2 px-4 lg:px-8">Learn More</button>
+                    <div className="relative inline-block">
+                        <button className="font-medium text-lg lg:text-2xl py-1 lg:py-2 px-4 lg:px-8 text-black bg-gray-400 bg-opacity-20 hover:bg-transparent hover:text-primary rounded-lg border border-transparent">
+                            Learn More
+                        </button>
+                        <div
+                            className="absolute inset-0 pointer-events-none rounded-md border-[1px] border-transparent transition-all duration-1000"
+                            style={{
+                                WebkitMaskImage: "linear-gradient(90deg, black 70%, transparent 100%)",
+                                borderColor: "black",
+                                borderWidth: "1px",
+                                maskImage: "linear-gradient(90deg, black 70%, transparent 100%)",
+                            }}
+                        />
+                    </div>
                 </Link>
             </motion.div>
         </div>
