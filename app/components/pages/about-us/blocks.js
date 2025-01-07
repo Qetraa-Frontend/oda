@@ -40,7 +40,7 @@ export default function AboutUsBlocks() {
                     style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_1.webp)" }}
                 >
                     <div className="pt-[75px] xl:pt-[151px] pl-[46px] xl:pl-[92px] pr-[19px] xl:pr-[39px]">
-                        <h4 className="font-[700] !font-nanum-myeongjo text-[28px] xl:text-[40px] text-white mb-10 md:mb-20 !leading-none">Innovative concepts, unique designs, refined solutions inspired by you</h4>
+                        <h4 className="font-[700] font-nanum-myeongjo text-[28px] xl:text-[40px] text-white mb-10 md:mb-20 !leading-none">Innovative concepts, unique designs, refined solutions inspired by you</h4>
                         <Link
                             className="float-right"
                             href="/read-brochure"
@@ -56,8 +56,8 @@ export default function AboutUsBlocks() {
                         style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_2.webp)" }}
                     >
                         <div className="pt-[41px] xl:pt-[83px] px-[26px] xl:px-[52px]">
-                            <h4 className="font-[700] !font-nanum-myeongjo text-[28px] xl:text-[40px] text-white uppercase leading-tight">Get our Newsletter</h4>
-                            <p className="font-[400] !font-nanum-myeongjo text-2xl xl:text-4xl text-white my-4 md:my-8">Get a front row seat to our Oda launches and trends - directly to your inbox.</p>
+                            <h4 className="font-[700] font-nanum-myeongjo text-[28px] xl:text-[40px] text-white uppercase leading-tight">Get our Newsletter</h4>
+                            <p className="font-[400] font-nanum-myeongjo text-2xl xl:text-4xl text-white my-4 md:my-8">Get a front row seat to our Oda launches and trends - directly to your inbox.</p>
                             <Link
                                 href="/sign-up"
                                 prefetch={false}
@@ -71,7 +71,7 @@ export default function AboutUsBlocks() {
                         style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_3.webp)" }}
                     >
                         <div className="pt-[58px] xl:pt-[117px] px-[19px] xl:px-[39px]">
-                            <h4 className="font-[700] !font-nanum-myeongjo text-[22px] xl:text-[34px] text-white mb-8 md:mb-16">Can&apos;t Find Your Unit?</h4>
+                            <h4 className="font-[700] font-nanum-myeongjo text-[22px] xl:text-[34px] text-white mb-8 md:mb-16">Can&apos;t Find Your Unit?</h4>
                             <Link
                                 href="#"
                                 prefetch={false}

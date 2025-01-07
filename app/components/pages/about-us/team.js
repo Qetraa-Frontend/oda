@@ -71,9 +71,9 @@ export default function AboutUsOurVision() {
                             />
                         </div>
                         <div className="col-span-1 md:col-span-6">
-                            <h5 className="font-[400] !font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
-                            <h6 className="font-[400] !font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
-                            <p className="font-[400] !font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facili.</p>
+                            <h5 className="font-[400] font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
+                            <h6 className="font-[400] font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
+                            <p className="font-[400] font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facili.</p>
                         </div>
                     </motion.div>
                     <motion.div
@@ -90,9 +90,9 @@ export default function AboutUsOurVision() {
                         }}
                     >
                         <div className="col-span-1 md:col-span-6">
-                            <h5 className="font-[400] !font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
-                            <h6 className="font-[400]!font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
-                            <p className="font-[400] !font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facili.</p>
+                            <h5 className="font-[400] font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayale</h5>
+                            <h6 className="font-[400]font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
+                            <p className="font-[400] font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facili.</p>
                         </div>
                         <div className="col-span-1 md:col-span-6">
                             <Image

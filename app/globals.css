@@ -30,7 +30,6 @@
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
         --font-albert-sans: "Albert Sans";
-        --font-nanum-myeongjo: "Nanum Myeongjo";
     }
   .dark {
         --background: 240 10% 3.9%;
@@ -58,7 +57,6 @@
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
         --font-albert-sans: "Albert Sans";
-        --font-nanum-myeongjo: "Nanum Myeongjo";
     }
 }
 
@@ -69,6 +67,31 @@
   body {
         @apply bg-background text-foreground;
     }
+}
+
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    src: url('/fonts/Nanum_Myeongjo/NanumMyeongjo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    src: url('/fonts/Nanum_Myeongjo/NanumMyeongjo-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nanum Myeongjo';
+    src: url('/fonts/Nanum_Myeongjo/NanumMyeongjo-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+.font-nanum-myeongjo {
+    font-family: 'Nanum Myeongjo'!important;
 }
 
 div[role="dialog"] > button:first-child { display: none; }

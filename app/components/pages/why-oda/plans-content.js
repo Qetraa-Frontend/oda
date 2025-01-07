@@ -84,13 +84,13 @@ export default function WhyOdaPlansContent() {
                                     type: "spring",
                                 }}
                             >
-                                <span className="font-[400] !font-nanum-myeongjo text-lg md:text-2xl py-2 px-3 rounded-full bg-primary absolute left-4 top-4">
+                                <span className="font-[400] font-nanum-myeongjo text-lg md:text-2xl py-2 px-3 rounded-full bg-primary absolute left-4 top-4">
                                     0
                                     {id}
                                 </span>
                                 <div className="mt-16">
-                                    <h5 className="font-[800] !font-nanum-myeongjo text-lg md:text-2xl text-white">{title}</h5>
-                                    <p className="font-[700] !font-nanum-myeongjo text-xs md:text-sm text-white py-7 md:py-14">{description}</p>
+                                    <h5 className="font-[800] font-nanum-myeongjo text-lg md:text-2xl text-white">{title}</h5>
+                                    <p className="font-[700] font-nanum-myeongjo text-xs md:text-sm text-white py-7 md:py-14">{description}</p>
                                 </div>
                             </motion.div>
                         ))}

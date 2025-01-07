@@ -80,7 +80,7 @@ export default function WorkScopes() {
                                     title,
                                 }, index) => (
                                     <li // eslint-disable-line
-                                        className={id === currentScope ? "active cursor-pointer py-1 lg:py-2 font-[700] text-[18px] sm:text-[22px] lg:text-[32px] lg:leading-tight text-black transition-all duration-1000 !font-nanum-myeongjo" : "cursor-pointer py-1 lg:py-2 font-[400] text-[18px] sm:text-[22px] lg:text-[32px] lg:leading-tight text-black opacity-50 transition-all duration-1000 !font-nanum-myeongjo"}
+                                        className={id === currentScope ? "active cursor-pointer py-1 lg:py-2 font-[700] text-[18px] sm:text-[22px] lg:text-[32px] lg:leading-tight text-black transition-all duration-1000 font-nanum-myeongjo" : "cursor-pointer py-1 lg:py-2 font-[400] text-[18px] sm:text-[22px] lg:text-[32px] lg:leading-tight text-black opacity-50 transition-all duration-1000 font-nanum-myeongjo"}
                                         key={id}
                                         onClick={() => handleScopeChange(index)}
                                     >
@@ -168,7 +168,7 @@ export default function WorkScopes() {
                                     width={78}
                                     onClick={() => (currentScope === 0 ? {} : handleScopeChange(currentIndex - 1))}
                                 />
-                                <span className="font-[400] !font-nanum-myeongjo text-base lg:text-xl">Swipe</span>
+                                <span className="font-[400] font-nanum-myeongjo text-base lg:text-xl">Swipe</span>
                                 <Image
                                     alt="arrow_right"
                                     className={currentScope === 8 ? "opacity-50" : "cursor-pointer"}

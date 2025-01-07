@@ -67,7 +67,6 @@ export default {
             },
             fontFamily: {
                 "albert-sans": "var(--font-albert-sans)",
-                "nanum-myeongjo": "var(--font-nanum-myeongjo)",
             },
             keyframes: {
                 heartBeat: {

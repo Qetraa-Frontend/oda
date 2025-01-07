@@ -62,7 +62,7 @@ export default function HomeBuildingProject() {
                     style={{ backgroundImage: `url(${buildingProjectImages[currentIndex].imageSrc})` }}
                 >
                     <div className="absolute inset-0 w-full h-full bg-black bg-opacity-40" />
-                    <h4 className="text-white font-[700] text-3xl md:text-5xl text-center !font-nanum-myeongjo relative z-10">{buildingProjectImages[currentIndex].title}</h4>
+                    <h4 className="text-white font-[700] text-3xl md:text-5xl text-center font-nanum-myeongjo relative z-10">{buildingProjectImages[currentIndex].title}</h4>
                 </div>
             </motion.div>
         </div>

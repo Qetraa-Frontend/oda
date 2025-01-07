@@ -72,7 +72,7 @@ export default function WhyOdaHowItWorks() {
                                 <div className={`absolute inset-0 bg-black ${showDescriptions?.[`description${id}`] ? "bg-opacity-60" : "bg-opacity-20"}`} />
                                 <div className="relative px-2 md:px-4 pb-3 md:pb-6 h-full flex flex-col justify-end">
                                     <div className={`${showDescriptions?.[`description${id}`] ? "" : "flex flex-col justify-end absolute h-full w-[88%]"}`}>
-                                        <span className="font-[700] !font-nanum-myeongjo text-lg md:text-2xl text-white">
+                                        <span className="font-[700] font-nanum-myeongjo text-lg md:text-2xl text-white">
                                             0
                                             {id}
                                         </span>
