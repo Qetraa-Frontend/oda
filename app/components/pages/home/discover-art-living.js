@@ -27,9 +27,15 @@ export default function HomeDiscoverArtLiving() {
             ref={ref}
         >
             <motion.div
-                animate={isInView && { y: 0 }}
+                animate={isInView && {
+                    opacity: 1,
+                    y: 0,
+                }}
                 className="container px-4 xl:px-0 mx-auto"
-                initial={{ y: "2000vh" }}
+                initial={{
+                    opacity: 0,
+                    y: "100vh",
+                }}
                 transition={{
                     damping: 10,
                     duration: 2,
@@ -47,7 +53,7 @@ export default function HomeDiscoverArtLiving() {
                         {" "}
                         <span className="font-[700] text-[40px] md:text-[64px] uppercase text-secondary">oda</span>
                     </h2>
-                    <p className="font-[400] text-[28px] md:text-[40px] mt-[11px] md:mt-[22px] mb-[24px] md:mb-[48px]">Where every room is tailored to your vision and style.</p>
+                    <h3 className="font-[400] text-[28px] md:text-[40px] mt-[11px] md:mt-[22px] mb-[24px] md:mb-[48px]">Where every room is tailored to your vision and style.</h3>
                 </div>
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 sm:justify-items-center xl:justify-items-start">
                     <div className="col-span-1 flex flex-col gap-4 md:gap-8 xl:relative top-36">

@@ -171,11 +171,11 @@ div[role="dialog"] > button:first-child { display: none; }
 
 @media (max-width: 1291px) {
     .testimonials-slider .swiper-button-next {
-        left: 58%!important;
+        left: 54%!important;
     }
 
     .testimonials-slider .swiper-button-prev {
-        left: 42%!important;
+        left: 40%!important;
     }
 }
 

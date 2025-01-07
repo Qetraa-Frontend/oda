@@ -24,9 +24,9 @@ export default function Home() {
             <HomeDiscoverArtLiving />
             <HomeHowItWorks />
             <HomeBuildingProject />
-            <div className="bg-[#222] max-h-[1942px] md:max-h-[2764px] lg:max-h-[2608px] xl:max-h-[2828px] relative bottom-[72px] md:bottom-36 -z-10">
+            <div className="bg-[#222] max-h-[1942px] md:max-h-[2764px] lg:max-h-[2634px] xl:max-h-[2874px] z-10">
                 <div className="container px-4 xl:px-0 pt-[163px] md:pt-[327px] mx-auto max-h-[1942px] md:max-h-[2764px] lg:max-h-[2608px] xl:max-h-[2828px]">
-                    <div className="">
+                    <div>
                         <HomeSuccessfulStories />
                         <OurPartners />
                         <HomeTestimonials />

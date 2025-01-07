@@ -18,9 +18,15 @@ export default function AboutUsBlocks() {
             ref={ref}
         >
             <motion.div
-                animate={isInView && { y: 0 }}
+                animate={isInView && {
+                    opacity: 1,
+                    y: 0,
+                }}
                 className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 relative top-[71px] md:top-[142px]"
-                initial={{ y: "2000vh" }}
+                initial={{
+                    opacity: 0,
+                    y: "100vh",
+                }}
                 transition={{
                     damping: 10,
                     duration: 2,

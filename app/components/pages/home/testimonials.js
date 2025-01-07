@@ -17,15 +17,28 @@ export default function HomeTestimonials() {
     );
 
     return (
-        <div className="pb-20 md:pb-40">
-            <div className="mb-12 md:mb-24 text-center">
-                <h2 className="font-semibold text-3xl md:text-5xl text-white text-center mb-2 md:mb-4">Testimonials</h2>
-                <span className="font-normal text-lg md:text-2xl text-white">What they say about us</span>
-            </div>
+        <div
+            className="pb-20 md:pb-40"
+            ref={ref}
+        >
             <motion.div
-                animate={isInView && { opacity: 1 }}
-                initial={{ opacity: 0 }}
-                ref={ref}
+                animate={isInView && { x: 0 }}
+                className="mb-12 md:mb-24 text-center"
+                initial={{ x: "-100vw" }}
+                transition={{
+                    damping: 10,
+                    duration: 2,
+                    ease: "easeIn",
+                    stiffness: 40,
+                    type: "spring",
+                }}
+            >
+                <h2 className="font-semibold text-3xl md:text-5xl text-white text-center mb-2 md:mb-4">Testimonials</h2>
+                <h3 className="font-normal text-lg md:text-2xl text-white">What they say about us</h3>
+            </motion.div>
+            <motion.div
+                animate={isInView && { x: 0 }}
+                initial={{ x: "100vw" }}
                 transition={{
                     damping: 10,
                     duration: 2,

@@ -18,14 +18,12 @@ export default function HomeOurPartners() {
 
     return (
         <div className="pt-20 md:pt-40 pb-[120px] md:pb-60">
-            <div className="mb-12 md:mb-24">
-                <h2 className="font-semibold text-[41px] md:text-[65px] text-white !leading-normal">
-                    Our
-                    <br className="hidden xl:block" />
-                    {" "}
-                    Partners
-                </h2>
-            </div>
+            <h2 className="font-semibold text-[41px] md:text-[65px] text-white !leading-normal mb-12 md:mb-24">
+                Our
+                <br className="hidden xl:block" />
+                {" "}
+                Partners
+            </h2>
             <motion.div
                 animate={isInView && { opacity: 1 }}
                 initial={{ opacity: 0 }}

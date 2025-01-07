@@ -15,13 +15,19 @@ export default function HomeNewsletter() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto"
+            className="container px-4 xl:px-0 mx-auto max-h-[536px]"
             ref={ref}
         >
             <motion.div
-                animate={isInView && { y: 0 }}
-                className="flex relative top-[90px] md:top-[180px] max-h-[536px]"
-                initial={{ y: "2000vh" }}
+                className="flex relative top-[90px] md:top-[180px] max-h-[536px] z-40"
+                animate={isInView && {
+                    opacity: 1,
+                    y: 0,
+                }}
+                initial={{
+                    opacity: 0,
+                    y: "100vh",
+                }}
                 transition={{
                     damping: 10,
                     duration: 2,

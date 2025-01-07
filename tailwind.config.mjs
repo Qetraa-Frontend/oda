@@ -11,12 +11,12 @@ export default {
     theme: {
         extend: {
             animation: {
-                fade: "fade 3s ease-in-out infinite",
+                heartBeat: "heartBeat .5s ease-in-out",
                 slideInFromBottom: "slideInFromBottom .5s linear .5s",
                 slideOutToTop: "slideOutToTop 1s linear",
                 wiggle: "wiggle 0.2s ease-in-out infinite;",
-                wiggleBottom: "wiggleBottom 0.2s ease-in-out infinite;",
-                wiggleTop: "wiggleTop 0.2s ease-in-out infinite;",
+                wiggleBottom: "wiggleBottom 0.2s ease-in-out infinite",
+                wiggleTop: "wiggleTop 0.2s ease-in-out infinite",
             },
             borderRadius: {
                 lg: "var(--radius)",
@@ -70,9 +70,16 @@ export default {
                 "nanum-myeongjo": "var(--font-nanum-myeongjo)",
             },
             keyframes: {
-                fade: {
-                    "0%": { opacity: "0" },
-                    "100%": { opacity: "1" },
+                heartBeat: {
+                    "0%": {
+                        transform: "scale(1)",
+                    },
+                    "50%": {
+                        transform: "scale(.98)",
+                    },
+                    "100%": { // eslint-disable-line
+                        transform: "scale(1)",
+                    },
                 },
                 slideInFromBottom: {
                     "0%": {

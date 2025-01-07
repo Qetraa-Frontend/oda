@@ -35,8 +35,14 @@ export default function HomeBuildingProject() {
             ref={ref}
         >
             <motion.div
-                animate={isInView && { y: 0 }}
-                initial={{ y: "2000vh" }}
+                animate={isInView && {
+                    opacity: 1,
+                    y: 0,
+                }}
+                initial={{
+                    opacity: 0,
+                    y: "100vh",
+                }}
                 transition={{
                     damping: 10,
                     duration: 2,
@@ -45,14 +51,14 @@ export default function HomeBuildingProject() {
                     type: "spring",
                 }}
             >
-                <h2 className="font-semibold text-4xl md:text-6xl uppercase text-center !leading-relaxed mb-20 md:mb-40">
+                <h2 className="font-semibold text-4xl md:text-6xl uppercase text-center !leading-relaxed">
                     Building a Legacy, One
                     <br className="hidden lg:block" />
                     {" "}
                     Project at a Time
                 </h2>
                 <div
-                    className="bg-cover bg-no-repeat bg-center rounded-lg min-h-[300px] md:min-h-[560px] flex items-center justify-center relative overflow-hidden transition-all duration-500 ease-in-out"
+                    className="bg-cover bg-no-repeat bg-center rounded-lg min-h-[300px] md:min-h-[560px] flex items-center justify-center relative top-[72px] md:top-36 transition-all duration-500 z-20"
                     style={{ backgroundImage: `url(${buildingProjectImages[currentIndex].imageSrc})` }}
                 >
                     <div className="absolute inset-0 w-full h-full bg-black bg-opacity-40" />

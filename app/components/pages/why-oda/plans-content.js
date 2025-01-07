@@ -42,9 +42,15 @@ export default function WhyOdaPlansContent() {
             >
                 <div>
                     <motion.h2
-                        animate={isInView && { y: 0 }}
+                        animate={isInView && {
+                    opacity: 1,
+                    y: 0,
+                }}
                         className="font-semibold text-3xl md:text-5xl text-white text-center !leading-relaxed mb-[63px] md:mb-[126px]"
-                        initial={{ y: "2000vh" }}
+                        initial={{
+                    opacity: 0,
+                    y: "100vh",
+                }}
                         transition={{
                             damping: 10,
                             duration: 2,
