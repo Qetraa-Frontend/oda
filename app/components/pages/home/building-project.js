@@ -58,7 +58,7 @@ export default function HomeBuildingProject() {
                     Project at a Time
                 </h2>
                 <div
-                    className="bg-cover bg-no-repeat bg-center rounded-lg min-h-[300px] md:min-h-[560px] flex items-center justify-center relative top-[72px] md:top-36 transition-all duration-500 z-20"
+                    className="bg-cover bg-no-repeat bg-center rounded-lg min-h-[300px] md:min-h-[560px] flex items-center justify-center relative top-[72px] md:top-36 transition-all duration-500 z-20 overflow-hidden"
                     style={{ backgroundImage: `url(${buildingProjectImages[currentIndex].imageSrc})` }}
                 >
                     <div className="absolute inset-0 w-full h-full bg-black bg-opacity-40" />

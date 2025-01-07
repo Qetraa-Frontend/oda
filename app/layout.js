@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className={`${albertSans.variable} antialiased overflow-x-hidden`}>
                 <Navbar />
-                <main className="min-h-screen font-albert-sans">
+                <main className="min-h-screen font-albert-sans !overflow-x-hidden">
                     {children}
                 </main>
                 <Footer />
