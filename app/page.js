@@ -2,25 +2,27 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import HomeBuildKit from "@/app/components/pages/home/build-kit";
-import HomeBuildingProject from "@/app/components/pages/home/building-project";
-import HomeDiscoverArtLiving from "@/app/components/pages/home/discover-art-living";
-import HomeHero from "@/app/components/pages/home/hero";
-import HomeHowItWorks from "@/app/components/pages/home/how-it-works";
-import HomeNewsletter from "@/app/components/pages/home/newsletter";
-import OurPartners from "@/app/components/pages/home/our-partners";
-import Statics from "@/app/components/pages/home/statics";
-import HomeSuccessfulStories from "@/app/components/pages/home/successful-stories";
-import HomeTestimonials from "@/app/components/pages/home/testimonials";
-import WorkScopes from "@/app/components/pages/home/work-scopes";
+import dynamic from "next/dynamic";
+
+const HomeBuildKit = dynamic(() => import("@/app/components/pages/home/build-kit"));
+const HomeBuildingProject = dynamic(() => import("@/app/components/pages/home/building-project"));
+const HomeDiscoverArtLiving = dynamic(() => import("@/app/components/pages/home/discover-art-living"));
+const HomeHero = dynamic(() => import("@/app/components/pages/home/hero"));
+const HomeHowItWorks = dynamic(() => import("@/app/components/pages/home/how-it-works"));
+const HomeNewsletter = dynamic(() => import("@/app/components/pages/home/newsletter"));
+const HomeOurPartners = dynamic(() => import("@/app/components/pages/home/our-partners"));
+const HomeStatics = dynamic(() => import("@/app/components/pages/home/statics"));
+const HomeSuccessfulStories = dynamic(() => import("@/app/components/pages/home/successful-stories"));
+const HomeTestimonials = dynamic(() => import("@/app/components/pages/home/testimonials"));
+const HomeWorkScopes = dynamic(() => import("@/app/components/pages/home/work-scopes"));
 
 export default async function Home() {
     return (
         <div>
             <HomeHero />
             <HomeBuildKit />
-            <Statics />
-            <WorkScopes />
+            <HomeStatics />
+            <HomeWorkScopes />
             <HomeDiscoverArtLiving />
             <HomeHowItWorks />
             <HomeBuildingProject />
@@ -28,7 +30,7 @@ export default async function Home() {
                 <div className="container px-4 xl:px-0 pt-[163px] md:pt-[327px] mx-auto max-h-[1942px] md:max-h-[2764px] lg:max-h-[2608px] xl:max-h-[2828px]">
                     <div>
                         <HomeSuccessfulStories />
-                        <OurPartners />
+                        <HomeOurPartners />
                         <HomeTestimonials />
                     </div>
                 </div>

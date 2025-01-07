@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 
 import { workScopes } from "@/app/data/home";
 
-export default function WorkScopes() {
+export default function HomeWorkScopes() {
     const [currentScope, setCurrentScope] = useState(1);
 
     const [previousScopeIndex, setPreviousScopeIndex] = useState(0);
