@@ -72,7 +72,7 @@ export default function WhyOdaOurPlans() {
                             </span>
                             <Image
                                 alt={alt}
-                                className="rounded-full mx-auto"
+                                className="rounded-full mx-auto hover:opacity-70"
                                 height={134}
                                 loading="lazy"
                                 src={imageSrc}
@@ -141,7 +141,7 @@ export default function WhyOdaOurPlans() {
                                 </span>
                                 <Image
                                     alt={plans2[2].alt}
-                                    className="rounded-full mx-auto"
+                                    className="rounded-full mx-auto hover:opacity-70"
                                     height={134}
                                     loading="lazy"
                                     src={plans2[2].imageSrc}

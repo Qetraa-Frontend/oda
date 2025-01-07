@@ -77,6 +77,7 @@ export default function WhyOdaPlansContent() {
                                 key={id}
                                 transition={{
                                     damping: 10,
+                                    delay: 0.5,
                                     duration: 2,
                                     ease: "easeIn",
                                     stiffness: 40,

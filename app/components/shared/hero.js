@@ -1,12 +1,15 @@
 "use client";
 
+import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero({
+    backgroundHeight,
     backgroundImageSrc,
     buttonLink,
     buttonText,
+    buttonTopSpace,
     description,
     otherData,
     title,
@@ -16,6 +19,13 @@ export default function Hero({
     const [previousTitle, setPreviousTitle] = useState("");
 
     const [isAnimating, setIsAnimating] = useState(false);
+
+    const ref = useRef(null);
+
+    const isInView = useInView(
+        ref,
+        { once: true },
+    );
 
     useEffect(
         () => {
@@ -41,27 +51,74 @@ export default function Hero({
 
     return (
         <div
-            className="relative bg-cover bg-no-repeat bg-center h-[600px] md:h-[1022px] w-[100vw] transition-all duration-1000"
+            className={`relative bg-cover bg-no-repeat bg-center ${backgroundHeight} w-[100vw] transition-all duration-1000`}
             style={{ backgroundImage: `url(${backgroundImageSrc})` }}
         >
             <div className="absolute inset-0 bg-black bg-opacity-40" />
             <div className="relative z-40 container px-4 xl:px-0 mx-auto h-full w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
-                <div className="col-span-1 lg:col-span-7 xl:col-span-6 mt-[139px] md:mt-[278px]">
-                    <div className="h-[248px] md:h-[339px] relative">
-                        <div className="h-[180px] md:h-[251px] overflow-hidden">
-                            {previousTitle && isAnimating && (
-                                <h1 className="font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87] animate-slideOutToTop h-full">
-                                    {previousTitle}
-                                </h1>
-                            )}
-                            <h1 className={`font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87] ${isAnimating ? "animate-slideInFromBottom" : ""} h-full`}>
-                                {currentTitle}
-                            </h1>
-                        </div>
-                        <p className="font-medium text-lg md:text-2xl text-white mt-3 md:mt-6 max-w-[468px]">{description}</p>
+                <div className={`col-span-1 lg:col-span-7 xl:col-span-6 ${otherData ? "mt-[139px] md:mt-[278px]" : "mt-[130px] md:mt-[261px]"}`}>
+                    <div
+                        className={`${otherData ? "h-[248px] md:h-[339px]" : "h-[186px] md:h-[255px]"} relative`}
+                        ref={ref}
+                    >
+                        {otherData ? (
+                            <>
+                                <div className="h-[180px] md:h-[251px] overflow-hidden">
+                                    {previousTitle && isAnimating && <h1 className="font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87] animate-slideOutToTop h-full">{previousTitle}</h1>}
+                                    <h1 className={`font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87] ${isAnimating ? "animate-slideInFromBottom" : ""} h-full`}>{currentTitle}</h1>
+                                </div>
+                                <p className="font-medium text-lg md:text-2xl text-white mt-4 md:mt-8 max-w-[468px]">{description}</p>
+                            </>
+                        ) : (
+                            <>
+                                <div className="h-[115px] md:h-[160px] overflow-hidden">
+                                    <motion.h1
+                                        className="font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87] h-full"
+                                        animate={isInView && {
+                                            opacity: 1,
+                                            y: 0,
+                                        }}
+                                        initial={{
+                                            opacity: 0,
+                                            y: "100vh",
+                                        }}
+                                        transition={{
+                                            damping: 10,
+                                            duration: 2,
+                                            ease: "easeIn",
+                                            stiffness: 33,
+                                            type: "spring",
+                                        }}
+                                    >
+                                        {currentTitle}
+                                    </motion.h1>
+                                </div>
+                                <motion.p
+                                    className="font-medium text-lg md:text-2xl text-white mt-4 md:mt-8 max-w-[468px]"
+                                    animate={isInView && {
+                                        opacity: 1,
+                                        y: 0,
+                                    }}
+                                    initial={{
+                                        opacity: 0,
+                                        y: "100vh",
+                                    }}
+                                    transition={{
+                                        damping: 10,
+                                        delay: 0.5,
+                                        duration: 2,
+                                        ease: "easeIn",
+                                        stiffness: 33,
+                                        type: "spring",
+                                    }}
+                                >
+                                    {description}
+                                </motion.p>
+                            </>
+                        )}
                     </div>
                     <Link
-                        className="mt-12 md:mt-24 inline-block"
+                        className={`${buttonTopSpace} inline-block`}
                         href={buttonLink}
                         prefetch={false}
                     >
