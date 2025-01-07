@@ -42,27 +42,21 @@ export default function Footer() {
                         solutions & designs.
                     </p>
                     <div className="mt-[19px] md:mt-[38px] flex flex-col gap-[9px] md:gap-[18px]">
-                        <div className="flex items-center gap-1 md:gap-2">
-                            <Mail
-                                color="#fff"
-                                size={20}
-                            />
+                        <div className="flex items-center gap-1 md:gap-2 text-white hover:text-primary transition-all duration-1000">
+                            <Mail size={20} />
                             <Link
-                                className="font-normal text-white text-xs md:text-base"
+                                className="font-normal text-xs md:text-base"
                                 href="mailto:shopcart_5@gmail.com"
                                 prefetch={false}
                                 target="_blank"
                             >
-                                shopcart_5@gmail.com
+                                oda-info@gmail.com
                             </Link>
                         </div>
-                        <div className="flex items-center gap-1 md:gap-2">
-                            <Phone
-                                color="#fff"
-                                size={20}
-                            />
+                        <div className="flex items-center gap-1 md:gap-2 text-white hover:text-primary transition-all duration-1000">
+                            <Phone size={20} />
                             <Link
-                                className="font-normal text-white text-xs md:text-base"
+                                className="font-normal text-xs md:text-base"
                                 href="tel:+20 111 2748 557"
                                 prefetch={false}
                                 target="_blank"
@@ -72,48 +66,36 @@ export default function Footer() {
                         </div>
                         <div className="flex items-center gap-1 md:gap-2">
                             <Link
-                                className="font-normal text-white text-xs md:text-base"
+                                className="font-normal text-xs md:text-base text-white hover:text-primary transition-all duration-1000"
                                 href="#"
                                 prefetch={false}
                                 target="_blank"
                             >
-                                <Youtube
-                                    color="#fff"
-                                    size={24}
-                                />
+                                <Youtube size={24} />
                             </Link>
                             <Link
-                                className="font-normal text-white text-xs md:text-base"
+                                className="font-normal text-xs md:text-base text-white hover:text-primary transition-all duration-1000"
                                 href="#"
                                 prefetch={false}
                                 target="_blank"
                             >
-                                <Instagram
-                                    color="#fff"
-                                    size={24}
-                                />
+                                <Instagram size={24} />
                             </Link>
                             <Link
-                                className="font-normal text-white text-xs md:text-base"
+                                className="font-normal text-xs md:text-base text-white hover:text-primary transition-all duration-1000"
                                 href="#"
                                 prefetch={false}
                                 target="_blank"
                             >
-                                <Facebook
-                                    color="#fff"
-                                    size={24}
-                                />
+                                <Facebook size={24} />
                             </Link>
                             <Link
-                                className="font-normal text-white text-xs md:text-base"
+                                className="font-normal text-xs md:text-base text-white hover:text-primary transition-all duration-1000"
                                 href="#"
                                 prefetch={false}
                                 target="_blank"
                             >
-                                <Twitter
-                                    color="#fff"
-                                    size={24}
-                                />
+                                <Twitter size={24} />
                             </Link>
                         </div>
                     </div>

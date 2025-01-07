@@ -1,6 +1,12 @@
 "use client";
 
-import { ChevronDownIcon } from "lucide-react";
+import {
+    ChevronDownIcon,
+    ChevronRight,
+    Menu,
+    MessageCircleQuestion,
+    Search,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -24,6 +30,14 @@ import {
 export default function Navbar() {
     const [isSheetOpen, setSheetOpen] = useState(false);
 
+    const [activeLinkId, setActiveLinkId] = useState({
+        leftColumn: null,
+        rightColumn: {
+            services: null,
+            top: null,
+        },
+    });
+
     return (
         <header className="absolute top-0 z-50 w-full h-[87px] md:h-[175px] border-none flex items-center">
             <div className="container px-4 xl:px-0 mx-auto flex justify-between">
@@ -43,14 +57,14 @@ export default function Navbar() {
                 </Link>
                 <nav className="hidden items-center gap-3 md:gap-6 text-xs md:text-sm font-medium md:flex !font-albert-sans">
                     <Link
-                        className="font-normal text-base md:text-xl text-white"
+                        className="font-normal text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                         href="/"
                         prefetch={false}
                     >
                         Home
                     </Link>
                     <DropdownMenu>
-                        <DropdownMenuTrigger className="flex items-center gap-1 font-normal text-base md:text-xl text-white outline-none">
+                        <DropdownMenuTrigger className="flex items-center gap-1 font-normal text-base md:text-xl text-white hover:text-primary transition-all duration-1000 outline-none">
                             Services
                             <ChevronDownIcon className="h-4 w-4" />
                         </DropdownMenuTrigger>
@@ -85,7 +99,7 @@ export default function Navbar() {
                         </DropdownMenuContent>
                     </DropdownMenu>
                     <Link
-                        className="font-normal text-base md:text-xl text-white"
+                        className="font-normal text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
                         href="/about-us"
                         prefetch={false}
                     >
@@ -93,31 +107,16 @@ export default function Navbar() {
                     </Link>
                 </nav>
                 <div className="flex items-center gap-2 md:gap-4">
-                    <div className="hidden items-center gap-1 md:gap-2 font-medium text-xs md:text-sm md:flex cursor-pointer">
-                        <Image
-                            alt="whatsapp"
-                            height={25}
-                            loading="eager"
-                            src="/icons/whatsapp.svg"
-                            width={25}
-                        />
-                    </div>
+                    <MessageCircleQuestion
+                        className="text-white hover:text-primary cursor-pointer"
+                        size={30}
+                    />
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button
-                                className="hover:bg-transparent cursor-pointer"
-                                size="icon"
-                                variant="ghost"
-                            >
-                                <Image
-                                    alt="search"
-                                    height={25}
-                                    loading="eager"
-                                    src="/icons/search.svg"
-                                    width={26}
-                                />
-                                <span className="sr-only">Search</span>
-                            </Button>
+                            <Search
+                                className="text-white hover:text-primary cursor-pointer"
+                                size={30}
+                            />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-[300px] p-4">
                             <div className="relative">
@@ -134,20 +133,10 @@ export default function Navbar() {
                         onOpenChange={setSheetOpen}
                     >
                         <SheetTrigger asChild>
-                            <Button
-                                className="hover:bg-transparent cursor-pointer"
-                                size="icon"
-                                variant="ghost"
-                            >
-                                <Image
-                                    alt="burger_menu"
-                                    height={8}
-                                    loading="eager"
-                                    src="/icons/burger-menu.svg"
-                                    width={25}
-                                />
-                                <span className="sr-only">Toggle Navigation Menu</span>
-                            </Button>
+                            <Menu
+                                className="text-white hover:text-primary cursor-pointer"
+                                size={30}
+                            />
                         </SheetTrigger>
                         <SheetContent
                             className="bg-cover bg-no-repeat border-b-transparent p-0 min-h-[1021px]"
@@ -168,14 +157,10 @@ export default function Navbar() {
                                         <span className="sr-only">Oda Logo</span>
                                     </div>
                                     <SheetClose>
-                                        <Image
-                                            alt="arrow_right"
-                                            height={53}
-                                            loading="eager"
-                                            src="/icons/arrow-right.svg"
-                                            width={53}
+                                        <ChevronRight
+                                            className="text-white hover:text-primary cursor-pointer"
+                                            size={50}
                                         />
-                                        <span className="sr-only">Close</span>
                                     </SheetClose>
                                 </div>
                                 <div className="container px-4 xl:px-0 mx-auto !font-albert-sans">
@@ -190,10 +175,22 @@ export default function Navbar() {
                                                 }) => (
                                                     <li key={id}>
                                                         <Link
-                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                            className={`font-medium text-lg md:text-2xl xl:text-5xl ${id === activeLinkId.leftColumn || activeLinkId.leftColumn === null ? "text-white" : "text-white opacity-50"} transition-all duration-500`}
                                                             href={url}
                                                             prefetch={false}
                                                             onClick={() => setSheetOpen(false)}
+                                                            onMouseEnter={() => setActiveLinkId(
+                                                                (prevState) => ({
+                                                                    ...prevState,
+                                                                    leftColumn: id,
+                                                                }),
+                                                            )}
+                                                            onMouseLeave={() => setActiveLinkId(
+                                                                (prevState) => ({
+                                                                    ...prevState,
+                                                                    leftColumn: null,
+                                                                }),
+                                                            )}
                                                         >
                                                             {text}
                                                         </Link>
@@ -210,10 +207,28 @@ export default function Navbar() {
                                                 }) => (
                                                     <li key={id}>
                                                         <Link
-                                                            className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                            className={`font-medium text-lg md:text-2xl xl:text-5xl ${id === activeLinkId.rightColumn.top || activeLinkId.rightColumn.top === null ? "text-white" : "text-white opacity-50"} transition-all duration-500`}
                                                             href={url}
                                                             prefetch={false}
                                                             onClick={() => setSheetOpen(false)}
+                                                            onMouseEnter={() => setActiveLinkId(
+                                                                (prevState) => ({
+                                                                    ...prevState,
+                                                                    rightColumn: {
+                                                                        ...prevState.rightColumn,
+                                                                        top: id,
+                                                                    },
+                                                                }),
+                                                            )}
+                                                            onMouseLeave={() => setActiveLinkId(
+                                                                (prevState) => ({
+                                                                    ...prevState,
+                                                                    rightColumn: {
+                                                                        ...prevState.rightColumn,
+                                                                        top: null,
+                                                                    },
+                                                                }),
+                                                            )}
                                                         >
                                                             {text}
                                                         </Link>
@@ -230,10 +245,28 @@ export default function Navbar() {
                                                     }) => (
                                                         <li key={id}>
                                                             <Link
-                                                                className="font-medium text-lg md:text-2xl xl:text-5xl text-white hover:text-primary transition-all duration-1000"
+                                                                className={`font-medium text-lg md:text-2xl xl:text-5xl ${id === activeLinkId.rightColumn.services || activeLinkId.rightColumn.services === null ? "text-white" : "text-white opacity-50"} transition-all duration-500`}
                                                                 href={url}
                                                                 prefetch={false}
                                                                 onClick={() => setSheetOpen(false)}
+                                                                onMouseEnter={() => setActiveLinkId(
+                                                                    (prevState) => ({
+                                                                        ...prevState,
+                                                                        rightColumn: {
+                                                                            ...prevState.rightColumn,
+                                                                            services: id,
+                                                                        },
+                                                                    }),
+                                                                )}
+                                                                onMouseLeave={() => setActiveLinkId(
+                                                                    (prevState) => ({
+                                                                        ...prevState,
+                                                                        rightColumn: {
+                                                                            ...prevState.rightColumn,
+                                                                            services: null,
+                                                                        },
+                                                                    }),
+                                                                )}
                                                             >
                                                                 {text}
                                                             </Link>
