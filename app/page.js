@@ -14,7 +14,7 @@ import HomeSuccessfulStories from "@/app/components/pages/home/successful-storie
 import HomeTestimonials from "@/app/components/pages/home/testimonials";
 import WorkScopes from "@/app/components/pages/home/work-scopes";
 
-export default function Home() {
+export default async function Home() {
     return (
         <div>
             <HomeHero />

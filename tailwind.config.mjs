@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+import { progress } from "framer-motion";
+
 export default {
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,6 +14,7 @@ export default {
         extend: {
             animation: {
                 heartBeat: "heartBeat .5s ease-in-out",
+                progress: "progress 1s infinite linear",
                 slideInFromBottom: "slideInFromBottom .5s linear .5s",
                 slideOutToTop: "slideOutToTop 1s linear",
                 wiggle: "wiggle 0.2s ease-in-out infinite;",
@@ -78,6 +81,17 @@ export default {
                     },
                     "100%": { // eslint-disable-line
                         transform: "scale(1)",
+                    },
+                },
+                progress: {
+                    "0%": {
+                        transform: "translateX(0) scaleX(0)",
+                    },
+                    "40%": {
+                        transform: "translateX(0) scaleX(0.4)",
+                    },
+                    "100%": { // eslint-disable-line
+                        transform: "translateX(100%) scaleX(0.5)",
                     },
                 },
                 slideInFromBottom: {
