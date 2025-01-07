@@ -18,7 +18,7 @@ export default function HomeTestimonials() {
 
     return (
         <div
-            className="pb-20 md:pb-40"
+            className="pb-20 md:pb-40 overflow-x-hidden"
             ref={ref}
         >
             <motion.div

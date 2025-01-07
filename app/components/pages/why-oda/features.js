@@ -42,7 +42,7 @@ export default function WhyOdaFeatures() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto pb-[96px] md:pb-[193px] pt-[42px] md:pt-[84px]"
+            className="container px-4 xl:px-0 mx-auto pb-[96px] md:pb-[193px] pt-[42px] md:pt-[84px] overflow-x-hidden"
             id="features"
         >
             <h2 className="font-bold text-[40px] md:text-[64px] mb-[98px] md:mb-[197px]">Compare All Features</h2>
