@@ -69,6 +69,10 @@
     }
 }
 
+body[data-scroll-locked] {
+    margin-right: 0!important;
+}
+
 @font-face {
     font-family: 'Nanum Myeongjo';
     src: url('/fonts/Nanum_Myeongjo/NanumMyeongjo-Regular.ttf') format('truetype');
@@ -247,4 +251,3 @@ div[role="dialog"] > button:first-child { display: none; }
         background: white;
     }
 }
-

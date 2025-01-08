@@ -149,8 +149,8 @@ export default function HomeWorkScopes() {
                                     >
                                         <div className="flex flex-col relative">
                                             <div className="lg:mt-[124px] lg:mb-[188px]">
-                                                <h3 className="font-medium text-[40px] lg:text-[64px]">{workScopes[currentIndex].title}</h3>
-                                                <p className="font-normal text-[22px] lg:text-[32px] text-gray-500 mt-3 lg:mt-6">{workScopes[currentIndex].description}</p>
+                                                <h3 className="font-medium text-[40px] lg:text-[45px] xl:text-[64px]">{workScopes[currentIndex].title}</h3>
+                                                <p className="font-normal text-[22px] lg:text-[28px] xl:text-[32px] text-gray-500 mt-3 lg:mt-6">{workScopes[currentIndex].description}</p>
                                             </div>
                                         </div>
                                     </motion.div>
