@@ -14,12 +14,12 @@ export default function AboutUsIntro() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-[31px] md:gap-[62px] pt-20 md:pt-40 pb-[72px] md:pb-36 overflow-x-hidden"
+            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[31px] md:gap-[62px] pt-20 md:pt-40 pb-[72px] md:pb-36 overflow-x-hidden"
             ref={ref}
         >
             <motion.div
                 animate={isInView && { x: 0 }}
-                className="col-span-1 md:col-span-6"
+                className="col-span-1 lg:col-span-6"
                 initial={{ x: "-100vw" }}
                 transition={{
                     damping: 10,
@@ -39,7 +39,7 @@ export default function AboutUsIntro() {
             </motion.div>
             <motion.div
                 animate={isInView && { x: 0 }}
-                className="col-span-1 md:col-span-6"
+                className="col-span-1 lg:col-span-6"
                 initial={{ x: "100vw" }}
                 transition={{
                     damping: 10,

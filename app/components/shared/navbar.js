@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { navbarLinks } from "@/app/data/navbar";
 import {
@@ -26,7 +26,11 @@ import {
     SheetTrigger,
 } from "@/app/ui/sheet";
 
+import Loader from "./loader";
+
 export default function Navbar() {
+    const [showLoader, setShowLoader] = useState(true);
+
     const [isSheetOpen, setSheetOpen] = useState(false);
 
     const [activeLinkId, setActiveLinkId] = useState({
@@ -37,7 +41,15 @@ export default function Navbar() {
         },
     });
 
-    return (
+    useEffect(
+        () => {
+            if (typeof window !== "undefined") setShowLoader(false);
+            else setShowLoader(true);
+        },
+        [],
+    );
+
+    return showLoader ? <Loader /> : (
         <header className="absolute top-0 z-50 w-full h-[87px] md:h-[175px] border-none flex items-center">
             <div className="container px-4 xl:px-0 mx-auto flex justify-between">
                 <Link
@@ -51,6 +63,7 @@ export default function Navbar() {
                         loading="eager"
                         src="/images/logo.webp"
                         width={183}
+                        priority
                     />
                     <span className="sr-only">Oda Logo</span>
                 </Link>
@@ -152,12 +165,13 @@ export default function Navbar() {
                                             loading="eager"
                                             src="/images/logo_2.webp"
                                             width={299}
+                                            priority
                                         />
                                         <span className="sr-only">Oda Logo</span>
                                     </div>
-                                    <SheetClose>
+                                    <SheetClose className="outline-0 border-0">
                                         <ChevronRight
-                                            className="text-white hover:text-primary cursor-pointer"
+                                            className="text-white hover:text-primary cursor-pointer outline-0 border-0"
                                             size={50}
                                         />
                                     </SheetClose>

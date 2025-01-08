@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Loading() {
+export default function Loader() {
     return (
         <div className="flex items-center justify-center bg-primary h-full w-full fixed z-50 overflow-hidden">
             <div className="flex flex-col items-center overflow-hidden w-[278px] lg:w-[556px]">

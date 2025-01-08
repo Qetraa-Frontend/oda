@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
@@ -18,7 +19,7 @@ export default function AboutUsBlocks() {
             ref={ref}
         >
             <motion.div
-                className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 relative top-[90px] md:top-[180px]"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-2 md:gap-4 relative top-[90px] md:top-[180px]"
                 animate={isInView && {
                     opacity: 1,
                     y: 0,
@@ -35,12 +36,16 @@ export default function AboutUsBlocks() {
                     type: "spring",
                 }}
             >
-                <div
-                    className="bg-cover bg-no-repeat bg-center col-span-1 md:col-span-8 min-h-[990px] rounded-lg"
-                    style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_1.webp)" }}
-                >
-                    <div className="pt-[75px] xl:pt-[151px] pl-[46px] xl:pl-[92px] pr-[19px] xl:pr-[39px]">
-                        <h4 className="font-[700] font-nanum-myeongjo text-[28px] xl:text-[40px] text-white mb-10 md:mb-20 !leading-none">Innovative concepts, unique designs, refined solutions inspired by you</h4>
+                <div className="relative col-span-1 lg:col-span-8 min-h-[567px] lg:min-h-[990px] rounded-lg overflow-hidden">
+                    <Image
+                        alt="block_1"
+                        layout="fill"
+                        loading="lazy"
+                        objectFit="cover"
+                        src="/images/pages/about-us/blocks/block_1.webp"
+                    />
+                    <div className="absolute inset-0 pt-[75px] xl:pt-[151px] pl-[46px] xl:pl-[92px] pr-[19px] xl:pr-[39px]">
+                        <h4 className="font-[700] font-nanum-myeongjo text-[28px] xl:text-[40px] text-white mb-10 md:mb-20 !leading-none">Innovative concepts, unique designs, refined solutions inspired by you.</h4>
                         <Link
                             className="float-right"
                             href="/read-brochure"
@@ -50,12 +55,16 @@ export default function AboutUsBlocks() {
                         </Link>
                     </div>
                 </div>
-                <div className="col-span-1 md:col-span-4 min-h-[990px]">
-                    <div
-                        className="bg-cover bg-no-repeat bg-center min-h-[567px] rounded-lg"
-                        style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_2.webp)" }}
-                    >
-                        <div className="pt-[41px] xl:pt-[83px] px-[26px] xl:px-[52px]">
+                <div className="col-span-1 lg:col-span-4 min-h-[990px]">
+                    <div className="relative min-h-[567px] rounded-lg overflow-hidden">
+                        <Image
+                            alt="block_2"
+                            layout="fill"
+                            loading="lazy"
+                            objectFit="cover"
+                            src="/images/pages/about-us/blocks/block_2.webp"
+                        />
+                        <div className="absolute inset-0 pt-[41px] xl:pt-[83px] px-[26px] xl:px-[52px]">
                             <h4 className="font-[700] font-nanum-myeongjo text-[28px] xl:text-[40px] text-white uppercase leading-tight">Get our Newsletter</h4>
                             <p className="font-[400] font-nanum-myeongjo text-2xl xl:text-4xl text-white my-4 md:my-8">Get a front row seat to our Oda launches and trends - directly to your inbox.</p>
                             <Link
@@ -66,11 +75,15 @@ export default function AboutUsBlocks() {
                             </Link>
                         </div>
                     </div>
-                    <div
-                        className="bg-cover bg-no-repeat bg-center min-h-[415px] rounded-lg mt-1 md:mt-2"
-                        style={{ backgroundImage: "url(/images/pages/about-us/blocks/block_3.webp)" }}
-                    >
-                        <div className="pt-[58px] xl:pt-[117px] px-[19px] xl:px-[39px]">
+                    <div className="relative min-h-[415px] rounded-lg mt-1 md:mt-2 overflow-hidden">
+                        <Image
+                            alt="block_3"
+                            layout="fill"
+                            loading="lazy"
+                            objectFit="cover"
+                            src="/images/pages/about-us/blocks/block_3.webp"
+                        />
+                        <div className="absolute inset-0 pt-[58px] xl:pt-[117px] px-[19px] xl:px-[39px]">
                             <h4 className="font-[700] font-nanum-myeongjo text-[22px] xl:text-[34px] text-white mb-8 md:mb-16">Can&apos;t Find Your Unit?</h4>
                             <Link
                                 href="#"

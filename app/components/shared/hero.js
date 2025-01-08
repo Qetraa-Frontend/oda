@@ -1,16 +1,17 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 export default function Hero({
-    backgroundHeight,
     backgroundImageSrc,
     buttonLink,
     buttonText,
     buttonTopSpace,
     description,
+    heroHeight,
     otherData,
     title,
 }) {
@@ -50,10 +51,15 @@ export default function Hero({
     );
 
     return (
-        <div
-            className={`relative bg-cover bg-no-repeat bg-center ${backgroundHeight} w-[100vw] transition-all duration-1000`}
-            style={{ backgroundImage: `url(${backgroundImageSrc})` }}
-        >
+        <div className={`relative ${heroHeight} w-[100vw] transition-all duration-1000`}>
+            <Image
+                alt="hero_bg"
+                layout="fill"
+                loading="eager"
+                objectFit="cover"
+                src={backgroundImageSrc}
+                priority
+            />
             <div className="absolute inset-0 bg-black bg-opacity-40" />
             <div className="relative z-40 container px-4 xl:px-0 mx-auto h-full w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
                 <div className={`col-span-1 lg:col-span-7 xl:col-span-6 ${otherData ? "mt-[139px] md:mt-[278px]" : "mt-[130px] md:mt-[261px]"}`}>

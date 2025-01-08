@@ -137,7 +137,7 @@ export default function AboutUsOurVision() {
                         >
                             <Image
                                 alt={alt}
-                                className="h-[400px] md:h-[300px] lg:h-[400px] object-cover md:object-fill rounded-lg"
+                                className="h-[350px] md:h-[250px] lg:h-[400px] object-cover md:object-fill rounded-lg"
                                 height={445}
                                 loading="lazy"
                                 src={imageSrc}

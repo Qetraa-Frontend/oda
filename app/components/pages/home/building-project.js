@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { buildingProjectImages } from "@/app/data/home";
@@ -57,10 +58,14 @@ export default function HomeBuildingProject() {
                     {" "}
                     Project at a Time
                 </h2>
-                <div
-                    className="bg-cover bg-no-repeat bg-center rounded-lg min-h-[300px] md:min-h-[560px] flex items-center justify-center relative top-[72px] md:top-36 transition-all duration-500 z-20 overflow-hidden"
-                    style={{ backgroundImage: `url(${buildingProjectImages[currentIndex].imageSrc})` }}
-                >
+                <div className="rounded-lg min-h-[300px] md:min-h-[560px] flex items-center justify-center relative top-[72px] md:top-36 transition-all duration-500 z-20 overflow-hidden">
+                    <Image
+                        alt={`building_project_${currentIndex}`}
+                        layout="fill"
+                        loading="lazy"
+                        objectFit="cover"
+                        src={buildingProjectImages[currentIndex].imageSrc}
+                    />
                     <div className="absolute inset-0 w-full h-full bg-black bg-opacity-40" />
                     <h4 className="text-white font-[700] text-3xl md:text-5xl text-center font-nanum-myeongjo relative z-10">{buildingProjectImages[currentIndex].title}</h4>
                 </div>

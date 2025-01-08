@@ -15,12 +15,12 @@ export default function AboutUsOurVision() {
     return (
         <div className="bg-[#222] pt-[36px] md:pt-[72px] pb-[37px] md:pb-[74px] overflow-x-hidden">
             <div
-                className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-[47px] md:gap-[94px]"
+                className="container px-4 xl:px-0 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[47px] md:gap-[94px]"
                 ref={ref}
             >
                 <motion.div
                     animate={isInView && { x: 0 }}
-                    className="col-span-1 md:col-span-6"
+                    className="col-span-1 lg:col-span-6"
                     initial={{ x: "-100vw" }}
                     transition={{
                         damping: 10,
@@ -40,7 +40,7 @@ export default function AboutUsOurVision() {
                 </motion.div>
                 <motion.div
                     animate={isInView && { x: 0 }}
-                    className="col-span-1 md:col-span-6"
+                    className="col-span-1 lg:col-span-6"
                     initial={{ x: "100vw" }}
                     transition={{
                         damping: 10,

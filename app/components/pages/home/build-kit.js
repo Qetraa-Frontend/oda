@@ -56,7 +56,21 @@ export default function HomeBuildKit() {
                     prefetch={false}
                 >
                     <div className="relative inline-block">
-                        <button className="font-medium text-lg lg:text-2xl py-1 lg:py-2 px-4 lg:px-8 text-black bg-gray-400 bg-opacity-20 hover:bg-transparent hover:text-primary rounded-lg border border-transparent">
+                        <button
+                            className="font-medium text-lg lg:text-2xl py-1 lg:py-2 px-4 lg:px-8 text-black bg-gray-400 bg-opacity-20 hover:bg-transparent hover:text-primary rounded-lg border border-transparent"
+                            onMouseEnter={(e) => {
+                                const borderDiv = e.currentTarget.nextSibling;
+
+                                borderDiv.style.borderImage = "linear-gradient(90deg, hsl(var(--primary)) 0%, black 100%) 1";
+                            }}
+                            onMouseLeave={(e) => {
+                                const borderDiv = e.currentTarget.nextSibling;
+
+                                borderDiv.style.borderImage = "none";
+
+                                borderDiv.style.borderColor = "black";
+                            }}
+                        >
                             Learn More
                         </button>
                         <div

@@ -58,12 +58,12 @@ export default function HomeHero() {
 
     return (
         <Hero
-            backgroundHeight="h-[600px] md:h-[1022px]"
             backgroundImageSrc={`/images/pages/home/hero/hero_${activeSlideIndex + 1}.webp`}
             buttonLink="/about-us"
             buttonText="Learn More"
             buttonTopSpace="mt-12 md:mt-24"
             description="To a beautifully finished home with Oda’s expertly crafted packages."
+            heroHeight="h-[600px] md:h-[1022px]"
             otherData={(
                 <Swiper
                     className="hero-slider"
