@@ -151,16 +151,24 @@ export default function Navbar() {
                             />
                         </SheetTrigger>
                         <SheetContent
-                            className="bg-cover bg-no-repeat border-b-transparent p-0 min-h-[1021px]"
+                            className="border-b-transparent p-0 min-h-[1021px]"
                             side="top"
-                            style={{ backgroundImage: "url(/images/pages/home/hero/hero_1.webp)" }}
                         >
+                            <Image
+                                alt="burger_menu_bg"
+                                layout="fill"
+                                loading="eager"
+                                objectFit="cover"
+                                src="/images/pages/home/hero/hero_1.webp"
+                                priority
+                            />
                             <div className="absolute inset-0 bg-black bg-opacity-90" />
                             <div className="relative z-40 w-full min-h-[1021px]">
                                 <div className="container px-4 xl:px-0 mx-auto flex items-center justify-between mt-[25px] md:mt-[51px] mb-[22px] md:mb-[45px]">
                                     <div>
                                         <Image
                                             alt="oda_logo"
+                                            className="w-[149px] md:w-[299px] h-[51px] md:h-[102px]"
                                             height={102}
                                             loading="eager"
                                             src="/images/logo_2.webp"

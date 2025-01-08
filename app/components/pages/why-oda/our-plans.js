@@ -21,10 +21,14 @@ export default function WhyOdaOurPlans() {
     });
 
     return (
-        <div
-            className="container px-4 xl:px-0 mx-auto pb-10 md:pb-20 pt-[120px] md:pt-60 bg-cover bg-no-repeat bg-center"
-            style={{ backgroundImage: "url(/images/pages/why-oda/our-plans/plans_bg.webp)" }}
-        >
+        <div className="container px-4 xl:px-0 mx-auto pb-10 md:pb-20 pt-[120px] md:pt-60 relative">
+            <Image
+                alt="our_plans_bg"
+                layout="fill"
+                loading="lazy"
+                objectFit="cover"
+                src="/images/pages/why-oda/our-plans/plans_bg.webp"
+            />
             <div className="mb-12 md:mb-24">
                 <h2 className="font-bold text-[32px] md:text-[64px] mb-5 md:mb-10">Our Plans</h2>
                 <h3 className="font-medium text-2xl md:text-4xl">Choose your desired pricing plan</h3>

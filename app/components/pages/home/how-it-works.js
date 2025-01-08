@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef, useState } from "react";
 
 import { steps } from "@/app/data/home";
@@ -56,9 +57,8 @@ export default function HomeHowItWorks() {
                         title,
                     }) => (
                         <div
-                            className="col-span-1 xl:col-span-3 w-full max-w-[288px] h-[390px] relative bg-cover bg-no-repeat bg-center rounded-lg overflow-hidden"
+                            className="col-span-1 xl:col-span-3 w-full max-w-[288px] h-[390px] relative overflow-hidden"
                             key={id}
-                            style={{ backgroundImage: `url(${imageSrc})` }}
                             onMouseEnter={() => setShowDescriptions((prevState) => ({
                                 ...prevState,
                                 [`description${id}`]: true,
@@ -68,7 +68,15 @@ export default function HomeHowItWorks() {
                                 [`description${id}`]: false,
                             }))}
                         >
-                            <div className={`absolute inset-0 bg-black ${showDescriptions?.[`description${id}`] ? "bg-opacity-60" : "bg-opacity-20"}`} />
+                            <Image
+                                alt={`step_${id}`}
+                                className="rounded-lg overflow-hidden"
+                                layout="fill"
+                                loading="lazy"
+                                objectFit="cover"
+                                src={imageSrc}
+                            />
+                            <div className={`absolute inset-0 bg-black ${showDescriptions?.[`description${id}`] ? "bg-opacity-60" : "bg-opacity-20"} overflow-hidden rounded-lg`} />
                             <div className="relative px-2 md:px-4 pb-3 md:pb-6 h-full flex flex-col justify-end">
                                 <div className={`${showDescriptions?.[`description${id}`] ? "" : "flex flex-col justify-end absolute h-full w-[88%]"}`}>
                                     <span className="font-[700] font-nanum-myeongjo text-lg md:text-2xl text-white">
