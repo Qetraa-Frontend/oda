@@ -4,9 +4,9 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-import { steps } from "@/app/data/why-oda";
+import { steps } from "@/app/data/home";
 
-export default function WhyOdaHowItWorks() {
+export default function HomeHowItWorks() {
     const [showDescriptions, setShowDescriptions] = useState({
         description1: false,
         description2: false,
@@ -44,11 +44,11 @@ export default function WhyOdaHowItWorks() {
                         type: "spring",
                     }}
                 >
-                    <h2 className="font-medium text-3xl md:text-5xl text-white text-center mb-[60px] md:mb-[120px] !leading-relaxed">
+                    <h2 className="font-medium text-3xl md:text-5xl text-white text-center mb-[53px] md:mb-[107px] !leading-snug">
                         <span className="opacity-80">How it works?</span>
                         <br />
                         {" "}
-                        <span className="text-[40px] md:text-[64px] uppercase">The 4 Steps</span>
+                        <span className="font-medium text-[40px] md:text-[64px] uppercase">The 4 Steps</span>
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-8 justify-items-center xl:justify-items-start">
                         {steps.map(({

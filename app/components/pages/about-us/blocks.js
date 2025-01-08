@@ -75,7 +75,7 @@ export default function AboutUsBlocks() {
                             </Link>
                         </div>
                     </div>
-                    <div className="relative min-h-[415px] rounded-lg mt-1 md:mt-2 overflow-hidden">
+                    <div className="relative min-h-[415px] rounded-lg mt-1 md:mt-2 z-10 overflow-hidden">
                         <Image
                             alt="block_3"
                             layout="fill"

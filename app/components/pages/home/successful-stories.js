@@ -72,6 +72,10 @@ export default function HomeSuccessfulStories() {
                         <SwiperSlide key={id}>
                             <div
                                 className="rounded-lg border-white border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden"
+                                onClick={() => setShowDescriptions((prevState) => ({
+                                    ...prevState,
+                                    [`description${id}`]: !showDescriptions?.[`description${id}`],
+                                }))}
                                 onMouseEnter={() => setShowDescriptions((prevState) => ({
                                     ...prevState,
                                     [`description${id}`]: true,
