@@ -52,7 +52,7 @@ export default function HomeBuildingProject() {
                     type: "spring",
                 }}
             >
-                <h2 className="font-semibold text-4xl md:text-6xl uppercase text-center !leading-relaxed">
+                <h2 className="font-semibold text-[40px] md:text-[64px] uppercase text-center !leading-relaxed">
                     Building a Legacy, One
                     <br className="hidden lg:block" />
                     {" "}

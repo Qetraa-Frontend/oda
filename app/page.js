@@ -12,7 +12,7 @@ const HomeHowItWorks = dynamic(() => import("@/app/components/pages/home/how-it-
 const HomeNewsletter = dynamic(() => import("@/app/components/pages/home/newsletter"));
 const HomeOurPartners = dynamic(() => import("@/app/components/pages/home/our-partners"));
 const HomeStatics = dynamic(() => import("@/app/components/pages/home/statics"));
-const HomeSuccessfulStories = dynamic(() => import("@/app/components/pages/home/successful-stories"));
+const HomeSuccessStories = dynamic(() => import("@/app/components/pages/home/success-stories"));
 const HomeTestimonials = dynamic(() => import("@/app/components/pages/home/testimonials"));
 const HomeWorkScopes = dynamic(() => import("@/app/components/pages/home/work-scopes"));
 
@@ -31,7 +31,7 @@ export default async function Home() {
             <div className="bg-[#222] max-h-[1942px] md:max-h-[2764px] lg:max-h-[2634px] xl:max-h-[2874px] z-10">
                 <div className="container px-4 xl:px-0 pt-[163px] md:pt-[327px] mx-auto max-h-[1942px] md:max-h-[2764px] lg:max-h-[2608px] xl:max-h-[2828px]">
                     <div>
-                        <HomeSuccessfulStories />
+                        <HomeSuccessStories />
                         <HomeOurPartners />
                         <HomeTestimonials />
                     </div>

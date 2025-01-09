@@ -22,8 +22,8 @@ export const navbarLinks = {
         },
         {
             id: 5,
-            text: "Successful Stories",
-            url: "/successful-stories",
+            text: "Success Stories",
+            url: "/success-stories",
         },
         {
             id: 6,

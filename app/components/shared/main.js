@@ -20,7 +20,7 @@ export default function Main({ children }) {
     useEffect(
         () => {
             const handleScroll = () => {
-                if (window.scrollY > window.innerHeight * 0.6) setShowToTopButton(true); // eslint-disable-line
+                if (window.scrollY > window.innerHeight * 0.75) setShowToTopButton(true); // eslint-disable-line
                 else setShowToTopButton(false);
             };
 
@@ -51,7 +51,7 @@ export default function Main({ children }) {
         <main className="min-h-screen font-albert-sans">
             {children}
             <button
-                className={`fixed bottom-5 right-5 z-30 cursor-pointer bg-white text-black p-3 bg-opacity-80 rounded-full shadow-lg hover:bg-opacity-100 hover:animate-heartBeat transition-all duration-300 ${
+                className={`fixed bottom-5 right-5 z-30 cursor-pointer bg-white hover:bg-primary text-black p-3 bg-opacity-80 rounded-full shadow-lg hover:bg-opacity-100 hover:animate-heartBeat transition-all duration-300 ${
                     showToTopButton
                         ? "opacity-100 scale-100"
                         : "opacity-0 scale-0 pointer-events-none"

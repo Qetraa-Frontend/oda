@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { stories } from "@/app/data/home";
 
-export default function HomeSuccessfulStories() {
+export default function HomeSuccessStories() {
     const [showDescriptions, setShowDescriptions] = useState({
         description1: false,
         description2: false,
@@ -45,7 +45,7 @@ export default function HomeSuccessfulStories() {
                 }}
             >
                 <h2 className="font-semibold text-[41px] md:text-[65px] text-white !leading-normal mb-12 md:mb-24">
-                    Successful
+                    Success
                     <br className="hidden xl:block" />
                     {" "}
                     Stories
@@ -98,7 +98,7 @@ export default function HomeSuccessfulStories() {
                                         <h5 className="font-[700] text-base md:text-xl text-white font-nanum-myeongjo">{title}</h5>
                                         <Link
                                             className="rounded-full bg-black p-2 h-10 w-10"
-                                            href="/successfull-stories"
+                                            href="/successl-stories"
                                             prefetch={false}
                                         >
                                             <ArrowRight color="white" />
