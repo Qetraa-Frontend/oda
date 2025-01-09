@@ -28,7 +28,7 @@ export default function OurServices() {
                     </div>
                     <Image
                         alt="service_2"
-                        className="h-full w-[95%] sm:w-[97%] md:w-[98%] lg:w-full"
+                        className="h-full w-[95.5%] sm:w-[97.5%] md:w-[98%] lg:w-full"
                         height={274}
                         loading="lazy"
                         src="/images/pages/services/our-services/service_2.webp"
@@ -38,7 +38,7 @@ export default function OurServices() {
                 <div className="flex flex-col justify-center h-full gap-[0px] w-full lg:w-1/2">
                     <Image
                         alt="service_3"
-                        className="w-full"
+                        className="w-full xl:h-[44%]"
                         height={278}
                         loading="lazy"
                         src="/images/pages/services/our-services/service_3.webp"

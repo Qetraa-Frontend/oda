@@ -22,7 +22,7 @@ export default function AboutUsOurVision() {
     );
 
     return (
-        <div className="bg-[#222] pt-[87px] md:pt-[175px] pb-[159px] md:pb-[319px] overflow-x-hidden">
+        <div className="bg-[#222] pt-[87px] md:pt-[175px] pb-[159px] md:pb-[319px] overflow-hidden">
             <div
                 className="container px-4 xl:px-0 mx-auto"
                 ref={ref1}

@@ -7,6 +7,8 @@ const AboutUsOurMission = dynamic(() => import("@/app/components/pages/about-us/
 const AboutUsOurVision = dynamic(() => import("@/app/components/pages/about-us/our-vision"));
 const AboutUsTeam = dynamic(() => import("@/app/components/pages/about-us/team"));
 
+export const metadata = { title: "Oda | About Us" };
+
 export default function AboutUs() {
     return (
         <div>

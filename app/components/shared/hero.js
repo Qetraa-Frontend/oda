@@ -51,7 +51,7 @@ export default function Hero({
     );
 
     return (
-        <div className={`relative ${heroHeight} w-[100vw] transition-all duration-1000`}>
+        <div className={`relative ${heroHeight} w-[100vw] transition-all duration-1000 overflow-hidden`}>
             <Image
                 alt="hero_bg"
                 layout="fill"

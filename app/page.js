@@ -16,6 +16,8 @@ const HomeSuccessfulStories = dynamic(() => import("@/app/components/pages/home/
 const HomeTestimonials = dynamic(() => import("@/app/components/pages/home/testimonials"));
 const HomeWorkScopes = dynamic(() => import("@/app/components/pages/home/work-scopes"));
 
+export const metadata = { title: "Oda | Home" };
+
 export default async function Home() {
     return (
         <div>

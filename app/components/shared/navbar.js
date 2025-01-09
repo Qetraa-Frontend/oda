@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { navbarLinks } from "@/app/data/navbar";
 import {
@@ -26,11 +26,7 @@ import {
     SheetTrigger,
 } from "@/app/ui/sheet";
 
-import Loader from "./loader";
-
 export default function Navbar() {
-    const [showLoader, setShowLoader] = useState(true);
-
     const [isSheetOpen, setSheetOpen] = useState(false);
 
     const [activeLinkId, setActiveLinkId] = useState({
@@ -41,15 +37,7 @@ export default function Navbar() {
         },
     });
 
-    useEffect(
-        () => {
-            if (typeof window !== "undefined") setShowLoader(false);
-            else setShowLoader(true);
-        },
-        [],
-    );
-
-    return showLoader ? <Loader /> : (
+    return (
         <header className="absolute top-0 z-50 w-full h-[87px] md:h-[175px] border-none flex items-center">
             <div className="container px-4 xl:px-0 mx-auto flex justify-between">
                 <Link

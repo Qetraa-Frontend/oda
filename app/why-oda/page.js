@@ -8,6 +8,8 @@ const WhyOdaHowItWorks = dynamic(() => import("@/app/components/pages/why-oda/ho
 const WhyOdaOurPlans = dynamic(() => import("@/app/components/pages/why-oda/our-plans"));
 const WhyOdaPlansContent = dynamic(() => import("@/app/components/pages/why-oda/plans-content"));
 
+export const metadata = { title: "Oda | Why Oda" };
+
 export default function WhyOda() {
     return (
         <div>

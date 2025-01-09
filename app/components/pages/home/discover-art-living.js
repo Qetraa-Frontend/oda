@@ -24,7 +24,7 @@ export default function HomeDiscoverArtLiving() {
 
     return (
         <div
-            className="bg-[#222] min-h-[1012px] py-[22px] md:py-11 font-nanum-myeongjo overflow-x-hidden"
+            className="bg-[#222] min-h-[1012px] py-[22px] md:py-11 font-nanum-myeongjo overflow-hidden"
             ref={ref}
         >
             <motion.div
