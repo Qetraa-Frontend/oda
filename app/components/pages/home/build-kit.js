@@ -15,7 +15,7 @@ export default function HomeBuildKit() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[36px] lg:gap-[72px] pt-[73px] lg:pt-[146px] pb-[75px] lg:pb-[150px] overflow-x-hidden"
+            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[36px] lg:gap-[72px] pt-[73px] lg:pt-[146px] pb-[75px] lg:pb-[150px] overflow-hidden"
             ref={ref}
         >
             <div className="col-span-1 lg:col-span-6">

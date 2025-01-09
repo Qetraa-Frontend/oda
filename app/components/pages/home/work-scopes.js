@@ -54,7 +54,7 @@ export default function HomeWorkScopes() {
     };
 
     return (
-        <div className="py-20 lg:py-40 overflow-x-hidden">
+        <div className="py-20 lg:py-40 overflow-hidden">
             <div
                 className="gradient-container"
                 ref={ref}

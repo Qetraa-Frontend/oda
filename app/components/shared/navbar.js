@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { navbarLinks } from "@/app/data/navbar";
 import {
@@ -36,6 +36,21 @@ export default function Navbar() {
             top: null,
         },
     });
+
+    useEffect(
+        () => {
+            if (!isSheetOpen) {
+                setActiveLinkId({
+                    leftColumn: null,
+                    rightColumn: {
+                        services: null,
+                        top: null,
+                    },
+                });
+            }
+        },
+        [isSheetOpen],
+    );
 
     return (
         <header className="absolute top-0 z-50 w-full h-[87px] md:h-[175px] border-none flex items-center">

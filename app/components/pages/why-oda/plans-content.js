@@ -35,7 +35,7 @@ export default function WhyOdaPlansContent() {
     );
 
     return (
-        <div className="bg-[#222] pt-[62px] md:pt-[124px] pb-[27px] md:pb-[55px] overflow-x-hidden">
+        <div className="bg-[#222] pt-[62px] md:pt-[124px] pb-[27px] md:pb-[55px] overflow-hidden">
             <div
                 className="container px-4 xl:px-0 mx-auto"
                 ref={ref}

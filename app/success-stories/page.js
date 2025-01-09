@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 const SuccessStoriesHero = dynamic(() => import("@/app/components/pages/success-stories/hero"));
 const SuccessStoriesBuildingProject = dynamic(() => import("@/app/components/pages/success-stories/building-project"));
+const OurSuccessStories = dynamic(() => import("@/app/components/pages/success-stories/our-success-stories"));
 
 export const metadata = { title: "Oda | Success Stories" };
 
@@ -10,6 +11,7 @@ export default function SuccessStories() {
         <div>
             <SuccessStoriesHero />
             <SuccessStoriesBuildingProject />
+            <OurSuccessStories />
         </div>
     );
 }

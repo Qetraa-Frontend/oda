@@ -36,7 +36,7 @@ export default function AboutUsBlocks() {
                     type: "spring",
                 }}
             >
-                <div className="relative col-span-1 lg:col-span-8 min-h-[567px] lg:min-h-[990px] rounded-lg overflow-hidden">
+                <div className="relative col-span-1 lg:col-span-8 min-h-[567px] lg:min-h-[990px] rounded-lg z-10 overflow-hidden">
                     <Image
                         alt="block_1"
                         layout="fill"
