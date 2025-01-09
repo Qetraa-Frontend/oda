@@ -8,8 +8,10 @@ export default function Loader() {
                     alt="logo"
                     className="h-[95px] lg:h-[191px] w-[278px] lg:w-[556px]"
                     height={191}
+                    loading="eager"
                     src="/images/logo_3.webp"
                     width={556}
+                    priority
                 />
                 <div className="w-[233px] mt-[22px] md:mt-[45px]">
                     <div className="h-[5px] w-full bg-black bg-opacity-40 overflow-hidden">

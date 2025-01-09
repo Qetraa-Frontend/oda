@@ -94,6 +94,7 @@ export default function HomeHero() {
                                 loading="eager"
                                 src={imageSrc}
                                 width={277}
+                                priority
                             />
                         </SwiperSlide>
                     ))}

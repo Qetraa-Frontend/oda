@@ -4,7 +4,7 @@ export default function WhyOdaHero() {
     return (
         <Hero
             backgroundImageSrc="/images/pages/why-oda/hero.webp"
-            buttonLink="/build-your-kit"
+            buttonLink="/services"
             buttonText="Learn More"
             buttonTopSpace="mt-[46px] md:mt-[93px]"
             description="To a beautifully finished home with Oda’s expertly crafted packages."

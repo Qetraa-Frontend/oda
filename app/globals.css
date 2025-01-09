@@ -251,3 +251,10 @@ div[role="dialog"] > button:first-child { display: none; }
         background: white;
     }
 }
+
+@media (min-width: 768px) {
+    div[role=dialog] {
+        height: 126vh;
+        overflow-y: auto;
+    }
+}

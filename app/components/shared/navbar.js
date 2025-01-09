@@ -84,6 +84,15 @@ export default function Navbar() {
                             <DropdownMenuItem>
                                 <Link
                                     className="font-normal text-sm md:text-lg"
+                                    href="/services"
+                                    prefetch={false}
+                                >
+                                    Our Services
+                                </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                                <Link
+                                    className="font-normal text-sm md:text-lg"
                                     href="/locate-your-home"
                                     prefetch={false}
                                 >
@@ -151,7 +160,7 @@ export default function Navbar() {
                             />
                         </SheetTrigger>
                         <SheetContent
-                            className="border-b-transparent p-0 min-h-[1021px]"
+                            className="border-b-transparent p-0"
                             side="top"
                         >
                             <Image
@@ -177,14 +186,14 @@ export default function Navbar() {
                                         />
                                         <span className="sr-only">Oda Logo</span>
                                     </div>
-                                    <SheetClose className="outline-0 border-0">
+                                    <SheetClose className="outline-0 border-0 shadow-none">
                                         <ChevronRight
                                             className="text-white hover:text-primary cursor-pointer outline-0 border-0"
                                             size={50}
                                         />
                                     </SheetClose>
                                 </div>
-                                <div className="container px-4 xl:px-0 mx-auto !font-albert-sans">
+                                <div className="container px-4 xl:px-0 mx-auto !font-albert-sans overflow-y-auto sm:h-[126vh]">
                                     <h6 className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Quick Links</h6>
                                     <div className="flex items-center justify-between mt-6 md:mt-12">
                                         <div>
