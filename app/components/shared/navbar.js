@@ -54,7 +54,15 @@ export default function Navbar() {
 
     return (
         <header className="absolute top-0 z-50 w-full h-[87px] md:h-[175px] border-none flex items-center">
-            <div className="container px-4 xl:px-0 mx-auto flex justify-between">
+            <Image
+                alt="navbar_bg"
+                layout="fill"
+                loading="eager"
+                objectFit="cover"
+                src="/images/navbar_bg.webp"
+                priority
+            />
+            <div className="container px-4 xl:px-0 mx-auto flex justify-between relative z-20">
                 <Link
                     className="flex items-center gap-1 md:gap-2"
                     href="/"

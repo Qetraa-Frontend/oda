@@ -258,3 +258,15 @@ div[role="dialog"] > button:first-child { display: none; }
         overflow-y: auto;
     }
 }
+
+.truncate-answer {
+    position: relative;
+    display: inline-block;
+    -webkit-mask-image: linear-gradient(to right, black 20%, rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to right, black 20%, rgba(0, 0, 0, 0));
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0.7);
+}

@@ -17,7 +17,7 @@ import { footerLinks } from "@/app/data/footer";
 export default function Footer() {
     const pathname = usePathname();
 
-    const isPageWithoutBottomImage = pathname === "/why-oda" || pathname === "/services";
+    const isPageWithoutBottomImage = pathname === "/why-oda" || pathname === "/services" || pathname === "/success-stories" || pathname === "/faqs";
 
     return (
         <footer className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] px-4 xl:px-0 relative`}>
@@ -26,7 +26,7 @@ export default function Footer() {
                 layout="fill"
                 loading="lazy"
                 objectFit="cover"
-                src="/images/footer.webp"
+                src="/images/footer_bg.webp"
             />
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 relative z-20">
                 <div className="col-span-6">

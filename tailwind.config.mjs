@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-import { progress } from "framer-motion";
-
 export default {
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,6 +11,9 @@ export default {
     theme: {
         extend: {
             animation: {
+                accordionDown: "accordionDown 0.2s ease-out",
+                accordionUp: "accordionUp 0.2s ease-out",
+                flash: "flash 1s infinite",
                 heartBeat: "heartBeat .5s ease-in-out",
                 progress: "progress 1s infinite linear",
                 slideInFromBottom: "slideInFromBottom .5s linear .5s",
@@ -72,6 +73,18 @@ export default {
                 "albert-sans": "var(--font-albert-sans)",
             },
             keyframes: {
+                accordionDown: {
+                    from: { height: "0" },
+                    to: { height: "var(--radix-accordion-content-height)" },
+                },
+                accordionUp: {
+                    from: { height: "var(--radix-accordion-content-height)" },
+                    to: { height: "0" },
+                },
+                flash: {
+                    "0%, 100%": { opacity: 1 },
+                    "50%": { opacity: 0.5 },
+                },
                 heartBeat: {
                     "0%": {
                         transform: "scale(1)",

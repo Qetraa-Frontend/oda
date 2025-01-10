@@ -36,26 +36,26 @@ export default function OurSuccessStories() {
 
     const ref1 = useRef(null);
 
+    const ref2 = useRef(null);
+
+    const ref3 = useRef(null);
+
+    const ref4 = useRef(null);
+
     const isInView1 = useInView(
         ref1,
         { once: true },
     );
-
-    const ref2 = useRef(null);
 
     const isInView2 = useInView(
         ref1,
         { once: true },
     );
 
-    const ref3 = useRef(null);
-
     const isInView3 = useInView(
         ref1,
         { once: true },
     );
-
-    const ref4 = useRef(null);
 
     const isInView4 = useInView(
         ref1,
@@ -100,13 +100,6 @@ export default function OurSuccessStories() {
                             >
                                 <div
                                     className={`rounded-lg ${showDescriptions.stories1?.[`description${id}`] ? "bg-primary" : "bg-white"} border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden`}
-                                    onClick={() => setShowDescriptions((prevState) => ({
-                                        ...prevState,
-                                        stories1: {
-                                            ...prevState.stories1,
-                                            [`description${id}`]: !showDescriptions.stories1?.[`description${id}`],
-                                        },
-                                    }))}
                                     onMouseEnter={() => setShowDescriptions((prevState) => ({
                                         ...prevState,
                                         stories1: {
@@ -178,13 +171,6 @@ export default function OurSuccessStories() {
                             >
                                 <div
                                     className="rounded-lg border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden"
-                                    onClick={() => setShowDescriptions((prevState) => ({
-                                        ...prevState,
-                                        stories2: {
-                                            ...prevState.stories2,
-                                            [`description${id}`]: !showDescriptions.stories2?.[`description${id}`],
-                                        },
-                                    }))}
                                     onMouseEnter={() => setShowDescriptions((prevState) => ({
                                         ...prevState,
                                         stories2: {
@@ -256,13 +242,6 @@ export default function OurSuccessStories() {
                             >
                                 <div
                                     className={`rounded-lg ${showDescriptions.stories3?.[`description${id}`] ? "bg-primary" : "bg-white"} border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden`}
-                                    onClick={() => setShowDescriptions((prevState) => ({
-                                        ...prevState,
-                                        stories3: {
-                                            ...prevState.stories3,
-                                            [`description${id}`]: !showDescriptions.stories3?.[`description${id}`],
-                                        },
-                                    }))}
                                     onMouseEnter={() => setShowDescriptions((prevState) => ({
                                         ...prevState,
                                         stories3: {
@@ -334,13 +313,6 @@ export default function OurSuccessStories() {
                             >
                                 <div
                                     className="rounded-lg border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden"
-                                    onClick={() => setShowDescriptions((prevState) => ({
-                                        ...prevState,
-                                        stories4: {
-                                            ...prevState.stories4,
-                                            [`description${id}`]: !showDescriptions.stories4?.[`description${id}`],
-                                        },
-                                    }))}
                                     onMouseEnter={() => setShowDescriptions((prevState) => ({
                                         ...prevState,
                                         stories4: {
