@@ -20,7 +20,7 @@ export default function Hero({
 }) {
     const searchParams = useSearchParams();
 
-    const [searchText, setSearchText] = useState(searchParams.get("search"));
+    const [searchText, setSearchText] = useState(searchParams.get("search") || "");
 
     const [currentTitle, setCurrentTitle] = useState(title);
 

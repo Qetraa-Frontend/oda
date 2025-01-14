@@ -33,7 +33,7 @@ export const footerLinks = {
         {
             id: 7,
             text: "News & Events",
-            url: "/news-and-events",
+            url: "/news",
         },
         {
             id: 8,

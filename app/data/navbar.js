@@ -33,7 +33,7 @@ export const navbarLinks = {
         {
             id: 7,
             text: "News & Events",
-            url: "/news-and-events",
+            url: "/news",
         },
     ],
     rightColumn: {

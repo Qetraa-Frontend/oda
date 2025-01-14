@@ -99,7 +99,7 @@ export default function OurSuccessStories() {
                                 key={id}
                             >
                                 <div
-                                    className={`rounded-lg ${showDescriptions.stories1?.[`description${id}`] ? "bg-primary" : "bg-white"} border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden`}
+                                    className={`rounded-lg ${showDescriptions.stories1?.[`description${id}`] ? "bg-primary" : "bg-white"} border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395px] h-[431px] overflow-hidden`}
                                     onMouseEnter={() => setShowDescriptions((prevState) => ({
                                         ...prevState,
                                         stories1: {
@@ -170,7 +170,7 @@ export default function OurSuccessStories() {
                                 key={id}
                             >
                                 <div
-                                    className="rounded-lg border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden"
+                                    className="rounded-lg border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395px] h-[431px] overflow-hidden"
                                     onMouseEnter={() => setShowDescriptions((prevState) => ({
                                         ...prevState,
                                         stories2: {
@@ -241,7 +241,7 @@ export default function OurSuccessStories() {
                                 key={id}
                             >
                                 <div
-                                    className={`rounded-lg ${showDescriptions.stories3?.[`description${id}`] ? "bg-primary" : "bg-white"} border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden`}
+                                    className={`rounded-lg ${showDescriptions.stories3?.[`description${id}`] ? "bg-primary" : "bg-white"} border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395px] h-[431px] overflow-hidden`}
                                     onMouseEnter={() => setShowDescriptions((prevState) => ({
                                         ...prevState,
                                         stories3: {
@@ -312,7 +312,7 @@ export default function OurSuccessStories() {
                                 key={id}
                             >
                                 <div
-                                    className="rounded-lg border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395] h-[431px] overflow-hidden"
+                                    className="rounded-lg border-black border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395px] h-[431px] overflow-hidden"
                                     onMouseEnter={() => setShowDescriptions((prevState) => ({
                                         ...prevState,
                                         stories4: {

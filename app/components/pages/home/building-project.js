@@ -60,7 +60,7 @@ export default function HomeBuildingProject() {
                 </h2>
                 <div className="rounded-lg min-h-[300px] md:min-h-[560px] flex items-center justify-center relative top-[72px] md:top-36 transition-all duration-500 z-20 overflow-hidden">
                     <Image
-                        alt={`building_project_${currentIndex}`}
+                        alt={buildingProjectImages[currentIndex].alt}
                         layout="fill"
                         loading="lazy"
                         objectFit="cover"

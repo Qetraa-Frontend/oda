@@ -38,7 +38,7 @@ const AccordionTrigger = React.forwardRef(({
     return (
         <AccordionPrimitive.Header
             className="flex flex-col"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen((prev) => !prev)}
         >
             <AccordionPrimitive.Trigger
                 ref={ref}
@@ -89,8 +89,6 @@ const AccordionContent = React.forwardRef(({
     <AccordionPrimitive.Content
         className="overflow-hidden font-normal text-xs md:text-base text-black opacity-40 data-[state=closed]:animate-accordionUp data-[state=open]:animate-accordionDown"
         ref={ref}
-        keyword
-        withHighlighter
         {...props}
     >
         <div
