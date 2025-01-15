@@ -66,7 +66,7 @@ export default function OurFaqs() {
     );
 
     return (
-        <div className="container px-4 xl:px-0 mx-auto pt-[72px] md:pt-[145px] pb-[77px] md:pb-[155px]">
+        <div className="container mx-auto pt-[72px] md:pt-[145px] pb-[77px] md:pb-[155px]">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-[28px] md:gap-[56px] mb-[62px] md:mb-[124px]">
                 <div className="col-span-1 md:col-span-6">
                     <h2 className="font-semibold text-[40px] lg:text-[64px] lg:!leading-relaxed">

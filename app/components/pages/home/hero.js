@@ -66,7 +66,7 @@ export default function HomeHero() {
             heroHeight="h-[600px] md:h-[1022px]"
             otherData={(
                 <Swiper
-                    className="hero-slider"
+                    className="hero-slider w-full h-[140px] relative left-[140px] top-[670px]"
                     modules={[Autoplay, Pagination]}
                     pagination={{ clickable: true }}
                     spaceBetween={14}
@@ -87,9 +87,13 @@ export default function HomeHero() {
                         id,
                         imageSrc,
                     }) => (
-                        <SwiperSlide key={id}>
+                        <SwiperSlide
+                            className="max-w-[277px] !h-[100px] xl:!h-[140px] !cursor-pointer rounded-lg overflow-hidden transition-all duration-500"
+                            key={id}
+                        >
                             <Image
                                 alt={alt}
+                                className="!w-full !h-full rounded-lg"
                                 height={196}
                                 loading="eager"
                                 src={imageSrc}

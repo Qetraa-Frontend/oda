@@ -68,7 +68,7 @@ export default function OurSuccessStories() {
                 className="bg-[#222] py-[60px] lg:py-[120px]"
                 ref={ref1}
             >
-                <div className="container px-4 xl:px-0 mx-auto">
+                <div className="container mx-auto">
                     <motion.div
                         className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 xl:gap-8 justify-items-center xl:justify-items-start"
                         animate={isInView1 && {
@@ -117,13 +117,13 @@ export default function OurSuccessStories() {
                                 >
                                     <Image
                                         alt={alt}
-                                        className={`rounded-lg object-cover w-full ${showDescriptions.stories1?.[`description${id}`] ? "h-[68%] sm:h-[55%]" : "h-[317px]"}`}
+                                        className={`rounded-lg object-cover w-full ${showDescriptions.stories1?.[`description${id}`] ? "max-h-[68%] sm:max-h-[55%]" : "max-h-[317px]"} transition-all duration-500`}
                                         height={317}
                                         loading="lazy"
                                         src={imageSrc}
                                         width={347}
                                     />
-                                    <div className={`${showDescriptions.stories1?.[`description${id}`] ? "h-[32%] sm:h-[45%]" : "block"}`}>
+                                    <div className={`${showDescriptions.stories1?.[`description${id}`] ? "max-h-[32%] sm:max-h-[45%]" : "block"} transition-all duration-500`}>
                                         <div className={`${showDescriptions.stories1?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
                                             <h5 className="font-[700] text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
                                         </div>
@@ -139,7 +139,7 @@ export default function OurSuccessStories() {
                 className="py-20 lg:py-40"
                 ref={ref2}
             >
-                <div className="container px-4 xl:px-0 mx-auto">
+                <div className="container mx-auto">
                     <motion.div
                         className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 xl:gap-8 justify-items-center xl:justify-items-start"
                         animate={isInView2 && {
@@ -188,13 +188,13 @@ export default function OurSuccessStories() {
                                 >
                                     <Image
                                         alt={alt}
-                                        className={`rounded-lg object-cover w-full ${showDescriptions.stories2?.[`description${id}`] ? "h-[68%] sm:h-[55%]" : "h-[317px]"}`}
+                                        className={`rounded-lg object-cover w-full ${showDescriptions.stories2?.[`description${id}`] ? "max-h-[68%] sm:max-h-[55%]" : "max-h-[317px]"} transition-all duration-500`}
                                         height={317}
                                         loading="lazy"
                                         src={imageSrc}
                                         width={347}
                                     />
-                                    <div className={`${showDescriptions.stories2?.[`description${id}`] ? "h-[32%] sm:h-[45%]" : "block"}`}>
+                                    <div className={`${showDescriptions.stories2?.[`description${id}`] ? "max-h-[32%] sm:max-h-[45%]" : "block"} transition-all duration-500`}>
                                         <div className={`${showDescriptions.stories2?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
                                             <h5 className="font-[700] text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
                                         </div>
@@ -210,7 +210,7 @@ export default function OurSuccessStories() {
                 className="bg-[#222] py-[54px] lg:py-[108px]"
                 ref={ref3}
             >
-                <div className="container px-4 xl:px-0 mx-auto">
+                <div className="container mx-auto">
                     <motion.div
                         className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 xl:gap-8 justify-items-center xl:justify-items-start"
                         animate={isInView3 && {
@@ -259,13 +259,13 @@ export default function OurSuccessStories() {
                                 >
                                     <Image
                                         alt={alt}
-                                        className={`rounded-lg object-cover w-full ${showDescriptions.stories3?.[`description${id}`] ? "h-[68%] sm:h-[55%]" : "h-[317px]"}`}
+                                        className={`rounded-lg object-cover w-full ${showDescriptions.stories3?.[`description${id}`] ? "max-h-[68%] sm:max-h-[55%]" : "max-h-[317px]"} transition-all duration-500`}
                                         height={317}
                                         loading="lazy"
                                         src={imageSrc}
                                         width={347}
                                     />
-                                    <div className={`${showDescriptions.stories3?.[`description${id}`] ? "h-[32%] sm:h-[45%]" : "block"}`}>
+                                    <div className={`${showDescriptions.stories3?.[`description${id}`] ? "max-h-[32%] sm:max-h-[45%]" : "block"} transition-all duration-500`}>
                                         <div className={`${showDescriptions.stories3?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
                                             <h5 className="font-[700] text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
                                         </div>
@@ -281,7 +281,7 @@ export default function OurSuccessStories() {
                 className="pt-20 lg:pt-40 pb-[122px] lg:pb-[244px]"
                 ref={ref4}
             >
-                <div className="container px-4 xl:px-0 mx-auto">
+                <div className="container mx-auto">
                     <motion.div
                         className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 xl:gap-8 justify-items-center xl:justify-items-start"
                         animate={isInView4 && {
@@ -330,13 +330,13 @@ export default function OurSuccessStories() {
                                 >
                                     <Image
                                         alt={alt}
-                                        className={`rounded-lg object-cover w-full ${showDescriptions.stories4?.[`description${id}`] ? "h-[68%] sm:h-[55%]" : "h-[317px]"}`}
+                                        className={`rounded-lg object-cover w-full ${showDescriptions.stories4?.[`description${id}`] ? "max-h-[68%] sm:max-h-[55%]" : "max-h-[317px]"} transition-all duration-500`}
                                         height={317}
                                         loading="lazy"
                                         src={imageSrc}
                                         width={347}
                                     />
-                                    <div className={`${showDescriptions.stories4?.[`description${id}`] ? "h-[32%] sm:h-[45%]" : "block"}`}>
+                                    <div className={`${showDescriptions.stories4?.[`description${id}`] ? "max-h-[32%] sm:max-h-[45%]" : "block"} transition-all duration-500`}>
                                         <div className={`${showDescriptions.stories4?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
                                             <h5 className="font-[700] text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
                                         </div>

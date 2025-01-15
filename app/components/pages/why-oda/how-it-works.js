@@ -24,7 +24,7 @@ export default function HomeHowItWorks() {
     return (
         <div className="bg-[#222] pt-[42px] md:pt-[85px] pb-[60px] lg:pb-[120px]">
             <div
-                className="container px-4 xl:px-0 mx-auto"
+                className="container mx-auto"
                 ref={ref}
             >
                 <motion.div

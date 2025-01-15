@@ -85,7 +85,7 @@ export default function Hero({
                 priority
             />
             <div className="absolute inset-0 bg-black bg-opacity-40" />
-            <div className="relative z-40 container px-4 xl:px-0 mx-auto h-full w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
+            <div className="relative z-40 container mx-auto h-full w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
                 <div className={`col-span-1 lg:col-span-7 xl:col-span-6 ${otherData ? "mt-[139px] md:mt-[278px]" : "mt-[130px] md:mt-[261px]"}`}>
                     <div
                         className={`${otherData ? "h-[248px] md:h-[339px]" : "h-[186px] md:h-[255px]"} relative`}

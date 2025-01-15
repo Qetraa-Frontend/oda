@@ -87,13 +87,13 @@ export default function HomeSuccessStories() {
                             >
                                 <Image
                                     alt={alt}
-                                    className={`rounded-lg object-cover w-full ${showDescriptions?.[`description${id}`] ? "h-[68%] sm:h-[55%]" : "h-[317px]"}`}
+                                    className={`rounded-lg object-cover w-full ${showDescriptions?.[`description${id}`] ? "max-h-[68%] sm:max-h-[55%]" : "max-h-[317px]"} transition-all duration-500`}
                                     height={317}
                                     loading="lazy"
                                     src={imageSrc}
                                     width={347}
                                 />
-                                <div className={`${showDescriptions?.[`description${id}`] ? "h-[32%] sm:h-[45%]" : "block"}`}>
+                                <div className={`${showDescriptions?.[`description${id}`] ? "max-h-[32%] sm:max-h-[45%]" : "block"} transition-all duration-500`}>
                                     <div className={`${showDescriptions?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
                                         <h5 className="font-[700] text-base md:text-xl text-white font-nanum-myeongjo">{title}</h5>
                                         <Link

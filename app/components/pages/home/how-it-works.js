@@ -23,7 +23,7 @@ export default function HomeHowItWorks() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto pt-20 md:pt-40 pb-[52px] lg:pb-[104px]"
+            className="container mx-auto pt-20 md:pt-40 pb-[52px] lg:pb-[104px]"
             ref={ref}
         >
             <motion.div

@@ -27,7 +27,7 @@ export default function WhyOdaBuildingProject() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto pb-[91px] md:pb-[181px] pt-14 md:pt-28"
+            className="container mx-auto pb-[91px] md:pb-[181px] pt-14 md:pt-28"
             ref={ref}
         >
             <motion.div

@@ -14,7 +14,7 @@ export default function AboutUsIntro() {
 
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[31px] md:gap-[62px] pt-20 md:pt-40 pb-[72px] md:pb-36 overflow-hidden"
+            className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[31px] md:gap-[62px] pt-20 md:pt-40 pb-[72px] md:pb-36 overflow-hidden"
             ref={ref}
         >
             <motion.div

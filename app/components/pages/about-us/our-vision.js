@@ -15,7 +15,7 @@ export default function AboutUsOurVision() {
     return (
         <div className="bg-[#222] pt-[36px] md:pt-[72px] pb-[37px] md:pb-[74px] overflow-hidden">
             <div
-                className="container px-4 xl:px-0 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[47px] md:gap-[94px]"
+                className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[47px] md:gap-[94px]"
                 ref={ref}
             >
                 <motion.div

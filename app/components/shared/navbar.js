@@ -62,7 +62,7 @@ export default function Navbar() {
                 src="/images/navbar_bg.webp"
                 priority
             />
-            <div className="container px-4 xl:px-0 mx-auto flex justify-between relative z-20">
+            <div className="container mx-auto flex justify-between relative z-20">
                 <Link
                     className="flex items-center gap-1 md:gap-2"
                     href="/"
@@ -184,7 +184,7 @@ export default function Navbar() {
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-90" />
                             <div className="relative z-40 w-full min-h-[1021px]">
-                                <div className="container px-4 xl:px-0 mx-auto flex items-center justify-between mt-[25px] md:mt-[51px] mb-[22px] md:mb-[45px]">
+                                <div className="container mx-auto flex items-center justify-between mt-[25px] md:mt-[51px] mb-[22px] md:mb-[45px]">
                                     <div>
                                         <Image
                                             alt="oda_logo"
@@ -204,7 +204,7 @@ export default function Navbar() {
                                         />
                                     </SheetClose>
                                 </div>
-                                <div className="container px-4 xl:px-0 mx-auto !font-albert-sans overflow-y-auto sm:h-[126vh]">
+                                <div className="container mx-auto !font-albert-sans overflow-y-auto sm:h-[126vh]">
                                     <h6 className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Quick Links</h6>
                                     <div className="flex items-center justify-between mt-6 md:mt-12">
                                         <div>

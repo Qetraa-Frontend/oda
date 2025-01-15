@@ -20,7 +20,7 @@ export default function Footer() {
     const isPageWithoutBottomImage = pathname === "/why-oda" || pathname === "/services" || pathname === "/success-stories" || pathname === "/faqs";
 
     return (
-        <footer className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] px-4 xl:px-0 relative`}>
+        <footer className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] relative`}>
             <Image
                 alt="footer_bg"
                 layout="fill"

@@ -2,13 +2,13 @@
 
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { Autoplay, EffectFade } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import { buildingProjectImages } from "@/app/data/home";
 
 export default function HomeBuildingProject() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
     const ref = useRef(null);
 
     const isInView = useInView(
@@ -16,23 +16,9 @@ export default function HomeBuildingProject() {
         { once: true },
     );
 
-    useEffect(
-        () => {
-            const interval = setInterval(
-                () => {
-                    setCurrentIndex((prevIndex) => (prevIndex + 1) % buildingProjectImages.length);
-                },
-                3000,
-            );
-
-            return () => clearInterval(interval);
-        },
-        [],
-    );
-
     return (
         <div
-            className="container px-4 xl:px-0 mx-auto pt-[28px] md:pt-[56px]"
+            className="container mx-auto pt-[28px] md:pt-[56px]"
             ref={ref}
         >
             <motion.div
@@ -58,17 +44,48 @@ export default function HomeBuildingProject() {
                     {" "}
                     Project at a Time
                 </h2>
-                <div className="rounded-lg min-h-[300px] md:min-h-[560px] flex items-center justify-center relative top-[72px] md:top-36 transition-all duration-500 z-20 overflow-hidden">
-                    <Image
-                        alt={buildingProjectImages[currentIndex].alt}
-                        layout="fill"
-                        loading="lazy"
-                        objectFit="cover"
-                        src={buildingProjectImages[currentIndex].imageSrc}
-                    />
-                    <div className="absolute inset-0 w-full h-full bg-black bg-opacity-40" />
-                    <h4 className="text-white font-[700] text-3xl md:text-5xl text-center font-nanum-myeongjo relative z-10">{buildingProjectImages[currentIndex].title}</h4>
-                </div>
+                <Swiper
+                    className="relative top-[72px] md:top-36 z-20"
+                    effect="fade"
+                    modules={[Autoplay, EffectFade]}
+                    slidesPerView={1}
+                    spaceBetween={30}
+                    speed={3000}
+                    autoplay={{
+                        delay: 2,
+                        disableOnInteraction: true,
+                    }}
+                    loop
+                >
+                    {buildingProjectImages.map(({
+                        alt,
+                        id,
+                        imageSrc,
+                        title,
+                    }) => (
+                        <SwiperSlide
+                            className="min-h-[300px] md:min-h-[560px]"
+                            key={id}
+                            style={{
+                                backgroundPosition: "center",
+                                backgroundSize: "cover",
+                            }}
+                        >
+                            <Image
+                                alt={alt}
+                                className="rounded-lg"
+                                layout="fill"
+                                loading="lazy"
+                                objectFit="cover"
+                                src={imageSrc}
+                            />
+                            <div className="absolute inset-0 w-full h-full bg-black bg-opacity-40 rounded-lg" />
+                            <div className="flex items-center justify-center absolute w-full h-full z-30">
+                                <h4 className="text-white font-[700] text-3xl md:text-5xl text-center font-nanum-myeongjo">{title}</h4>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </motion.div>
         </div>
     );

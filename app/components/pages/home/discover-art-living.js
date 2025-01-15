@@ -28,7 +28,7 @@ export default function HomeDiscoverArtLiving() {
             ref={ref}
         >
             <motion.div
-                className="container px-4 xl:px-0 mx-auto"
+                className="container mx-auto"
                 animate={isInView && {
                     opacity: 1,
                     y: 0,

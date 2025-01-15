@@ -21,7 +21,7 @@ export default function WhyOdaOurPlans() {
     });
 
     return (
-        <div className="container px-4 xl:px-0 mx-auto pb-10 md:pb-20 pt-[120px] md:pt-60 relative">
+        <div className="container mx-auto pb-10 md:pb-20 pt-[120px] md:pt-60 relative">
             <Image
                 alt="our_plans_bg"
                 layout="fill"

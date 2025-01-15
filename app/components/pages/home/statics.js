@@ -13,7 +13,7 @@ export default function HomeStatics() {
                 objectFit="cover"
                 src="/images/pages/home/statics.webp"
             />
-            <div className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-0 min-h-80 py-[38px] md:py-[76px]">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-0 min-h-80 py-[38px] md:py-[76px]">
                 {statics.map(({
                     id,
                     title,

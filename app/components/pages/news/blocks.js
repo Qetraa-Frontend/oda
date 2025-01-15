@@ -14,7 +14,7 @@ export default function NewsBlocks() {
     );
 
     return (
-        <div className="container px-4 xl:px-0 mx-auto max-h-[741px]">
+        <div className="container mx-auto max-h-[741px]">
             <div
                 className="flex relative top-[90px] md:top-[180px] max-h-[741px] z-40"
                 ref={ref}

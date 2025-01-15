@@ -27,7 +27,7 @@ export default function NewsEvents() {
     return (
         <div>
             <Swiper
-                className="bottom-[40px] md:bottom-[80px] h-[155px] md:h-[215px] !z-30 !ml-12 md:!ml-24"
+                className="events-slider bottom-[40px] md:bottom-[80px] h-[155px] md:h-[215px] !z-30 !ml-4 sm:!ml-8 md:!ml-16"
                 modules={[Autoplay]}
                 slidesPerView="auto"
                 spaceBetween={16}
@@ -79,7 +79,7 @@ export default function NewsEvents() {
                 })}
             </Swiper>
             <div
-                className="container px-4 xl:px-0 mx-auto mb-[74px] md:mb-[148px] mt-[22px] md:mt-[45px]"
+                className="container mx-auto mb-[74px] md:mb-[148px] mt-[22px] md:mt-[45px]"
                 ref={ref1}
             >
                 <motion.div
@@ -134,7 +134,7 @@ export default function NewsEvents() {
                 ref={ref2}
             >
                 <motion.div
-                    className="container px-4 xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
+                    className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
                     animate={isInView2 && {
                         opacity: 1,
                         y: 0,

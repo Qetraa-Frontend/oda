@@ -61,7 +61,7 @@ export default function HomeWorkScopes() {
             >
                 <motion.div
                     animate={isInView && { x: 0 }}
-                    className="container px-4 xl:px-0 mx-auto grid grid-cols-1 lg:grid-cols-3"
+                    className="container mx-auto grid grid-cols-1 lg:grid-cols-3"
                     initial={{ x: "100vw" }}
                     transition={{
                         damping: 10,
