@@ -71,7 +71,7 @@ export default function HomeSuccessStories() {
                     }) => (
                         <SwiperSlide key={id}>
                             <div
-                                className="rounded-lg border-white border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395px] h-[431px] overflow-hidden"
+                                className="rounded-lg border-white border-[1px] hover:border-primary hover:border-[2px] p-4 max:w-[395px] h-[400px] lg:h-[360px] xl:h-[431px] overflow-hidden"
                                 onClick={() => setShowDescriptions((prevState) => ({
                                     ...prevState,
                                     [`description${id}`]: !showDescriptions?.[`description${id}`],
@@ -87,13 +87,13 @@ export default function HomeSuccessStories() {
                             >
                                 <Image
                                     alt={alt}
-                                    className={`rounded-lg object-cover w-full ${showDescriptions?.[`description${id}`] ? "max-h-[68%] sm:max-h-[55%]" : "max-h-[317px]"} transition-all duration-500`}
+                                    className={`rounded-lg object-cover w-full ${showDescriptions?.[`description${id}`] ? "max-h-[68%] sm:max-h-[70%] md:max-h-[50%] lg:max-h-[45%] xl:max-h-[55%]" : "max-h-[317px]"} transition-all duration-500`}
                                     height={317}
                                     loading="lazy"
                                     src={imageSrc}
                                     width={347}
                                 />
-                                <div className={`${showDescriptions?.[`description${id}`] ? "max-h-[32%] sm:max-h-[45%]" : "block"} transition-all duration-500`}>
+                                <div className={`${showDescriptions?.[`description${id}`] ? "max-h-[32%] sm:max-h-[30%] md:max-h-[50%] lg:max-h-[55%] xl:max-h-[45%]" : "block"} transition-all duration-500`}>
                                     <div className={`${showDescriptions?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
                                         <h5 className="font-[700] text-base md:text-xl text-white font-nanum-myeongjo">{title}</h5>
                                         <Link
