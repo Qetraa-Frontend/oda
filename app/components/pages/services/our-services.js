@@ -24,7 +24,7 @@ export default function OurServices() {
                             href="/locate-your-home"
                             prefetch={false}
                         >
-                            <button className="font-semibold text-[13px] lg:text-[15px] bg-primary transition-all duration-1000 rounded-3xl py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Get Started</button>
+                            <button className="font-semibold text-[13px] lg:text-[15px] bg-primary transition-all duration-1000 rounded-3xl py-1 lg:py-2 px-4 lg:px-8 hover:animate-heartBeat">Get Started</button>
                         </Link>
                     </div>
                     <Image

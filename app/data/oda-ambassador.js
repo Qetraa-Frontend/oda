@@ -3,13 +3,13 @@ export const odaAmbassadorForm = {
         {
             id: 1,
             label: "Name",
-            name: "name",
+            name: "ownerName",
             type: "text",
         },
         {
             id: 2,
             label: "Phone Number",
-            name: "phoneNumber",
+            name: "ownerPhoneNumber",
             type: "text",
         },
         {
@@ -112,20 +112,20 @@ export const odaAmbassadorForm = {
         {
             id: 1,
             label: "Name",
-            name: "name",
+            name: "referralName",
             type: "text",
         },
         {
             id: 2,
             label: "Phone Number",
-            name: "phoneNumber",
+            name: "referralPhoneNumber",
             type: "text",
         },
         {
             id: 3,
             label: "Email",
-            name: "email",
-            type: "text",
+            name: "referralEmail",
+            type: "email",
         },
         {
             data: ["New Client", "Returning Client"],

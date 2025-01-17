@@ -233,6 +233,16 @@ div[role="dialog"] > button:first-child { display: none; }
     color: rgba(0, 0, 0, 0.7);
 }
 
+button[role="combobox"] {
+    box-shadow: none!important;
+}
+
+button[role="combobox"] svg {
+    width: 40px;
+    height: 40px;
+    opacity: 30%!important;
+}
+
 @media (max-width: 640px) {
     .container {
         padding-inline: 16px!important;

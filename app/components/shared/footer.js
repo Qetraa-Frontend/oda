@@ -17,7 +17,11 @@ import { footerLinks } from "@/app/data/footer";
 export default function Footer() {
     const pathname = usePathname();
 
-    const isPageWithoutBottomImage = pathname === "/why-oda" || pathname === "/services" || pathname === "/success-stories" || pathname === "/faqs";
+    const isPageWithoutBottomImage = pathname === "/why-oda"
+        || pathname === "/services"
+        || pathname === "/success-stories"
+        || pathname === "/faqs"
+        || pathname === "/oda-ambassador";
 
     return (
         <footer className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] relative`}>

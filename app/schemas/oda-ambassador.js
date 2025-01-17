@@ -7,33 +7,45 @@ export const odaAmbassadorFormSchema = z.object({
     ),
     clientStatus: z.string().min(
         1,
-        "Client status is required",
+        "Client Status is required",
     ),
     developer: z.string().min(
         1,
         "Developer is required",
     ),
-    email: z.
+    ownerName: z.string().min(
+        1,
+        "Name is required",
+    ),
+    ownerPhoneNumber: z.
         string().
-        email("Enter a valid email address").
+        regex(
+            /^\+?[0-9]{10,15}$/,
+            "Enter a valid Phone Number (10-15 digits, optional + prefix)",
+        ),
+    referralEmail: z.
+        string().
+        email("Enter a valid Email Address").
         min(
             1,
             "Email is required",
         ),
-    name: z.string().min(
+    referralName: z.string().min(
         1,
         "Name is required",
     ),
-    phoneNumber: z.string().min(
-        1,
-        "Phone number is required",
-    ),
+    referralPhoneNumber: z.
+        string().
+        regex(
+            /^\+?[0-9]{10,15}$/,
+            "Enter a valid Phone Number (10-15 digits, optional + prefix).",
+        ),
     unitArea: z.string().min(
         1,
-        "Unit area is required",
+        "Unit Area is required",
     ),
     unitLocation: z.string().min(
         1,
-        "Unit location is required",
+        "Unit Location is required",
     ),
 });
