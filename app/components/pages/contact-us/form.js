@@ -1,0 +1,231 @@
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Asterisk } from "lucide-react";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+
+import Spinner from "@/app/components/shared/spinner";
+import { odaAmbassadorForm } from "@/app/data/oda-ambassador";
+import { odaAmbassadorFormSchema } from "@/app/schemas/oda-ambassador";
+import { Input } from "@/app/ui/input";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/app/ui/select";
+
+export default function OdaAmbassadorForm() {
+    const [loading, setLoading] = useState(false);
+
+    const [responseMsg, setResponseMsg] = useState({
+        text: "",
+        type: null,
+    });
+
+    const {
+        control,
+        formState: { errors },
+        handleSubmit,
+        reset,
+    } = useForm({
+        defaultValues: {
+            budget: "",
+            clientStatus: "",
+            developer: "",
+            ownerName: "",
+            ownerPhoneNumber: "",
+            referralEmail: "",
+            referralName: "",
+            referralPhoneNumber: "",
+            unitArea: "",
+            unitLocation: "",
+        },
+        resolver: zodResolver(odaAmbassadorFormSchema),
+    });
+
+    const onSubmit = (data) => {
+        setResponseMsg({
+            text: "",
+            type: null,
+        });
+
+        setLoading(true);
+
+        console.log(data);
+
+        setTimeout(
+            () => {
+                setLoading(false);
+
+                setResponseMsg({
+                    text: "Form submitted successfully!",
+                    type: "success",
+                });
+
+                reset();
+            },
+            4000,
+        );
+    };
+
+    return (
+        <div className="container mx-auto pt-[59px] md:pt-[119px] pb-[143px] md:pb-[287px]">
+            <form
+                className="max-w-[1034px] mx-auto"
+                onSubmit={handleSubmit(onSubmit)}
+            >
+                <div className="mb-[70px] md:mb-[141px]">
+                    <div className="mb-[76px] md:mb-[153px]">
+                        <h2 className="font-semibold text-[40px] md:text-[64px] text-center mb-[44px] md:mb-[88px]">Owner Details</h2>
+                        <div className="flex flex-col gap-3 md:gap-6 p-3 md:p-6 border border-black border-opacity-35 rounded-lg">
+                            {odaAmbassadorForm.ownerDetails.map(({
+                                data,
+                                id,
+                                label,
+                                name,
+                                type,
+                            }) => (
+                                <div
+                                    className="flex flex-col gap-2 md:gap-4 py-3 md:py-6"
+                                    key={id}
+                                >
+                                    <label className="font-medium text-[22px] md:text-[32px]">
+                                        {label}
+                                        <Asterisk
+                                            className="text-red-500 relative left-2 bottom-2 inline"
+                                            size={15}
+                                        />
+                                    </label>
+                                    <div>
+                                        {type !== "select" ? (
+                                            <Controller
+                                                control={control}
+                                                name={name}
+                                                render={({ field: inputProps }) => (
+                                                    <Input
+                                                        {...inputProps}
+                                                        type={type}
+                                                    />
+                                                )}
+                                            />
+                                        ) : (
+                                            <Controller
+                                                control={control}
+                                                name={name}
+                                                render={({ field: selectProps }) => (
+                                                    <Select
+                                                        value={selectProps.value}
+                                                        onValueChange={selectProps.onChange}
+                                                    >
+                                                        <SelectTrigger className="border-0 border-b-2 border-input rounded-none outline-none shadow-none px-3 py-1">
+                                                            <SelectValue />
+                                                        </SelectTrigger>
+                                                        <SelectContent>
+                                                            {data.map((option) => (
+                                                                <SelectItem
+                                                                    key={option}
+                                                                    value={option}
+                                                                >
+                                                                    {option}
+                                                                </SelectItem>
+                                                            ))}
+                                                        </SelectContent>
+                                                    </Select>
+                                                )}
+                                            />
+                                        )}
+                                        {errors[name] && <span className="text-red-500 text-xs mt-1 block">{errors[name]?.message}</span>}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div>
+                        <h2 className="font-semibold text-[40px] md:text-[64px] text-center mb-[44px] md:mb-[88px]">Referral Details</h2>
+                        <div className="flex flex-col gap-3 md:gap-6 p-3 md:p-6 border border-black border-opacity-35 rounded-lg">
+                            {odaAmbassadorForm.referralDetails.map(({
+                                data,
+                                id,
+                                label,
+                                name,
+                                type,
+                            }) => (
+                                <div
+                                    className="flex flex-col gap-2 md:gap-4 py-3 md:py-6"
+                                    key={id}
+                                >
+                                    <label className="font-medium text-[22px] md:text-[32px]">
+                                        {label}
+                                        <Asterisk
+                                            className="text-red-500 relative left-2 bottom-2 inline"
+                                            size={15}
+                                        />
+                                    </label>
+                                    <div>
+                                        {type !== "select" ? (
+                                            <Controller
+                                                control={control}
+                                                name={name}
+                                                render={({ field: inputProps }) => (
+                                                    <Input
+                                                        {...inputProps}
+                                                        type={type}
+                                                    />
+                                                )}
+                                            />
+                                        ) : (
+                                            <Controller
+                                                control={control}
+                                                name={name}
+                                                render={({ field: selectProps }) => (
+                                                    <Select
+                                                        value={selectProps.value}
+                                                        onValueChange={selectProps.onChange}
+                                                    >
+                                                        <SelectTrigger className="border-0 border-b-2 border-input rounded-none outline-none shadow-none px-3 py-1">
+                                                            <SelectValue />
+                                                        </SelectTrigger>
+                                                        <SelectContent>
+                                                            {data.map((option) => (
+                                                                <SelectItem
+                                                                    key={option}
+                                                                    value={option}
+                                                                >
+                                                                    {option}
+                                                                </SelectItem>
+                                                            ))}
+                                                        </SelectContent>
+                                                    </Select>
+                                                )}
+                                            />
+                                        )}
+                                        {errors[name] && <span className="text-red-500 text-xs mt-1 block">{errors[name]?.message}</span>}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-2 md:gap-4 items-end">
+                    <button
+                        className="font-semibold text-[22px] md:text-[32px] bg-primary transition-all duration-1000 rounded-[24px] w-full md:w-[371px] py-2 md:py-5 hover:animate-heartBeat disabled:opacity-60"
+                        disabled={loading}
+                    >
+                        {loading ? (
+                            <Spinner
+                                color="text-black"
+                                height="h-[20px]"
+                            />
+                        ) : "Submit"}
+                    </button>
+                    {responseMsg.text && (
+                        <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
+                    )}
+                </div>
+            </form>
+        </div>
+    );
+}

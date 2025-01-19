@@ -1,0 +1,15 @@
+import dynamic from "next/dynamic";
+
+const ContactUsHero = dynamic(() => import("@/app/components/pages/contact-us/hero"));
+const ContactUsForm = dynamic(() => import("@/app/components/pages/contact-us/form"));
+
+export const metadata = { title: "Oda | Contact Us" };
+
+export default function ContactUs() {
+    return (
+        <div>
+            <ContactUsHero />
+            <ContactUsForm />
+        </div>
+    );
+}

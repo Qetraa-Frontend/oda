@@ -155,7 +155,7 @@ export default function Navbar() {
                                 <Input
                                     className="w-full"
                                     placeholder="Search..."
-                                    type="search"
+                                    type="text"
                                 />
                             </div>
                         </DropdownMenuContent>
