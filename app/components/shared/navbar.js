@@ -40,13 +40,18 @@ export default function Navbar() {
     useEffect(
         () => {
             if (!isSheetOpen) {
-                setActiveLinkId({
-                    leftColumn: null,
-                    rightColumn: {
-                        services: null,
-                        top: null,
+                setTimeout(
+                    () => {
+                        setActiveLinkId({
+                            leftColumn: null,
+                            rightColumn: {
+                                services: null,
+                                top: null,
+                            },
+                        });
                     },
-                });
+                    400,
+                );
             }
         },
         [isSheetOpen],
@@ -220,18 +225,20 @@ export default function Navbar() {
                                                             href={url}
                                                             prefetch={false}
                                                             onClick={() => setSheetOpen(false)}
-                                                            onMouseEnter={() => setActiveLinkId(
-                                                                (prevState) => ({
-                                                                    ...prevState,
-                                                                    leftColumn: id,
-                                                                }),
-                                                            )}
-                                                            onMouseLeave={() => setActiveLinkId(
-                                                                (prevState) => ({
-                                                                    ...prevState,
-                                                                    leftColumn: null,
-                                                                }),
-                                                            )}
+                                                            onMouseEnter={() => setActiveLinkId({
+                                                                leftColumn: id,
+                                                                rightColumn: {
+                                                                    services: null,
+                                                                    top: null,
+                                                                },
+                                                            })}
+                                                            onMouseLeave={() => setActiveLinkId({
+                                                                leftColumn: null,
+                                                                rightColumn: {
+                                                                    services: null,
+                                                                    top: null,
+                                                                },
+                                                            })}
                                                         >
                                                             {text}
                                                         </Link>
@@ -252,24 +259,20 @@ export default function Navbar() {
                                                             href={url}
                                                             prefetch={false}
                                                             onClick={() => setSheetOpen(false)}
-                                                            onMouseEnter={() => setActiveLinkId(
-                                                                (prevState) => ({
-                                                                    ...prevState,
-                                                                    rightColumn: {
-                                                                        ...prevState.rightColumn,
-                                                                        top: id,
-                                                                    },
-                                                                }),
-                                                            )}
-                                                            onMouseLeave={() => setActiveLinkId(
-                                                                (prevState) => ({
-                                                                    ...prevState,
-                                                                    rightColumn: {
-                                                                        ...prevState.rightColumn,
-                                                                        top: null,
-                                                                    },
-                                                                }),
-                                                            )}
+                                                            onMouseEnter={() => setActiveLinkId({
+                                                                leftColumn: null,
+                                                                rightColumn: {
+                                                                    services: null,
+                                                                    top: id,
+                                                                },
+                                                            })}
+                                                            onMouseLeave={() => setActiveLinkId({
+                                                                leftColumn: null,
+                                                                rightColumn: {
+                                                                    services: null,
+                                                                    top: null,
+                                                                },
+                                                            })}
                                                         >
                                                             {text}
                                                         </Link>
@@ -290,24 +293,20 @@ export default function Navbar() {
                                                                 href={url}
                                                                 prefetch={false}
                                                                 onClick={() => setSheetOpen(false)}
-                                                                onMouseEnter={() => setActiveLinkId(
-                                                                    (prevState) => ({
-                                                                        ...prevState,
-                                                                        rightColumn: {
-                                                                            ...prevState.rightColumn,
-                                                                            services: id,
-                                                                        },
-                                                                    }),
-                                                                )}
-                                                                onMouseLeave={() => setActiveLinkId(
-                                                                    (prevState) => ({
-                                                                        ...prevState,
-                                                                        rightColumn: {
-                                                                            ...prevState.rightColumn,
-                                                                            services: null,
-                                                                        },
-                                                                    }),
-                                                                )}
+                                                                onMouseEnter={() => setActiveLinkId({
+                                                                    leftColumn: null,
+                                                                    rightColumn: {
+                                                                        services: id,
+                                                                        top: null,
+                                                                    },
+                                                                })}
+                                                                onMouseLeave={() => setActiveLinkId({
+                                                                    leftColumn: null,
+                                                                    rightColumn: {
+                                                                        services: null,
+                                                                        top: null,
+                                                                    },
+                                                                })}
                                                             >
                                                                 {text}
                                                             </Link>

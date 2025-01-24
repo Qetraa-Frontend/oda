@@ -1,6 +1,6 @@
 import Hero from "@/app/components/shared/hero";
 
-export default function OdaAmbassadorHero() {
+export default function ContactUsHero() {
     return (
         <Hero
             backgroundImageSrc="/images/pages/contact-us/hero.webp"

@@ -56,9 +56,13 @@ export default function HomeOurPartners() {
                         id,
                         imageSrc,
                     }) => (
-                        <SwiperSlide key={id}>
+                        <SwiperSlide
+                            className="bg-white !h-[235px] px-1 py-1"
+                            key={id}
+                        >
                             <Image
                                 alt={alt}
+                                className="w-full h-full"
                                 height={235}
                                 loading="lazy"
                                 src={imageSrc}

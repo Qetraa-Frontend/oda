@@ -58,34 +58,44 @@ export const steps = [
 
 export const partners = [
     {
-        alt: "partner_1",
+        alt: "palm_hills",
         id: 1,
-        imageSrc: "/images/pages/home/our-partners/partner_1.webp",
+        imageSrc: "/images/pages/home/our-partners/palm_hills.webp",
     },
     {
-        alt: "partner_2",
+        alt: "marakez",
         id: 2,
-        imageSrc: "/images/pages/home/our-partners/partner_2.webp",
+        imageSrc: "/images/pages/home/our-partners/marakez.webp",
     },
     {
-        alt: "partner_3",
+        alt: "dorra",
         id: 3,
-        imageSrc: "/images/pages/home/our-partners/partner_3.webp",
+        imageSrc: "/images/pages/home/our-partners/dorra.webp",
     },
     {
-        alt: "partner_4",
+        alt: "elgouna",
         id: 4,
-        imageSrc: "/images/pages/home/our-partners/partner_1.webp",
+        imageSrc: "/images/pages/home/our-partners/elgouna.webp",
     },
     {
-        alt: "partner_5",
+        alt: "new_giza",
         id: 5,
-        imageSrc: "/images/pages/home/our-partners/partner_2.webp",
+        imageSrc: "/images/pages/home/our-partners/new_giza.webp",
     },
     {
-        alt: "partner_6",
+        alt: "inertia",
         id: 6,
-        imageSrc: "/images/pages/home/our-partners/partner_3.webp",
+        imageSrc: "/images/pages/home/our-partners/inertia.webp",
+    },
+    {
+        alt: "city_view",
+        id: 7,
+        imageSrc: "/images/pages/home/our-partners/city_view.webp",
+    },
+    {
+        alt: "soma_bay",
+        id: 8,
+        imageSrc: "/images/pages/home/our-partners/soma_bay.webp",
     },
 ];
 
