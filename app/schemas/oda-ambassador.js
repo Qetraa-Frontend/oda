@@ -38,7 +38,7 @@ export const odaAmbassadorFormSchema = z.object({
         string().
         regex(
             /^\+?[0-9]{10,15}$/,
-            "Enter a valid Phone Number (10-15 digits, optional + prefix).",
+            "Enter a valid Phone Number",
         ),
     unitArea: z.string().min(
         1,

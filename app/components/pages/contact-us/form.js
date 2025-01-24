@@ -5,19 +5,14 @@ import { Asterisk } from "lucide-react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
+import Social from "@/app/components/shared/social";
 import Spinner from "@/app/components/shared/spinner";
-import { odaAmbassadorForm } from "@/app/data/oda-ambassador";
-import { odaAmbassadorFormSchema } from "@/app/schemas/oda-ambassador";
+import { contactUsForm } from "@/app/data/forms/contact-us";
+import { contactUsFormSchema } from "@/app/schemas/contact-us";
 import { Input } from "@/app/ui/input";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/app/ui/select";
+import { Textarea } from "@/app/ui/textarea";
 
-export default function OdaAmbassadorForm() {
+export default function ContactUsForm() {
     const [loading, setLoading] = useState(false);
 
     const [responseMsg, setResponseMsg] = useState({
@@ -32,18 +27,12 @@ export default function OdaAmbassadorForm() {
         reset,
     } = useForm({
         defaultValues: {
-            budget: "",
-            clientStatus: "",
-            developer: "",
-            ownerName: "",
-            ownerPhoneNumber: "",
-            referralEmail: "",
-            referralName: "",
-            referralPhoneNumber: "",
-            unitArea: "",
-            unitLocation: "",
+            comment: "",
+            email: "",
+            name: "",
+            phoneNumber: "",
         },
-        resolver: zodResolver(odaAmbassadorFormSchema),
+        resolver: zodResolver(contactUsFormSchema),
     });
 
     const onSubmit = (data) => {
@@ -72,18 +61,27 @@ export default function OdaAmbassadorForm() {
     };
 
     return (
-        <div className="container mx-auto pt-[59px] md:pt-[119px] pb-[143px] md:pb-[287px]">
-            <form
-                className="max-w-[1034px] mx-auto"
-                onSubmit={handleSubmit(onSubmit)}
-            >
-                <div className="mb-[70px] md:mb-[141px]">
-                    <div className="mb-[76px] md:mb-[153px]">
-                        <h2 className="font-semibold text-[40px] md:text-[64px] text-center mb-[44px] md:mb-[88px]">Owner Details</h2>
-                        <div className="flex flex-col gap-3 md:gap-6 p-3 md:p-6 border border-black border-opacity-35 rounded-lg">
-                            {odaAmbassadorForm.ownerDetails.map(({
-                                data,
+        <div className="container mx-auto pt-[59px] md:pt-[119px] pb-[47px] md:pb-[95px]">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-[30px] md:gap-[60px]">
+                <div className="col-span-1 md:col-span-6">
+                    <h2 className="font-[800] font-nanum-myeongjo text-6xl lg:text-8xl">
+                        Let&apos;s Talk
+                    </h2>
+                    <p className="font-[700] font-nanum-myeongjo opacity-65 text-[22px] lg:text-[32px] lg:leading-[40px] mt-5 lg:mt-10">Got a unit on your mind ? Let’s discuss about the details.</p>
+                    <div className="mt-10 lg:mt-20">
+                        <span className="font-[800] font-nanum-myeongjo text-[22px] lg:text-[32px]">Call Us</span>
+                        <Social />
+                    </div>
+                </div>
+                <form
+                    className="col-span-1 md:col-span-6"
+                    onSubmit={handleSubmit(onSubmit)}
+                >
+                    <div className="p-1 md:p-3 border border-black border-opacity-35 rounded-lg">
+                        <div className="flex flex-col gap-3 md:gap-6">
+                            {contactUsForm.map(({
                                 id,
+                                isOptional,
                                 label,
                                 name,
                                 type,
@@ -92,140 +90,55 @@ export default function OdaAmbassadorForm() {
                                     className="flex flex-col gap-2 md:gap-4 py-3 md:py-6"
                                     key={id}
                                 >
-                                    <label className="font-medium text-[22px] md:text-[32px]">
+                                    <label className="font-[800] font-nanum-myeongjo text-lg md:text-2xl">
                                         {label}
-                                        <Asterisk
-                                            className="text-red-500 relative left-2 bottom-2 inline"
-                                            size={15}
-                                        />
-                                    </label>
-                                    <div>
-                                        {type !== "select" ? (
-                                            <Controller
-                                                control={control}
-                                                name={name}
-                                                render={({ field: inputProps }) => (
-                                                    <Input
-                                                        {...inputProps}
-                                                        type={type}
-                                                    />
-                                                )}
-                                            />
-                                        ) : (
-                                            <Controller
-                                                control={control}
-                                                name={name}
-                                                render={({ field: selectProps }) => (
-                                                    <Select
-                                                        value={selectProps.value}
-                                                        onValueChange={selectProps.onChange}
-                                                    >
-                                                        <SelectTrigger className="border-0 border-b-2 border-input rounded-none outline-none shadow-none px-3 py-1">
-                                                            <SelectValue />
-                                                        </SelectTrigger>
-                                                        <SelectContent>
-                                                            {data.map((option) => (
-                                                                <SelectItem
-                                                                    key={option}
-                                                                    value={option}
-                                                                >
-                                                                    {option}
-                                                                </SelectItem>
-                                                            ))}
-                                                        </SelectContent>
-                                                    </Select>
-                                                )}
+                                        {!isOptional && (
+                                            <Asterisk
+                                                className="text-red-500 relative left-2 bottom-2 inline"
+                                                size={15}
                                             />
                                         )}
+                                    </label>
+                                    <div>
+                                        <Controller
+                                            control={control}
+                                            name={name}
+                                            render={({ field: inputProps }) => (type !== "text-area" ? (
+                                                <Input
+                                                    {...inputProps}
+                                                    type={type}
+                                                />
+                                            ) : (
+                                                <Textarea
+                                                    {...inputProps}
+                                                    type={type}
+                                                />
+                                            ))}
+                                        />
                                         {errors[name] && <span className="text-red-500 text-xs mt-1 block">{errors[name]?.message}</span>}
                                     </div>
                                 </div>
                             ))}
                         </div>
-                    </div>
-                    <div>
-                        <h2 className="font-semibold text-[40px] md:text-[64px] text-center mb-[44px] md:mb-[88px]">Referral Details</h2>
-                        <div className="flex flex-col gap-3 md:gap-6 p-3 md:p-6 border border-black border-opacity-35 rounded-lg">
-                            {odaAmbassadorForm.referralDetails.map(({
-                                data,
-                                id,
-                                label,
-                                name,
-                                type,
-                            }) => (
-                                <div
-                                    className="flex flex-col gap-2 md:gap-4 py-3 md:py-6"
-                                    key={id}
-                                >
-                                    <label className="font-medium text-[22px] md:text-[32px]">
-                                        {label}
-                                        <Asterisk
-                                            className="text-red-500 relative left-2 bottom-2 inline"
-                                            size={15}
-                                        />
-                                    </label>
-                                    <div>
-                                        {type !== "select" ? (
-                                            <Controller
-                                                control={control}
-                                                name={name}
-                                                render={({ field: inputProps }) => (
-                                                    <Input
-                                                        {...inputProps}
-                                                        type={type}
-                                                    />
-                                                )}
-                                            />
-                                        ) : (
-                                            <Controller
-                                                control={control}
-                                                name={name}
-                                                render={({ field: selectProps }) => (
-                                                    <Select
-                                                        value={selectProps.value}
-                                                        onValueChange={selectProps.onChange}
-                                                    >
-                                                        <SelectTrigger className="border-0 border-b-2 border-input rounded-none outline-none shadow-none px-3 py-1">
-                                                            <SelectValue />
-                                                        </SelectTrigger>
-                                                        <SelectContent>
-                                                            {data.map((option) => (
-                                                                <SelectItem
-                                                                    key={option}
-                                                                    value={option}
-                                                                >
-                                                                    {option}
-                                                                </SelectItem>
-                                                            ))}
-                                                        </SelectContent>
-                                                    </Select>
-                                                )}
-                                            />
-                                        )}
-                                        {errors[name] && <span className="text-red-500 text-xs mt-1 block">{errors[name]?.message}</span>}
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="flex flex-col gap-2 md:gap-4">
+                            <button
+                                className="font-[800] font-nanum-myeongjo text-lg md:text-2xl bg-primary transition-all duration-1000 rounded-[29px] w-full md:w-[227px] py-1 md:py-2 hover:animate-heartBeat disabled:opacity-60"
+                                disabled={loading}
+                            >
+                                {loading ? (
+                                    <Spinner
+                                        color="text-black"
+                                        height="h-[40px]"
+                                    />
+                                ) : "Submit"}
+                            </button>
+                            {responseMsg.text && (
+                                <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center md:text-left`}>{responseMsg.text}</span>
+                            )}
                         </div>
                     </div>
-                </div>
-                <div className="flex flex-col gap-2 md:gap-4 items-end">
-                    <button
-                        className="font-semibold text-[22px] md:text-[32px] bg-primary transition-all duration-1000 rounded-[24px] w-full md:w-[371px] py-2 md:py-5 hover:animate-heartBeat disabled:opacity-60"
-                        disabled={loading}
-                    >
-                        {loading ? (
-                            <Spinner
-                                color="text-black"
-                                height="h-[20px]"
-                            />
-                        ) : "Submit"}
-                    </button>
-                    {responseMsg.text && (
-                        <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
-                    )}
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     );
 }

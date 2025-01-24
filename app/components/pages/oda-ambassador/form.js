@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import Spinner from "@/app/components/shared/spinner";
-import { odaAmbassadorForm } from "@/app/data/oda-ambassador";
+import { odaAmbassadorForm } from "@/app/data/forms/oda-ambassador";
 import { odaAmbassadorFormSchema } from "@/app/schemas/oda-ambassador";
 import { Input } from "@/app/ui/input";
 import {
