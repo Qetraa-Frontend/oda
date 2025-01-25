@@ -86,7 +86,7 @@ export default function Hero({
             />
             <div className="absolute inset-0 bg-black bg-opacity-40" />
             <div className="relative z-40 container mx-auto h-full w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
-                <div className={`col-span-1 lg:col-span-7 ${otherData ? "xl:col-span-6" : "xl:col-span-7"} ${otherData ? "mt-[139px] md:mt-[278px]" : "mt-[130px] md:mt-[261px]"}`}>
+                <div className={`col-span-1 lg:col-span-8 ${otherData ? "xl:col-span-6" : "xl:col-span-7"} ${otherData ? "mt-[139px] md:mt-[278px]" : "mt-[130px] md:mt-[261px]"}`}>
                     <div
                         className={`${otherData ? "h-[248px] md:h-[339px]" : "h-fit-content"} relative`}
                         ref={ref}
@@ -95,7 +95,7 @@ export default function Hero({
                             <>
                                 <div className="h-[180px] md:h-[251px] overflow-hidden">
                                     {previousTitle && isAnimating && <h1 className="font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87] animate-slideOutToTop h-full">{previousTitle}</h1>}
-                                    <h1 className={`font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87] ${isAnimating ? "animate-slideInFromBottom" : ""} h-full`}>{currentTitle}</h1>
+                                    <h1 className={`font-medium uppercase text-5xl sm:text-6xl md:text-8xl text-white md:!leading-[.87] ${isAnimating ? "animate-slideInFromBottom" : ""} h-full`}>{currentTitle}</h1>
                                 </div>
                                 <p className="font-medium text-lg md:text-2xl text-white mt-4 md:mt-8 max-w-[468px]">{description}</p>
                             </>
@@ -103,7 +103,7 @@ export default function Hero({
                             <>
                                 <div className="overflow-hidden">
                                     <motion.h1
-                                        className="font-medium uppercase text-6xl md:text-8xl text-white md:!leading-[.87] h-full"
+                                        className="font-medium uppercase text-5xl sm:text-6xl md:text-8xl text-white md:!leading-[.87] h-full"
                                         animate={isInView && {
                                             opacity: 1,
                                             y: 0,
