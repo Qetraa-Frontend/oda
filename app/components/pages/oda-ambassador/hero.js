@@ -7,14 +7,14 @@ export default function OdaAmbassadorHero() {
             buttonLink="#"
             buttonText="Download App"
             buttonTopSpace="mt-[25px] md:mt-[50px]"
-            description="To a beautifully finished home with Oda’s expertly crafted packages."
+            description="How about joining our team? We’d love to have you on board and be  part of our journey!"
             heroHeight="h-[500px] md:h-[806px]"
             title={(
                 <>
-                    Want to Join Our
+                    Join ODA
                     <br />
                     {" "}
-                    Family?
+                    Team
                 </>
             )}
         />
