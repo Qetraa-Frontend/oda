@@ -21,7 +21,7 @@ export const faqs = {
             question: "04 Can I receive 3D for proposed furniture plan ?",
         },
         {
-            asnwer: "Yes, multiple washing machine locations can be requested within the package . Oda customer excellence will accommodate your request and ensure proper water supply, drainage, and electrical outlets at each location.",
+            answer: "Yes, multiple washing machine locations can be requested within the package . Oda customer excellence will accommodate your request and ensure proper water supply, drainage, and electrical outlets at each location.",
             id: "faqs1_5",
             question: "05 Can I have multiple location for washing machine ?",
         },
