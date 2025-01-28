@@ -16,6 +16,7 @@ export default function WhyOdaBuildingProject() {
     useEffect(
         () => {
             const video = videoRef.current;
+
             if (video) {
                 const playVideo = async () => await video.play(); // eslint-disable-line
 
@@ -47,13 +48,13 @@ export default function WhyOdaBuildingProject() {
                     type: "spring",
                 }}
             >
-                <h2 className="font-semibold text-[32px] md:text-[56px] uppercase text-center !leading-normal mb-12 md:mb-24">
+                <h2 className="font-semibold text-[32px] md:text-[56px] uppercase text-center !leading-normal">
                     Building a Legacy, One
                     <br className="hidden lg:block" />
                     {" "}
                     Project at a Time
                 </h2>
-                <video
+                {/* <video
                     className="w-full max-w-full xl:min-h-[563px]"
                     height="563"
                     ref={videoRef}
@@ -73,7 +74,7 @@ export default function WhyOdaBuildingProject() {
                         srcLang="en"
                     />
                     Your browser does not support the video tag.
-                </video>
+                </video> */}
             </motion.div>
         </div>
     );

@@ -266,7 +266,7 @@ export const plans2 = [
         id: 1,
         imageSrc: "/images/pages/why-oda/our-plans/plan_1.webp",
         price: 7500,
-        title: "Grand Design & Build Kit",
+        title: "Grand Package",
     },
     {
         alt: "plan_2",
@@ -316,7 +316,7 @@ export const plans2 = [
         id: 2,
         imageSrc: "/images/pages/why-oda/our-plans/plan_2.webp",
         price: 9500,
-        title: "Prime Design & Build Kit",
+        title: "Prime Package",
     },
     {
         alt: "plan_2",
@@ -366,7 +366,7 @@ export const plans2 = [
         id: 3,
         imageSrc: "/images/pages/why-oda/our-plans/plan_3.webp",
         price: 11500,
-        title: "Signature Design & Build Kit",
+        title: "Signature Package",
     },
 ];
 

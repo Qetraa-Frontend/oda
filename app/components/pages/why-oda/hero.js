@@ -7,7 +7,7 @@ export default function WhyOdaHero() {
             buttonLink="/services"
             buttonText="Learn More"
             buttonTopSpace="mt-[46px] md:mt-[93px]"
-            description="To a beautifully finished home with Oda’s expertly crafted packages."
+            description="From understanding your needs to providing tailored solutions, we strive to create an experience that is seamless and awesome. Here’s why Oda is the perfect destination for your journey."
             heroHeight="h-[500px] md:h-[806px]"
             title="Why Oda?"
         />

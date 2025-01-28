@@ -83,15 +83,15 @@ export default function WhyOdaOurPlans() {
                                 width={134}
                             />
                             <div className="mt-3 md:mt-6">
-                                <h4 className="font-medium text-lg md:text-2xl">{title}</h4>
-                                <div className="my-6 md:my-12">
+                                <h4 className="font-medium text-lg md:text-2xl mb-6 md:mb-12">{title}</h4>
+                                {/* <div className="my-6 md:my-12">
                                     <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Start From</h5>
                                     <span className="font-normal text-lg md:text-2xl">
                                         {price}
                                         {" "}
                                         | M2
                                     </span>
-                                </div>
+                                </div> */}
                                 <p className="font-medium text-base md:text-xl !leading-loose">{description}</p>
                             </div>
                             <div className={`mt-6 md:mt-12 overflow-hidden transition-[max-height] duration-1000 ${showFeatures[`plan${id}`] ? "max-h-[1000px]" : "max-h-0"}`}>
