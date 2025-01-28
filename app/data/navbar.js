@@ -20,11 +20,11 @@ export const navbarLinks = {
             text: "Contact Us",
             url: "/contact-us",
         },
-        {
+        /* {
             id: 5,
             text: "Success Stories",
             url: "/success-stories",
-        },
+        }, */
         {
             id: 6,
             text: "Oda Ambassador",

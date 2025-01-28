@@ -20,11 +20,11 @@ export const footerLinks = {
             text: "Build Your Kit",
             url: "/build-your-kit",
         },
-        {
+        /* {
             id: 5,
             text: "Success Stories",
             url: "/success-stories",
-        },
+        }, */
         {
             id: 6,
             text: "Oda Ambassador",
