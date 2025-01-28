@@ -31,7 +31,7 @@ export default function AboutUsOurMission() {
                     }}
                 >
                     <h2 className="font-bold text-3xl md:text-5xl uppercase">Our Mission</h2>
-                    <p className="font-normal text-[22px] md:text-[32px] mt-6 md:mt-12">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                    <p className="font-normal text-[22px] md:text-[32px] mt-6 md:mt-12">Is to provide our customers with hassle-free design, build and manage experiences by delivering on our commitment to a solid work ethic, and devotion to doing things right, every time.</p>
                 </motion.div>
                 <motion.div
                     animate={isInView && { x: 0 }}

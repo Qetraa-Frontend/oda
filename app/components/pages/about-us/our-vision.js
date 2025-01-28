@@ -51,7 +51,7 @@ export default function AboutUsOurVision() {
                     }}
                 >
                     <h2 className="font-bold text-3xl md:text-5xl text-white uppercase">Our Vision</h2>
-                    <p className="font-normal text-[22px] md:text-[32px] text-white mt-6 md:mt-12">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convalli`s vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                    <p className="font-normal text-[22px] md:text-[32px] text-white mt-6 md:mt-12">To passionately inspire and be known as the innovative go-to design and build platform hub in Egypt and beyond.</p>
                 </motion.div>
             </div>
         </div>

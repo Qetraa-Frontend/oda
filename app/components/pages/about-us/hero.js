@@ -7,14 +7,14 @@ export default function AboutUsHero() {
             buttonLink="/success-stories"
             buttonText="Learn More"
             buttonTopSpace="mt-5 md:mt-[41px]"
-            description="To a beautifully finished home with Oda’s expertly crafted packages."
+            description="Discover who we are, what we stand for, and how we’re disrupting the prop tech ecosystem."
             heroHeight="h-[500px] md:h-[806px]"
             title={(
                 <>
-                    About
+                    Get To
                     <br />
                     {" "}
-                    Us
+                    Know Us
                 </>
             )}
         />
