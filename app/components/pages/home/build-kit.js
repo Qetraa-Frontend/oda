@@ -42,15 +42,8 @@ export default function HomeBuildKit() {
                     type: "spring",
                 }}
             >
-                <h2 className="font-bold text-3xl lg:text-5xl uppercase lg:!leading-relaxed h-20 lg:h-40">
-                    Build your Kit
-                    {" "}
-                    <span className="normal-case">With</span>
-                    <br className="hidden xl:block" />
-                    {" "}
-                    <span className="font-bold text-3xl lg:text-5xl uppercase text-primary">oda</span>
-                </h2>
-                <p className="font-normal opacity-65 text-[22px] lg:text-[32px] lg:leading-[1.4] my-4 lg:my-8 py-4 lg:py-8">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                <h2 className="font-bold text-3xl lg:text-5xl lg:!leading-relaxed">Build your Kit</h2>
+                <p className="font-normal opacity-65 text-[22px] lg:text-[32px] lg:leading-[1.4] my-4 lg:my-8 py-4 lg:py-8">Choose one of our packages and customize it with additional elements from our add-one menu</p>
                 <Link
                     href="/why-oda"
                     prefetch={false}

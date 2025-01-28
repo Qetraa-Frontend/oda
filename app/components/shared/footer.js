@@ -44,7 +44,7 @@ export default function Footer() {
                         our customers who inspire us to stay ahead with innovative finishing
                         solutions & designs.
                     </p>
-                    <Social color="text-white" />
+                    <Social color="white" />
                 </div>
                 <div className="col-span-3">
                     <h6 className="font-medium text-2xl md:text-4xl text-white">Quick Links</h6>

@@ -13,8 +13,8 @@ const HomeHowItWorks = dynamic(() => import("@/app/components/pages/home/how-it-
 const HomeNewsletter = dynamic(() => import("@/app/components/pages/home/newsletter"));
 const HomeOurPartners = dynamic(() => import("@/app/components/pages/home/our-partners"));
 const HomeStatics = dynamic(() => import("@/app/components/pages/home/statics"));
-const HomeSuccessStories = dynamic(() => import("@/app/components/pages/home/success-stories"));
-const HomeTestimonials = dynamic(() => import("@/app/components/pages/home/testimonials"));
+/* const HomeSuccessStories = dynamic(() => import("@/app/components/pages/home/success-stories"));
+   const HomeTestimonials = dynamic(() => import("@/app/components/pages/home/testimonials")); */
 const HomeWorkScopes = dynamic(() => import("@/app/components/pages/home/work-scopes"));
 
 export const metadata = { title: "Oda | Home" };
@@ -30,12 +30,10 @@ export default async function Home() {
             <HomeHowItWorks />
             <HomeBuildingProject />
             <div className="bg-[#222] max-h-[1942px] md:max-h-[2764px] lg:max-h-[2634px] xl:max-h-[2874px] z-10">
-                <div className="container pt-[163px] md:pt-[327px] mx-auto max-h-[1942px] md:max-h-[2764px] lg:max-h-[2608px] xl:max-h-[2828px]">
-                    <div>
-                        <HomeSuccessStories />
-                        <HomeOurPartners />
-                        <HomeTestimonials />
-                    </div>
+                <div className="container pt-[140px] md:pt-[280px] mx-auto max-h-[1942px] md:max-h-[2764px] lg:max-h-[2608px] xl:max-h-[2828px]">
+                    {/* <HomeSuccessStories /> */}
+                    <HomeOurPartners />
+                    {/* <HomeTestimonials /> */}
                 </div>
             </div>
             <HomeNewsletter />

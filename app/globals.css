@@ -272,3 +272,12 @@ button[role="combobox"] svg {
         padding-inline: 16px!important;
     }
 }
+
+a.social-icon svg g {
+    transition: all;
+    transition-duration: 1000ms;
+}
+
+a.social-icon:hover svg g:first-child {
+    fill: #C8E36F!important;
+}

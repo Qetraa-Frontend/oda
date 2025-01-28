@@ -38,6 +38,7 @@
         "react-hook-form": "^7.54.2",
         "react-leaflet": "^5.0.0-rc.1",
         "react-slot-counter": "^3.0.4",
+        "react-social-icons": "^6.20.0",
         "react-swipeable-list": "^1.10.0",
         "swiper": "^11.1.15",
         "tailwind-merge": "^2.5.5",
