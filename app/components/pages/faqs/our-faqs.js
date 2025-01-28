@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -67,28 +66,6 @@ export default function OurFaqs() {
 
     return (
         <div className="container mx-auto pt-[72px] md:pt-[145px] pb-[77px] md:pb-[155px]">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-[28px] md:gap-[56px] mb-[62px] md:mb-[124px]">
-                <div className="col-span-1 md:col-span-6">
-                    <h2 className="font-semibold text-[40px] lg:text-[64px] lg:!leading-relaxed">
-                        Getting Started
-                        {" "}
-                        <br className="hidden xl:block" />
-                        {" "}
-                        With
-                        {" "}
-                        <span className="uppercase">oda</span>
-                    </h2>
-                </div>
-                <div className="col-span-1 md:col-span-6">
-                    <Image
-                        alt="faqs_getting_started"
-                        height={422}
-                        loading="lazy"
-                        src="/images/pages/faqs/faqs_getting_started.webp"
-                        width={580}
-                    />
-                </div>
-            </div>
             {loading ? <Spinner /> : (
                 <div>
                     {filteredFaqs.length > 0 ? ( // eslint-disable-line

@@ -8,7 +8,7 @@ export default function FaqsHero() {
             title={(
                 <>
                     <span className="font-semibold text-2xl md:text-4xl normal-case block mb-[11px] md:mb-[23px] ml-[23px] md:ml-[46px]">Oda FAQs</span>
-                    <span className="font-semibold text-[40px] md:text-[64px] normal-case">How can we help you ?</span>
+                    <span className="font-semibold text-[40px] md:text-[64px] normal-case">How Oda may assist you ?</span>
                 </>
             )}
             withSearchInput
