@@ -42,7 +42,7 @@ export default function NewsBlocks() {
                 </motion.div>
                 <motion.div
                     animate={isInView && { x: 0 }}
-                    className="w-full md:w-1/2 bg-primary pt-[43px] md:pt-[86px] pb-[63px] md:pb-[127px] pr-[16px] md:pr-[32px] pl-[17px] md:pl-[35px] rounded-lg md:rounded-tl-[0px] md:rounded-bl-[0px] md:rounded-tr-xl md:rounded-br-xl"
+                    className="w-full md:w-1/2 bg-primary pt-[43px] md:pt-[86px] pb-[63px] md:pb-[127px] pr-[16px] md:pr-[32px] pl-[17px] md:pl-[35px] rounded-lg md:rounded-tl-[0px] md:rounded-bl-[0px] md:rounded-tr-lg md:rounded-br-lg"
                     initial={{ x: "100vw" }}
                     transition={{
                         damping: 10,

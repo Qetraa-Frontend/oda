@@ -30,7 +30,7 @@ export default function WhyOdaOurPlans() {
                 src="/images/pages/why-oda/our-plans/plans_bg.webp"
             />
             <div className="mb-12 md:mb-24">
-                <h2 className="font-bold text-[32px] md:text-[64px] mb-5 md:mb-10">Our Plans</h2>
+                <h2 className="font-bold text-[32px] md:text-[64px] mb-s md:mb-5">Our Plans</h2>
                 <h3 className="font-medium text-2xl md:text-4xl">Choose your desired pricing plan</h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 xl:gap-8 justify-items-center xl:justify-items-start mb-5 md:mb-10">
@@ -40,11 +40,11 @@ export default function WhyOdaOurPlans() {
                     features,
                     id,
                     imageSrc,
-                    price,
+                    // price,
                     title,
                 }) => (
                     <div
-                        className={`col-span-1 xl:col-span-4 ${id === 3 ? "block sm:hidden xl:block" : ""}`}
+                        className={`w-full col-span-1 xl:col-span-4 ${id === 3 ? "block sm:hidden xl:block" : ""}`}
                         key={id}
                         onMouseEnter={() => setShowChevron({
                             ...showChevron,
@@ -55,7 +55,7 @@ export default function WhyOdaOurPlans() {
                             [`plan${id}`]: false,
                         })}
                     >
-                        <div className={`${id === 2 ? "bg-primary" : "bg-white"} px-4 md:px-8 pt-[37px] md:pt-[74px] rounded-lg text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}>
+                        <div className={`${id === 2 ? "bg-primary" : "bg-transparent"} px-4 md:px-8 pt-[28px] md:pt-[56px] md:pb-[13px] lg:pb-[27px] rounded-lg text-center border-black border-2 min-h-[500px] lg:min-h-[695px] relative transition-all duration-1000`}>
                             <span
                                 className={`absolute bottom-6 right-6 bg-black p-2 rounded-full cursor-pointer transition-all duration-1000 ${
                                     showFeatures[`plan${id}`] ? "rotate-180 opacity-45" : "rotate-0"
@@ -83,9 +83,9 @@ export default function WhyOdaOurPlans() {
                                 width={134}
                             />
                             <div className="mt-3 md:mt-6">
-                                <h4 className="font-medium text-lg md:text-2xl mb-6 md:mb-12">{title}</h4>
+                                <h4 className="font-medium text-lg md:text-2xl mb-3 md:mb-6">{title}</h4>
                                 {/* <div className="my-6 md:my-12">
-                                    <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Start From</h5>
+                                    <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Starting From</h5>
                                     <span className="font-normal text-lg md:text-2xl">
                                         {price}
                                         {" "}
@@ -122,7 +122,7 @@ export default function WhyOdaOurPlans() {
                         </div>
                         {id === 1 && (
                             <div
-                                className={`${id === 2 ? "bg-primary" : "bg-white"} hidden sm:block xl:hidden mt-8 px-4 md:px-8 pt-[37px] md:pt-[74px] rounded-lg text-center border-black border-2 min-h-[695px] relative transition-all duration-1000`}
+                                className={`${id === 2 ? "bg-primary" : "bg-transparent"} hidden sm:block xl:hidden mt-4 xl:mt-8 px-4 md:px-8 pt-[28px] md:pt-[56px] md:pb-[13px] lg:pb-[27px] rounded-lg text-center border-black border-2 min-h-[500px] lg:min-h-[695px] relative transition-all duration-1000`}
                                 key={3}
                             >
                                 <span
@@ -138,7 +138,7 @@ export default function WhyOdaOurPlans() {
                                     }}
                                     onClick={() => setShowFeatures({
                                         ...showFeatures,
-                                        [`plan${id}`]: !showFeatures[`plan${id}`],
+                                        plan3: !showFeatures.plan3,
                                     })}
                                 >
                                     <ChevronDown color="white" />
@@ -152,16 +152,16 @@ export default function WhyOdaOurPlans() {
                                     width={134}
                                 />
                                 <div className="mt-3 md:mt-6">
-                                    <h3 className="font-medium text-lg md:text-2xl">{title}</h3>
-                                    <div className="my-6 md:my-12">
-                                        <h6 className="font-medium text-base md:text-xl mb-3 md:mb-6">Start From</h6>
-                                        <span className="font-normal text-lg md:text-2xl">
-                                            {price}
-                                            {" "}
-                                            | M2
-                                        </span>
-                                    </div>
-                                    <p className="font-medium text-base md:text-xl !leading-loose">{description}</p>
+                                    <h4 className="font-medium text-lg md:text-2xl mb-3 md:mb-6">{plans2[2].title}</h4>
+                                    {/* <div className="my-6 md:my-12">
+                                            <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Starting From</h5>
+                                            <span className="font-normal text-lg md:text-2xl">
+                                                {plans2[2].price}
+                                                {" "}
+                                                | M2
+                                            </span>
+                                        </div> */}
+                                    <p className="font-medium text-base md:text-xl !leading-loose">{plans2[2].description}</p>
                                 </div>
                                 <div className={`mt-6 md:mt-12 overflow-hidden transition-[max-height] duration-1000 ${showFeatures.plan3 ? "max-h-[1000px]" : "max-h-0"}`}>
                                     <ul className="m-0 p-0 list-none !text-left">

@@ -31,20 +31,20 @@ export default function Merchants() {
                         value={ourMerchants[key].key}
                     >
                         {key !== ourMerchants.all.key ? (
-                            <div className="grid grid-cols-1 md:grid-cols-12 gap-[13px] md:gap-[26px] mt-[36px] md:mt-[72px]">
+                            <div className="grid grid-cols-1 sm:grid-cols-12 gap-[13px] md:gap-[26px] mt-[36px] md:mt-[72px]">
                                 {ourMerchants[key].merchants.map(({
                                     alt,
                                     id,
                                     imageSrc,
                                 }) => (
                                     <div
-                                        className="col-span-1 sm:col-span-6 md:col-span-4"
+                                        className="col-span-1 sm:col-span-6 md:col-span-4 flex justify-center md:justify-start"
                                         key={id}
                                     >
                                         <div className="flex flex-col justify-center max-w-[363px] min-h-[203px] border">
                                             <Image
                                                 alt={alt}
-                                                className="h-[153px] mx-auto"
+                                                className="h-[153px] mx-auto object-contain"
                                                 height={153}
                                                 loading="lazy"
                                                 src={imageSrc}
@@ -70,20 +70,20 @@ export default function Merchants() {
                                             key={merchantsCategoryKey}
                                         >
                                             <h4 className="font-medium text-[22px] md:text-[32px] mb-3 md:mb-6">{tab}</h4>
-                                            <div className="grid grid-cols-1 md:grid-cols-12 gap-[13px] md:gap-[26px]">
+                                            <div className="grid grid-cols-1 sm:grid-cols-12 gap-[13px] md:gap-[26px]">
                                                 {merchants.map(({
                                                     alt,
                                                     id,
                                                     imageSrc,
                                                 }) => (
                                                     <div
-                                                        className="col-span-1 sm:col-span-6 md:col-span-4"
+                                                        className="col-span-1 sm:col-span-6 md:col-span-4 flex justify-center md:justify-start"
                                                         key={id}
                                                     >
                                                         <div className="flex flex-col justify-center max-w-[363px] min-h-[203px] border">
                                                             <Image
                                                                 alt={alt}
-                                                                className="h-[153px] mx-auto"
+                                                                className="h-[153px] mx-auto object-contain"
                                                                 height={153}
                                                                 loading="lazy"
                                                                 src={imageSrc}

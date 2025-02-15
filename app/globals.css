@@ -28,7 +28,7 @@
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
+        --radius: 1rem;
         --font-albert-sans: "Albert Sans";
     }
   .dark {
@@ -280,4 +280,11 @@ a.social-icon svg g {
 
 a.social-icon:hover svg g:first-child {
     fill: #C8E36F!important;
+}
+
+button[role="combobox"].primary-select svg {
+    transform: rotate(-90deg);
+    width: 25px!important;
+    height: 25px!important;
+    opacity: 100%!important;
 }

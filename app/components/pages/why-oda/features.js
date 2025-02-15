@@ -127,7 +127,7 @@ export default function WhyOdaFeatures() {
                                         <ChevronLeft
                                             className={`${currentPlan?.id === 1 || !currentPlan?.id ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
                                             size={30}
-                                            onClick={() => (currentPlan?.id !== 1 || !currentPlan?.id === 1) && setCurrentPlan(plans1.find(({ id: planId }) => planId === (currentPlan?.id || 1) - 1))}
+                                            onClick={() => (currentPlan?.id > 1) && setCurrentPlan(plans1.find(({ id: planId }) => planId === (currentPlan?.id || 1) - 1))}
                                         />
                                         <ChevronRight
                                             className={`${currentPlan?.id === plans1.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
@@ -142,7 +142,7 @@ export default function WhyOdaFeatures() {
                                             note,
                                         }, i) => (
                                             <div
-                                                className={`flex items-center ${i === 1 ? "h-[114px] sm:h-20" : "h-20"}`}
+                                                className="flex items-center h-20"
                                                 key={i} // eslint-disable-line
                                             >
                                                 {!note && (

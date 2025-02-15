@@ -16,7 +16,9 @@ export default function Footer() {
         || pathname === "/success-stories"
         || pathname === "/faqs"
         || pathname === "/oda-ambassador"
-        || pathname === "/our-partners";
+        || pathname === "/our-merchants"
+        || pathname === "/our-partners"
+        || pathname === "/locate-your-home";
 
     return (
         <footer className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] relative`}>
