@@ -9,13 +9,13 @@ export const heroSlides = [
         alt: "slide_2",
         id: 2,
         imageSrc: "/images/pages/home/hero/hero_2.webp",
-        title: "Build\\nYour Kit",
+        title: "Build\\nYour\\nKit",
     },
     {
         alt: "slide_3",
         id: 3,
         imageSrc: "/images/pages/home/hero/hero_3.webp",
-        title: "Locate\\nYour\nHome",
+        title: "Locate\\nYour\\nHome",
     },
     {
         alt: "slide_4",

@@ -48,7 +48,7 @@ export default function CheckoutForm({ paymentPlans }) {
         setInfo,
         unitArea,
     } = useLocateYourHomeStore();
-    console.log(Object.values(questions));
+
     const ref = useRef(null);
 
     const isInView = useInView(
