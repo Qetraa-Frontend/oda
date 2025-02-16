@@ -90,7 +90,7 @@ export default function LocateYourHomeAddons({
                             <div>
                                 <motion.div
                                     animate={isInView1 && { x: 0 }}
-                                    className="absolute top-0 left-0 bg-primary rounded-lg h-[438px] w-full"
+                                    className="absolute top-0 left-0 bg-primary rounded-2xl h-[438px] w-full"
                                     initial={{ x: "-100vw" }}
                                     transition={{
                                         damping: 10,
@@ -128,7 +128,7 @@ export default function LocateYourHomeAddons({
                                             type: "spring",
                                         }}
                                     >
-                                        <div className={`min-h-[269px] w-full max-w-[931px] py-4 md:py-[25] xl:py-[33px] px-3 md:px-4 xl:px-6 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between shadow-xl border border-gray-400 rounded-lg ${selectedAddons.find(({ id }) => id === addons[0]?.addonid) ? "bg-primary" : "bg-white"}`}>
+                                        <div className={`min-h-[269px] w-full max-w-[931px] py-4 md:py-[25] xl:py-[33px] px-3 md:px-4 xl:px-6 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between shadow-xl border border-gray-300 rounded-2xl ${selectedAddons.find(({ id }) => id === addons[0]?.addonid) ? "bg-primary" : "bg-white"}`}>
                                             <div className="flex items-center">
                                                 {selectedAddons.find(({ id }) => id === addons[0]?.addonid) ? (
                                                     <Check
@@ -155,26 +155,26 @@ export default function LocateYourHomeAddons({
                                                     />
                                                 )}
                                                 <div className="lg:max-w-[370px]">
-                                                    <h6 className="font-[500] text-[22px] md:text-[32px] mb-1 md:mb-2">{addons[0]?.addonname}</h6>
-                                                    <p className="font-[500] text-[22px] md:text-[32px] opacity-55">{addons[0]?.description}</p>
+                                                    <h6 className="font-medium text-[22px] md:text-[32px] mb-1 md:mb-2">{addons[0]?.addonname}</h6>
+                                                    <p className="font-medium text-[22px] md:text-[32px] opacity-55">{addons[0]?.description}</p>
                                                 </div>
                                             </div>
                                             <div className="flex items-center justify-center">
                                                 {addons[0]?.unitormeter === 1 ? (
-                                                    <span className="font-[400] text-base md:text-xl">
+                                                    <span className="font-normal text-base md:text-xl">
                                                         +
                                                         {addons[0]?.price}
                                                         {" "}
                                                         EGP \m2
                                                     </span>
                                                 ) : (
-                                                    <span className="font-[400] text-base md:text-xl flex gap-2 items-center">
+                                                    <span className="font-normal text-base md:text-xl flex gap-2 items-center">
                                                         +
                                                         {addons[0]?.price}
                                                         {" "}
                                                         EGP
                                                         <Input
-                                                            className="w-[57px] h-[33px] rounded-lg border border-gray-400"
+                                                            className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                             defaultValue={0}
                                                             disabled={addons[0]?.addongroup === "Boilers"}
                                                             type="number"
@@ -241,7 +241,7 @@ export default function LocateYourHomeAddons({
                                                     type: "spring",
                                                 }}
                                             >
-                                                <div className={`min-h-[185px] w-full max-w-[605px] py-4 md:py-[25] xl:py-[28px] px-3 md:px-4 xl:px-6 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between border border-gray-400 rounded-lg ${selectedAddons.find(({ id }) => id === addonid) ? "bg-primary" : "bg-white"}`}>
+                                                <div className={`min-h-[185px] w-full max-w-[605px] py-4 md:py-[25] xl:py-[28px] px-3 md:px-4 xl:px-6 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between border border-gray-300 rounded-2xl ${selectedAddons.find(({ id }) => id === addonid) ? "bg-primary" : "bg-white"}`}>
                                                     <div className="flex items-center">
                                                         {selectedAddons.find(({ id }) => id === addonid) ? (
                                                             <Check
@@ -267,25 +267,25 @@ export default function LocateYourHomeAddons({
                                                                 }}
                                                             />
                                                         )}
-                                                        <h6 className="font-[500] text-[16px] md:text-[20px] lg:max-w-[184px]">{addonname}</h6>
+                                                        <h6 className="font-medium text-[16px] md:text-[20px] lg:max-w-[184px]">{addonname}</h6>
                                                     </div>
                                                     <div className="flex flex-col items-center justify-center lg:max-w-[272px]">
-                                                        <p className="font-[400] text-xs md:text-base mb-3 md:mb-6 text-center">{description}</p>
+                                                        <p className="font-normal text-xs md:text-base mb-3 md:mb-6 text-center">{description}</p>
                                                         {unitormeter === 1 ? (
-                                                            <span className="font-[400] text-base md:text-xl">
+                                                            <span className="font-normal text-base md:text-xl">
                                                                 +
                                                                 {price}
                                                                 {" "}
                                                                 EGP \m2
                                                             </span>
                                                         ) : (
-                                                            <span className="font-[400] text-base md:text-xl flex gap-2 items-center">
+                                                            <span className="font-normal text-base md:text-xl flex gap-2 items-center">
                                                                 +
                                                                 {price}
                                                                 {" "}
                                                                 EGP
                                                                 <Input
-                                                                    className="w-[57px] h-[33px] rounded-lg border border-gray-400"
+                                                                    className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                                     defaultValue={0}
                                                                     disabled={addongroup === "Boilers"}
                                                                     type="number"
@@ -339,7 +339,7 @@ export default function LocateYourHomeAddons({
                             >
                                 <motion.div
                                     animate={isInView3 && { x: 0 }}
-                                    className={`min-h-[185px] w-full max-w-[831px] py-4 md:py-[25] xl:py-[28px] px-2 md:px-3 xl:px-4 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between shadow-xl border border-gray-400 rounded-lg ${selectedAirConditioningAddons.length > 0 ? "bg-primary" : "bg-white"}`}
+                                    className={`min-h-[185px] w-full max-w-[831px] py-4 md:py-[25] xl:py-[28px] px-2 md:px-3 xl:px-4 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between shadow-xl border border-gray-300 rounded-2xl ${selectedAirConditioningAddons.length > 0 ? "bg-primary" : "bg-white"}`}
                                     initial={{ x: "100vw" }}
                                     transition={{
                                         damping: 10,
@@ -371,8 +371,8 @@ export default function LocateYourHomeAddons({
                                             />
                                         )}
                                         <div className="lg:w-[225px]">
-                                            <h6 className="font-[600] text-base md:text-[20px] mb-1 md:mb-2">Air Conditions</h6>
-                                            <p className="font-[400] text-xs md:text-base">{airConditioningAddons[0]?.description}</p>
+                                            <h6 className="font-semibold text-base md:text-[20px] mb-1 md:mb-2">Air Conditions</h6>
+                                            <p className="font-normal text-xs md:text-base">{airConditioningAddons[0]?.description}</p>
                                         </div>
                                     </div>
                                     <div className="flex flex-wrap gap-2 md:gap-4 items-center justify-center">
@@ -385,14 +385,14 @@ export default function LocateYourHomeAddons({
                                                 className="flex gap-1"
                                                 key={addonid}
                                             >
-                                                <span className="font-[400] text-xs md:text-base border border-gray-400 min-w-[154px] rounded-lg flex items-center justify-center">
+                                                <span className="font-normal text-xs md:text-base border border-gray-300 min-w-[154px] rounded-2xl flex items-center justify-center">
                                                     {addonname}
                                                     {" "}
                                                     +
                                                     {price}
                                                 </span>
                                                 <Input
-                                                    className="w-[57px] h-[33px] rounded-lg border border-gray-400"
+                                                    className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                     defaultValue={0}
                                                     type="number"
                                                     value={selectedAirConditioningAddons.find(({ id }) => id === addonid)?.quantity || 0}
@@ -447,7 +447,7 @@ export default function LocateYourHomeAddons({
                     >
                         <motion.div
                             animate={isInView4 && { x: 0 }}
-                            className="absolute top-0 left-0 bg-primary rounded-lg h-[270px] w-full max-w-[962px]"
+                            className="absolute top-0 left-0 bg-primary rounded-2xl h-[270px] w-full max-w-[962px]"
                             initial={{ x: "-100vw" }}
                             transition={{
                                 damping: 10,
@@ -480,7 +480,7 @@ export default function LocateYourHomeAddons({
                                     type: "spring",
                                 }}
                             >
-                                <div className={`min-h-[225px] w-full max-w-[716px] py-4 md:py-[25] xl:py-[36px] px-2 md:px-3 xl:px-4 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between shadow-xl border border-gray-400 rounded-lg ${selectedAddonsPerRequest.find(({ id }) => id === addonsPerRequest[0]?.addperrequestid) ? "bg-primary" : "bg-white"}`}>
+                                <div className={`min-h-[225px] w-full max-w-[716px] py-4 md:py-[25] xl:py-[36px] px-2 md:px-3 xl:px-4 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between shadow-xl border border-gray-300 rounded-2xl ${selectedAddonsPerRequest.find(({ id }) => id === addonsPerRequest[0]?.addperrequestid) ? "bg-primary" : "bg-white"}`}>
                                     <div className="flex items-center">
                                         {selectedAddonsPerRequest.find(({ id }) => id === addonsPerRequest[0]?.addperrequestid) ? (
                                             <Check
@@ -501,12 +501,12 @@ export default function LocateYourHomeAddons({
                                             />
                                         )}
                                         <div className="lg:max-w-[276px]">
-                                            <h6 className="font-[600] text-[22px] md:text-[32px]">{addonsPerRequest[0]?.addperrequestname}</h6>
+                                            <h6 className="font-semibold text-[22px] md:text-[32px]">{addonsPerRequest[0]?.addperrequestname}</h6>
                                         </div>
                                     </div>
                                     <div className="flex flex-col items-center justify-center lg:max-w-[286px]">
-                                        <p className="font-[400] text-xs md:text-base mb-3 md:mb-6">{addonsPerRequest[0]?.description}</p>
-                                        <span className="font-[400] text-xs md:text-base border border-gray-400 w-[174px] rounded-lg flex items-center justify-center">Price Upon Request</span>
+                                        <p className="font-normal text-xs md:text-base mb-3 md:mb-6">{addonsPerRequest[0]?.description}</p>
+                                        <span className="font-normal text-xs md:text-base border border-gray-300 w-[174px] rounded-2xl flex items-center justify-center">Price Upon Request</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -532,7 +532,7 @@ export default function LocateYourHomeAddons({
                                             type: "spring",
                                         }}
                                     >
-                                        <div className={`min-h-[180px] w-full max-w-[500px] py-4 md:py-[25] xl:py-[28px] px-3 md:px-4 xl:px-6 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between border border-gray-400 rounded-lg ${selectedAddonsPerRequest.find(({ id }) => id === addperrequestid) ? "bg-primary" : "bg-white"}`}>
+                                        <div className={`min-h-[180px] w-full max-w-[500px] py-4 md:py-[25] xl:py-[28px] px-3 md:px-4 xl:px-6 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between border border-gray-300 rounded-2xl ${selectedAddonsPerRequest.find(({ id }) => id === addperrequestid) ? "bg-primary" : "bg-white"}`}>
                                             <div className="flex items-center">
                                                 {selectedAddonsPerRequest.find(({ id }) => id === addperrequestid) ? (
                                                     <Check
@@ -552,11 +552,11 @@ export default function LocateYourHomeAddons({
                                                         }}
                                                     />
                                                 )}
-                                                <h6 className="font-[600] text-[16px] md:text-[20px] lg:max-w-[184px]">{addperrequestname}</h6>
+                                                <h6 className="font-semibold text-[16px] md:text-[20px] lg:max-w-[184px]">{addperrequestname}</h6>
                                             </div>
                                             <div className="flex flex-col items-center justify-center lg:max-w-[168px]">
-                                                <p className="font-[400] text-xs md:text-base mb-3 md:mb-6">{description}</p>
-                                                <span className="font-[400] text-xs md:text-base border border-gray-400 w-[174px] rounded-lg flex items-center justify-center">Price Upon Request</span>
+                                                <p className="font-normal text-xs md:text-base mb-3 md:mb-6">{description}</p>
+                                                <span className="font-normal text-xs md:text-base border border-gray-300 w-[174px] rounded-2xl flex items-center justify-center">Price Upon Request</span>
                                             </div>
                                         </div>
                                     </motion.div>

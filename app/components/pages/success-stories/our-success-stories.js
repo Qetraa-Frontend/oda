@@ -125,7 +125,7 @@ export default function OurSuccessStories() {
                                     />
                                     <div className={`${showDescriptions.stories1?.[`description${id}`] ? "max-h-[32%] sm:max-h-[30%] md:max-h-[50%] lg:max-h-[55%] xl:max-h-[45%]" : "block"} transition-all duration-500`}>
                                         <div className={`${showDescriptions.stories1?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
-                                            <h5 className="font-[700] text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
+                                            <h5 className="font-bold text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
                                         </div>
                                         <p className={`font-normal text-sm md:text-lg text-black mt-2 md:mt-4 transform ${showDescriptions.stories1?.[`description${id}`] ? "translate-y-0" : "translate-y-[200%]"} transition-all duration-500`}>{description}</p>
                                     </div>
@@ -196,7 +196,7 @@ export default function OurSuccessStories() {
                                     />
                                     <div className={`${showDescriptions.stories2?.[`description${id}`] ? "max-h-[32%] sm:max-h-[30%] md:max-h-[50%] lg:max-h-[55%] xl:max-h-[45%]" : "block"} transition-all duration-500`}>
                                         <div className={`${showDescriptions.stories2?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
-                                            <h5 className="font-[700] text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
+                                            <h5 className="font-bold text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
                                         </div>
                                         <p className={`font-normal text-sm md:text-lg text-black mt-2 md:mt-4 transform ${showDescriptions.stories2?.[`description${id}`] ? "translate-y-0" : "translate-y-[200%]"} transition-all duration-500`}>{description}</p>
                                     </div>
@@ -267,7 +267,7 @@ export default function OurSuccessStories() {
                                     />
                                     <div className={`${showDescriptions.stories3?.[`description${id}`] ? "max-h-[32%] sm:max-h-[30%] md:max-h-[50%] lg:max-h-[55%] xl:max-h-[45%]" : "block"} transition-all duration-500`}>
                                         <div className={`${showDescriptions.stories3?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
-                                            <h5 className="font-[700] text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
+                                            <h5 className="font-bold text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
                                         </div>
                                         <p className={`font-normal text-sm md:text-lg text-black mt-2 md:mt-4 transform ${showDescriptions.stories3?.[`description${id}`] ? "translate-y-0" : "translate-y-[200%]"} transition-all duration-500`}>{description}</p>
                                     </div>
@@ -338,7 +338,7 @@ export default function OurSuccessStories() {
                                     />
                                     <div className={`${showDescriptions.stories4?.[`description${id}`] ? "max-h-[32%] sm:max-h-[30%] md:max-h-[50%] lg:max-h-[55%] xl:max-h-[45%]" : "block"} transition-all duration-500`}>
                                         <div className={`${showDescriptions.stories4?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
-                                            <h5 className="font-[700] text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
+                                            <h5 className="font-bold text-base md:text-xl text-black font-nanum-myeongjo">{title}</h5>
                                         </div>
                                         <p className={`font-normal text-sm md:text-lg text-black mt-2 md:mt-4 transform ${showDescriptions.stories4?.[`description${id}`] ? "translate-y-0" : "translate-y-[200%]"} transition-all duration-500`}>{description}</p>
                                     </div>

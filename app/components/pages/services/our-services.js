@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Button } from "@/app/ui/button";
+
 export default function OurServices() {
     return (
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[0px] pt-[120px] lg:pt-60 pb-[65px] lg:pb-[131px]">
@@ -24,7 +26,7 @@ export default function OurServices() {
                             href="/locate-your-home"
                             prefetch={false}
                         >
-                            <button className="font-semibold text-[13px] lg:text-[15px] bg-primary transition-all duration-1000 rounded-3xl py-1 lg:py-2 px-4 lg:px-8 hover:animate-heartBeat">Get Started</button>
+                            <Button className="font-semibold text-[13px] lg:text-[15px] !bg-primary text-black transition-all duration-1000 rounded-3xl py-1 lg:py-2 px-4 lg:px-8 hover:animate-heartBeat">Get Started</Button>
                         </Link>
                     </div>
                     <Image
@@ -54,7 +56,7 @@ export default function OurServices() {
                                 href="/build-your-kit"
                                 prefetch={false}
                             >
-                                <button className="font-semibold text-[13px] lg:text-[15px] bg-primary transition-all duration-1000 rounded-3xl py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Get Started</button>
+                                <Button className="font-semibold text-[13px] lg:text-[15px] !bg-primary text-black transition-all duration-1000 rounded-3xl py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Get Started</Button>
                             </Link>
                         </div>
                     </div>
@@ -80,7 +82,7 @@ export default function OurServices() {
                             href="/need-facelift"
                             prefetch={false}
                         >
-                            <button className="font-semibold text-[13px] lg:text-[15px] bg-primary transition-all duration-1000 rounded-3xl py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Get Started</button>
+                            <Button className="font-semibold text-[13px] lg:text-[15px] !bg-primary text-black transition-all duration-1000 rounded-3xl py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Get Started</Button>
                         </Link>
                     </div>
                 </div>

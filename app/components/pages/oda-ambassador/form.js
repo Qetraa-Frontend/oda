@@ -8,6 +8,7 @@ import { Controller, useForm } from "react-hook-form";
 import Spinner from "@/app/components/shared/spinner";
 import { odaAmbassadorForm } from "@/app/data/forms/oda-ambassador";
 import { odaAmbassadorFormSchema } from "@/app/schemas/oda-ambassador";
+import { Button } from "@/app/ui/button";
 import { Input } from "@/app/ui/input";
 import {
     Select,
@@ -210,8 +211,8 @@ export default function OdaAmbassadorForm() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-2 md:gap-4 items-end">
-                    <button
-                        className="font-semibold text-[22px] md:text-[32px] bg-primary transition-all duration-1000 rounded-[24px] w-full md:w-[371px] py-2 md:py-5 hover:animate-heartBeat disabled:opacity-60"
+                    <Button
+                        className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px] hover:animate-heartBeat"
                         disabled={loading}
                     >
                         {loading ? (
@@ -220,7 +221,7 @@ export default function OdaAmbassadorForm() {
                                 height="h-[20px]"
                             />
                         ) : "Submit"}
-                    </button>
+                    </Button>
                     {responseMsg.text && (
                         <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
                     )}

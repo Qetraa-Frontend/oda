@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
+import { Button } from "@/app/ui/button";
+
 export default function HomeBuildKit() {
     const ref = useRef(null);
 
@@ -49,8 +51,8 @@ export default function HomeBuildKit() {
                     prefetch={false}
                 >
                     <div className="relative inline-block">
-                        <button
-                            className="font-medium text-lg lg:text-2xl py-1 lg:py-2 px-4 lg:px-8 text-black bg-gray-400 bg-opacity-20 hover:bg-transparent hover:text-primary rounded-lg border border-transparent"
+                        <Button
+                            className="font-medium text-lg lg:text-2xl py-1 lg:py-2 px-4 lg:px-8 h-12 text-black bg-gray-400 bg-opacity-20 hover:bg-transparent hover:text-primary rounded-lg border border-transparent"
                             onMouseEnter={(e) => {
                                 const borderDiv = e.currentTarget.nextSibling;
 
@@ -65,7 +67,7 @@ export default function HomeBuildKit() {
                             }}
                         >
                             Learn More
-                        </button>
+                        </Button>
                         <div
                             className="absolute inset-0 pointer-events-none rounded-md border-[1px] border-transparent transition-all duration-1000"
                             style={{

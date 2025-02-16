@@ -4,9 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
-import { departments, plans1 } from "@/app/data/why-oda";
-
-export default function WhyOdaFeatures() {
+export default function WhyOdaFeatures({ plans }) {
     const [currentPlan, setCurrentPlan] = useState(null);
 
     const ref = useRef(null);
@@ -15,6 +13,8 @@ export default function WhyOdaFeatures() {
         ref,
         { once: true },
     );
+
+    const formattedPlans = Object.values(plans);
 
     useEffect(
         () => {
@@ -62,43 +62,72 @@ export default function WhyOdaFeatures() {
                         type: "spring",
                     }}
                 >
-                    {departments.map(({
-                        features,
-                        id,
-                        title,
-                    }) => (
-                        <React.Fragment key={id}>
-                            <thead>
-                                <tr className="bg-primary h-20">
-                                    <th
-                                        className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4"
-                                        colSpan="3"
+                    <thead>
+                        <tr className="bg-white h-20">
+                            <th
+                                className="px-2 md:px-4"
+                                colSpan="3"
+                            />
+                        </tr>
+                    </thead>
+                    <>
+                        <thead>
+                            <tr className="bg-primary h-20">
+                                <th
+                                    className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4"
+                                    colSpan="3"
+                                >
+                                    Foundation
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {formattedPlans[0]?.foundation.map(({ plandetailsname }, index) => (
+                                <tr
+                                    className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
+                                                        key={index} // eslint-disable-line
+                                >
+                                    <td
+                                        className="font-normal text-lg md:text-2xl px-2 md:px-4"
+                                        colSpan={3}
                                     >
-                                        {title}
-                                    </th>
+                                        <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block">{plandetailsname}</h5>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                {features.map((feature, index) => (
-                                    <tr
-                                        className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
-                                        key={index} // eslint-disable-line
+                            ))}
+                        </tbody>
+                    </>
+                    <>
+                        <thead>
+                            <tr className="bg-primary h-20">
+                                <th
+                                    className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4"
+                                    colSpan="3"
+                                >
+                                    Decoration
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {formattedPlans[0]?.decoration.map(({ plandetailsname }, index) => (
+                                <tr
+                                    className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
+                                                        key={index} // eslint-disable-line
+                                >
+                                    <td
+                                        className="font-normal text-lg md:text-2xl px-2 md:px-4"
+                                        colSpan={3}
                                     >
-                                        <td
-                                            className="font-normal text-lg md:text-2xl px-2 md:px-4"
-                                            colSpan={3}
-                                        >
-                                            <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block">{feature}</h5>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </React.Fragment>
-                    ))}
+                                        <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block">{plandetailsname}</h5>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </>
                 </motion.table>
                 <motion.div
                     animate={isInView && { x: 0 }}
-                    className="flex flex-wrap gap-4 md:gap-8 justify-end absolute -top-20 right-0 w-full h-[1090px]"
+                    className="flex flex-wrap gap-4 md:gap-8 justify-end absolute -top-0 right-0 w-full h-full"
                     initial={{ x: "100vw" }}
                     transition={{
                         damping: 10,
@@ -108,85 +137,108 @@ export default function WhyOdaFeatures() {
                         type: "spring",
                     }}
                 >
-                    {plans1.map(({
-                        departments: planDepartments,
-                        id,
-                        title,
+                    {formattedPlans.map(({
+                        decoration,
+                        details: formattedPlanDetails,
+                        foundation,
                     }) => {
-                        let currentPlanDepartments = planDepartments;
+                        let currentPlanDepartments = [
+                            {
+                                features: foundation,
+                                title: "Foundation",
+                            },
+                            {
+                                features: decoration,
+                                title: "Decoration",
+                            },
+                        ];
 
                         if (currentPlan?.departments) currentPlanDepartments = currentPlan.departments;
 
                         return (
                             (
                                 <div
-                                    className={`${id !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-lg text-center pt-8 px-4 md:px-8 hover:bg-primary transition-all duration-1000`}
-                                    key={id}
+                                    className={`${formattedPlanDetails.planid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center pt-8 px-4 md:px-8 hover:bg-primary transition-all duration-1000`}
+                                    key={formattedPlanDetails.planid}
                                 >
                                     <div className="xl:hidden absolute top-8 right-[2px] w-full flex justify-between">
                                         <ChevronLeft
-                                            className={`${currentPlan?.id === 1 || !currentPlan?.id ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                            className={`${currentPlan?.details.planid === 1 || !currentPlan?.details?.planid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
                                             size={30}
-                                            onClick={() => (currentPlan?.id > 1) && setCurrentPlan(plans1.find(({ id: planId }) => planId === (currentPlan?.id || 1) - 1))}
+                                            onClick={() => (currentPlan?.details.planid > 1) && setCurrentPlan({
+                                                departments: [
+                                                    {
+                                                        features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).foundation,
+                                                        title: "Foundation",
+                                                    },
+                                                    {
+                                                        features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).decoration,
+                                                        title: "Decoration",
+                                                    },
+                                                ],
+                                                details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).details,
+                                            })}
                                         />
                                         <ChevronRight
-                                            className={`${currentPlan?.id === plans1.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                            className={`${currentPlan?.details.planid === formattedPlans.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
                                             size={30}
-                                            onClick={() => currentPlan?.id !== plans1.length && setCurrentPlan(plans1.find(({ id: planId }) => planId === (currentPlan?.id || 1) + 1))}
+                                            onClick={() => currentPlan?.details.planid !== formattedPlans.length && setCurrentPlan({
+                                                departments: [
+                                                    {
+                                                        features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).foundation,
+                                                        title: "Foundation",
+                                                    },
+                                                    {
+                                                        features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).decoration,
+                                                        title: "Decoration",
+                                                    },
+                                                ],
+                                                details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).details,
+                                            })}
                                         />
                                     </div>
-                                    <h5 className="font-semibold text-lg md:text-2xl uppercase">{currentPlan?.title || title}</h5>
+                                    <h5 className="font-semibold text-lg md:text-2xl uppercase">{currentPlan?.details?.planname || formattedPlanDetails?.planname}</h5>
                                     <div className="flex flex-col justify-center items-center relative top-24">
                                         {currentPlanDepartments[0].features.map(({
-                                            checksCount,
-                                            note,
+                                            description,
+                                            stars,
                                         }, i) => (
                                             <div
-                                                className="flex items-center h-20"
-                                                key={i} // eslint-disable-line
+                                                className="flex items-center gap-1 h-20"
+                                                                    key={i} // eslint-disable-line
                                             >
-                                                {!note && (
-                                                    <span className="flex gap-[2px] md:gap-1">
-                                                        {Array.from(
-                                                            { length: checksCount },
-                                                            (_, index) => index + 1,
-                                                        ).map((_, indx) => (
-                                                            <Check
-                                                                className="rounded-full border border-black p-1 md:p-2"
-                                                                key={indx} // eslint-disable-line
-                                                                size={35}
-                                                            />
-                                                        ))}
-                                                    </span>
-                                                )}
-                                                {note && <h6 className="font-medium text-xs md:text-base">{note}</h6>}
+                                                {description ? <h6 className="font-medium text-xs md:text-base">{description}</h6> : Array.from(
+                                                    { length: stars },
+                                                    (_, index) => index + 1,
+                                                ).map((_, indx) => (
+                                                    <Check
+                                                        className="rounded-full border border-black p-1 md:p-2"
+                                                                            key={indx} // eslint-disable-line
+                                                        size={35}
+                                                    />
+                                                ))}
                                             </div>
                                         ))}
                                     </div>
                                     <div className="flex flex-col justify-center items-center relative top-44">
                                         {currentPlanDepartments[1].features.map(({
-                                            checksCount,
-                                            note,
+                                            description,
+                                            stars,
                                         }, i) => (
                                             <div
-                                                className="flex items-center h-20"
-                                                key={i} // eslint-disable-line
+                                                className="flex items-center gap-1 h-20"
+                                                                    key={i} // eslint-disable-line
                                             >
-                                                {!note && (
-                                                    <span className="flex gap-[2px] md:gap-1">
-                                                        {Array.from(
-                                                            { length: checksCount },
-                                                            (_, index) => index + 1,
-                                                        ).map((_, indx) => (
-                                                            <Check
-                                                                className="rounded-full border border-black p-1 md:p-2"
-                                                                key={indx} // eslint-disable-line
-                                                                size={35}
-                                                            />
-                                                        ))}
-                                                    </span>
-                                                )}
-                                                {note && <h6 className="font-medium text-xs md:text-base">{note}</h6>}
+                                                {description ? <h6 className="font-medium text-xs md:text-base">{description}</h6> : Array.from(
+                                                    { length: stars },
+                                                    (_, index) => index + 1,
+                                                ).map((_, indx) => (
+                                                    <Check
+                                                        className="rounded-full border border-black p-1 md:p-2"
+                                                                            key={indx} // eslint-disable-line
+                                                        size={35}
+                                                    />
+                                                ))}
                                             </div>
                                         ))}
                                     </div>

@@ -3,6 +3,8 @@
 import { MoveUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { Button } from "@/app/ui/button";
+
 import Loader from "./loader";
 
 export default function Main({ children }) {
@@ -50,8 +52,8 @@ export default function Main({ children }) {
     return showLoader ? <Loader /> : (
         <main className="min-h-screen font-albert-sans">
             {children}
-            <button
-                className={`fixed bottom-5 right-5 z-30 cursor-pointer bg-white hover:bg-primary text-black p-3 bg-opacity-80 rounded-full shadow-lg hover:bg-opacity-100 hover:animate-heartBeat transition-all duration-300 ${
+            <Button
+                className={`fixed bottom-5 right-5 z-30 cursor-pointer bg-white hover:bg-primary text-black p-3 w-12 h-12 bg-opacity-80 rounded-full shadow-lg hover:bg-opacity-100 hover:animate-heartBeat transition-all duration-300 ${
                     showToTopButton
                         ? "opacity-100 scale-100"
                         : "opacity-0 scale-0 pointer-events-none"
@@ -59,7 +61,7 @@ export default function Main({ children }) {
                 onClick={handleScrollToTop}
             >
                 <MoveUp color="black" />
-            </button>
+            </Button>
         </main>
     );
 }

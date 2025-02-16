@@ -95,7 +95,7 @@ export default function HomeSuccessStories() {
                                 />
                                 <div className={`${showDescriptions?.[`description${id}`] ? "max-h-[32%] sm:max-h-[30%] md:max-h-[50%] lg:max-h-[55%] xl:max-h-[45%]" : "block"} transition-all duration-500`}>
                                     <div className={`${showDescriptions?.[`description${id}`] ? "flex justify-between mt-[14px] xl:mt-7 items-center" : "flex justify-between items-center place-items-center h-[80px]"}`}>
-                                        <h5 className="font-[700] text-base md:text-xl text-white font-nanum-myeongjo">{title}</h5>
+                                        <h5 className="font-bold text-base md:text-xl text-white font-nanum-myeongjo">{title}</h5>
                                         <Link
                                             className="rounded-full bg-black p-2 h-10 w-10"
                                             href="/successl-stories"

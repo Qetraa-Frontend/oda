@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
+import { Button } from "@/app/ui/button";
+
 export default function NewsBlocks() {
     const ref = useRef(null);
 
@@ -58,7 +60,7 @@ export default function NewsBlocks() {
                         href="/about-us"
                         prefetch={false}
                     >
-                        <button className="font-medium text-lg md:text-2xl text-black hover:text-white bg-transparent border-black border-r-[.5px] border-[1px] hover:border-white transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8">Learn More</button>
+                        <Button className="font-medium text-lg md:text-2xl text-black hover:text-white bg-transparent border-black border-r-[.5px] border-[1px] hover:border-white transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-12">Learn More</Button>
                     </Link>
                 </motion.div>
             </div>

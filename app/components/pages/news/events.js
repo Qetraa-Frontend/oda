@@ -8,6 +8,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { events, eventsSlider } from "@/app/data/news";
+import { Button } from "@/app/ui/button";
 
 export default function NewsEvents() {
     const ref1 = useRef(null);
@@ -31,7 +32,7 @@ export default function NewsEvents() {
                 modules={[Autoplay]}
                 slidesPerView="auto"
                 spaceBetween={16}
-                speed={3000}
+                speed={5000}
                 autoplay={{
                     delay: 2,
                     disableOnInteraction: true,
@@ -70,7 +71,7 @@ export default function NewsEvents() {
                                         href={buttonLink}
                                         prefetch={false}
                                     >
-                                        <button className="font-medium text-xs md:text-base hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">{buttonText}</button>
+                                        <Button className="font-medium text-xs md:text-base text-black hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">{buttonText}</Button>
                                     </Link>
                                 </div>
                             </div>
@@ -121,7 +122,7 @@ export default function NewsEvents() {
                             />
                             <div>
                                 <div className="mt-3 md:mt-6">
-                                    <time className="font-[700] text-base md:text-xl text-[#222] opacity-40 font-nanum-myeongjo">{date.split("-").reverse().join(".")}</time>
+                                    <time className="font-bold text-base md:text-xl text-[#222] opacity-40 font-nanum-myeongjo">{date.split("-").reverse().join(".")}</time>
                                     <p className="font-normal text-base md:text-xl text-black mt-3 md:mt-6">{description}</p>
                                 </div>
                             </div>
@@ -172,7 +173,7 @@ export default function NewsEvents() {
                             />
                             <div>
                                 <div className="mt-3 md:mt-6">
-                                    <time className="font-[700] text-base md:text-xl text-white font-nanum-myeongjo">{date.split("-").reverse().join(".")}</time>
+                                    <time className="font-bold text-base md:text-xl text-white font-nanum-myeongjo">{date.split("-").reverse().join(".")}</time>
                                     <p className="font-normal text-base md:text-xl text-white mt-3 md:mt-6">{description}</p>
                                 </div>
                             </div>

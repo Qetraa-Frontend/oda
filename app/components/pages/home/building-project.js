@@ -81,7 +81,7 @@ export default function HomeBuildingProject() {
                             />
                             <div className="absolute inset-0 w-full h-full bg-black bg-opacity-40 rounded-lg" />
                             <div className="flex items-center justify-center absolute w-full h-full z-30">
-                                <h4 className="text-white font-[700] text-3xl md:text-5xl text-center font-nanum-myeongjo">{title}</h4>
+                                <h4 className="text-white font-bold text-3xl md:text-5xl text-center font-nanum-myeongjo">{title}</h4>
                             </div>
                         </SwiperSlide>
                     ))}

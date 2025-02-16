@@ -68,19 +68,19 @@ export default async function LocateYourHome() {
 
     const plan3Details = await plan3DetailsResponse.json();
 
-    const categorizedPlan1Details = {
+    const formattedPlan1Details = {
         decoration: plan1Details.filter(({ plandetailstype }) => plandetailstype === 1),
         details: plans[0],
         foundation: plan1Details.filter(({ plandetailstype }) => plandetailstype === 0),
     };
 
-    const categorizedPlan2Details = {
+    const formattedPlan2Details = {
         decoration: plan2Details.filter(({ plandetailstype }) => plandetailstype === 1),
         details: plans[1],
         foundation: plan2Details.filter(({ plandetailstype }) => plandetailstype === 0),
     };
 
-    const categorizedPlan3Details = {
+    const formattedPlan3Details = {
         decoration: plan3Details.filter(({ plandetailstype }) => plandetailstype === 1),
         details: plans[2],
         foundation: plan3Details.filter(({ plandetailstype }) => plandetailstype === 0),
@@ -90,7 +90,7 @@ export default async function LocateYourHome() {
 
     const otherAddons = addons.filter(({ addongroup }) => addongroup !== "AirConditioning");
 
-    const categorizedAutomation = {
+    const formattedAutomation = {
         advanced: automation.filter(({ automationid }) => automationid === 2),
         basic: automation.filter(({ automationid }) => automationid === 1),
     };
@@ -102,9 +102,9 @@ export default async function LocateYourHome() {
             <LocateYourHomeMenu plans={plans} />
             <LocateYourHomePlans
                 plans={{
-                    plan1: categorizedPlan1Details,
-                    plan2: categorizedPlan2Details,
-                    plan3: categorizedPlan3Details,
+                    plan1: formattedPlan1Details,
+                    plan2: formattedPlan2Details,
+                    plan3: formattedPlan3Details,
                 }}
             />
             <LocateYourHomeAddons
@@ -112,7 +112,7 @@ export default async function LocateYourHome() {
                 addonsPerRequest={addonsPerRequest}
                 airConditioningAddons={airConditioningAddons}
             />
-            <LocateYourHomeAutomation automation={categorizedAutomation} />
+            <LocateYourHomeAutomation automation={formattedAutomation} />
         </div>
     );
 }

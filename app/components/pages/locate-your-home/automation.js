@@ -2,7 +2,11 @@
 
 import { motion, useInView } from "framer-motion";
 import {
-    Check, ChevronLeft, ChevronRight, Plus, X,
+    Check,
+    ChevronLeft,
+    ChevronRight,
+    Plus,
+    X,
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -23,6 +27,7 @@ export default function LocateYourHomeAutomation({ automation }) {
         plan,
         project,
         setAutomation,
+        setIsActive,
         unitArea,
     } = useLocateYourHomeStore();
 
@@ -82,7 +87,7 @@ export default function LocateYourHomeAutomation({ automation }) {
             >
                 <motion.div
                     animate={isInView && { x: 0 }}
-                    className="w-full xl:w-[838px] min-h-[300px] md:h-[495px] bg-primary py-[20px] md:py-[41px] px-4 md:px-8 rounded-lg xl:rounded-r-none"
+                    className="w-full xl:w-[838px] min-h-[300px] md:h-[495px] bg-primary py-[20px] md:py-[41px] px-4 md:px-8 rounded-2xl xl:rounded-r-none"
                     initial={{ x: "-100vw" }}
                     transition={{
                         damping: 10,
@@ -93,20 +98,20 @@ export default function LocateYourHomeAutomation({ automation }) {
                     }}
                 >
                     <div>
-                        <span className="font-[500] text-base md:text-[20px] mb-2 md:mb-4 inline-block ml-2 md:ml-4">Add-on</span>
+                        <span className="font-medium text-base md:text-[20px] mb-2 md:mb-4 inline-block ml-2 md:ml-4">Add-on</span>
                         <div className="flex items-center mb-2">
                             <Plus
                                 className="opacity-60 w-[30px] h-[30px] md:w-[60px] md:h-[60px]"
                                 size={96}
                             />
-                            <h2 className="font-[600] text-[22px] md:text-[32px] !uppercase">Automation</h2>
+                            <h2 className="font-semibold text-[22px] md:text-[32px] !uppercase">Automation</h2>
                         </div>
-                        <p className="font-[600] text-base md:text-[20px] !leading-loose lg:w-3/4">
+                        <p className="font-semibold text-base md:text-[20px] !leading-loose lg:w-3/4">
                             Enhance what you love most about your home
                             with a seamless automation experience using
                             world class automation technology & brands
                         </p>
-                        <p className="font-[600] text-base md:text-[20px] !leading-loose mt-2 md:mt-4 lg:w-3/4">
+                        <p className="font-semibold text-base md:text-[20px] !leading-loose mt-2 md:mt-4 lg:w-3/4">
                             Whether you’re looking to give your home an edgy
                             modern feel with some automation or make turn
                             your home into a fully smart home. We have a
@@ -140,7 +145,7 @@ export default function LocateYourHomeAutomation({ automation }) {
             <div className="container mx-auto flex justify-center relative">
                 <motion.div
                     animate={isInView && { x: 0 }}
-                    className="overflow-visible md:max-w-[718px] min-h-[480px] bg-white rounded-lg py-2 md:py-4 px-2 md:px-4 my-8 md:my-0 md:absolute -top-20 xl:-top-56 z-50"
+                    className="overflow-visible md:max-w-[718px] min-h-[480px] bg-white rounded-2xl py-2 md:py-4 px-2 md:px-4 my-8 md:my-0 md:absolute -top-20 xl:-top-56 z-50"
                     initial={{ x: "-100vw" }}
                     transition={{
                         damping: 10,
@@ -180,7 +185,7 @@ export default function LocateYourHomeAutomation({ automation }) {
                         <thead>
                             <tr className="h-[55px]">
                                 <th
-                                    className="font-[800] text-[22px] md:text-[32px] text-left px-2 md:px-4 absolute z-50 -bottom-[50px] md:-bottom-[60px]"
+                                    className="font-extrabold text-[22px] md:text-[32px] text-left px-2 md:px-4 absolute z-50 -bottom-[50px] md:-bottom-[60px]"
                                     colSpan="1"
                                 >
                                     Choose Plan
@@ -205,7 +210,7 @@ export default function LocateYourHomeAutomation({ automation }) {
                             return (
                                 (
                                     <div
-                                        className={`${formattedAutomationDetails.automationid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[161px] h-[94%] border border-gray-400 rounded-lg text-center pt-2 md:pt-4 px-2 md:px-4 hover:bg-primary transition-all duration-1000`}
+                                        className={`${formattedAutomationDetails.automationid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[161px] h-[94%] border border-gray-300 rounded-2xl text-center pt-2 md:pt-4 px-2 md:px-4 hover:bg-primary transition-all duration-1000`}
                                         key={formattedAutomationDetails.automationid}
                                     >
                                         <div className="relative top-8 md:top-0">
@@ -287,9 +292,13 @@ export default function LocateYourHomeAutomation({ automation }) {
             </div>
             <div className="container mt-10 md:mt-[550px] xl:mt-[430px] flex justify-end">
                 <Button
-                    className="font-semibold text-[22px] md:text-[32px] bg-primary text-black h-20 w-[370px] mb-10 md:mb-0"
+                    className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat mb-10 md:mb-0"
                     disabled={!plan.id || !developer.id || !project.id || !unitArea.id}
-                    onClick={() => router.push("/checkout")}
+                    onClick={() => {
+                        router.push("/checkout");
+
+                        setIsActive(true);
+                    }}
                 >
                     Add to Cart
                 </Button>

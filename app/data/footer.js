@@ -30,11 +30,11 @@ export const footerLinks = {
             text: "Oda Ambassador",
             url: "/oda-ambassador",
         },
-        {
+        /* {
             id: 7,
             text: "News & Events",
             url: "/news",
-        },
+        }, */
         {
             id: 8,
             text: "Contact Us",

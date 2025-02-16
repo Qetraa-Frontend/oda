@@ -73,7 +73,7 @@ export default function LocateYourHomeSelections({ developers }) {
             <div className="relative max-w-[1018px] h-[834px] mx-auto px-10 lg:px-0">
                 <Image
                     alt="statics_bg"
-                    className="rounded-lg"
+                    className="rounded-2xl"
                     layout="fill"
                     loading="lazy"
                     objectFit="cover"
@@ -89,7 +89,7 @@ export default function LocateYourHomeSelections({ developers }) {
                                 name: developers.find(({ developerid }) => developerid === value).developername,
                             })}
                         >
-                            <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-lg outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
+                            <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
                                 <SelectValue placeholder="Developer" />
                             </SelectTrigger>
                             <SelectContent>
@@ -115,11 +115,11 @@ export default function LocateYourHomeSelections({ developers }) {
                                 name: projects.find(({ projectid }) => projectid === value).projectname,
                             })}
                         >
-                            <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-lg outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
+                            <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
                                 <SelectValue placeholder="Project" />
                                 {projectsLoading && (
                                     <Spinner
-                                        className="w-[50px] absolute right-10"
+                                        className="!w-[50px] absolute right-10"
                                         color="text-white"
                                         height="h-20"
                                     />
@@ -148,11 +148,11 @@ export default function LocateYourHomeSelections({ developers }) {
                                 space: unitAreas.find(({ apartmentid }) => apartmentid === value).apartmentspace,
                             })}
                         >
-                            <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-lg outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
+                            <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
                                 <SelectValue placeholder="Unit Area" />
                                 {unitAreasLoading && (
                                     <Spinner
-                                        className="w-[50px] absolute right-10"
+                                        className="!w-[50px] absolute right-10"
                                         color="text-white"
                                         height="h-20"
                                     />

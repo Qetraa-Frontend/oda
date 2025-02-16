@@ -10,6 +10,7 @@ import Social from "@/app/components/shared/social";
 import Spinner from "@/app/components/shared/spinner";
 import { contactUsForm } from "@/app/data/forms/contact-us";
 import { contactUsFormSchema } from "@/app/schemas/contact-us";
+import { Button } from "@/app/ui/button";
 import { Input } from "@/app/ui/input";
 import { Textarea } from "@/app/ui/textarea";
 
@@ -86,12 +87,12 @@ export default function ContactUsForm() {
                         type: "spring",
                     }}
                 >
-                    <h2 className="font-[800] font-nanum-myeongjo text-6xl lg:text-8xl">
+                    <h2 className="font-extrabold font-nanum-myeongjo text-6xl lg:text-8xl">
                         Let&apos;s Talk
                     </h2>
-                    <p className="font-[700] font-nanum-myeongjo opacity-65 text-[22px] lg:text-[32px] lg:leading-[40px] mt-5 lg:mt-10">Got a unit on your mind ? Let’s discuss about the details.</p>
+                    <p className="font-bold font-nanum-myeongjo opacity-65 text-[22px] lg:text-[32px] lg:leading-[40px] mt-5 lg:mt-10">Got a unit on your mind ? Let’s discuss about the details.</p>
                     <div className="mt-10 lg:mt-20">
-                        <span className="font-[800] font-nanum-myeongjo text-[22px] lg:text-[32px]">Call Us</span>
+                        <span className="font-extrabold font-nanum-myeongjo text-[22px] lg:text-[32px]">Call Us</span>
                         <Social />
                     </div>
                 </motion.div>
@@ -121,7 +122,7 @@ export default function ContactUsForm() {
                                         className="flex flex-col gap-2 md:gap-4 py-3 md:py-6"
                                         key={id}
                                     >
-                                        <label className="font-[800] font-nanum-myeongjo text-lg md:text-2xl">
+                                        <label className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl">
                                             {label}
                                             {!isOptional && (
                                                 <Asterisk
@@ -152,8 +153,8 @@ export default function ContactUsForm() {
                                 ))}
                             </div>
                             <div className="flex flex-col gap-2 md:gap-4">
-                                <button
-                                    className="font-[800] font-nanum-myeongjo text-lg md:text-2xl bg-primary transition-all duration-1000 rounded-[29px] w-full md:w-[227px] py-1 md:py-2 hover:animate-heartBeat disabled:opacity-60"
+                                <Button
+                                    className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl !bg-primary text-black transition-all duration-1000 rounded-[29px] w-full md:w-[227px] py-1 md:py-2 h-12 hover:animate-heartBeat disabled:opacity-60"
                                     disabled={loading}
                                 >
                                     {loading ? (
@@ -162,7 +163,7 @@ export default function ContactUsForm() {
                                             height="h-[40px]"
                                         />
                                     ) : "Submit"}
-                                </button>
+                                </Button>
                                 {responseMsg.text && (
                                     <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center md:text-left`}>{responseMsg.text}</span>
                                 )}

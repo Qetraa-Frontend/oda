@@ -8,10 +8,13 @@ export const useLocateYourHomeStore = create((set, get) => ({
         id: "",
         name: "",
     },
+    bookingId: "",
     developer: {
         id: "",
         name: "",
     },
+    info: {},
+    isActive: false,
     plan: {
         id: "",
         name: "",
@@ -20,6 +23,7 @@ export const useLocateYourHomeStore = create((set, get) => ({
         id: "",
         name: "",
     },
+    questions: {},
     removeAddon: (id) => set({
         ...get(),
         addons: get().addons.filter(({ id: addonId }) => addonId !== id),
@@ -90,6 +94,7 @@ export const useLocateYourHomeStore = create((set, get) => ({
             name: automation.name,
         },
     }),
+    setBookingId: (bookingId) => set({ bookingId }),
     setDeveloper: (developer) => set({
         ...get(),
         developer: {
@@ -97,6 +102,11 @@ export const useLocateYourHomeStore = create((set, get) => ({
             name: developer.name,
         },
     }),
+    setInfo: (info) => set({
+        ...get(),
+        info,
+    }),
+    setIsActive: (isActive) => set({ isActive }),
     setPlan: (plan) => set({
         ...get(),
         plan: {
@@ -109,6 +119,16 @@ export const useLocateYourHomeStore = create((set, get) => ({
         project: {
             id: project.id,
             name: project.name,
+        },
+    }),
+    setQuestion: (question) => set({
+        ...get(),
+        questions: {
+            ...get().questions,
+            [question.id]: {
+                answer: question.answer,
+                question: question.question,
+            },
         },
     }),
     setUnitArea: (unitArea) => set({

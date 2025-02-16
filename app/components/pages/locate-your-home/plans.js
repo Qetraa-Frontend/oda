@@ -51,7 +51,7 @@ export default function LocateYourHomePlans({ plans }) {
 
     return (
         <div className="container mx-auto pb-20 md:pb-40 overflow-hidden relative">
-            <div className="absolute top-0 left-0 bg-primary rounded-lg h-[871px] w-full" />
+            <div className="absolute top-0 left-0 bg-primary rounded-2xl h-[871px] w-full" />
             <div className="relative pl-5 md:pl-10 w-full mt-10 md:mt-20">
                 <div className="flex gap-6 md:gap-12 items-center mb-[52px] md:mb-[105px]">
                     <Image
@@ -188,7 +188,7 @@ export default function LocateYourHomePlans({ plans }) {
                             return (
                                 (
                                     <div
-                                        className={`${formattedPlanDetails.planid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-lg text-center pt-8 px-4 md:px-8 hover:bg-primary transition-all duration-1000`}
+                                        className={`${formattedPlanDetails.planid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center pt-8 px-4 md:px-8 hover:bg-primary transition-all duration-1000`}
                                         key={formattedPlanDetails.planid}
                                     >
                                         <div className="xl:hidden absolute top-8 right-[2px] w-full flex justify-between">

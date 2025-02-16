@@ -72,9 +72,9 @@ export default function AboutUsOurVision() {
                             />
                         </div>
                         <div className="col-span-1 md:col-span-6">
-                            <h5 className="font-[400] font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayaly</h5>
-                            <h6 className="font-[400] font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
-                            <p className="font-[400] font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Amr Hayaly is the founder and CEO of Oda. With the vision of providing high-quality, innovative solutions in the prop tech field and years of experience, Amr Hayaly built Oda from the ground up, focusing on delivering scalable top-tier Design-Build & Manage services. The company quickly gained recognition for its ability to successfully complete complex projects across various industries. Hayaly has grown Oda into a regional player with a strong credibility in the region and partnerships with key industry players. Hayaly is an MBA graduate from Sorbonne et Dauphine University. Business strategist and serial entrepreneur with +25 years of experience in multiple industries and disciplines.</p>
+                            <h5 className="font-normal font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayaly</h5>
+                            <h6 className="font-normal font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
+                            <p className="font-normal font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Amr Hayaly is the founder and CEO of Oda. With the vision of providing high-quality, innovative solutions in the prop tech field and years of experience, Amr Hayaly built Oda from the ground up, focusing on delivering scalable top-tier Design-Build & Manage services. The company quickly gained recognition for its ability to successfully complete complex projects across various industries. Hayaly has grown Oda into a regional player with a strong credibility in the region and partnerships with key industry players. Hayaly is an MBA graduate from Sorbonne et Dauphine University. Business strategist and serial entrepreneur with +25 years of experience in multiple industries and disciplines.</p>
                         </div>
                     </motion.div>
                     <motion.div
@@ -91,9 +91,9 @@ export default function AboutUsOurVision() {
                         }}
                     >
                         <div className="col-span-1 md:col-span-6">
-                            <h5 className="font-[400] font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayaly</h5>
-                            <h6 className="font-[400]font-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
-                            <p className="font-[400] font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Amr’s true craving lies in mentoring disruptive tech start-ups and entrepreneurs across the GCC who specialize in real estate, oil & gas, sports & entertainment and food safety. Skilled in data driven strategy development, commercial business modeling and transformation, platform business operation and excellence - Amr has worked at various multinationals in the region, namely Shell, Samsung, Xerox & Sela Sports, to name but a few. Exposure to a diverse set of technical and commercial roles has enabled Amr to become a growth guru in multiple industries.</p>
+                            <h5 className="font-normal font-nanum-myeongjo text-2xl md:text-4xl text-white uppercase mb-[6px] md:mb-[13px]">Amr Hayaly</h5>
+                            <h6 className="font-normalfont-nanum-myeongjo text-[22px] md:text-[28px] text-white uppercase">Ceo @ Founder</h6>
+                            <p className="font-normal font-nanum-myeongjo text-xl md:text-3xl text-white mt-5 md:mt-10">Amr’s true craving lies in mentoring disruptive tech start-ups and entrepreneurs across the GCC who specialize in real estate, oil & gas, sports & entertainment and food safety. Skilled in data driven strategy development, commercial business modeling and transformation, platform business operation and excellence - Amr has worked at various multinationals in the region, namely Shell, Samsung, Xerox & Sela Sports, to name but a few. Exposure to a diverse set of technical and commercial roles has enabled Amr to become a growth guru in multiple industries.</p>
                         </div>
                         <div className="col-span-1 md:col-span-6">
                             <Image

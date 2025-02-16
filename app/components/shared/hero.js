@@ -7,6 +7,8 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+import { Button } from "@/app/ui/button";
+
 export default function Hero({
     backgroundImageSrc,
     buttonLink,
@@ -169,7 +171,7 @@ export default function Hero({
                             href={buttonLink}
                             prefetch={false}
                         >
-                            <button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">{buttonText}</button>
+                            <Button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-14 hover:animate-heartBeat">{buttonText}</Button>
                         </Link>
                     )}
                 </div>

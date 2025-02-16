@@ -46,20 +46,20 @@ export default function HomeDiscoverArtLiving() {
                 }}
             >
                 <div className="text-center text-white mb-[23px] md:mb-[46px]">
-                    <h2 className="font-[700] text-[40px] md:text-[64px] uppercase !leading-snug">
+                    <h2 className="font-bold text-[40px] md:text-[64px] uppercase !leading-snug">
                         Discover the Art of Living
                         <br className="hidden xl:block" />
                         {" "}
                         with
                         {" "}
-                        <span className="font-[700] text-[40px] md:text-[64px] uppercase text-secondary">oda</span>
+                        <span className="font-bold text-[40px] md:text-[64px] uppercase text-secondary">oda</span>
                     </h2>
-                    <h3 className="font-[400] text-[28px] md:text-[40px] mt-[11px] md:mt-[22px] mb-[24px] md:mb-[48px]">Where every room is tailored to your vision and style.</h3>
+                    <h3 className="font-normal text-[28px] md:text-[40px] mt-[11px] md:mt-[22px] mb-[24px] md:mb-[48px]">Where every room is tailored to your vision and style.</h3>
                 </div>
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 sm:justify-items-center xl:justify-items-start relative left-6 sm:left-0">
                     <div className="col-span-1 flex flex-col gap-4 md:gap-8 xl:relative top-36">
                         <div className="w-20 h-20 bg-secondary xl:relative left-32" />
-                        <span className="font-[700] text-[28px] md:text-[40px] rounded-[100px] uppercase bg-secondary text-center w-fit px-[6px] md:px-3 rotate-[17deg] xl:hover:animate-wiggleBottom cursor-default xl:relative top-8 left-8 my-4 md:my-0">MININAL</span>
+                        <span className="font-bold text-[28px] md:text-[40px] rounded-[100px] uppercase bg-secondary text-center w-fit px-[6px] md:px-3 rotate-[17deg] xl:hover:animate-wiggleBottom cursor-default xl:relative top-8 left-8 my-4 md:my-0">MININAL</span>
                         <div
                             className="relative xl:top-10 h-[150px] w-[150px] md:h-[207px] md:w-[207px]"
                             onMouseEnter={() => setImagesSrcs({
@@ -116,7 +116,7 @@ export default function HomeDiscoverArtLiving() {
                                 src={imagesSrcs.art3}
                             />
                         </div>
-                        <span className="font-[800] text-3xl md:text-5xl rounded-[200px] px-[6px] md:px-3 uppercase bg-secondary text-center w-fit xl:hover:animate-wiggle cursor-default xl:relative left-32 bottom-6">BOHO</span>
+                        <span className="font-extrabold text-3xl md:text-5xl rounded-[200px] px-[6px] md:px-3 uppercase bg-secondary text-center w-fit xl:hover:animate-wiggle cursor-default xl:relative left-32 bottom-6">BOHO</span>
                         <div
                             className="relative xl:left-12 xl:bottom-8 h-[100px] w-[100px] md:h-[159px] md:w-[159px]"
                             onMouseEnter={() => setImagesSrcs({
@@ -179,7 +179,7 @@ export default function HomeDiscoverArtLiving() {
                             />
                         </div>
                         <div className="w-20 h-20 bg-secondary relative top-8 md:top-0 xl:top-20 xl:left-12 rotate-[-17deg]" />
-                        <span className="font-[700] text-[28px] md:text-[40px] rounded-[100px] uppercase bg-secondary text-center w-fit px-[6px] md:px-3 rotate-[17deg] xl:hover:animate-wiggleBottom cursor-default relative xl:top-24 right-20 sm:right-0 xl:right-20 mt-10 sm:mt-16 xl:mt-0">SCANDINAVIAN</span>
+                        <span className="font-bold text-[28px] md:text-[40px] rounded-[100px] uppercase bg-secondary text-center w-fit px-[6px] md:px-3 rotate-[17deg] xl:hover:animate-wiggleBottom cursor-default relative xl:top-24 right-20 sm:right-0 xl:right-20 mt-10 sm:mt-16 xl:mt-0">SCANDINAVIAN</span>
                     </div>
                     <div className="col-span-1 flex flex-col gap-4 md:gap-8 relative sm:-top-32 lg:-top-2 xl:top-16">
                         <div
@@ -202,7 +202,7 @@ export default function HomeDiscoverArtLiving() {
                                 src={imagesSrcs.art7}
                             />
                         </div>
-                        <span className="font-[700] text-[28px] md:text-[40px] rounded-[100px] uppercase bg-secondary text-center w-fit px-[6px] md:px-3 rotate-[-17deg] xl:hover:animate-wiggleTop cursor-default xl:relative right-16 top-6 my-4 md:my-0">MODERN</span>
+                        <span className="font-bold text-[28px] md:text-[40px] rounded-[100px] uppercase bg-secondary text-center w-fit px-[6px] md:px-3 rotate-[-17deg] xl:hover:animate-wiggleTop cursor-default xl:relative right-16 top-6 my-4 md:my-0">MODERN</span>
                         <div className="w-44 h-44 bg-[#6F6458] flex align-center justify-center items-center xl:relative top-20 xl:top-12 xl:left-6 lg:ml-8 xl:ml-0">
                             <div className="w-36 h-36 bg-[#222] rounded-full" />
                         </div>
