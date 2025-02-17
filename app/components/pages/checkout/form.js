@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, useInView } from "framer-motion";
 import { Asterisk } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
@@ -32,7 +32,7 @@ export default function CheckoutForm({ paymentPlans }) {
         type: null,
     });
 
-    const router = useRouter();
+    // const router = useRouter();
 
     const {
         addons,
@@ -100,12 +100,28 @@ export default function CheckoutForm({ paymentPlans }) {
             {
                 body: JSON.stringify({
                     addonPerRequestIDs: addonsPerRequest.map(({ id }) => id),
-                    addons: addons.map(({ id }) => id).concat(airConditioningAddons.map(({ id }) => id)),
-                    apartmentID: unitArea.id,
-                    apartmenttype: isActive ? 0 : 1,
+                    addons: addons.map(({
+                        id,
+                        quantity,
+                    }) => ({
+                        addonID: id,
+                        quantity: quantity || 0,
+                    })).concat(airConditioningAddons.map(({
+                        id,
+                        quantity,
+                    }) => ({
+                        addonID: id,
+                        quantity: quantity || 0,
+                    }))),
+                    apartmentDTO: {
+                        apartmentAddress: isActive && null,
+                        apartmentId: unitArea.id,
+                        apartmentSpace: unitArea.space,
+                        apartmentType: isActive ? 0 : 1,
+                    },
                     automationID: automation.id,
                     customerInfo: {
-                        ...!isActive && { address: null },
+                        address: isActive && null,
                         email,
                         firstname: name,
                         phonenumber: phoneNumber,
@@ -117,34 +133,31 @@ export default function CheckoutForm({ paymentPlans }) {
                     questions: Object.values(questions).map(({
                         answer,
                         question,
-                    }) => ({
+                    }, index) => ({
                         answer,
                         name: question,
+                        questionsID: index + 1,
                     })),
                 }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 method: "POST",
             },
-        ).
-            then((response) => response.json()).
-            then((response) => {
-                setLoading(false);
+        ).then((response) => response.json()).then((response) => {
+            setLoading(false);
 
-                reset();
+            reset();
 
-                setBookingId(response?.bookingID);
+            setBookingId(response?.bookingID);
 
-                router.push("/cart");
-            })["catch"](() => {
-                setLoading(false);
+            // router.push(`/cart?bookingId=${response?.bookingID}`);
+        })["catch"](() => {
+            setLoading(false);
 
-                setResponseMsg({
-                    text: "Failed to booking your Order, please try again later!",
-                    type: "error",
-                });
+            setResponseMsg({
+                text: "Failed to booking your Order, please try again later!",
+                type: "error",
             });
+        });
     };
 
     return (
@@ -245,7 +258,7 @@ export default function CheckoutForm({ paymentPlans }) {
                                 </div>
                             ))}
                         </div>
-                        <div className="flex justify-center">
+                        <div className="flex flex-col gap-2 justify-center">
                             <Button
                                 className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px] hover:animate-heartBeat"
                                 disabled={loading || Object.values(questions).length !== 8}

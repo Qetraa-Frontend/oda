@@ -103,28 +103,30 @@ export default function Hero({
                             </>
                         ) : (
                             <>
-                                <div className="overflow-hidden">
-                                    <motion.h1
-                                        className="font-medium uppercase text-5xl sm:text-6xl md:text-8xl text-white md:!leading-[.87] h-full"
-                                        animate={isInView && {
-                                            opacity: 1,
-                                            y: 0,
-                                        }}
-                                        initial={{
-                                            opacity: 0,
-                                            y: "100vh",
-                                        }}
-                                        transition={{
-                                            damping: 10,
-                                            duration: 2,
-                                            ease: "easeIn",
-                                            stiffness: 33,
-                                            type: "spring",
-                                        }}
-                                    >
-                                        {currentTitle}
-                                    </motion.h1>
-                                </div>
+                                {title && (
+                                    <div className="overflow-hidden">
+                                        <motion.h1
+                                            className="font-medium uppercase text-5xl sm:text-6xl md:text-8xl text-white md:!leading-[.87] h-full"
+                                            animate={isInView && {
+                                                opacity: 1,
+                                                y: 0,
+                                            }}
+                                            initial={{
+                                                opacity: 0,
+                                                y: "100vh",
+                                            }}
+                                            transition={{
+                                                damping: 10,
+                                                duration: 2,
+                                                ease: "easeIn",
+                                                stiffness: 33,
+                                                type: "spring",
+                                            }}
+                                        >
+                                            {currentTitle}
+                                        </motion.h1>
+                                    </div>
+                                )}
                                 {description && (
                                     <motion.p
                                         className="font-medium text-lg md:text-2xl text-white mt-4 md:mt-8"
@@ -151,7 +153,7 @@ export default function Hero({
                             </>
                         )}
                     </div>
-                    {withSearchInput ? (
+                    {withSearchInput ? ( // eslint-disable-line
                         <div className="mt-[25px] md:mt-[50px] relative flex items-center w-full">
                             <Search
                                 className="absolute left-3 text-black opacity-25 pointer-events-none"
@@ -165,7 +167,7 @@ export default function Hero({
                                 onChange={handleChangeSearchInputValue}
                             />
                         </div>
-                    ) : (
+                    ) : buttonText && buttonLink ? (
                         <Link
                             className={`${buttonTopSpace} inline-block`}
                             href={buttonLink}
@@ -173,7 +175,7 @@ export default function Hero({
                         >
                             <Button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-14 hover:animate-heartBeat">{buttonText}</Button>
                         </Link>
-                    )}
+                    ) : null}
                 </div>
                 {otherData && <div className="col-span-1 lg:col-span-5 xl:col-span-6 hidden lg:block">{otherData}</div>}
             </div>

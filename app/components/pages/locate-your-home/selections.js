@@ -39,13 +39,11 @@ export default function LocateYourHomeSelections({ developers }) {
             if (developer?.id) {
                 setProjectsLoading(true);
 
-                fetch(`${backendUrl}Developer/${developer.id}/ProjectsIDAndNames`).
-                    then((response) => {
-                        setProjectsLoading(false);
+                fetch(`${backendUrl}Developer/${developer.id}/ProjectsIDAndNames`).then((response) => {
+                    setProjectsLoading(false);
 
-                        return response.json();
-                    }).
-                    then((data) => setProjects(data));
+                    return response.json();
+                }).then((data) => setProjects(data));
             }
         },
         [developer], // eslint-disable-line
@@ -56,20 +54,18 @@ export default function LocateYourHomeSelections({ developers }) {
             if (project?.id) {
                 setUnitAreasLoading(true);
 
-                fetch(`${backendUrl}Project/by-id/${project.id}/available-apartment-spaces`).
-                    then((response) => {
-                        setUnitAreasLoading(false);
+                fetch(`${backendUrl}Project/by-id/${project.id}/available-apartment-spaces`).then((response) => {
+                    setUnitAreasLoading(false);
 
-                        return response.json();
-                    }).
-                    then((data) => setUnitAreas(data));
+                    return response.json();
+                }).then((data) => setUnitAreas(data));
             }
         },
         [project], // eslint-disable-line
     );
 
     return (
-        <div className="container mx-auto pt-[47px] md:pt-[94px] pb-[61px] md:pb-[122px]">
+        <div className="container mx-auto pt-[47px] md:pt-[94px] pb-[50px] md:pb-[100px]">
             <div className="relative max-w-[1018px] h-[834px] mx-auto px-10 lg:px-0">
                 <Image
                     alt="statics_bg"

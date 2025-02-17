@@ -17,7 +17,7 @@ export default function CheckoutHero() {
             backgroundImageSrc="/images/pages/checkout/hero.webp"
             buttonLink="/locate-your-home"
             buttonText="Learn More"
-            buttonTopSpace="mt-[46px] md:mt-[93px]"
+            buttonTopSpace="mt-[33px] md:mt-[67px]"
             description="To a beautifully finished home with Oda’s expertly crafted packages."
             heroHeight="h-[500px] md:h-[806px]"
             title={(

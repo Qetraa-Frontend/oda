@@ -55,10 +55,10 @@ export default function LocateYourHomeMenu({ plans }) {
                             pricepermeter,
                         }) => (
                             <div
-                                className={`w-full col-span-1 xl:col-span-4 ${planid === 3 ? "block sm:hidden xl:block" : ""}`}
+                                className="w-full col-span-1 xl:col-span-4"
                                 key={planid}
                             >
-                                <div className="bg-transparent px-4 md:px-8 pt-[15px] md:pt-[31px] md:pb-[13px] lg:pb-[27px] rounded-2xl text-center border-black border-2 min-h-[500px] lg:min-h-[546px] relative transition-all duration-1000">
+                                <div className="bg-transparent px-4 md:px-8 pt-[13px] md:pt-[31px] pb-[13px] md:pb-[27px] rounded-2xl text-center border-black border-2 h-fit lg:h-full relative transition-all duration-1000">
                                     <Image
                                         alt={`plan_${planid}`}
                                         className="rounded-full mx-auto hover:opacity-70"
@@ -69,7 +69,7 @@ export default function LocateYourHomeMenu({ plans }) {
                                     />
                                     <div className="mt-3 md:mt-6">
                                         <h4 className="font-medium text-lg md:text-2xl mb-3 md:mb-6">{planname}</h4>
-                                        <div className="my-6 md:my-12">
+                                        <div className="my-5 md:my-10">
                                             <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Starting From</h5>
                                             <span className="font-normal text-lg md:text-2xl">
                                                 {pricepermeter}
@@ -80,33 +80,6 @@ export default function LocateYourHomeMenu({ plans }) {
                                         <p className="font-medium text-base md:text-xl !leading-loose">{description}</p>
                                     </div>
                                 </div>
-                                {planid === 1 && (
-                                    <div
-                                        className="bg-transparent hidden sm:block xl:hidden mt-4 xl:mt-8 px-4 md:px-8 pt-[28px] md:pt-[56px] md:pb-[20px] lg:pb-[27px] rounded-2xl text-center border-black border-2 min-h-[500px] lg:min-h-[546px] relative transition-all duration-1000"
-                                        key={3}
-                                    >
-                                        <Image
-                                            alt="plan_3"
-                                            className="rounded-full mx-auto hover:opacity-70"
-                                            height={134}
-                                            loading="lazy"
-                                            src="/images/pages/locate-your-home/our-plans/plan_3.webp"
-                                            width={134}
-                                        />
-                                        <div className="mt-3 md:mt-6">
-                                            <h4 className="font-medium text-lg md:text-2xl mb-3 md:mb-6">{plans[2].planname}</h4>
-                                            <div className="my-6 md:my-12">
-                                                <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Starting From</h5>
-                                                <span className="font-normal text-lg md:text-2xl">
-                                                    {plans[2].pricepermeter}
-                                                    {" "}
-                                                    | M2
-                                                </span>
-                                            </div>
-                                            <p className="font-medium text-base md:text-xl !leading-loose">{plans[2].description}</p>
-                                        </div>
-                                    </div>
-                                )}
                             </div>
                         ))}
                     </div>

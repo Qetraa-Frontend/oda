@@ -130,30 +130,32 @@ export default function LocateYourHomeAddons({
                                     >
                                         <div className={`min-h-[269px] w-full max-w-[931px] py-4 md:py-[25] xl:py-[33px] px-3 md:px-4 xl:px-6 flex flex-wrap lg:flex-nowrap lg:gap-2 justify-between shadow-xl border border-gray-300 rounded-2xl ${selectedAddons.find(({ id }) => id === addons[0]?.addonid) ? "bg-primary" : "bg-white"}`}>
                                             <div className="flex items-center">
-                                                {selectedAddons.find(({ id }) => id === addons[0]?.addonid) ? (
-                                                    <Check
-                                                        className="opacity-70 cursor-pointer w-[30px] h-[30px] md:w-[60px] md:h-[60px]"
-                                                        size={60}
-                                                        onClick={() => removeAddon(addons[0]?.addonid)}
-                                                    />
-                                                ) : (
-                                                    <Plus
-                                                        className={`${checkBoilerAndHeaterAvailability(addons[0]?.addongroup) ? "opacity-70 cursor-pointer" : "opacity-50 cursor-not-allowed"} w-[30px] h-[30px] md:w-[60px] md:h-[60px]`}
-                                                        size={60}
-                                                        onClick={() => {
-                                                            if (checkBoilerAndHeaterAvailability(addons[0]?.addongroup)) {
-                                                                setAddon({
-                                                                    group: addons[0]?.addongroup,
-                                                                    id: addons[0]?.addonid,
-                                                                    name: addons[0]?.addonname,
-                                                                    price: addons[0]?.price,
-                                                                    ...addons[0]?.unitormeter === 0 && { quantity: 1 },
-                                                                    unitOrMeter: addons[0]?.unitormeter === 0 ? "Unit" : "Meter",
-                                                                });
-                                                            }
-                                                        }}
-                                                    />
-                                                )}
+                                                <div className="flex-1">
+                                                    {selectedAddons.find(({ id }) => id === addons[0]?.addonid) ? (
+                                                        <Check
+                                                            className="opacity-70 cursor-pointer w-[30px] h-[30px] md:w-[60px] md:h-[60px]"
+                                                            size={60}
+                                                            onClick={() => removeAddon(addons[0]?.addonid)}
+                                                        />
+                                                    ) : (
+                                                        <Plus
+                                                            className={`${checkBoilerAndHeaterAvailability(addons[0]?.addongroup) ? "opacity-70 cursor-pointer" : "opacity-50 cursor-not-allowed"} w-[30px] h-[30px] md:w-[60px] md:h-[60px]`}
+                                                            size={60}
+                                                            onClick={() => {
+                                                                if (checkBoilerAndHeaterAvailability(addons[0]?.addongroup)) {
+                                                                    setAddon({
+                                                                        group: addons[0]?.addongroup,
+                                                                        id: addons[0]?.addonid,
+                                                                        name: addons[0]?.addonname,
+                                                                        price: addons[0]?.price,
+                                                                        ...addons[0]?.unitormeter === 0 && { quantity: 1 },
+                                                                        unitOrMeter: addons[0]?.unitormeter === 0 ? "Unit" : "Meter",
+                                                                    });
+                                                                }
+                                                            }}
+                                                        />
+                                                    )}
+                                                </div>
                                                 <div className="lg:max-w-[370px]">
                                                     <h6 className="font-medium text-[22px] md:text-[32px] mb-1 md:mb-2">{addons[0]?.addonname}</h6>
                                                     <p className="font-medium text-[22px] md:text-[32px] opacity-55">{addons[0]?.description}</p>
@@ -197,12 +199,12 @@ export default function LocateYourHomeAddons({
                                                                         id: addons[0]?.addonid,
                                                                         name: addons[0]?.addonname,
                                                                         price: addons[0]?.price,
-                                                                        quantity: value,
+                                                                        quantity: parseInt(value),
                                                                         unitOrMeter: "Unit",
                                                                     });
                                                                 } else {
                                                                     setAddonQuantity(
-                                                                        value,
+                                                                        parseInt(value),
                                                                         addons[0]?.addonid,
                                                                     );
                                                                 }
@@ -308,12 +310,12 @@ export default function LocateYourHomeAddons({
                                                                                 id: addonid,
                                                                                 name: addonname,
                                                                                 price,
-                                                                                quantity: value,
+                                                                                quantity: parseInt(value),
                                                                                 unitOrMeter: "Unit",
                                                                             });
                                                                         } else {
                                                                             setAddonQuantity(
-                                                                                value,
+                                                                                parseInt(value),
                                                                                 addonid,
                                                                             );
                                                                         }
@@ -375,7 +377,7 @@ export default function LocateYourHomeAddons({
                                             <p className="font-normal text-xs md:text-base">{airConditioningAddons[0]?.description}</p>
                                         </div>
                                     </div>
-                                    <div className="flex flex-wrap gap-2 md:gap-4 items-center justify-center">
+                                    <div className="flex flex-wrap gap-2 md:gap-4 items-center justify-center mt-2 md:mt-4">
                                         {airConditioningAddons.map(({
                                             addonid,
                                             addonname,
@@ -385,7 +387,7 @@ export default function LocateYourHomeAddons({
                                                 className="flex gap-1"
                                                 key={addonid}
                                             >
-                                                <span className="font-normal text-xs md:text-base border border-gray-300 min-w-[154px] rounded-2xl flex items-center justify-center">
+                                                <span className="font-normal text-xs md:text-base border border-gray-300 min-w-[120px] sm:min-w-[154px] rounded-2xl flex items-center justify-center">
                                                     {addonname}
                                                     {" "}
                                                     +
@@ -419,11 +421,11 @@ export default function LocateYourHomeAddons({
                                                                 id: addonid,
                                                                 power: addonname,
                                                                 price,
-                                                                quantity: value,
+                                                                quantity: parseInt(value),
                                                             });
                                                         } else {
                                                             setAirConditioningAddonQuantity(
-                                                                value,
+                                                                parseInt(value),
                                                                 addonid,
                                                             );
                                                         }

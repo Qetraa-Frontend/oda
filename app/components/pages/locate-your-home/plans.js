@@ -51,9 +51,9 @@ export default function LocateYourHomePlans({ plans }) {
 
     return (
         <div className="container mx-auto pb-20 md:pb-40 overflow-hidden relative">
-            <div className="absolute top-0 left-0 bg-primary rounded-2xl h-[871px] w-full" />
+            <div className="absolute top-0 left-3 sm:left-0 bg-primary rounded-2xl h-[871px] w-[94%] sm:w-full" />
             <div className="relative pl-5 md:pl-10 w-full mt-10 md:mt-20">
-                <div className="flex gap-6 md:gap-12 items-center mb-[52px] md:mb-[105px]">
+                <div className="flex gap-4 md:gap-8 items-center mb-[52px] md:mb-[105px] w-[94%]">
                     <Image
                         alt="choose"
                         height={116}
@@ -61,7 +61,7 @@ export default function LocateYourHomePlans({ plans }) {
                         src="/icons/choose.svg"
                         width={116}
                     />
-                    <div className="relative z-50">
+                    <div className="relative z-50 pl-2 md:pl-4">
                         <h2 className="font-bold text-3xl md:text-5xl mb-5 md:mb-10">Choose Plan</h2>
                         <h3 className="font-medium text-2xl md:text-4xl">Choose your desired pricing plan</h3>
                     </div>
@@ -72,7 +72,7 @@ export default function LocateYourHomePlans({ plans }) {
                 >
                     <motion.table
                         animate={isInView && { x: 0 }}
-                        className="table-fixed w-full"
+                        className="table-fixed w-full rounded-tr-xl overflow-hidden"
                         initial={{ x: "-100vw" }}
                         transition={{
                             damping: 10,

@@ -54,7 +54,7 @@ export default function WhyOdaOurPlans({
                                 [`plan${planid}`]: false,
                             })}
                         >
-                            <div className={`${planid === 2 ? "bg-primary" : "bg-transparent"} px-4 md:px-8 pt-[15px] md:pt-[31px] md:pb-[13px] lg:pb-[27px] rounded-2xl text-center border-black border-2 min-h-[500px] lg:min-h-[546px] relative transition-all duration-1000`}>
+                            <div className={`${planid === 2 ? "bg-primary" : "bg-transparent"} px-4 md:px-8 pt-[13px] md:pt-[31px] pb-[13px] md:pb-[27px] rounded-2xl text-center border-black border-2 min-h-[400px] md:min-h-[695px] relative transition-all duration-1000`}>
                                 <span
                                     style={{ visibility: showChevron[`plan${planid}`] ? "visible" : "xl:hidden" }}
                                     className={`absolute bottom-6 right-6 bg-black p-2 rounded-full cursor-pointer transition-all duration-1000 ${
@@ -83,7 +83,7 @@ export default function WhyOdaOurPlans({
                                     <h4 className="font-medium text-lg md:text-2xl mb-3 md:mb-6">{planname}</h4>
                                     <p className="font-medium text-base md:text-xl !leading-loose">{description}</p>
                                 </div>
-                                <div className={`mt-6 md:mt-12 overflow-hidden transition-[max-height] duration-1000 ${showFeatures[`plan${planid}`] ? "max-h-[1000px]" : "max-h-0"}`}>
+                                <div className={`overflow-hidden transition-[max-height] duration-1000 ${showFeatures[`plan${planid}`] ? "max-h-[1000px] mt-5 md:mt-10" : "max-h-0"}`}>
                                     <ul className="m-0 p-0 list-none !text-left">
                                         {features[planid].foundation.map(({
                                             description: planDetailsDescription,
@@ -144,7 +144,7 @@ export default function WhyOdaOurPlans({
                             </div>
                             {planid === 1 && (
                                 <div
-                                    className={`${planid === 2 ? "bg-primary" : "bg-transparent"} hidden sm:block xl:hidden mt-4 xl:mt-8 px-4 md:px-8 pt-[28px] md:pt-[56px] md:pb-[20px] lg:pb-[27px] rounded-2xl text-center border-black border-2 min-h-[500px] lg:min-h-[546px] relative transition-all duration-1000`}
+                                    className={`${planid === 2 ? "bg-primary" : "bg-transparent"} hidden sm:block xl:hidden mt-4 xl:mt-8 px-4 md:px-8 pt-[13px] md:pt-[31px] pb-[13px] md:pb-[27px] rounded-2xl text-center border-black border-2 min-h-[400px] md:min-h-[695px] relative transition-all duration-1000`}
                                     key={3}
                                 >
                                     <span
@@ -175,7 +175,7 @@ export default function WhyOdaOurPlans({
                                         <h4 className="font-medium text-lg md:text-2xl mb-3 md:mb-6">{plans[2].planname}</h4>
                                         <p className="font-medium text-base md:text-xl !leading-loose">{plans[2].description}</p>
                                     </div>
-                                    <div className={`mt-6 md:mt-12 overflow-hidden transition-[max-height] duration-1000 ${showFeatures.plan3 ? "max-h-[1000px]" : "max-h-0"}`}>
+                                    <div className={`overflow-hidden transition-[max-height] duration-1000 ${showFeatures.plan3 ? "max-h-[1000px] mt-5 md:mt-10" : "max-h-0"}`}>
                                         <ul className="m-0 p-0 list-none !text-left">
                                             {features[3].foundation.map(({
                                                 description: planDetailsDescription,
