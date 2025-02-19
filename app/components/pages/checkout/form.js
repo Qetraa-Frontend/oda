@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, useInView } from "framer-motion";
 import { Asterisk } from "lucide-react";
 import Image from "next/image";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
@@ -32,15 +32,18 @@ export default function CheckoutForm({ paymentPlans }) {
         type: null,
     });
 
-    // const router = useRouter();
+    const router = useRouter();
 
     const {
         addons,
         addonsPerRequest,
         airConditioningAddons,
         automation,
+        bookingId,
         developer,
+        info,
         isActive,
+        mode,
         plan,
         project,
         questions,
@@ -96,7 +99,7 @@ export default function CheckoutForm({ paymentPlans }) {
         });
 
         fetch(
-            `${backendUrl}BookingDataIn`,
+            `${backendUrl}BookingDataIn${mode === "edit" ? `/${bookingId}` : ""}`,
             {
                 body: JSON.stringify({
                     addonPerRequestIDs: addonsPerRequest.map(({ id }) => id),
@@ -105,13 +108,13 @@ export default function CheckoutForm({ paymentPlans }) {
                         quantity,
                     }) => ({
                         addonID: id,
-                        quantity: quantity || 0,
+                        quantity: quantity || 1,
                     })).concat(airConditioningAddons.map(({
                         id,
                         quantity,
                     }) => ({
                         addonID: id,
-                        quantity: quantity || 0,
+                        quantity: quantity || 1,
                     }))),
                     apartmentDTO: {
                         apartmentAddress: isActive && null,
@@ -119,7 +122,7 @@ export default function CheckoutForm({ paymentPlans }) {
                         apartmentSpace: unitArea.space,
                         apartmentType: isActive ? 0 : 1,
                     },
-                    automationID: automation.id,
+                    automationID: automation.id || null,
                     customerInfo: {
                         address: isActive && null,
                         email,
@@ -140,16 +143,23 @@ export default function CheckoutForm({ paymentPlans }) {
                     })),
                 }),
                 headers: { "Content-Type": "application/json" },
-                method: "POST",
+                method: mode === "edit" ? "PUT" : "POST",
             },
         ).then((response) => response.json()).then((response) => {
             setLoading(false);
 
             reset();
 
-            setBookingId(response?.bookingID);
+            if (mode !== "edit") {
+                setBookingId(response?.bookingID);
 
-            // router.push(`/cart?bookingId=${response?.bookingID}`);
+                localStorage.setItem( // eslint-disable-line
+                    "unitAreaId",
+                    unitArea.id,
+                );
+            }
+
+            router.push(`/cart?orderId=${response?.bookingID}`);
         })["catch"](() => {
             setLoading(false);
 
@@ -183,7 +193,7 @@ export default function CheckoutForm({ paymentPlans }) {
                     type: "spring",
                 }}
             >
-                <div className="w-full md:w-[60%] bg-white border-gray-300 border-[2px] border-r-0 rounded-l-xl p-4 md:p-8">
+                <div className="w-full md:w-[60%] bg-white border-gray-300 border-[2px] md:border-r-0 rounded-2xl md:rounded-r-none p-4 md:p-8">
                     <h4 className="font-semibold text-3xl md:text-[40px]">Enter your Info</h4>
                     <form
                         className="mt-4 md:mt-8"
@@ -215,7 +225,9 @@ export default function CheckoutForm({ paymentPlans }) {
                                                 render={({ field: inputProps }) => (
                                                     <Input
                                                         {...inputProps}
+                                                        defaultValue={info?.[name]}
                                                         type={type}
+                                                        value={inputProps.value || info?.[name]}
                                                     />
                                                 )}
                                             />
@@ -225,7 +237,8 @@ export default function CheckoutForm({ paymentPlans }) {
                                                 name={name}
                                                 render={({ field: selectProps }) => (
                                                     <Select
-                                                        value={selectProps.value}
+                                                        defaultValue={info.paymentPlan.id}
+                                                        value={selectProps.value || info.paymentPlan.id}
                                                         onValueChange={selectProps.onChange}
                                                     >
                                                         <SelectTrigger className="border-0 border-b-2 border-input rounded-none outline-none shadow-none px-3 py-1">
@@ -263,12 +276,7 @@ export default function CheckoutForm({ paymentPlans }) {
                                 className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px] hover:animate-heartBeat"
                                 disabled={loading || Object.values(questions).length !== 8}
                             >
-                                {loading ? (
-                                    <Spinner
-                                        color="text-black"
-                                        height="h-[20px]"
-                                    />
-                                ) : "Submit"}
+                                {loading ? <Spinner color="text-black" /> : mode === "edit" ? "Save" : "Submit"} {/* eslint-disable-line */}
                             </Button>
                             {responseMsg.text && (
                                 <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center md:text-left`}>{responseMsg.text}</span>

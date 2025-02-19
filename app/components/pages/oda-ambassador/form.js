@@ -215,12 +215,7 @@ export default function OdaAmbassadorForm() {
                         className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px] hover:animate-heartBeat"
                         disabled={loading}
                     >
-                        {loading ? (
-                            <Spinner
-                                color="text-black"
-                                height="h-[20px]"
-                            />
-                        ) : "Submit"}
+                        {loading ? <Spinner color="text-black" /> : "Submit"}
                     </Button>
                     {responseMsg.text && (
                         <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>

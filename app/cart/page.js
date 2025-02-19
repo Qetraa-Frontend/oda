@@ -1,12 +1,25 @@
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
+import { notFound } from "next/navigation";
 
-const CartHero = dynamic(() => import("@/app/components/pages/cart/hero"));
-const CartSummary = dynamic(() => import("@/app/components/pages/cart/summary"));
+export const dynamic = "force-dynamic";
+
+const CartHero = dynamicImport(() => import("@/app/components/pages/cart/hero"));
+const CartSummary = dynamicImport(() => import("@/app/components/pages/cart/summary"));
 
 export const metadata = { title: "Oda | Cart" };
 
-export default async function Cart() {
+export default async function Cart({ searchParams }) {
+    const { orderId } = searchParams;
+
     const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+    const orderResponse = await fetch(
+        `${publicSiteUrl}api/orders?id=${orderId}`,
+        {
+            cache: "no-store",
+            next: { revalidate: 0 },
+        },
+    );
 
     const plansResponse = await fetch(
         `${publicSiteUrl}api/plans`,
@@ -32,6 +45,8 @@ export default async function Cart() {
         `${publicSiteUrl}api/plans?id=3`,
         { cache: "no-store" },
     );
+
+    const order = await orderResponse.json();
 
     const plans = await plansResponse.json();
 
@@ -62,19 +77,22 @@ export default async function Cart() {
     };
 
     const formattedAutomation = {
-        advanced: automation.filter(({ automationid }) => automationid === 2),
-        basic: automation.filter(({ automationid }) => automationid === 1),
+        1: automation.filter(({ automationid }) => automationid === 1),
+        2: automation.filter(({ automationid }) => automationid === 2),
     };
+
+    if (order?.error) notFound();
 
     return (
         <div>
             <CartHero />
             <CartSummary
                 automation={formattedAutomation}
+                order={order}
                 plans={{
-                    plan1: formattedPlan1Details,
-                    plan2: formattedPlan2Details,
-                    plan3: formattedPlan3Details,
+                    1: formattedPlan1Details,
+                    2: formattedPlan2Details,
+                    3: formattedPlan3Details,
                 }}
             />
         </div>

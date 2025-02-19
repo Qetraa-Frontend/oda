@@ -27,6 +27,7 @@ export default function LocateYourHomeSelections({ developers }) {
 
     const {
         developer,
+        mode,
         project,
         setDeveloper,
         setProject,
@@ -66,7 +67,7 @@ export default function LocateYourHomeSelections({ developers }) {
 
     return (
         <div className="container mx-auto pt-[47px] md:pt-[94px] pb-[50px] md:pb-[100px]">
-            <div className="relative max-w-[1018px] h-[834px] mx-auto px-10 lg:px-0">
+            <div className="relative max-w-[1018px] h-[834px] mx-auto px-5 lg:px-0">
                 <Image
                     alt="statics_bg"
                     className="rounded-2xl"
@@ -79,6 +80,7 @@ export default function LocateYourHomeSelections({ developers }) {
                     <div className="relative z-50 flex flex-col gap-5 md:gap-10">
                         <Select
                             defaultValue={developer.id}
+                            disabled={mode === "edit"}
                             value={developer.id}
                             onValueChange={(value) => setDeveloper({
                                 id: value,
@@ -104,7 +106,7 @@ export default function LocateYourHomeSelections({ developers }) {
                         </Select>
                         <Select
                             defaultValue={project.id}
-                            disabled={!developer?.id || projects.length === 0}
+                            disabled={!developer?.id || projects.length === 0 || mode === "edit"}
                             value={project.id}
                             onValueChange={(value) => setProject({
                                 id: value,
@@ -135,39 +137,41 @@ export default function LocateYourHomeSelections({ developers }) {
                                 ))}
                             </SelectContent>
                         </Select>
-                        <Select
-                            defaultValue={unitArea.id}
-                            disabled={!project?.id || unitAreas.length === 0}
-                            value={unitArea.id}
-                            onValueChange={(value) => setUnitArea({
-                                id: value,
-                                space: unitAreas.find(({ apartmentid }) => apartmentid === value).apartmentspace,
-                            })}
-                        >
-                            <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
-                                <SelectValue placeholder="Unit Area" />
-                                {unitAreasLoading && (
-                                    <Spinner
-                                        className="!w-[50px] absolute right-10"
-                                        color="text-white"
-                                        height="h-20"
-                                    />
-                                )}
-                            </SelectTrigger>
-                            <SelectContent>
-                                {unitAreas.map(({
-                                    apartmentid,
-                                    apartmentspace,
-                                }) => (
-                                    <SelectItem
-                                        key={apartmentid}
-                                        value={apartmentid}
-                                    >
-                                        {apartmentspace}
-                                    </SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
+                        {mode === "edit" && !localStorage.getItem("unitAreaId") ? null : ( // eslint-disable-line
+                            <Select
+                                defaultValue={mode === "edit" ? parseInt(localStorage.getItem("unitAreaId")) : unitArea.id} // eslint-disable-line
+                                disabled={!project?.id || unitAreas.length === 0 || mode === "edit"}
+                                value={mode === "edit" ? parseInt(localStorage.getItem("unitAreaId")) : unitArea.id} // eslint-disable-line
+                                onValueChange={(value) => setUnitArea({
+                                    id: value,
+                                    space: unitAreas.find(({ apartmentid }) => apartmentid === value).apartmentspace,
+                                })}
+                            >
+                                <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
+                                    <SelectValue placeholder="Unit Area" />
+                                    {unitAreasLoading && (
+                                        <Spinner
+                                            className="!w-[50px] absolute right-10"
+                                            color="text-white"
+                                            height="h-20"
+                                        />
+                                    )}
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {unitAreas.map(({
+                                        apartmentid,
+                                        apartmentspace,
+                                    }) => (
+                                        <SelectItem
+                                            key={apartmentid}
+                                            value={apartmentid}
+                                        >
+                                            {apartmentspace}
+                                        </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        )}
                     </div>
                 </div>
             </div>

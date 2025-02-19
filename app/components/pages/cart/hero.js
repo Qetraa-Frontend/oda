@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/app/components/shared/hero";
 
 export default function CartHero() {

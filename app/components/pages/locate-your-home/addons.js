@@ -64,11 +64,9 @@ export default function LocateYourHomeAddons({
     );
 
     const checkBoilerAndHeaterAvailability = (addonGroup) => {
-        if (addonGroup === "Boilers") return !selectedAddons.find(({ group }) => group === "SolarHeating");
+        if (addonGroup === "Boilers") return !!(selectedAddons.find(({ group }) => group === "SolarHeating") || selectedAddons.find(({ group }) => group === "Heaters"));
 
-        if (addonGroup === "SolarHeating") return !selectedAddons.find(({ group }) => group === "Boilers");
-
-        return true;
+        if (addonGroup === "SolarHeating" || addonGroup === "Heaters") return !!selectedAddons.find(({ group }) => group === "Boilers");
     };
 
     return (
@@ -139,10 +137,10 @@ export default function LocateYourHomeAddons({
                                                         />
                                                     ) : (
                                                         <Plus
-                                                            className={`${checkBoilerAndHeaterAvailability(addons[0]?.addongroup) ? "opacity-70 cursor-pointer" : "opacity-50 cursor-not-allowed"} w-[30px] h-[30px] md:w-[60px] md:h-[60px]`}
+                                                            className={`${!checkBoilerAndHeaterAvailability(addons[0]?.addongroup) ? "opacity-70 cursor-pointer" : "opacity-50 cursor-not-allowed"} w-[30px] h-[30px] md:w-[60px] md:h-[60px]`}
                                                             size={60}
                                                             onClick={() => {
-                                                                if (checkBoilerAndHeaterAvailability(addons[0]?.addongroup)) {
+                                                                if (!checkBoilerAndHeaterAvailability(addons[0]?.addongroup)) {
                                                                     setAddon({
                                                                         group: addons[0]?.addongroup,
                                                                         id: addons[0]?.addonid,
@@ -178,7 +176,7 @@ export default function LocateYourHomeAddons({
                                                         <Input
                                                             className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                             defaultValue={0}
-                                                            disabled={addons[0]?.addongroup === "Boilers"}
+                                                            disabled={addons[0]?.addongroup === "Boilers" || (addons[0]?.addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addons[0]?.addongroup))}
                                                             type="number"
                                                             value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity || 0}
                                                             onChange={(e) => {
@@ -198,13 +196,14 @@ export default function LocateYourHomeAddons({
                                                                         group: addons[0]?.addongroup,
                                                                         id: addons[0]?.addonid,
                                                                         name: addons[0]?.addonname,
-                                                                        price: addons[0]?.price,
+                                                                        price: addons[0].price * parseInt(value),
                                                                         quantity: parseInt(value),
                                                                         unitOrMeter: "Unit",
                                                                     });
                                                                 } else {
                                                                     setAddonQuantity(
                                                                         parseInt(value),
+                                                                        addons[0].price * parseInt(value),
                                                                         addons[0]?.addonid,
                                                                     );
                                                                 }
@@ -253,10 +252,10 @@ export default function LocateYourHomeAddons({
                                                             />
                                                         ) : (
                                                             <Plus
-                                                                className={`${checkBoilerAndHeaterAvailability(addongroup) ? "opacity-70 cursor-pointer" : "opacity-50 cursor-not-allowed"} w-[30px] h-[30px] md:w-[60px] md:h-[60px]`}
+                                                                className={`${!checkBoilerAndHeaterAvailability(addongroup) ? "opacity-70 cursor-pointer" : "opacity-50 cursor-not-allowed"} w-[30px] h-[30px] md:w-[60px] md:h-[60px]`}
                                                                 size={60}
                                                                 onClick={() => {
-                                                                    if (checkBoilerAndHeaterAvailability(addongroup)) {
+                                                                    if (!checkBoilerAndHeaterAvailability(addongroup)) {
                                                                         setAddon({
                                                                             group: addongroup,
                                                                             id: addonid,
@@ -289,7 +288,7 @@ export default function LocateYourHomeAddons({
                                                                 <Input
                                                                     className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                                     defaultValue={0}
-                                                                    disabled={addongroup === "Boilers"}
+                                                                    disabled={addongroup === "Boilers" || (addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addongroup))}
                                                                     type="number"
                                                                     value={selectedAddons.find(({ id }) => id === addonid)?.quantity || 0}
                                                                     onChange={(e) => {
@@ -309,13 +308,14 @@ export default function LocateYourHomeAddons({
                                                                                 group: addongroup,
                                                                                 id: addonid,
                                                                                 name: addonname,
-                                                                                price,
+                                                                                price: price * parseInt(value),
                                                                                 quantity: parseInt(value),
                                                                                 unitOrMeter: "Unit",
                                                                             });
                                                                         } else {
                                                                             setAddonQuantity(
                                                                                 parseInt(value),
+                                                                                price * parseInt(value),
                                                                                 addonid,
                                                                             );
                                                                         }
@@ -379,6 +379,7 @@ export default function LocateYourHomeAddons({
                                     </div>
                                     <div className="flex flex-wrap gap-2 md:gap-4 items-center justify-center mt-2 md:mt-4">
                                         {airConditioningAddons.map(({
+                                            addongroup,
                                             addonid,
                                             addonname,
                                             price,
@@ -418,14 +419,16 @@ export default function LocateYourHomeAddons({
 
                                                         if (!selectedAirConditioningAddons.find(({ id }) => id === addonid)) {
                                                             setAirConditioningAddon({
+                                                                group: addongroup,
                                                                 id: addonid,
                                                                 power: addonname,
-                                                                price,
+                                                                price: price * parseInt(value),
                                                                 quantity: parseInt(value),
                                                             });
                                                         } else {
                                                             setAirConditioningAddonQuantity(
                                                                 parseInt(value),
+                                                                price * parseInt(value),
                                                                 addonid,
                                                             );
                                                         }
@@ -507,7 +510,7 @@ export default function LocateYourHomeAddons({
                                         </div>
                                     </div>
                                     <div className="flex flex-col items-center justify-center lg:max-w-[286px]">
-                                        <p className="font-normal text-xs md:text-base mb-3 md:mb-6">{addonsPerRequest[0]?.description}</p>
+                                        <p className="font-normal text-xs md:text-base mb-3 md:mb-6 text-center">{addonsPerRequest[0]?.description}</p>
                                         <span className="font-normal text-xs md:text-base border border-gray-300 w-[174px] rounded-2xl flex items-center justify-center">Price Upon Request</span>
                                     </div>
                                 </div>
@@ -557,7 +560,7 @@ export default function LocateYourHomeAddons({
                                                 <h6 className="font-semibold text-[16px] md:text-[20px] lg:max-w-[184px]">{addperrequestname}</h6>
                                             </div>
                                             <div className="flex flex-col items-center justify-center lg:max-w-[168px]">
-                                                <p className="font-normal text-xs md:text-base mb-3 md:mb-6">{description}</p>
+                                                <p className="font-normal text-xs md:text-base mb-3 md:mb-6 text-center">{description}</p>
                                                 <span className="font-normal text-xs md:text-base border border-gray-300 w-[174px] rounded-2xl flex items-center justify-center">Price Upon Request</span>
                                             </div>
                                         </div>

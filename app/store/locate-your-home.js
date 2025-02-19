@@ -13,8 +13,18 @@ export const useLocateYourHomeStore = create((set, get) => ({
         id: "",
         name: "",
     },
-    info: {},
+    info: {
+        email: "",
+        name: "",
+        paymentPlan: {
+            id: "",
+            installmentMonths: "",
+            name: "",
+        },
+        phoneNumber: "",
+    },
     isActive: false,
+    mode: "create",
     plan: {
         id: "",
         name: "",
@@ -54,12 +64,13 @@ export const useLocateYourHomeStore = create((set, get) => ({
             addon,
         ],
     }),
-    setAddonQuantity: (quantity, id) => set({
+    setAddonQuantity: (quantity, price, id) => set({
         ...get(),
         addons: get().addons.map((addon) => {
             if (addon.id === id) {
                 return {
                     ...addon,
+                    price,
                     quantity,
                 };
             }
@@ -67,6 +78,8 @@ export const useLocateYourHomeStore = create((set, get) => ({
             return addon;
         }),
     }),
+    setAddons: (addons) => set({ addons }),
+    setAddonsPerRequest: (addons) => set({ addonsPerRequest: addons }),
     setAirConditioningAddon: (addon) => set({
         ...get(),
         airConditioningAddons: [
@@ -74,12 +87,13 @@ export const useLocateYourHomeStore = create((set, get) => ({
             addon,
         ],
     }),
-    setAirConditioningAddonQuantity: (quantity, id) => set({
+    setAirConditioningAddonQuantity: (quantity, price, id) => set({
         ...get(),
         airConditioningAddons: get().airConditioningAddons.map((addon) => {
             if (addon.id === id) {
                 return {
                     ...addon,
+                    price,
                     quantity,
                 };
             }
@@ -87,6 +101,7 @@ export const useLocateYourHomeStore = create((set, get) => ({
             return addon;
         }),
     }),
+    setAirConditioningAddons: (addons) => set({ airConditioningAddons: addons }),
     setAutomation: (automation) => set({
         ...get(),
         automation: {
@@ -107,6 +122,7 @@ export const useLocateYourHomeStore = create((set, get) => ({
         info,
     }),
     setIsActive: (isActive) => set({ isActive }),
+    setMode: (mode) => set({ mode }),
     setPlan: (plan) => set({
         ...get(),
         plan: {
@@ -131,6 +147,7 @@ export const useLocateYourHomeStore = create((set, get) => ({
             },
         },
     }),
+    setQuestions: (questions) => set({ questions }),
     setUnitArea: (unitArea) => set({
         ...get(),
         unitArea,

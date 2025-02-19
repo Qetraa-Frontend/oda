@@ -12,20 +12,37 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+import Spinner from "@/app/components/shared/spinner";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 import { Button } from "@/app/ui/button";
 import { Checkbox } from "@/app/ui/checkbox";
 
 export default function LocateYourHomeAutomation({ automation }) {
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
+    const [loading, setLoading] = useState(false);
+
+    const [responseMsg, setResponseMsg] = useState({
+        text: "",
+        type: null,
+    });
+
     const [currentAutomation, setCurrentAutomation] = useState(null);
 
     const router = useRouter();
 
     const {
+        addons,
+        addonsPerRequest,
+        airConditioningAddons,
         automation: selectedAutomation,
+        bookingId,
         developer,
+        info,
+        mode,
         plan,
         project,
+        questions,
         setAutomation,
         setIsActive,
         unitArea,
@@ -54,6 +71,75 @@ export default function LocateYourHomeAutomation({ automation }) {
             features: [...automation.advanced],
         },
     });
+
+    const saveOrderHandler = () => {
+        setResponseMsg({
+            text: "",
+            type: null,
+        });
+
+        setLoading(true);
+
+        fetch(
+            `${backendUrl}BookingDataIn/${bookingId}`,
+            {
+                body: JSON.stringify({
+                    addonPerRequestIDs: addonsPerRequest.map(({ id }) => id),
+                    addons: addons.map(({
+                        id,
+                        quantity,
+                    }) => ({
+                        addonID: id,
+                        quantity: quantity || 1,
+                    })).concat(airConditioningAddons.map(({
+                        id,
+                        quantity,
+                    }) => ({
+                        addonID: id,
+                        quantity: quantity || 1,
+                    }))),
+                    apartmentDTO: {
+                        apartmentAddress: null,
+                        apartmentId: unitArea.id,
+                        apartmentSpace: unitArea.space,
+                        apartmentType: 0,
+                    },
+                    automationID: selectedAutomation.id || null,
+                    customerInfo: {
+                        address: null,
+                        email: info.email,
+                        firstname: info.name,
+                        phonenumber: info.phoneNumber,
+                    },
+                    developerID: developer.id,
+                    paymentPlanID: info.paymentPlan.id,
+                    planID: plan.id,
+                    projectID: project.id,
+                    questions: Object.values(questions).map(({
+                        answer,
+                        question,
+                    }, index) => ({
+                        answer,
+                        name: question,
+                        questionsID: index + 1,
+                    })),
+                }),
+                headers: { "Content-Type": "application/json" },
+                method: "PUT",
+            },
+        ).then((response) => response.json()).then((response) => {
+            setLoading(false);
+
+            router.push(`/cart?orderId=${response?.bookingID}`);
+        })["catch"](() => {
+            setLoading(false);
+
+            setResponseMsg({
+                text: "Failed to updating your Order, please try again later!",
+                type: "error",
+            });
+        });
+    };
 
     useEffect(
         () => {
@@ -291,17 +377,25 @@ export default function LocateYourHomeAutomation({ automation }) {
                 </motion.div>
             </div>
             <div className="container mt-10 md:mt-[550px] xl:mt-[430px] flex justify-end">
-                <Button
-                    className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat mb-10 md:mb-0"
-                    disabled={!plan.id || !developer.id || !project.id || !unitArea.id}
-                    onClick={() => {
-                        router.push("/checkout");
+                <div className="flex flex-col gap-2">
+                    <Button
+                        className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat mb-10 md:mb-0"
+                        disabled={!plan.id || !developer.id || !project.id || !unitArea.id}
+                        onClick={() => {
+                            if (mode === "edit") saveOrderHandler();
+                            else {
+                                router.push("/checkout");
 
-                        setIsActive(true);
-                    }}
-                >
-                    Add to Cart
-                </Button>
+                                setIsActive(true);
+                            }
+                        }}
+                    >
+                        {mode === "edit" ? loading ? <Spinner color="text-black" /> : "Save" : "Add to Cart"} {/* eslint-disable-line */}
+                    </Button>
+                    {responseMsg.text && (
+                        <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
+                    )}
+                </div>
             </div>
         </div>
     );

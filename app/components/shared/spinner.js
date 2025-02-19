@@ -1,13 +1,15 @@
 export default function Spinner({
     className,
     color,
+    fill,
     height,
+    size,
 }) {
     return (
         <div className={`flex items-center justify-center w-full ${height || "h-[300px]"} ${className || ""}`}>
             <svg
                 aria-hidden="true"
-                className={`w-12 h-12 ${color || "text-gray-200"} animate-spin dark:text-gray-500 fill-primary`}
+                className={`${size || "!w-12 !h-12"} ${color || "text-gray-200"} animate-spin dark:text-gray-500 ${fill || "fill-primary"}`}
                 fill="none"
                 viewBox="0 0 100 101"
                 xmlns="http://www.w3.org/2000/svg"

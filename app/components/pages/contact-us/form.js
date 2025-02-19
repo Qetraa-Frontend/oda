@@ -160,7 +160,7 @@ export default function ContactUsForm() {
                                     {loading ? (
                                         <Spinner
                                             color="text-black"
-                                            height="h-[40px]"
+                                            size="!h-10 !w-10"
                                         />
                                     ) : "Submit"}
                                 </Button>
