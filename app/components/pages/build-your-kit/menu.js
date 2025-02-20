@@ -52,7 +52,6 @@ export default function BuildYourKitMenu({ plans }) {
                             planBase64,
                             planid,
                             planname,
-                            pricepermeter,
                         }) => (
                             <div
                                 className="w-full col-span-1 xl:col-span-4"
@@ -69,14 +68,6 @@ export default function BuildYourKitMenu({ plans }) {
                                     />
                                     <div className="mt-3 md:mt-6">
                                         <h4 className="font-medium text-lg md:text-2xl mb-3 md:mb-6">{planname}</h4>
-                                        <div className="my-5 md:my-10">
-                                            <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Starting From</h5>
-                                            <span className="font-normal text-lg md:text-2xl">
-                                                {pricepermeter}
-                                                {" "}
-                                                | M2
-                                            </span>
-                                        </div>
                                         <p className="font-medium text-base md:text-xl !leading-loose">{description}</p>
                                     </div>
                                 </div>
