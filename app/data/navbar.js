@@ -48,11 +48,11 @@ export const navbarLinks = {
                 text: "Build Your Kit",
                 url: "/build-your-kit",
             },
-            {
+            /* {
                 id: 3,
                 text: "Need a Facelift",
                 url: "/need-facelift",
-            },
+            }, */
         ],
         top: [
             {

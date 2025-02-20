@@ -5,10 +5,10 @@ import { Check, Plus } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 
-import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
+import { useBuildYourKitStore } from "@/app/store/build-your-kit";
 import { Input } from "@/app/ui/input";
 
-export default function LocateYourHomeAddons({
+export default function BuildYourKitAddons({
     addons,
     addonsPerRequest,
     airConditioningAddons,
@@ -26,7 +26,7 @@ export default function LocateYourHomeAddons({
         setAddonQuantity,
         setAirConditioningAddon,
         setAirConditioningAddonQuantity,
-    } = useLocateYourHomeStore();
+    } = useBuildYourKitStore();
 
     const ref1 = useRef(null);
 
@@ -76,7 +76,7 @@ export default function LocateYourHomeAddons({
                 layout="fill"
                 loading="lazy"
                 objectFit="cover"
-                src="/images/pages/locate-your-home/plans/plans_bg.webp"
+                src="/images/pages/build-your-kit/plans/plans_bg.webp"
             />
             <div className="container mx-auto">
                 {(addons.length > 0 || airConditioningAddons.length > 0) && (

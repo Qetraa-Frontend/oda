@@ -69,7 +69,7 @@ export default function LocateYourHomeSelections({ developers }) {
         <div className="container mx-auto pt-[47px] md:pt-[94px] pb-[50px] md:pb-[100px]">
             <div className="relative max-w-[1018px] h-[834px] mx-auto px-5 lg:px-0">
                 <Image
-                    alt="statics_bg"
+                    alt="selections_bg"
                     className="rounded-2xl"
                     layout="fill"
                     loading="lazy"

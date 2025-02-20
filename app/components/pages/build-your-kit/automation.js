@@ -18,7 +18,7 @@ import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 import { Button } from "@/app/ui/button";
 import { Checkbox } from "@/app/ui/checkbox";
 
-export default function LocateYourHomeAutomation({ automation }) {
+export default function BuildYourKitAutomation({ automation }) {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
     const [loading, setLoading] = useState(false);
@@ -35,21 +35,20 @@ export default function LocateYourHomeAutomation({ automation }) {
     const {
         addons,
         addonsPerRequest,
+        address,
         airConditioningAddons,
         automation: selectedAutomation,
         bookingId,
-        developer,
         info,
         mode,
         plan,
-        project,
         questions,
         setAutomation,
-        setIsActive: setLocateYourHomeIsActive,
+        setIsActive: setBuildYourKitIsActive,
         unitArea,
-    } = useLocateYourHomeStore();
+    } = useBuildYourKitStore();
 
-    const { setIsActive: setBuildYourKitIsActive } = useBuildYourKitStore();
+    const { setIsActive: setLocateYourHomeIsActive } = useLocateYourHomeStore();
 
     const ref = useRef(null);
 
@@ -102,22 +101,22 @@ export default function LocateYourHomeAutomation({ automation }) {
                         quantity: quantity || 1,
                     }))),
                     apartmentDTO: {
-                        apartmentAddress: null,
-                        apartmentId: unitArea.id,
-                        apartmentSpace: unitArea.space,
-                        apartmentType: 0,
+                        apartmentAddress: address,
+                        apartmentId: null,
+                        apartmentSpace: parseInt(unitArea),
+                        apartmentType: 1,
                     },
                     automationID: selectedAutomation.id || null,
                     customerInfo: {
-                        address: null,
+                        address,
                         email: info.email,
                         firstname: info.name,
                         phonenumber: info.phoneNumber,
                     },
-                    developerID: developer.id,
+                    developerID: null,
                     paymentPlanID: info.paymentPlan.id,
                     planID: plan.id,
-                    projectID: project.id,
+                    projectID: null,
                     questions: Object.values(questions).map(({
                         answer,
                         question,
@@ -226,7 +225,7 @@ export default function LocateYourHomeAutomation({ automation }) {
                         className="h-full object-cover xl:object-fill w-[455px] rounded-tr-lg relative z-50"
                         height={673}
                         loading="lazy"
-                        src="/images/pages/locate-your-home/automation.webp"
+                        src="/images/pages/build-your-kit/automation.webp"
                         width={455}
                     />
                 </motion.div>
@@ -383,15 +382,15 @@ export default function LocateYourHomeAutomation({ automation }) {
                 <div className="flex flex-col gap-2">
                     <Button
                         className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat mb-10 md:mb-0"
-                        disabled={!plan.id || !developer.id || !project.id || !unitArea.id}
+                        disabled={!plan.id || !address || !unitArea}
                         onClick={() => {
                             if (mode === "edit") saveOrderHandler();
                             else {
                                 router.push("/checkout");
 
-                                setLocateYourHomeIsActive(true);
+                                setBuildYourKitIsActive(true);
 
-                                setBuildYourKitIsActive(false);
+                                setLocateYourHomeIsActive(false);
                             }
                         }}
                     >

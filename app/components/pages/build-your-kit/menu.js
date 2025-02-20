@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-export default function LocateYourHomeMenu({ plans }) {
+export default function BuildYourKitMenu({ plans }) {
     const ref = useRef(null);
 
     const isInView = useInView(
@@ -22,7 +22,7 @@ export default function LocateYourHomeMenu({ plans }) {
                 layout="fill"
                 loading="lazy"
                 objectFit="cover"
-                src="/images/pages/locate-your-home/plans/plans_bg.webp"
+                src="/images/pages/build-your-kit/plans/plans_bg.webp"
             />
             <div className="container mx-auto">
                 <motion.div
