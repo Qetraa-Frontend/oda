@@ -50,6 +50,45 @@ export const useLocateYourHomeStore = create((set, get) => ({
         ...get(),
         airConditioningAddons: [],
     }),
+    resetAll: () => set({
+        addons: [],
+        addonsPerRequest: [],
+        airConditioningAddons: [],
+        automation: {
+            id: "",
+            name: "",
+        },
+        bookingId: "",
+        developer: {
+            id: "",
+            name: "",
+        },
+        info: {
+            email: "",
+            name: "",
+            paymentPlan: {
+                id: "",
+                installmentMonths: "",
+                name: "",
+            },
+            phoneNumber: "",
+        },
+        isActive: false,
+        mode: "create",
+        plan: {
+            id: "",
+            name: "",
+        },
+        project: {
+            id: "",
+            name: "",
+        },
+        questions: {},
+        unitArea: {
+            id: "",
+            space: "",
+        },
+    }),
     setAddon: (addon) => set({
         ...get(),
         addons: [

@@ -4,7 +4,10 @@
 "use client";
 
 import {
-    Check, Pencil, Trash, X,
+    Check,
+    Pencil,
+    Trash,
+    X,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +19,7 @@ import { Button } from "@/app/ui/button";
 import { Input } from "@/app/ui/input";
 
 import Spinner from "../../shared/spinner";
+import OrderConfirmed from "./order-confirmed";
 
 export default function CartSummary({
     automation,
@@ -28,6 +32,8 @@ export default function CartSummary({
 
     const [loading, setLoading] = useState(false);
 
+    const [confirmLoading, setConfirmLoading] = useState(false);
+
     const [targetUpdatedItem, setTargetUpdatedItem] = useState({
         id: "",
         type: "",
@@ -38,9 +44,17 @@ export default function CartSummary({
         type: null,
     });
 
+    const [confirmResponseMsg, setConfirmResponseMsg] = useState({
+        text: "",
+        type: null,
+    });
+
+    const [orderConfirmed, setOrderConfirmed] = useState(false);
+
     const {
         isActive,
         plan,
+        resetAll,
         setAddons,
         setAddonsPerRequest,
         setAirConditioningAddons,
@@ -159,6 +173,36 @@ export default function CartSummary({
         });
     };
 
+    const confirmOrderHandler = async () => {
+        setConfirmResponseMsg({
+            text: "",
+            type: null,
+        });
+
+        setConfirmLoading(true);
+
+        fetch(
+            `${backendUrl}Booking/${order.bookingID}/confirm`,
+            {
+                headers: { "Content-Type": "application/json" },
+                method: "PUT",
+            },
+        ).then((response) => response.json()).then(() => {
+            setConfirmLoading(false);
+
+            if (isActive) resetAll();
+
+            setOrderConfirmed(true);
+        })["catch"](() => {
+            setConfirmLoading(false);
+
+            setConfirmResponseMsg({
+                text: "Failed to confirm your Order, please try again later!",
+                type: "error",
+            });
+        });
+    };
+
     useEffect(
         () => {
             if (!plan.id) localStorage.removeItem("unitAreaId"); // eslint-disable-line
@@ -248,7 +292,7 @@ export default function CartSummary({
         [order], // eslint-disable-line
     );
 
-    return (
+    return orderConfirmed ? <OrderConfirmed /> : (
         <div className="container mx-auto pt-[40px] md:pt-[80px] pb-[100px] md:pb-[200px]">
             <div className="flex flex-wrap gap-2 justify-between border border-gray-300 rounded-3xl p-2 max-w-[996px] mx-auto mb-[50px] md:mb-[100px]">
                 <Link
@@ -839,7 +883,7 @@ export default function CartSummary({
                                                     key={addonPerRequestID}
                                                 >
                                                     <span className="font-normal text-lg md:text-2xl">{addonPerRequestName}</span>
-                                                    <span className="font-normal text-xs md:text-base border border-gray-300 rounded-xl px-2">Upon Request</span>
+                                                    <span className="font-normal text-xs md:text-base border border-gray-300 rounded-xl px-2 w-fit lg:w-[140px] text-center xl:w-fit h-fit">Upon Request</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -855,7 +899,7 @@ export default function CartSummary({
                                             {" "}
                                             Plan
                                         </span>
-                                        <span className="font-normal text-xs md:text-base border border-gray-300 rounded-xl px-2">Upon Request</span>
+                                        <span className="font-normal text-xs md:text-base border border-gray-300 rounded-xl px-2 w-fit lg:w-[140px] text-center xl:w-fit h-fit">Upon Request</span>
                                     </div>
                                     <hr className="my-2 md:my-4" />
                                 </div>
@@ -959,12 +1003,17 @@ export default function CartSummary({
                                 <span className="font-normal text-xs md:text-base">{`${order.totalAmount.toLocaleString()} EGP`}</span>
                             </div>
                         </div>
-                        <div className="mt-5 md:mt-10">
+                        <div className="mt-5 md:mt-10 flex flex-col gap-2 justify-center">
                             <Button
                                 className="font-semibold text-lg md:text-2xl !bg-primary text-black transition-all duration-1000 rounded-[32px] h-[60px] w-full hover:animate-heartBeat"
+                                disabled={loading || confirmLoading}
+                                onClick={confirmOrderHandler}
                             >
-                                Checkout
+                                {confirmLoading ? <Spinner color="text-black" /> : "Confirm Order"}
                             </Button>
+                            {confirmResponseMsg.text && (
+                                <span className={`font-bold text-xs md:text-base ${confirmResponseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
+                            )}
                         </div>
                     </div>
                 </div>

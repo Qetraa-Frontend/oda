@@ -211,7 +211,7 @@ export default function Navbar() {
                                 </div>
                                 <div className="container mx-auto !font-albert-sans overflow-y-auto sm:h-[126vh]">
                                     <h6 className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Quick Links</h6>
-                                    <div className="flex items-center justify-between mt-6 md:mt-12">
+                                    <div className="flex justify-between mt-6 md:mt-12">
                                         <div>
                                             <ul className="flex flex-col gap-5 md:gap-10">
                                                 {navbarLinks.leftColumn.map(({

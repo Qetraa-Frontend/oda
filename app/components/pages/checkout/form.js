@@ -176,7 +176,7 @@ export default function CheckoutForm({ paymentPlans }) {
             ref={ref}
         >
             <motion.div
-                className="flex relative top-[90px] md:top-[180px] min-h-[814px] z-40"
+                className="flex relative top-[90px] md:top-[180px] md:min-h-[814px] z-40"
                 animate={isInView && {
                     opacity: 1,
                     y: 0,
@@ -273,13 +273,13 @@ export default function CheckoutForm({ paymentPlans }) {
                         </div>
                         <div className="flex flex-col gap-2 justify-center">
                             <Button
-                                className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px] hover:animate-heartBeat"
+                                className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full md:w-[370px] hover:animate-heartBeat"
                                 disabled={loading || Object.values(questions).length !== 8}
                             >
                                 {loading ? <Spinner color="text-black" /> : mode === "edit" ? "Save" : "Submit"} {/* eslint-disable-line */}
                             </Button>
                             {responseMsg.text && (
-                                <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center md:text-left`}>{responseMsg.text}</span>
+                                <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
                             )}
                         </div>
                     </form>
@@ -287,7 +287,7 @@ export default function CheckoutForm({ paymentPlans }) {
                 <div className="hidden md:block w-[40%]">
                     <Image
                         alt="checkout"
-                        className="object-cover xl:object-fill w-full h-full"
+                        className="object-cover xl:object-fill w-full h-full rounded-r-2xl"
                         height={814}
                         loading="lazy"
                         src="/images/pages/checkout/form.webp"

@@ -18,7 +18,8 @@ export default function Footer() {
         || pathname === "/oda-ambassador"
         || pathname === "/our-merchants"
         || pathname === "/our-partners"
-        || pathname === "/locate-your-home";
+        || pathname === "/locate-your-home"
+        || pathname === "/cart";
 
     return (
         <footer className={`${isPageWithoutBottomImage ? "pt-[58px] md:pt-[116px]" : "pt-[133px] md:pt-[267px]"} pb-[39px] md:pb-[79px] relative`}>
@@ -48,71 +49,75 @@ export default function Footer() {
                     </p>
                     <Social color="white" />
                 </div>
-                <div className="col-span-3">
+                <div className="col-span-6">
                     <h6 className="font-medium text-2xl md:text-4xl text-white">Quick Links</h6>
-                    <ul className="p-0 mt-[19px] md:mt-[38px] flex flex-col gap-1 md:gap-2">
-                        {footerLinks.leftColumn.map(({
-                            id,
-                            text,
-                            url,
-                        }) => (
-                            <li key={id}>
-                                <Link
-                                    className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                    href={url}
-                                    prefetch={false}
-                                >
-                                    {text}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="col-span-3 mt-[35px] md:mt-[70px]">
-                    <ul className="p-0 m-0 flex flex-col gap-1 md:gap-2">
-                        {footerLinks.rightColumn.map(({
-                            id,
-                            text,
-                            url,
-                        }) => (
-                            <li key={id}>
-                                <Link
-                                    className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
-                                    href={url}
-                                    prefetch={false}
-                                >
-                                    {text}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="mt-[21px] md:mt-[43px]">
-                        <span className="mb-2 md:mb-4 inline-block font-medium text-xs md:text-base text-white">Download App</span>
-                        <div className="flex gap-1 md:gap-2 flex-col">
-                            <Link
-                                href="#"
-                                prefetch={false}
-                            >
-                                <Image
-                                    alt="google_play"
-                                    height={65}
-                                    loading="lazy"
-                                    src="/images/google_play.webp"
-                                    width={180}
-                                />
-                            </Link>
-                            <Link
-                                href="#"
-                                prefetch={false}
-                            >
-                                <Image
-                                    alt="apple_store"
-                                    height={65}
-                                    loading="lazy"
-                                    src="/images/apple_store.webp"
-                                    width={180}
-                                />
-                            </Link>
+                    <div className="flex flex-nowrap justify-between gap-2 mt-5 md:mt-10">
+                        <div className="w-[49%]">
+                            <ul className="p-0 flex flex-col gap-1 md:gap-2">
+                                {footerLinks.leftColumn.map(({
+                                    id,
+                                    text,
+                                    url,
+                                }) => (
+                                    <li key={id}>
+                                        <Link
+                                            className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
+                                            href={url}
+                                            prefetch={false}
+                                        >
+                                            {text}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="w-[49%]">
+                            <ul className="p-0 m-0 flex flex-col gap-1 md:gap-2">
+                                {footerLinks.rightColumn.map(({
+                                    id,
+                                    text,
+                                    url,
+                                }) => (
+                                    <li key={id}>
+                                        <Link
+                                            className="font-medium text-base md:text-xl text-white hover:text-primary transition-all duration-1000"
+                                            href={url}
+                                            prefetch={false}
+                                        >
+                                            {text}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                            <div className="mt-[21px] md:mt-[43px]">
+                                <span className="mb-2 md:mb-4 inline-block font-medium text-xs md:text-base text-white">Download App</span>
+                                <div className="flex gap-1 md:gap-2 flex-col">
+                                    <Link
+                                        href="#"
+                                        prefetch={false}
+                                    >
+                                        <Image
+                                            alt="google_play"
+                                            height={65}
+                                            loading="lazy"
+                                            src="/images/google_play.webp"
+                                            width={180}
+                                        />
+                                    </Link>
+                                    <Link
+                                        href="#"
+                                        prefetch={false}
+                                    >
+                                        <Image
+                                            alt="apple_store"
+                                            height={65}
+                                            loading="lazy"
+                                            src="/images/apple_store.webp"
+                                            width={180}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
