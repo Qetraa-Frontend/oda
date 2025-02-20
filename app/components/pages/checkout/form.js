@@ -11,6 +11,7 @@ import { Controller, useForm } from "react-hook-form";
 import Spinner from "@/app/components/shared/spinner";
 import { checkoutFormData } from "@/app/data/forms/checkout";
 import { checkoutFormSchema } from "@/app/schemas/checkout";
+import { useBuildYourKitStore } from "@/app/store/build-your-kit";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 import { Button } from "@/app/ui/button";
 import { Input } from "@/app/ui/input";
@@ -35,22 +36,39 @@ export default function CheckoutForm({ paymentPlans }) {
     const router = useRouter();
 
     const {
-        addons,
-        addonsPerRequest,
-        airConditioningAddons,
-        automation,
-        bookingId,
-        developer,
-        info,
-        isActive,
-        mode,
-        plan,
-        project,
-        questions,
-        setBookingId,
-        setInfo,
-        unitArea,
+        addons: locateYourHomeAddons,
+        addonsPerRequest: locateYourHomeAddonsPerRequest,
+        airConditioningAddons: locateYourHomeAirConditioningAddons,
+        automation: locateYourHomeAutomation,
+        bookingId: locateYourHomeBookingId,
+        developer: locateYourHomeDeveloper,
+        info: locateYourHomeInfo,
+        isActive: locateYourHomeIsActive,
+        mode: locateYourHomeMode,
+        plan: locateYourHomePlan,
+        project: locateYourHomeProject,
+        questions: locateYourHomeQuestions,
+        setBookingId: setLocateYourHomeBookingId,
+        setInfo: setLocateYourHomeInfo,
+        unitArea: locateYourHomeUnitArea,
     } = useLocateYourHomeStore();
+
+    const {
+        addons: buildYourKitAddons,
+        addonsPerRequest: buildYourKitAddonsPerRequest,
+        address: buildYourKitAddress,
+        airConditioningAddons: buildYourKitAirConditioningAddons,
+        automation: buildYourKitAutomation,
+        bookingId: buildYourKitBookingId,
+        info: buildYourKitInfo,
+        isActive: buildYourKitIsActive,
+        mode: buildYourKitMode,
+        plan: buildYourKitPlan,
+        questions: buildYourKitQuestions,
+        setBookingId: setBuildYourKitBookingId,
+        setInfo: setBuildYourKitInfo,
+        unitArea: buildYourKitUnitArea,
+    } = useBuildYourKitStore();
 
     const ref = useRef(null);
 
@@ -74,6 +92,20 @@ export default function CheckoutForm({ paymentPlans }) {
         resolver: zodResolver(checkoutFormSchema),
     });
 
+    const mode = locateYourHomeIsActive ? locateYourHomeMode : buildYourKitMode;
+
+    const bookingId = locateYourHomeIsActive ? locateYourHomeBookingId : buildYourKitBookingId;
+
+    const addons = locateYourHomeIsActive ? locateYourHomeAddons : buildYourKitAddons;
+
+    const addonsPerRequest = locateYourHomeIsActive ? locateYourHomeAddonsPerRequest : buildYourKitAddonsPerRequest;
+
+    const airConditioningAddons = locateYourHomeIsActive ? locateYourHomeAirConditioningAddons : buildYourKitAirConditioningAddons;
+
+    const questions = locateYourHomeIsActive ? locateYourHomeQuestions : buildYourKitQuestions;
+
+    const info = locateYourHomeIsActive ? locateYourHomeInfo : buildYourKitInfo;
+
     const onSubmit = ({
         email,
         name,
@@ -87,16 +119,29 @@ export default function CheckoutForm({ paymentPlans }) {
 
         setLoading(true);
 
-        setInfo({
-            email,
-            name,
-            paymentPlan: {
-                id: parseInt(paymentPlan),
-                installmentMonths: paymentPlans.find(({ paymentplanid }) => paymentplanid === parseInt(paymentPlan))?.numberofinstallmentmonths,
-                name: paymentPlans.find(({ paymentplanid }) => paymentplanid === parseInt(paymentPlan))?.paymentplanname,
-            },
-            phoneNumber,
-        });
+        if (locateYourHomeIsActive) {
+            setLocateYourHomeInfo({
+                email,
+                name,
+                paymentPlan: {
+                    id: parseInt(paymentPlan),
+                    installmentMonths: paymentPlans.find(({ paymentplanid }) => paymentplanid === parseInt(paymentPlan))?.numberofinstallmentmonths,
+                    name: paymentPlans.find(({ paymentplanid }) => paymentplanid === parseInt(paymentPlan))?.paymentplanname,
+                },
+                phoneNumber,
+            });
+        } else {
+            setBuildYourKitInfo({
+                email,
+                name,
+                paymentPlan: {
+                    id: parseInt(paymentPlan),
+                    installmentMonths: paymentPlans.find(({ paymentplanid }) => paymentplanid === parseInt(paymentPlan))?.numberofinstallmentmonths,
+                    name: paymentPlans.find(({ paymentplanid }) => paymentplanid === parseInt(paymentPlan))?.paymentplanname,
+                },
+                phoneNumber,
+            });
+        }
 
         fetch(
             `${backendUrl}BookingDataIn${mode === "edit" ? `/${bookingId}` : ""}`,
@@ -117,22 +162,22 @@ export default function CheckoutForm({ paymentPlans }) {
                         quantity: quantity || 1,
                     }))),
                     apartmentDTO: {
-                        apartmentAddress: isActive && null,
-                        apartmentId: unitArea.id,
-                        apartmentSpace: unitArea.space,
-                        apartmentType: isActive ? 0 : 1,
+                        apartmentAddress: buildYourKitIsActive ? buildYourKitAddress : null,
+                        apartmentId: locateYourHomeIsActive ? locateYourHomeUnitArea.id : null,
+                        apartmentSpace: locateYourHomeIsActive ? locateYourHomeUnitArea.space : buildYourKitUnitArea,
+                        apartmentType: locateYourHomeIsActive ? 0 : 1,
                     },
-                    automationID: automation.id || null,
+                    automationID: locateYourHomeIsActive ? locateYourHomeAutomation.id || null : buildYourKitAutomation.id || null,
                     customerInfo: {
-                        address: isActive && null,
+                        address: buildYourKitIsActive ? buildYourKitAddress : null,
                         email,
                         firstname: name,
                         phonenumber: phoneNumber,
                     },
-                    developerID: developer.id,
+                    developerID: locateYourHomeIsActive ? locateYourHomeDeveloper.id : null,
                     paymentPlanID: parseInt(paymentPlan),
-                    planID: plan.id,
-                    projectID: project.id,
+                    planID: locateYourHomeIsActive ? locateYourHomePlan.id : buildYourKitPlan.id,
+                    projectID: locateYourHomeIsActive ? locateYourHomeProject.id : null,
                     questions: Object.values(questions).map(({
                         answer,
                         question,
@@ -151,12 +196,15 @@ export default function CheckoutForm({ paymentPlans }) {
             reset();
 
             if (mode !== "edit") {
-                setBookingId(response?.bookingID);
+                if (locateYourHomeIsActive) setLocateYourHomeBookingId(response?.bookingID);
+                else setBuildYourKitBookingId(response?.bookingID);
 
-                localStorage.setItem( // eslint-disable-line
-                    "unitAreaId",
-                    unitArea.id,
-                );
+                if (locateYourHomeIsActive) {
+                    localStorage.setItem( // eslint-disable-line
+                        "unitAreaId",
+                        locateYourHomeUnitArea.id,
+                    );
+                }
             }
 
             router.push(`/cart?orderId=${response?.bookingID}`);

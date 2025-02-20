@@ -70,15 +70,15 @@ export default function BuildYourKitAddons({
     };
 
     return (
-        <div className="pb-[75px] lg:pb-[150px] overflow-hidden relative">
+        <div className="container mx-auto pb-[40px] md:pb-[80px] mb-[60px] md:mb-[120px] overflow-hidden relative rounded-2xl">
             <Image
                 alt="plans_bg"
                 layout="fill"
                 loading="lazy"
                 objectFit="cover"
-                src="/images/pages/build-your-kit/plans/plans_bg.webp"
+                src="/images/pages/build-your-kit/addons_bg.webp"
             />
-            <div className="container mx-auto">
+            <div>
                 {(addons.length > 0 || airConditioningAddons.length > 0) && (
                     <div
                         className="relative"
@@ -88,7 +88,7 @@ export default function BuildYourKitAddons({
                             <div>
                                 <motion.div
                                     animate={isInView1 && { x: 0 }}
-                                    className="absolute top-0 left-0 bg-primary rounded-2xl h-[438px] w-full"
+                                    className="absolute top-0 left-0 rounded-2xl h-[438px] w-full"
                                     initial={{ x: "-100vw" }}
                                     transition={{
                                         damping: 10,
@@ -99,21 +99,44 @@ export default function BuildYourKitAddons({
                                     }}
                                 >
                                     <div className="flex items-center pl-5 md:pl-10">
-                                        <Plus
-                                            className="opacity-60 mt-10 md:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
-                                            size={96}
-                                        />
+                                        <div className="flex-1 sm:flex-none">
+                                            <Plus
+                                                className="opacity-60 mt-10 md:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
+                                                size={96}
+                                            />
+                                        </div>
                                         <div className="relative z-50 mt-10 md:mt-20">
                                             <h2 className="font-bold text-3xl md:text-5xl mb-5 md:mb-10 !uppercase">Add-ons</h2>
                                             <p className="font-medium text-base md:text-xl !leading-loose">
                                                 Foundation to Automation: Off-the-Shelf
-                                                <br />
+                                                {" "}
+                                                <br className="hidden lg:block" />
                                                 Finishing Packages Built Just For You
                                             </p>
                                         </div>
                                     </div>
                                 </motion.div>
-                                <div className="relative w-full overflow-visible h-fit pt-[162px] md:pt-[325px]">
+                                <motion.div
+                                    animate={isInView1 && { x: 0 }}
+                                    className="absolute top-[500px] left-0 rounded-2xl h-[301px] hidden sm:block"
+                                    initial={{ x: "-100vw" }}
+                                    transition={{
+                                        damping: 10,
+                                        duration: 2,
+                                        ease: "easeIn",
+                                        stiffness: 40,
+                                        type: "spring",
+                                    }}
+                                >
+                                    <Image
+                                        alt="addon_per_request"
+                                        height={301}
+                                        loading="lazy"
+                                        src="/images/pages/build-your-kit/addon.webp"
+                                        width={819}
+                                    />
+                                </motion.div>
+                                <div className="relative w-full overflow-visible h-fit pt-[200px] sm:pt-[170px] md:pt-[300px]">
                                     <motion.div
                                         animate={isInView1 && { x: 0 }}
                                         className="flex justify-end"
@@ -178,7 +201,7 @@ export default function BuildYourKitAddons({
                                                             defaultValue={0}
                                                             disabled={addons[0]?.addongroup === "Boilers" || (addons[0]?.addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addons[0]?.addongroup))}
                                                             type="number"
-                                                            value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity || 0}
+                                                            value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity}
                                                             onChange={(e) => {
                                                                 const { value } = e.target;
 
@@ -189,7 +212,13 @@ export default function BuildYourKitAddons({
                                                                     );
                                                                 }
 
-                                                                if (value < 1) return;
+                                                                if (value !== "" && Number(value) < 1) return;
+
+                                                                if (value === "") {
+                                                                    removeAddon(addons[0]?.addonid);
+
+                                                                    return;
+                                                                }
 
                                                                 if (!selectedAddons.find(({ id }) => id === addons[0]?.addonid)) {
                                                                     setAddon({
@@ -218,7 +247,7 @@ export default function BuildYourKitAddons({
                                         </div>
                                     </motion.div>
                                     <div
-                                        className="grid grid-cols-1 lg:grid-cols-12 justify-center items-center gap-4 md:gap-8 mt-[36px] md:mt-[72px]"
+                                        className="grid grid-cols-1 lg:grid-cols-12 justify-center items-center gap-4 md:gap-8 mt-[20px] sm:mt-[356px] md:mt-[280px]"
                                         ref={ref2}
                                     >
                                         {addons.slice(1).map(({
@@ -290,7 +319,7 @@ export default function BuildYourKitAddons({
                                                                     defaultValue={0}
                                                                     disabled={addongroup === "Boilers" || (addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addongroup))}
                                                                     type="number"
-                                                                    value={selectedAddons.find(({ id }) => id === addonid)?.quantity || 0}
+                                                                    value={selectedAddons.find(({ id }) => id === addonid)?.quantity}
                                                                     onChange={(e) => {
                                                                         const { value } = e.target;
 
@@ -301,7 +330,13 @@ export default function BuildYourKitAddons({
                                                                             );
                                                                         }
 
-                                                                        if (value < 1) return;
+                                                                        if (value !== "" && Number(value) < 1) return;
+
+                                                                        if (value === "") {
+                                                                            removeAddon(addonid);
+
+                                                                            return;
+                                                                        }
 
                                                                         if (!selectedAddons.find(({ id }) => id === addonid)) {
                                                                             setAddon({
@@ -398,7 +433,7 @@ export default function BuildYourKitAddons({
                                                     className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                     defaultValue={0}
                                                     type="number"
-                                                    value={selectedAirConditioningAddons.find(({ id }) => id === addonid)?.quantity || 0}
+                                                    value={selectedAirConditioningAddons.find(({ id }) => id === addonid)?.quantity}
                                                     onChange={(e) => {
                                                         const { value } = e.target;
 
@@ -409,9 +444,9 @@ export default function BuildYourKitAddons({
                                                             );
                                                         }
 
-                                                        if (value < 0) return;
+                                                        if (value !== "" && Number(value) < 1) return;
 
-                                                        if (value < 1) {
+                                                        if (value < 1 || value === "") {
                                                             removeAirConditioningAddon(addonid);
 
                                                             return;
@@ -445,7 +480,7 @@ export default function BuildYourKitAddons({
                         )}
                     </div>
                 )}
-                {airConditioningAddons.length > 0 && (
+                {addonsPerRequest.length > 0 && (
                     <div
                         className="relative mt-[48px] md:mt-[96px]"
                         ref={ref4}
@@ -462,15 +497,13 @@ export default function BuildYourKitAddons({
                                 type: "spring",
                             }}
                         >
-                            <div className="flex items-center mb-5 md:mb-0 pl-5 md:pl-10">
-                                <Plus
-                                    className="opacity-60 mt-10 md:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
-                                    size={96}
-                                />
-                                <div className="relative z-50 mt-10 md:mt-20">
-                                    <h2 className="font-bold text-3xl md:text-5xl !uppercase">Add-ons</h2>
-                                </div>
-                            </div>
+                            <Image
+                                alt="addon_per_request"
+                                height={270}
+                                loading="lazy"
+                                src="/images/pages/build-your-kit/addon_per_request.webp"
+                                width={962}
+                            />
                         </motion.div>
                         <div className="relative w-full overflow-visible h-fit pt-[87px] md:pt-[175px]">
                             <motion.div

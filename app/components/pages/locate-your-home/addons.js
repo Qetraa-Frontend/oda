@@ -70,7 +70,7 @@ export default function LocateYourHomeAddons({
     };
 
     return (
-        <div className="pb-[75px] lg:pb-[150px] overflow-hidden relative">
+        <div className="pb-[75px] md:pb-[150px] overflow-hidden relative">
             <Image
                 alt="plans_bg"
                 layout="fill"
@@ -99,21 +99,24 @@ export default function LocateYourHomeAddons({
                                     }}
                                 >
                                     <div className="flex items-center pl-5 md:pl-10">
-                                        <Plus
-                                            className="opacity-60 mt-10 md:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
-                                            size={96}
-                                        />
+                                        <div className="flex-1 sm:flex-none">
+                                            <Plus
+                                                className="opacity-60 mt-10 md:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
+                                                size={96}
+                                            />
+                                        </div>
                                         <div className="relative z-50 mt-10 md:mt-20">
                                             <h2 className="font-bold text-3xl md:text-5xl mb-5 md:mb-10 !uppercase">Add-ons</h2>
                                             <p className="font-medium text-base md:text-xl !leading-loose">
                                                 Foundation to Automation: Off-the-Shelf
-                                                <br />
+                                                {" "}
+                                                <br className="hidden lg:block" />
                                                 Finishing Packages Built Just For You
                                             </p>
                                         </div>
                                     </div>
                                 </motion.div>
-                                <div className="relative w-full overflow-visible h-fit pt-[162px] md:pt-[325px]">
+                                <div className="relative w-full overflow-visible h-fit pt-[200px] md:pt-[325px]">
                                     <motion.div
                                         animate={isInView1 && { x: 0 }}
                                         className="flex justify-end"
@@ -178,7 +181,7 @@ export default function LocateYourHomeAddons({
                                                             defaultValue={0}
                                                             disabled={addons[0]?.addongroup === "Boilers" || (addons[0]?.addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addons[0]?.addongroup))}
                                                             type="number"
-                                                            value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity || 0}
+                                                            value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity}
                                                             onChange={(e) => {
                                                                 const { value } = e.target;
 
@@ -189,7 +192,13 @@ export default function LocateYourHomeAddons({
                                                                     );
                                                                 }
 
-                                                                if (value < 1) return;
+                                                                if (value !== "" && Number(value) < 1) return;
+
+                                                                if (value === "") {
+                                                                    removeAddon(addons[0]?.addonid);
+
+                                                                    return;
+                                                                }
 
                                                                 if (!selectedAddons.find(({ id }) => id === addons[0]?.addonid)) {
                                                                     setAddon({
@@ -290,7 +299,7 @@ export default function LocateYourHomeAddons({
                                                                     defaultValue={0}
                                                                     disabled={addongroup === "Boilers" || (addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addongroup))}
                                                                     type="number"
-                                                                    value={selectedAddons.find(({ id }) => id === addonid)?.quantity || 0}
+                                                                    value={selectedAddons.find(({ id }) => id === addonid)?.quantity}
                                                                     onChange={(e) => {
                                                                         const { value } = e.target;
 
@@ -301,7 +310,13 @@ export default function LocateYourHomeAddons({
                                                                             );
                                                                         }
 
-                                                                        if (value < 1) return;
+                                                                        if (value !== "" && Number(value) < 1) return;
+
+                                                                        if (value === "") {
+                                                                            removeAddon(addonid);
+
+                                                                            return;
+                                                                        }
 
                                                                         if (!selectedAddons.find(({ id }) => id === addonid)) {
                                                                             setAddon({
@@ -398,7 +413,7 @@ export default function LocateYourHomeAddons({
                                                     className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                     defaultValue={0}
                                                     type="number"
-                                                    value={selectedAirConditioningAddons.find(({ id }) => id === addonid)?.quantity || 0}
+                                                    value={selectedAirConditioningAddons.find(({ id }) => id === addonid)?.quantity}
                                                     onChange={(e) => {
                                                         const { value } = e.target;
 
@@ -409,9 +424,9 @@ export default function LocateYourHomeAddons({
                                                             );
                                                         }
 
-                                                        if (value < 0) return;
+                                                        if (value !== "" && Number(value) < 1) return;
 
-                                                        if (value < 1) {
+                                                        if (value < 1 || value === "") {
                                                             removeAirConditioningAddon(addonid);
 
                                                             return;
@@ -445,7 +460,7 @@ export default function LocateYourHomeAddons({
                         )}
                     </div>
                 )}
-                {airConditioningAddons.length > 0 && (
+                {addonsPerRequest.length > 0 && (
                     <div
                         className="relative mt-[48px] md:mt-[96px]"
                         ref={ref4}
@@ -464,10 +479,10 @@ export default function LocateYourHomeAddons({
                         >
                             <div className="flex items-center mb-5 md:mb-0 pl-5 md:pl-10">
                                 <Plus
-                                    className="opacity-60 mt-10 md:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
+                                    className="opacity-60 mt-10 lg:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
                                     size={96}
                                 />
-                                <div className="relative z-50 mt-10 md:mt-20">
+                                <div className="relative z-50 mt-5 lg:mt-20">
                                     <h2 className="font-bold text-3xl md:text-5xl !uppercase">Add-ons</h2>
                                 </div>
                             </div>

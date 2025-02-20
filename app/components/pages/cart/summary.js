@@ -14,6 +14,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { questions } from "@/app/data/questions";
+import { useBuildYourKitStore } from "@/app/store/build-your-kit";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 import { Button } from "@/app/ui/button";
 import { Input } from "@/app/ui/input";
@@ -52,23 +53,40 @@ export default function CartSummary({
     const [orderConfirmed, setOrderConfirmed] = useState(false);
 
     const {
-        isActive,
-        plan,
-        resetAll,
-        setAddons,
-        setAddonsPerRequest,
-        setAirConditioningAddons,
-        setAutomation,
-        setBookingId,
-        setDeveloper,
-        setInfo,
-        setIsActive,
-        setMode,
-        setPlan,
-        setProject,
-        setQuestions,
-        setUnitArea,
+        isActive: locateYourHomeIsActive,
+        plan: locateYourHomePlan,
+        resetAll: locateYourHomeResetAll,
+        setAddons: setLocateYourHomeAddons,
+        setAddonsPerRequest: setLocateYourHomeAddonsPerRequest,
+        setAirConditioningAddons: setLocateYourHomeAirConditioningAddons,
+        setAutomation: setLocateYourHomeAutomation,
+        setBookingId: setLocateYourHomeBookingId,
+        setDeveloper: setLocateYourHomeDeveloper,
+        setInfo: setLocateYourHomeInfo,
+        setIsActive: setLocateYourHomeIsActive,
+        setMode: setLocateYourHomeMode,
+        setPlan: setLocateYourHomePlan,
+        setProject: setLocateYourHomeProject,
+        setQuestions: setLocateYourHomeQuestions,
+        setUnitArea: setLocateYourHomeUnitArea,
     } = useLocateYourHomeStore();
+
+    const {
+        isActive: buildYourKitIsActive,
+        resetAll: buildYourKitResetAll,
+        setAddons: setBuildYourKitAddons,
+        setAddonsPerRequest: setBuildYourKitAddonsPerRequest,
+        setAddress: setBuildYourKitAddress,
+        setAirConditioningAddons: setBuildYourKitAirConditioningAddons,
+        setAutomation: setBuildYourKitAutomation,
+        setBookingId: setBuildYourKitBookingId,
+        setInfo: setBuildYourKitInfo,
+        setIsActive: setBuildYourKitIsActive,
+        setMode: setBuildYourKitMode,
+        setPlan: setBuildYourKitPlan,
+        setQuestions: setBuildYourKitQuestions,
+        setUnitArea: setBuildYourKitUnitArea,
+    } = useBuildYourKitStore();
 
     const airConditioningAddons = order.addons.filter(({ addongroup }) => addongroup === "AirConditioning");
 
@@ -124,22 +142,22 @@ export default function CartSummary({
                         quantity: addonQuality,
                     })),
                     apartmentDTO: {
-                        apartmentAddress: isActive && null,
-                        apartmentId: order.newApartmentID,
+                        apartmentAddress: buildYourKitIsActive ? order.apartmentAddress : null,
+                        apartmentId: locateYourHomeIsActive ? order.newApartmentID : null,
                         apartmentSpace: order.apartmentSpace,
-                        apartmentType: isActive ? 0 : 1,
+                        apartmentType: locateYourHomeIsActive ? 0 : 1,
                     },
                     automationID: type === "automation" && isRemoved ? null : order.automationID,
                     customerInfo: {
-                        address: isActive && null,
+                        address: buildYourKitIsActive ? order.apartmentAddress : null,
                         email: order.customerInfo.email,
                         firstname: order.customerInfo.firstname,
                         phonenumber: order.customerInfo.phonenumber,
                     },
-                    developerID: order.developerID,
+                    developerID: locateYourHomeIsActive ? order.developerID : null,
                     paymentPlanID: order.paymentDTO.paymentplanid,
                     planID: order.planID,
-                    projectID: order.projectID,
+                    projectID: locateYourHomeIsActive ? order.projectID : null,
                     questions: order?.questions.map(({
                         answer,
                         questionsid,
@@ -187,10 +205,11 @@ export default function CartSummary({
                 headers: { "Content-Type": "application/json" },
                 method: "PUT",
             },
-        ).then((response) => response.json()).then(() => {
+        ).then(() => {
             setConfirmLoading(false);
 
-            if (isActive) resetAll();
+            if (locateYourHomeIsActive) locateYourHomeResetAll();
+            else buildYourKitResetAll();
 
             setOrderConfirmed(true);
         })["catch"](() => {
@@ -205,99 +224,179 @@ export default function CartSummary({
 
     useEffect(
         () => {
-            if (!plan.id) localStorage.removeItem("unitAreaId"); // eslint-disable-line
+            if (order.apartmentType === 0) {
+                if (!locateYourHomePlan.id) localStorage.removeItem("unitAreaId"); // eslint-disable-line
 
-            setMode("edit");
+                setLocateYourHomeMode("edit");
 
-            setIsActive(order.apartmentType === 0);
+                setLocateYourHomeIsActive(order.apartmentType === 0);
 
-            setBookingId(order.bookingID);
+                setLocateYourHomeBookingId(order.bookingID);
 
-            setAddons(otherAddons.length > 0 ? otherAddons.map(({
-                addonID,
-                addonName,
-                addongroup,
-                price,
-                quantity,
-                unitormeter,
-            }) => ({
-                group: addongroup,
-                id: addonID,
-                name: addonName,
-                price,
-                quantity,
-                unitOrMeter: unitormeter === 0 ? "Unit" : "Meter",
-            })) : []);
+                setLocateYourHomeAddons(otherAddons.length > 0 ? otherAddons.map(({
+                    addonID,
+                    addonName,
+                    addongroup,
+                    price,
+                    quantity,
+                    unitormeter,
+                }) => ({
+                    group: addongroup,
+                    id: addonID,
+                    name: addonName,
+                    price,
+                    quantity,
+                    unitOrMeter: unitormeter === 0 ? "Unit" : "Meter",
+                })) : []);
 
-            setAirConditioningAddons(airConditioningAddons.length > 0 ? airConditioningAddons.map(({
-                addonID,
-                addonName,
-                addongroup,
-                price,
-                quantity,
-            }) => ({
-                group: addongroup,
-                id: addonID,
-                power: addonName,
-                price,
-                quantity,
-            })) : []);
+                setLocateYourHomeAirConditioningAddons(airConditioningAddons.length > 0 ? airConditioningAddons.map(({
+                    addonID,
+                    addonName,
+                    addongroup,
+                    price,
+                    quantity,
+                }) => ({
+                    group: addongroup,
+                    id: addonID,
+                    power: addonName,
+                    price,
+                    quantity,
+                })) : []);
 
-            setAddonsPerRequest(order.addonPerRequests.length > 0 ? order.addonPerRequests.map(({
-                addonPerRequestID,
-                addonPerRequestName,
-            }) => ({
-                id: addonPerRequestID,
-                name: addonPerRequestName,
-            })) : []);
+                setLocateYourHomeAddonsPerRequest(order.addonPerRequests.length > 0 ? order.addonPerRequests.map(({
+                    addonPerRequestID,
+                    addonPerRequestName,
+                }) => ({
+                    id: addonPerRequestID,
+                    name: addonPerRequestName,
+                })) : []);
 
-            setAutomation(order.automationID ? { id: order.automationID } : {
-                id: "",
-                name: "",
-            });
+                setLocateYourHomeAutomation(order.automationID ? { id: order.automationID } : {
+                    id: "",
+                    name: "",
+                });
 
-            setPlan({ id: order.planID });
+                setLocateYourHomePlan({ id: order.planID });
 
-            setDeveloper({ id: order.developerID });
+                setLocateYourHomeDeveloper({ id: order.developerID });
 
-            setProject({ id: order.projectID });
+                setLocateYourHomeProject({ id: order.projectID });
 
-            setUnitArea({
-                id: order.newApartmentID,
-                space: order.apartmentSpace,
-            });
+                setLocateYourHomeUnitArea({
+                    id: order.newApartmentID,
+                    space: order.apartmentSpace,
+                });
 
-            setQuestions(order.questions.reduce(
-                (acc, question) => {
-                    acc[question.questionsid] = {
-                        answer: question.answer,
-                        question: questions[question.questionsid - 1]?.question,
-                    };
-                    return acc;
-                },
-                {},
-            ));
+                setLocateYourHomeQuestions(order.questions.reduce(
+                    (acc, question) => {
+                        acc[question.questionsid] = {
+                            answer: question.answer,
+                            question: questions[question.questionsid - 1]?.question,
+                        };
+                        return acc;
+                    },
+                    {},
+                ));
 
-            setInfo({
-                email: order.customerInfo.email,
-                name: order.customerInfo.firstname,
-                paymentPlan: {
-                    id: order.paymentDTO.paymentplanid,
-                    installmentMonths: order.paymentDTO.numberofinstallmentmonths,
-                    name: order.paymentDTO.paymentplanname,
-                },
-                phoneNumber: order.customerInfo.phonenumber,
-            });
+                setLocateYourHomeInfo({
+                    email: order.customerInfo.email,
+                    name: order.customerInfo.firstname,
+                    paymentPlan: {
+                        id: order.paymentDTO.paymentplanid,
+                        installmentMonths: order.paymentDTO.numberofinstallmentmonths,
+                        name: order.paymentDTO.paymentplanname,
+                    },
+                    phoneNumber: order.customerInfo.phonenumber,
+                });
+            } else {
+                setBuildYourKitMode("edit");
+
+                setBuildYourKitIsActive(order.apartmentType === 1);
+
+                setBuildYourKitBookingId(order.bookingID);
+
+                setBuildYourKitAddons(otherAddons.length > 0 ? otherAddons.map(({
+                    addonID,
+                    addonName,
+                    addongroup,
+                    price,
+                    quantity,
+                    unitormeter,
+                }) => ({
+                    group: addongroup,
+                    id: addonID,
+                    name: addonName,
+                    price,
+                    quantity,
+                    unitOrMeter: unitormeter === 0 ? "Unit" : "Meter",
+                })) : []);
+
+                setBuildYourKitAirConditioningAddons(airConditioningAddons.length > 0 ? airConditioningAddons.map(({
+                    addonID,
+                    addonName,
+                    addongroup,
+                    price,
+                    quantity,
+                }) => ({
+                    group: addongroup,
+                    id: addonID,
+                    power: addonName,
+                    price,
+                    quantity,
+                })) : []);
+
+                setBuildYourKitAddonsPerRequest(order.addonPerRequests.length > 0 ? order.addonPerRequests.map(({
+                    addonPerRequestID,
+                    addonPerRequestName,
+                }) => ({
+                    id: addonPerRequestID,
+                    name: addonPerRequestName,
+                })) : []);
+
+                setBuildYourKitAutomation(order.automationID ? { id: order.automationID } : {
+                    id: "",
+                    name: "",
+                });
+
+                setBuildYourKitPlan({ id: order.planID });
+
+                setBuildYourKitUnitArea(order.apartmentSpace);
+
+                setBuildYourKitAddress(order.customerInfo.address);
+
+                setBuildYourKitQuestions(order.questions.reduce(
+                    (acc, question) => {
+                        acc[question.questionsid] = {
+                            answer: question.answer,
+                            question: questions[question.questionsid - 1]?.question,
+                        };
+                        return acc;
+                    },
+                    {},
+                ));
+
+                setBuildYourKitInfo({
+                    address: order.customerInfo.address,
+                    email: order.customerInfo.email,
+                    name: order.customerInfo.firstname,
+                    paymentPlan: {
+                        id: order.paymentDTO.paymentplanid,
+                        installmentMonths: order.paymentDTO.numberofinstallmentmonths,
+                        name: order.paymentDTO.paymentplanname,
+                    },
+                    phoneNumber: order.customerInfo.phonenumber,
+                });
+            }
         },
         [order], // eslint-disable-line
     );
-
+    console.log(orderConfirmed);
     return orderConfirmed ? <OrderConfirmed /> : (
         <div className="container mx-auto pt-[40px] md:pt-[80px] pb-[100px] md:pb-[200px]">
             <div className="flex flex-wrap gap-2 justify-between border border-gray-300 rounded-3xl p-2 max-w-[996px] mx-auto mb-[50px] md:mb-[100px]">
                 <Link
                     className="text-[22px] lg:text-[32px] font-medium py-2 md:py-4 text-black bg-primary flex gap-2 items-center justify-center rounded-2xl w-full lg:w-[49%]"
-                    href={isActive ? "/locate-your-home" : "/build-your-kit"}
+                    href={locateYourHomeIsActive ? "/locate-your-home" : "/build-your-kit"}
                     prefetch={false}
                 >
                     Edit Addons
@@ -462,6 +561,7 @@ export default function CartSummary({
                                         {otherAddons.length > 0 && otherAddons.map(({
                                             addonID,
                                             addonName,
+                                            addongroup,
                                             description,
                                             price,
                                             quantity,
@@ -519,7 +619,7 @@ export default function CartSummary({
                                                                     <Input
                                                                         className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                                         defaultValue={quantity}
-                                                                        disabled={loading}
+                                                                        disabled={loading || addongroup === "Boilers"}
                                                                         id={`addon_input_${addonID}`}
                                                                         type="number"
                                                                         onChange={(e) => {
@@ -532,15 +632,17 @@ export default function CartSummary({
                                                                                 );
                                                                             }
 
-                                                                            if (value < 1) return;
+                                                                            if (value !== "" && Number(value) < 1) return;
 
-                                                                            updateCartHandler(
-                                                                                "addon",
-                                                                                addonID,
-                                                                                parseInt(value),
-                                                                                false,
-                                                                                quantity,
-                                                                            );
+                                                                            if (value !== "") {
+                                                                                updateCartHandler(
+                                                                                    "addon",
+                                                                                    addonID,
+                                                                                    parseInt(value),
+                                                                                    false,
+                                                                                    quantity,
+                                                                                );
+                                                                            }
                                                                         }}
                                                                         onKeyDown={(e) => {
                                                                             if (e.key === "-" || e.key === "e") e.preventDefault();
@@ -623,15 +725,17 @@ export default function CartSummary({
                                                                                             );
                                                                                         }
 
-                                                                                        if (value < 1) return;
+                                                                                        if (value !== "" && Number(value) < 1) return;
 
-                                                                                        updateCartHandler(
-                                                                                            "airConditioningAddon",
-                                                                                            addonID,
-                                                                                            parseInt(value),
-                                                                                            false,
-                                                                                            quantity,
-                                                                                        );
+                                                                                        if (value !== "") {
+                                                                                            updateCartHandler(
+                                                                                                "airConditioningAddon",
+                                                                                                addonID,
+                                                                                                parseInt(value),
+                                                                                                false,
+                                                                                                quantity,
+                                                                                            );
+                                                                                        }
                                                                                     }}
                                                                                     onKeyDown={(e) => {
                                                                                         if (e.key === "-" || e.key === "e") e.preventDefault();

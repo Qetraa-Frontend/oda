@@ -5,13 +5,22 @@ import Image from "next/image";
 import { useRef } from "react";
 
 import { questions } from "@/app/data/questions";
+import { useBuildYourKitStore } from "@/app/store/build-your-kit";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 
 export default function CheckoutQuestions() {
     const {
-        questions: selectedQuestions,
-        setQuestion,
+        isActive: locateYourHomeIsActive,
+        questions: selectedLocateYourHomeQuestions,
+        setQuestion: setLocateYourHomeQuestion,
     } = useLocateYourHomeStore();
+
+    const {
+        questions: selectedBuildYourKitQuestions,
+        setQuestion: setBuildYourKitQuestion,
+    } = useBuildYourKitStore();
+
+    const selectedQuestions = locateYourHomeIsActive ? selectedLocateYourHomeQuestions : selectedBuildYourKitQuestions;
 
     const ref1 = useRef(null);
 
@@ -97,11 +106,19 @@ export default function CheckoutQuestions() {
                                         src={imageSrc1}
                                         width={163}
                                         onClick={() => {
-                                            setQuestion({
-                                                answer: 1,
-                                                id,
-                                                question,
-                                            });
+                                            if (locateYourHomeIsActive) {
+                                                setLocateYourHomeQuestion({
+                                                    answer: 1,
+                                                    id,
+                                                    question,
+                                                });
+                                            } else {
+                                                setBuildYourKitQuestion({
+                                                    answer: 1,
+                                                    id,
+                                                    question,
+                                                });
+                                            }
                                         }}
                                     />
                                     <Image
@@ -112,11 +129,19 @@ export default function CheckoutQuestions() {
                                         src={imageSrc2}
                                         width={163}
                                         onClick={() => {
-                                            setQuestion({
-                                                answer: 2,
-                                                id,
-                                                question,
-                                            });
+                                            if (locateYourHomeIsActive) {
+                                                setLocateYourHomeQuestion({
+                                                    answer: 2,
+                                                    id,
+                                                    question,
+                                                });
+                                            } else {
+                                                setBuildYourKitQuestion({
+                                                    answer: 2,
+                                                    id,
+                                                    question,
+                                                });
+                                            }
                                         }}
                                     />
                                 </div>
