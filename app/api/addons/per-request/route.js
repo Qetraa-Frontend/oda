@@ -2,11 +2,11 @@ export const GET = async () => {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
     try {
-        const response = await fetch(`${backendUrl}Developer`);
+        const response = await fetch(`${backendUrl}Addperrequest`);
 
         if (!response.ok) {
             return Response.json(
-                { error: "Failed to fetch developer data" },
+                { error: "Failed to fetch per request addon data" },
                 { status: response.status },
             );
         }

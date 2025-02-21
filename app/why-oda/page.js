@@ -24,17 +24,17 @@ export default async function WhyOda() {
     );
 
     const plan1DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=1`,
+        `${publicSiteUrl}api/plans/1`,
         { cache: "no-store" },
     );
 
     const plan2DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=2`,
+        `${publicSiteUrl}api/plans/2`,
         { cache: "no-store" },
     );
 
     const plan3DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=3`,
+        `${publicSiteUrl}api/plans/3`,
         { cache: "no-store" },
     );
 

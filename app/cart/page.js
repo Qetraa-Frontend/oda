@@ -14,7 +14,7 @@ export default async function Cart({ searchParams }) {
     const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
     const orderResponse = await fetch(
-        `${publicSiteUrl}api/orders?id=${orderId}`,
+        `${publicSiteUrl}api/orders/${orderId}`,
         {
             cache: "no-store",
             next: { revalidate: 0 },
@@ -32,17 +32,17 @@ export default async function Cart({ searchParams }) {
     );
 
     const plan1DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=1`,
+        `${publicSiteUrl}api/plans/1`,
         { cache: "no-store" },
     );
 
     const plan2DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=2`,
+        `${publicSiteUrl}api/plans/2`,
         { cache: "no-store" },
     );
 
     const plan3DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=3`,
+        `${publicSiteUrl}api/plans/3`,
         { cache: "no-store" },
     );
 

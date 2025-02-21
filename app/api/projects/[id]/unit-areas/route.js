@@ -1,12 +1,20 @@
-export const GET = async () => {
+export const GET = async (req, { params }) => {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+    const { id } = params;
+
+    if (!id) {
+        return Response.json(
+            { error: "Project ID is required" },
+            { status: 400 },
+        );
+    }
 
     try {
-        const response = await fetch(`${backendUrl}Developer`);
+        const response = await fetch(`${backendUrl}Project/by-name/${id}/available-apartment-spaces`);
 
         if (!response.ok) {
             return Response.json(
-                { error: "Failed to fetch developer data" },
+                { error: "Failed to fetch available apartment spaces" },
                 { status: response.status },
             );
         }

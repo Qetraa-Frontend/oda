@@ -1,12 +1,20 @@
-export const GET = async () => {
+export const GET = async (req, { params }) => {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+    const { id } = params;
+
+    if (!id) {
+        return Response.json(
+            { error: "Booking ID is required" },
+            { status: 400 },
+        );
+    }
 
     try {
-        const response = await fetch(`${backendUrl}Developer`);
+        const response = await fetch(`${backendUrl}BookingDataOut/${id}`);
 
         if (!response.ok) {
             return Response.json(
-                { error: "Failed to fetch developer data" },
+                { error: "Failed to fetch booking data" },
                 { status: response.status },
             );
         }

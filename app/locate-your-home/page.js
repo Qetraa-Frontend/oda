@@ -28,7 +28,7 @@ export default async function LocateYourHome() {
     );
 
     const addonsPerRequestResponse = await fetch(
-        `${publicSiteUrl}api/addons?per_request=true`,
+        `${publicSiteUrl}api/addons/per-request`,
         { cache: "no-store" },
     );
 
