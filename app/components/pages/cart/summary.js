@@ -391,7 +391,7 @@ export default function CartSummary({
         },
         [order], // eslint-disable-line
     );
-    console.log(orderConfirmed);
+
     return orderConfirmed ? <OrderConfirmed /> : (
         <div className="container mx-auto pt-[40px] md:pt-[80px] pb-[100px] md:pb-[200px]">
             <div className="flex flex-wrap gap-2 justify-between border border-gray-300 rounded-3xl p-2 max-w-[996px] mx-auto mb-[50px] md:mb-[100px]">

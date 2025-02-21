@@ -38,17 +38,17 @@ export default async function BuildYourKit() {
     );
 
     const plan1DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=1`,
+        `${publicSiteUrl}api/plans/1`,
         { cache: "no-store" },
     );
 
     const plan2DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=2`,
+        `${publicSiteUrl}api/plans/2`,
         { cache: "no-store" },
     );
 
     const plan3DetailsResponse = await fetch(
-        `${publicSiteUrl}api/plans?id=3`,
+        `${publicSiteUrl}api/plans/3`,
         { cache: "no-store" },
     );
 
@@ -68,6 +68,24 @@ export default async function BuildYourKit() {
 
     const plan3Details = await plan3DetailsResponse.json();
 
+    const formattedPlan1Details = {
+        decoration: plan1Details.filter(({ plandetailstype }) => plandetailstype === 1),
+        details: plans[0],
+        foundation: plan1Details.filter(({ plandetailstype }) => plandetailstype === 0),
+    };
+
+    const formattedPlan2Details = {
+        decoration: plan2Details.filter(({ plandetailstype }) => plandetailstype === 1),
+        details: plans[1],
+        foundation: plan2Details.filter(({ plandetailstype }) => plandetailstype === 0),
+    };
+
+    const formattedPlan3Details = {
+        decoration: plan3Details.filter(({ plandetailstype }) => plandetailstype === 1),
+        details: plans[2],
+        foundation: plan3Details.filter(({ plandetailstype }) => plandetailstype === 0),
+    };
+
     const airConditioningAddons = addons.filter(({ addongroup }) => addongroup === "AirConditioning");
 
     const otherAddons = addons.filter(({ addongroup }) => addongroup !== "AirConditioning");
@@ -83,11 +101,10 @@ export default async function BuildYourKit() {
             <BuildYourKitSelections developers={developers} />
             <BuildYourKitMenu plans={plans} />
             <BuildYourKitPlans
-                plans={plans}
-                plansDetails={{
-                    plan1: plan1Details,
-                    plan2: plan2Details,
-                    plan3: plan3Details,
+                plans={{
+                    plan1: formattedPlan1Details,
+                    plan2: formattedPlan2Details,
+                    plan3: formattedPlan3Details,
                 }}
             />
             <BuildYourKitAddons
