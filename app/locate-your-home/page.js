@@ -67,7 +67,12 @@ export default async function LocateYourHome() {
     const plan2Details = await plan2DetailsResponse.json();
 
     const plan3Details = await plan3DetailsResponse.json();
-
+    console.log(
+        plans,
+        plan1Details,
+        plan2Details,
+        plan3Details,
+    );
     const formattedPlan1Details = {
         decoration: plan1Details.filter(({ plandetailstype }) => plandetailstype === 1),
         details: plans[0],

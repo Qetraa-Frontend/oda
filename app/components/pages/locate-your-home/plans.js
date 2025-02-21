@@ -25,6 +25,12 @@ export default function LocateYourHomePlans({ plans }) {
 
     const formattedPlans = Object.values(plans);
 
+    console.log(
+        currentPlan,
+        plans,
+        formattedPlans,
+    );
+
     useEffect(
         () => {
             const handleResize = () => {
