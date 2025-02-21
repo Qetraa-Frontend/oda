@@ -184,7 +184,7 @@ export default function LocateYourHomeAddons({
                                                             inputMode="numeric"
                                                             pattern="[0-9]*"
                                                             type="number"
-                                                            value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity}
+                                                            value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity || 0}
                                                             onChange={(e) => {
                                                                 const { value } = e.target;
 
@@ -192,6 +192,13 @@ export default function LocateYourHomeAddons({
 
                                                                 if (value === "") {
                                                                     removeAddon(addons[0]?.addonid);
+
+                                                                    setTimeout(
+                                                                        () => {
+                                                                            e.target.value = "";
+                                                                        },
+                                                                        [50],
+                                                                    );
 
                                                                     return;
                                                                 }
@@ -297,7 +304,7 @@ export default function LocateYourHomeAddons({
                                                                     inputMode="numeric"
                                                                     pattern="[0-9]*"
                                                                     type="number"
-                                                                    value={selectedAddons.find(({ id }) => id === addonid)?.quantity}
+                                                                    value={selectedAddons.find(({ id }) => id === addonid)?.quantity || 0}
                                                                     onChange={(e) => {
                                                                         const { value } = e.target;
 
@@ -305,6 +312,13 @@ export default function LocateYourHomeAddons({
 
                                                                         if (value === "") {
                                                                             removeAddon(addonid);
+
+                                                                            setTimeout(
+                                                                                () => {
+                                                                                    e.target.value = "";
+                                                                                },
+                                                                                [50],
+                                                                            );
 
                                                                             return;
                                                                         }
@@ -406,7 +420,7 @@ export default function LocateYourHomeAddons({
                                                     inputMode="numeric"
                                                     pattern="[0-9]*"
                                                     type="number"
-                                                    value={selectedAirConditioningAddons.find(({ id }) => id === addonid)?.quantity}
+                                                    value={selectedAirConditioningAddons.find(({ id }) => id === addonid)?.quantity || 0}
                                                     onChange={(e) => {
                                                         const { value } = e.target;
 
@@ -414,6 +428,13 @@ export default function LocateYourHomeAddons({
 
                                                         if (value < 1 || value === "") {
                                                             removeAirConditioningAddon(addonid);
+
+                                                            setTimeout(
+                                                                () => {
+                                                                    e.target.value = "";
+                                                                },
+                                                                [50],
+                                                            );
 
                                                             return;
                                                         }
