@@ -5,6 +5,7 @@ import { Check, Plus } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 
+import { handleNumberInputLogic } from "@/app/lib/utils";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 import { Input } from "@/app/ui/input";
 
@@ -180,19 +181,14 @@ export default function LocateYourHomeAddons({
                                                             className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                             defaultValue={0}
                                                             disabled={addons[0]?.addongroup === "Boilers" || (addons[0]?.addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addons[0]?.addongroup))}
+                                                            inputMode="numeric"
+                                                            pattern="[0-9]*"
                                                             type="number"
                                                             value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity}
                                                             onChange={(e) => {
                                                                 const { value } = e.target;
 
-                                                                if (value.startsWith("0")) {
-                                                                    e.target.value = value.replace(
-                                                                        /^0+/,
-                                                                        "",
-                                                                    );
-                                                                }
-
-                                                                if (value !== "" && Number(value) < 1) return;
+                                                                if (!handleNumberInputLogic(e)) return;
 
                                                                 if (value === "") {
                                                                     removeAddon(addons[0]?.addonid);
@@ -298,19 +294,14 @@ export default function LocateYourHomeAddons({
                                                                     className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                                     defaultValue={0}
                                                                     disabled={addongroup === "Boilers" || (addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addongroup))}
+                                                                    inputMode="numeric"
+                                                                    pattern="[0-9]*"
                                                                     type="number"
                                                                     value={selectedAddons.find(({ id }) => id === addonid)?.quantity}
                                                                     onChange={(e) => {
                                                                         const { value } = e.target;
 
-                                                                        if (value.startsWith("0")) {
-                                                                            e.target.value = value.replace(
-                                                                                /^0+/,
-                                                                                "",
-                                                                            );
-                                                                        }
-
-                                                                        if (value !== "" && Number(value) < 1) return;
+                                                                        if (!handleNumberInputLogic(e)) return;
 
                                                                         if (value === "") {
                                                                             removeAddon(addonid);
@@ -412,19 +403,14 @@ export default function LocateYourHomeAddons({
                                                 <Input
                                                     className="w-[57px] h-[33px] rounded-lg border border-gray-300"
                                                     defaultValue={0}
+                                                    inputMode="numeric"
+                                                    pattern="[0-9]*"
                                                     type="number"
                                                     value={selectedAirConditioningAddons.find(({ id }) => id === addonid)?.quantity}
                                                     onChange={(e) => {
                                                         const { value } = e.target;
 
-                                                        if (value.startsWith("0")) {
-                                                            e.target.value = value.replace(
-                                                                /^0+/,
-                                                                "",
-                                                            );
-                                                        }
-
-                                                        if (value !== "" && Number(value) < 1) return;
+                                                        if (!handleNumberInputLogic(e)) return;
 
                                                         if (value < 1 || value === "") {
                                                             removeAirConditioningAddon(addonid);

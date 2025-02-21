@@ -8,7 +8,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 import { Checkbox } from "@/app/ui/checkbox";
 
-export default function LocateYourHomePlans({ plans }) {
+export default function LocateYourHomePlans({
+    plans,
+    plansDetails,
+}) {
     const [currentPlan, setCurrentPlan] = useState(null);
 
     const {
@@ -23,12 +26,35 @@ export default function LocateYourHomePlans({ plans }) {
         { once: true },
     );
 
-    const formattedPlans = Object.values(plans);
+    const formattedPlan1Details = {
+        decoration: plansDetails.plan1.filter(({ plandetailstype }) => plandetailstype === 1),
+        details: plans[0],
+        foundation: plansDetails.plan1.filter(({ plandetailstype }) => plandetailstype === 0),
+    };
+
+    const formattedPlan2Details = {
+        decoration: plansDetails.plan2.filter(({ plandetailstype }) => plandetailstype === 1),
+        details: plans[1],
+        foundation: plansDetails.plan2.filter(({ plandetailstype }) => plandetailstype === 0),
+    };
+
+    const formattedPlan3Details = {
+        decoration: plansDetails.plan3.filter(({ plandetailstype }) => plandetailstype === 1),
+        details: plans[2],
+        foundation: plansDetails.plan3.filter(({ plandetailstype }) => plandetailstype === 0),
+    };
+
+    const formattedPlans = Object.values({
+        plan1: formattedPlan1Details,
+        plan2: formattedPlan2Details,
+        plan3: formattedPlan3Details,
+    });
 
     console.log(
         currentPlan,
         plans,
         formattedPlans,
+        plansDetails,
     );
 
     useEffect(

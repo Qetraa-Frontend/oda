@@ -73,23 +73,6 @@ export default async function LocateYourHome() {
         plan2Details,
         plan3Details,
     );
-    const formattedPlan1Details = {
-        decoration: plan1Details.filter(({ plandetailstype }) => plandetailstype === 1),
-        details: plans[0],
-        foundation: plan1Details.filter(({ plandetailstype }) => plandetailstype === 0),
-    };
-
-    const formattedPlan2Details = {
-        decoration: plan2Details.filter(({ plandetailstype }) => plandetailstype === 1),
-        details: plans[1],
-        foundation: plan2Details.filter(({ plandetailstype }) => plandetailstype === 0),
-    };
-
-    const formattedPlan3Details = {
-        decoration: plan3Details.filter(({ plandetailstype }) => plandetailstype === 1),
-        details: plans[2],
-        foundation: plan3Details.filter(({ plandetailstype }) => plandetailstype === 0),
-    };
 
     const airConditioningAddons = addons.filter(({ addongroup }) => addongroup === "AirConditioning");
 
@@ -106,10 +89,11 @@ export default async function LocateYourHome() {
             <LocateYourHomeSelections developers={developers} />
             <LocateYourHomeMenu plans={plans} />
             <LocateYourHomePlans
-                plans={{
-                    plan1: formattedPlan1Details,
-                    plan2: formattedPlan2Details,
-                    plan3: formattedPlan3Details,
+                plans={plans}
+                plansDetails={{
+                    plan1: plan1Details,
+                    plan2: plan2Details,
+                    plan3: plan3Details,
                 }}
             />
             <LocateYourHomeAddons

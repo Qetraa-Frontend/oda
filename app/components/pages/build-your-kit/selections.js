@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 
+import { handleNumberInputLogic } from "@/app/lib/utils";
 import { useBuildYourKitStore } from "@/app/store/build-your-kit";
 import { Input } from "@/app/ui/input";
 
@@ -30,19 +31,14 @@ export default function BuildYourKitSelections() {
                         <Input
                             className="rounded-lg bg-white bg-opacity-60 h-14"
                             defaultValue={unitArea}
+                            inputMode="numeric"
+                            pattern="[0-9]*"
                             type="number"
                             value={unitArea}
                             onChange={(e) => {
                                 const { value } = e.target;
 
-                                if (value.startsWith("0")) {
-                                    e.target.value = value.replace(
-                                        /^0+/,
-                                        "",
-                                    );
-                                }
-
-                                if (value !== "" && Number(value) < 1) return;
+                                if (!handleNumberInputLogic(e)) return;
 
                                 setUnitArea(value);
                             }}

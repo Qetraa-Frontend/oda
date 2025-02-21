@@ -14,6 +14,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { questions } from "@/app/data/questions";
+import { handleNumberInputLogic } from "@/app/lib/utils";
 import { useBuildYourKitStore } from "@/app/store/build-your-kit";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 import { Button } from "@/app/ui/button";
@@ -621,18 +622,13 @@ export default function CartSummary({
                                                                         defaultValue={quantity}
                                                                         disabled={loading || addongroup === "Boilers"}
                                                                         id={`addon_input_${addonID}`}
+                                                                        inputMode="numeric"
+                                                                        pattern="[0-9]*"
                                                                         type="number"
                                                                         onChange={(e) => {
                                                                             const { value } = e.target;
 
-                                                                            if (value.startsWith("0")) {
-                                                                                e.target.value = value.replace(
-                                                                                    /^0+/,
-                                                                                    "",
-                                                                                );
-                                                                            }
-
-                                                                            if (value !== "" && Number(value) < 1) return;
+                                                                            if (!handleNumberInputLogic(e)) return;
 
                                                                             if (value !== "") {
                                                                                 updateCartHandler(
@@ -714,18 +710,13 @@ export default function CartSummary({
                                                                                     defaultValue={quantity}
                                                                                     disabled={loading}
                                                                                     id={`addon_input_${addonID}`}
+                                                                                    inputMode="numeric"
+                                                                                    pattern="[0-9]*"
                                                                                     type="number"
                                                                                     onChange={(e) => {
                                                                                         const { value } = e.target;
 
-                                                                                        if (value.startsWith("0")) {
-                                                                                            e.target.value = value.replace(
-                                                                                                /^0+/,
-                                                                                                "",
-                                                                                            );
-                                                                                        }
-
-                                                                                        if (value !== "" && Number(value) < 1) return;
+                                                                                        if (!handleNumberInputLogic(e)) return;
 
                                                                                         if (value !== "") {
                                                                                             updateCartHandler(
