@@ -44,10 +44,10 @@ export default function HomeBuildKit() {
                     type: "spring",
                 }}
             >
-                <h2 className="font-bold text-3xl lg:text-5xl lg:!leading-relaxed">Build your Kit</h2>
-                <p className="font-normal opacity-65 text-[22px] lg:text-[32px] lg:leading-[1.4] my-4 lg:my-8 py-4 lg:py-8">Choose one of our packages and customize it with additional elements from our add-one menu</p>
+                <h2 className="font-bold text-3xl lg:text-5xl lg:!leading-relaxed">Our Services</h2>
+                <p className="font-normal opacity-65 text-[22px] lg:text-[32px] lg:leading-[1.4] my-4 lg:my-8 py-4 lg:py-8">Choose one of our packages and customize it with additional elements from our add-ons menu</p>
                 <Link
-                    href="/why-oda"
+                    href="/services"
                     prefetch={false}
                 >
                     <div className="relative inline-block">

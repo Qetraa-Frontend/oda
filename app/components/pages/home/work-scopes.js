@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef, useState } from "react";
 
 import { workScopes } from "@/app/data/home";
@@ -88,13 +87,6 @@ export default function HomeWorkScopes() {
                                     </li>
                                 ))}
                             </ul>
-                            <Link
-                                className="text-lg lg:text-2xl font-medium inline-block mt-3 lg:mt-6 py-[6px] lg:py-3 text-white underline"
-                                href="/our-services"
-                                prefetch={false}
-                            >
-                                Learn More
-                            </Link>
                         </div>
                     </div>
                     <div className="relative col-span-1 lg:col-span-2">

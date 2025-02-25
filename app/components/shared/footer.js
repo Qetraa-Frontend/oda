@@ -5,6 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { footerLinks } from "@/app/data/footer";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/app/ui/tooltip";
 
 import Social from "./social";
 
@@ -42,11 +48,6 @@ export default function Footer() {
                         />
                         <span className="sr-only">Oda Logo</span>
                     </div>
-                    <p className="mt-[7px] md:mt-[14px] font-medium text-white text-base md:text-xl max-w-[400px]">
-                        We aim to change the concept of the finishing home by listening to
-                        our customers who inspire us to stay ahead with innovative finishing
-                        solutions & designs.
-                    </p>
                     <Social color="white" />
                 </div>
                 <div className="col-span-6">
@@ -92,30 +93,40 @@ export default function Footer() {
                             <div className="mt-[21px] md:mt-[43px]">
                                 <span className="mb-2 md:mb-4 inline-block font-medium text-xs md:text-base text-white">Download App</span>
                                 <div className="flex gap-1 md:gap-2 flex-col">
-                                    <Link
-                                        href="#"
-                                        prefetch={false}
-                                    >
-                                        <Image
-                                            alt="google_play"
-                                            height={65}
-                                            loading="lazy"
-                                            src="/images/google_play.webp"
-                                            width={180}
-                                        />
-                                    </Link>
-                                    <Link
-                                        href="#"
-                                        prefetch={false}
-                                    >
-                                        <Image
-                                            alt="apple_store"
-                                            height={65}
-                                            loading="lazy"
-                                            src="/images/apple_store.webp"
-                                            width={180}
-                                        />
-                                    </Link>
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <Image
+                                                    alt="google_play"
+                                                    className="cursor-pointer"
+                                                    height={65}
+                                                    loading="lazy"
+                                                    src="/images/google_play.webp"
+                                                    width={180}
+                                                />
+                                            </TooltipTrigger>
+                                            <TooltipContent>
+                                                <span className="text-black">Coming Soon</span>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <Image
+                                                    alt="apple_store"
+                                                    className="cursor-pointer"
+                                                    height={65}
+                                                    loading="lazy"
+                                                    src="/images/apple_store.webp"
+                                                    width={180}
+                                                />
+                                            </TooltipTrigger>
+                                            <TooltipContent>
+                                                <span className="text-black">Coming Soon</span>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
                                 </div>
                             </div>
                         </div>

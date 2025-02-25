@@ -288,3 +288,14 @@ button[role="combobox"].primary-select svg {
     height: 25px!important;
     opacity: 100%!important;
 }
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

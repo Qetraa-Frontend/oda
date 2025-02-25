@@ -79,7 +79,18 @@ export default function Social({ color }) {
                     className="font-normal text-xs md:text-base hover:text-primary transition-all duration-1000"
                     fgColor={color || "black"}
                     target="_blank"
-                    url="www.linkedin.com/company/odahomesolution"
+                    url="https://www.instagram.com/theodahome?igsh=MTc2ZjY2M2VnM3U5OA=="
+                    style={{
+                        height: 35,
+                        width: 35,
+                    }}
+                />
+                <SocialIcon
+                    bgColor="transparent"
+                    className="font-normal text-xs md:text-base hover:text-primary transition-all duration-1000"
+                    fgColor={color || "black"}
+                    target="_blank"
+                    url="https://www.linkedin.com/company/odahomesolution"
                     style={{
                         height: 35,
                         width: 35,

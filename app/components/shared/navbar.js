@@ -5,7 +5,6 @@ import {
     ChevronRight,
     Menu,
     MessageCircleQuestion,
-    Search,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,7 +17,6 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/app/ui/dropdown-menu";
-import { Input } from "@/app/ui/input";
 import {
     Sheet,
     SheetClose,
@@ -27,7 +25,7 @@ import {
 } from "@/app/ui/sheet";
 
 export default function Navbar() {
-    const [isSheetOpen, setSheetOpen] = useState(false);
+    const [isSheetOpen, setIsSheetOpen] = useState(false);
 
     const [activeLinkId, setActiveLinkId] = useState({
         leftColumn: null,
@@ -92,20 +90,17 @@ export default function Navbar() {
                         Home
                     </Link>
                     <DropdownMenu>
-                        <DropdownMenuTrigger className="flex items-center gap-1 font-normal text-base md:text-xl text-white hover:text-primary transition-all duration-1000 outline-none">
-                            Services
+                        <Link
+                            className="font-normal text-base md:text-xl text-white hover:text-primary transition-all duration-1000 ml-4"
+                            href="/services"
+                            prefetch={false}
+                        >
+                            Our Services
+                        </Link>
+                        <DropdownMenuTrigger className="font-normal text-base md:text-xl text-white hover:text-primary transition-all duration-1000 outline-none relative right-4">
                             <ChevronDownIcon className="h-4 w-4" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                            <DropdownMenuItem>
-                                <Link
-                                    className="font-normal text-sm md:text-lg"
-                                    href="/services"
-                                    prefetch={false}
-                                >
-                                    Our Services
-                                </Link>
-                            </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <Link
                                     className="font-normal text-sm md:text-lg"
@@ -118,13 +113,13 @@ export default function Navbar() {
                             <DropdownMenuItem>
                                 <Link
                                     className="font-normal text-sm md:text-lg"
-                                    href="/book-your-kit"
+                                    href="/build-your-kit"
                                     prefetch={false}
                                 >
                                     Build Your Kit
                                 </Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            {/* <DropdownMenuItem>
                                 <Link
                                     className="font-normal text-sm md:text-lg"
                                     href="/need-facelift"
@@ -132,7 +127,7 @@ export default function Navbar() {
                                 >
                                     Need a Facelift
                                 </Link>
-                            </DropdownMenuItem>
+                            </DropdownMenuItem> */}
                         </DropdownMenuContent>
                     </DropdownMenu>
                     <Link
@@ -144,30 +139,20 @@ export default function Navbar() {
                     </Link>
                 </nav>
                 <div className="flex items-center gap-2 md:gap-4">
-                    <MessageCircleQuestion
+                    <Link
                         className="text-white hover:text-primary cursor-pointer"
-                        size={30}
-                    />
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Search
-                                className="text-white hover:text-primary cursor-pointer"
-                                size={30}
-                            />
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-[300px] p-4">
-                            <div className="relative">
-                                <Input
-                                    className="w-full"
-                                    placeholder="Search..."
-                                    type="text"
-                                />
-                            </div>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                        href="https://wa.me/1080555597"
+                        prefetch={false}
+                        target="_blank"
+                    >
+                        <MessageCircleQuestion
+                            className="text-white hover:text-primary cursor-pointer"
+                            size={30}
+                        />
+                    </Link>
                     <Sheet
                         open={isSheetOpen}
-                        onOpenChange={setSheetOpen}
+                        onOpenChange={setIsSheetOpen}
                     >
                         <SheetTrigger asChild>
                             <Menu
@@ -224,7 +209,7 @@ export default function Navbar() {
                                                             className={`font-medium text-lg md:text-2xl xl:text-5xl ${id === activeLinkId.leftColumn || activeLinkId.leftColumn === null ? "text-white" : "text-white opacity-50"} transition-all duration-500`}
                                                             href={url}
                                                             prefetch={false}
-                                                            onClick={() => setSheetOpen(false)}
+                                                            onClick={() => setIsSheetOpen(false)}
                                                             onMouseEnter={() => setActiveLinkId({
                                                                 leftColumn: id,
                                                                 rightColumn: {
@@ -258,7 +243,7 @@ export default function Navbar() {
                                                             className={`font-medium text-lg md:text-2xl xl:text-5xl ${id === activeLinkId.rightColumn.top || activeLinkId.rightColumn.top === null ? "text-white" : "text-white opacity-50"} transition-all duration-500`}
                                                             href={url}
                                                             prefetch={false}
-                                                            onClick={() => setSheetOpen(false)}
+                                                            onClick={() => setIsSheetOpen(false)}
                                                             onMouseEnter={() => setActiveLinkId({
                                                                 leftColumn: null,
                                                                 rightColumn: {
@@ -292,7 +277,7 @@ export default function Navbar() {
                                                                 className={`font-medium text-lg md:text-2xl xl:text-5xl ${id === activeLinkId.rightColumn.services || activeLinkId.rightColumn.services === null ? "text-white" : "text-white opacity-50"} transition-all duration-500`}
                                                                 href={url}
                                                                 prefetch={false}
-                                                                onClick={() => setSheetOpen(false)}
+                                                                onClick={() => setIsSheetOpen(false)}
                                                                 onMouseEnter={() => setActiveLinkId({
                                                                     leftColumn: null,
                                                                     rightColumn: {

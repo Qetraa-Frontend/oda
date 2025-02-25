@@ -25,7 +25,7 @@ export default function HomeStatics() {
                             index !== statics.length - 2 && index !== statics.length - 1 ? "sm:mb-8 lg:mb-0" : ""
                         } ${index >= statics.length - 2 ? "sm:w-1/2 sm:flex sm:justify-center" : ""}`}
                     >
-                        <h6 className="font-normal text-[22px] lg:text-[32px] text-white text-center z-20">{title}</h6>
+                        <h6 className="font-normal text-[22px] lg:text-[32px] text-white text-center z-20 sm:min-h-[96px] flex items-center">{title}</h6>
                         <SlotCounter
                             animateOnVisible={{ triggerOnce: true }}
                             debounceDelay={300}

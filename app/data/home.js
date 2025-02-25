@@ -21,7 +21,7 @@ export const heroSlides = [
         alt: "slide_4",
         id: 4,
         imageSrc: "/images/pages/home/hero/hero_4.webp",
-        title: "Discover\\nArt Of\\nLiving",
+        title: "Discover\\nThe Art\\nOf Living",
     },
 ];
 
