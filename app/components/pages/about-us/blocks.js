@@ -50,10 +50,10 @@ export default function AboutUsBlocks() {
                         <h4 className="font-bold font-nanum-myeongjo text-[28px] xl:text-[40px] text-white mb-10 md:mb-20 !leading-none">Innovative concepts, unique designs, refined solutions inspired by you.</h4>
                         <Link
                             className="float-right"
-                            href="/read-brochure"
+                            href="/why-oda"
                             prefetch={false}
                         >
-                            <Button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-12 hover:animate-heartBeat">Read Brochure</Button>
+                            <Button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-12 hover:animate-heartBeat">Discover Why Oda</Button>
                         </Link>
                     </div>
                 </div>
@@ -67,13 +67,13 @@ export default function AboutUsBlocks() {
                             src="/images/pages/about-us/blocks/block_2.webp"
                         />
                         <div className="absolute inset-0 pt-[41px] xl:pt-[83px] px-[26px] xl:px-[52px]">
-                            <h4 className="font-bold font-nanum-myeongjo text-[28px] xl:text-[40px] text-white uppercase leading-tight">Get our Newsletter</h4>
-                            <p className="font-normal font-nanum-myeongjo text-2xl xl:text-4xl text-white my-4 md:my-8">Get a front row seat to our Oda launches and trends - directly to your inbox.</p>
+                            <h4 className="font-bold font-nanum-myeongjo text-[28px] xl:text-[40px] text-white uppercase leading-tight">Contact Us</h4>
+                            <p className="font-normal font-nanum-myeongjo text-2xl xl:text-4xl text-white my-4 md:my-8">Have any questions or need more information? We&apos;re here to help.</p>
                             <Link
-                                href="/sign-up"
+                                href="/contact-us"
                                 prefetch={false}
                             >
-                                <Button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-12 hover:animate-heartBeat">Sign Up</Button>
+                                <Button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-12 hover:animate-heartBeat">Get in Touch</Button>
                             </Link>
                         </div>
                     </div>
@@ -86,12 +86,13 @@ export default function AboutUsBlocks() {
                             src="/images/pages/about-us/blocks/block_3.webp"
                         />
                         <div className="absolute inset-0 pt-[58px] xl:pt-[117px] px-[19px] xl:px-[39px]">
-                            <h4 className="font-bold font-nanum-myeongjo text-[22px] xl:text-[34px] text-white mb-8 md:mb-16">Can&apos;t Find Your Unit?</h4>
+                            <h4 className="font-bold font-nanum-myeongjo text-[22px] xl:text-[34px] text-white mb-8 md:mb-16">Explore our services and offerings in detail.</h4>
                             <Link
-                                href="#"
+                                href="https://drive.google.com/file/d/1ucl5zW5MIvSMg7byJss_-ZRV-441Dzjf/view"
                                 prefetch={false}
+                                target="_blank"
                             >
-                                <Button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-12 hover:animate-heartBeat">Download App</Button>
+                                <Button className="font-medium text-lg md:text-2xl text-white hover:text-primary bg-transparent border-r-[.5px] border-[1px] hover:border-primary transition-all duration-1000 rounded-lg py-1 md:py-2 px-4 md:px-8 h-12 hover:animate-heartBeat">Read Brochure</Button>
                             </Link>
                         </div>
                     </div>

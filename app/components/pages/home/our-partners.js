@@ -62,7 +62,7 @@ export default function HomeOurPartners() {
                         >
                             <Image
                                 alt={alt}
-                                className="w-full h-full object-contain px-1"
+                                className="w-full h-full object-fill px-1"
                                 height={235}
                                 loading="lazy"
                                 src={imageSrc}

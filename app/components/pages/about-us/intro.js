@@ -31,6 +31,7 @@ export default function AboutUsIntro() {
             >
                 <Image
                     alt="intro"
+                    className="rounded-lg"
                     height={820}
                     loading="lazy"
                     src="/images/pages/about-us/intro.webp"
@@ -50,7 +51,7 @@ export default function AboutUsIntro() {
                 }}
             >
                 <p className="font-normal text-xl md:text-3xl">Established in 2014, Oda is Home to universal design and build finishing kits where infinite elevating menu follow you wherever you desire, Oda is the leading tech enabled platform, delivering an end to end, pre-designed packages, from foundation decoration and addons menu, up to refined facelift services.</p>
-                <p className="font-normal text-xl md:text-3xl mt-10">ODA is the beginning of incomparable experiences, deeply drawing from streamlined big data and subject matter associates. Founded in the state of Delaware USA, headquartered in Egypt with a liaison office in Riyadh, KSA, we have built strong regional partnerships to efficiently meet our clients’ needs across Mena and GCC region. Oda has successfully delivered standout projects across diverse industries, committed to providing top-tier quality and efficiency in greenfield projects, renovations, and property transformations.</p>
+                <p className="font-normal text-xl md:text-3xl mt-10">ODA is the beginning of incomparable experiences, deeply drawing from streamlined big data and subject matter associates. Founded in the state of Delaware USA, headquartered in Egypt with a liaison office in Riyadh KSA, Abu Dhabi UAE, and Berlin Germany. We have built strong regional partnerships to efficiently meet our clients’ needs. Oda has successfully delivered standout projects across diverse industries, committed to providing top-tier quality and efficiency in greenfield projects, renovations, and property transformations.</p>
             </motion.div>
         </div>
     );
