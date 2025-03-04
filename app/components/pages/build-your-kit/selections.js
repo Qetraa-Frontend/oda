@@ -30,7 +30,6 @@ export default function BuildYourKitSelections() {
                         <h5 className="font-medium text-lg md:text-2xl mb-2 md:mb-4">Unit Area</h5>
                         <Input
                             className="rounded-lg bg-white bg-opacity-60 h-14"
-                            defaultValue={unitArea}
                             inputMode="numeric"
                             pattern="[0-9]*"
                             type="number"

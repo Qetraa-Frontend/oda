@@ -42,11 +42,11 @@ export default function LocateYourHomeAutomation({ automation }) {
         info,
         mode,
         plan,
-        project,
         questions,
         setAutomation,
         setIsActive: setLocateYourHomeIsActive,
         unitArea,
+        unitType,
     } = useLocateYourHomeStore();
 
     const { setIsActive: setBuildYourKitIsActive } = useBuildYourKitStore();
@@ -103,9 +103,10 @@ export default function LocateYourHomeAutomation({ automation }) {
                     }))),
                     apartmentDTO: {
                         apartmentAddress: null,
-                        apartmentId: unitArea.id,
-                        apartmentSpace: unitArea.space,
+                        apartmentId: unitType.id,
+                        apartmentSpace: parseInt(unitArea),
                         apartmentType: 0,
+                        unittypeid: unitType.id,
                     },
                     automationID: selectedAutomation.id || null,
                     customerInfo: {
@@ -117,15 +118,14 @@ export default function LocateYourHomeAutomation({ automation }) {
                     developerID: developer.id,
                     paymentPlanID: info.paymentPlan.id,
                     planID: plan.id,
-                    projectID: project.id,
-                    questions: Object.values(questions).map(({
+                    questions: Object.keys(questions).length > 0 ? Object.values(questions).map(({
                         answer,
                         question,
                     }, index) => ({
                         answer,
                         name: question,
                         questionsID: index + 1,
-                    })),
+                    })) : {},
                 }),
                 headers: { "Content-Type": "application/json" },
                 method: "PUT",
@@ -383,7 +383,7 @@ export default function LocateYourHomeAutomation({ automation }) {
                 <div className="flex flex-col gap-2">
                     <Button
                         className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat mb-10 md:mb-0"
-                        disabled={!plan.id || !developer.id || !project.id || !unitArea.id}
+                        disabled={!plan.id || !developer.id || !unitType.id || !unitArea}
                         onClick={() => {
                             if (mode === "edit") saveOrderHandler();
                             else {

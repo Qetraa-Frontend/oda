@@ -29,10 +29,6 @@ export const useLocateYourHomeStore = create((set, get) => ({
         id: "",
         name: "",
     },
-    project: {
-        id: "",
-        name: "",
-    },
     questions: {},
     removeAddon: (id) => set({
         ...get(),
@@ -45,6 +41,16 @@ export const useLocateYourHomeStore = create((set, get) => ({
     removeAirConditioningAddon: (id) => set({
         ...get(),
         airConditioningAddons: get().airConditioningAddons.filter(({ id: addonId }) => addonId !== id),
+    }),
+    removeQuestion: (id) => set(() => {
+        const updatedQuestions = { ...get().questions };
+
+        delete updatedQuestions[id];
+
+        return {
+            ...get(),
+            questions: updatedQuestions,
+        };
     }),
     resetAirConditioningAddons: () => set({
         ...get(),
@@ -169,13 +175,6 @@ export const useLocateYourHomeStore = create((set, get) => ({
             name: plan.name,
         },
     }),
-    setProject: (project) => set({
-        ...get(),
-        project: {
-            id: project.id,
-            name: project.name,
-        },
-    }),
     setQuestion: (question) => set({
         ...get(),
         questions: {
@@ -191,8 +190,16 @@ export const useLocateYourHomeStore = create((set, get) => ({
         ...get(),
         unitArea,
     }),
-    unitArea: {
+    setUnitType: (project) => set({
+        ...get(),
+        unitType: {
+            id: project.id,
+            name: project.name,
+        },
+    }),
+    unitArea: "",
+    unitType: {
         id: "",
-        space: "",
+        name: "",
     },
 }));

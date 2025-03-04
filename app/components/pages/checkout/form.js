@@ -46,11 +46,11 @@ export default function CheckoutForm({ paymentPlans }) {
         isActive: locateYourHomeIsActive,
         mode: locateYourHomeMode,
         plan: locateYourHomePlan,
-        project: locateYourHomeProject,
         questions: locateYourHomeQuestions,
         setBookingId: setLocateYourHomeBookingId,
         setInfo: setLocateYourHomeInfo,
         unitArea: locateYourHomeUnitArea,
+        unitType: locateYourHomeUnitType,
     } = useLocateYourHomeStore();
 
     const {
@@ -163,9 +163,10 @@ export default function CheckoutForm({ paymentPlans }) {
                     }))),
                     apartmentDTO: {
                         apartmentAddress: buildYourKitIsActive ? buildYourKitAddress : null,
-                        apartmentId: locateYourHomeIsActive ? locateYourHomeUnitArea.id : null,
-                        apartmentSpace: locateYourHomeIsActive ? locateYourHomeUnitArea.space : buildYourKitUnitArea,
+                        apartmentId: locateYourHomeIsActive ? locateYourHomeUnitType.id : null,
+                        apartmentSpace: locateYourHomeIsActive ? parseInt(locateYourHomeUnitArea) : parseInt(buildYourKitUnitArea),
                         apartmentType: locateYourHomeIsActive ? 0 : 1,
+                        unittypeid: locateYourHomeIsActive ? locateYourHomeUnitType.id : null,
                     },
                     automationID: locateYourHomeIsActive ? locateYourHomeAutomation.id || null : buildYourKitAutomation.id || null,
                     customerInfo: {
@@ -177,7 +178,6 @@ export default function CheckoutForm({ paymentPlans }) {
                     developerID: locateYourHomeIsActive ? locateYourHomeDeveloper.id : null,
                     paymentPlanID: parseInt(paymentPlan),
                     planID: locateYourHomeIsActive ? locateYourHomePlan.id : buildYourKitPlan.id,
-                    projectID: locateYourHomeIsActive ? locateYourHomeProject.id : null,
                     questions: Object.values(questions).map(({
                         answer,
                         question,
@@ -193,18 +193,16 @@ export default function CheckoutForm({ paymentPlans }) {
         ).then((response) => response.json()).then((response) => {
             setLoading(false);
 
-            reset();
+            reset({
+                email: "",
+                name: "",
+                paymentPlan: "",
+                phoneNumber: "",
+            });
 
             if (mode !== "edit") {
                 if (locateYourHomeIsActive) setLocateYourHomeBookingId(response?.bookingID);
                 else setBuildYourKitBookingId(response?.bookingID);
-
-                if (locateYourHomeIsActive) {
-                    localStorage.setItem( // eslint-disable-line
-                        "unitAreaId",
-                        locateYourHomeUnitArea.id,
-                    );
-                }
             }
 
             router.push(`/cart?orderId=${response?.bookingID}`);
@@ -322,7 +320,7 @@ export default function CheckoutForm({ paymentPlans }) {
                         <div className="flex flex-col gap-2 justify-center">
                             <Button
                                 className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full md:w-[370px] hover:animate-heartBeat"
-                                disabled={loading || Object.values(questions).length !== 8}
+                                disabled={loading}
                             >
                                 {loading ? <Spinner color="text-black" /> : mode === "edit" ? "Save" : "Submit"} {/* eslint-disable-line */}
                             </Button>

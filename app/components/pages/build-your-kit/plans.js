@@ -188,7 +188,7 @@ export default function BuildYourKitPlans({ plans }) {
                             return (
                                 (
                                     <div
-                                        className={`${formattedPlanDetails.planid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center pt-8 px-4 md:px-8 hover:bg-primary transition-all duration-1000`}
+                                        className={`${formattedPlanDetails.planid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center pt-8 px-4 md:px-8 hover:bg-primary ${plan.id === (currentPlan?.details.planid || formattedPlanDetails.planid) ? "bg-primary" : ""} transition-all duration-1000`}
                                         key={formattedPlanDetails.planid}
                                     >
                                         <div className="xl:hidden absolute top-8 right-[2px] w-full flex justify-between">

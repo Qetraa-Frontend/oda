@@ -39,6 +39,16 @@ export const useBuildYourKitStore = create((set, get) => ({
         ...get(),
         airConditioningAddons: get().airConditioningAddons.filter(({ id: addonId }) => addonId !== id),
     }),
+    removeQuestion: (id) => set(() => {
+        const updatedQuestions = { ...get().questions };
+
+        delete updatedQuestions[id];
+
+        return {
+            ...get(),
+            questions: updatedQuestions,
+        };
+    }),
     resetAirConditioningAddons: () => set({
         ...get(),
         airConditioningAddons: [],

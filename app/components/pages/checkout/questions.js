@@ -12,11 +12,13 @@ export default function CheckoutQuestions() {
     const {
         isActive: locateYourHomeIsActive,
         questions: selectedLocateYourHomeQuestions,
+        removeQuestion: removeLocateYourHomeQuestion,
         setQuestion: setLocateYourHomeQuestion,
     } = useLocateYourHomeStore();
 
     const {
         questions: selectedBuildYourKitQuestions,
+        removeQuestion: removeBuildYourKitQuestion,
         setQuestion: setBuildYourKitQuestion,
     } = useBuildYourKitStore();
 
@@ -107,17 +109,23 @@ export default function CheckoutQuestions() {
                                         width={163}
                                         onClick={() => {
                                             if (locateYourHomeIsActive) {
-                                                setLocateYourHomeQuestion({
-                                                    answer: 1,
-                                                    id,
-                                                    question,
-                                                });
+                                                if (selectedQuestions[id]?.answer === 1) removeLocateYourHomeQuestion(id);
+                                                else {
+                                                    setLocateYourHomeQuestion({
+                                                        answer: 1,
+                                                        id,
+                                                        question,
+                                                    });
+                                                }
                                             } else {
-                                                setBuildYourKitQuestion({
-                                                    answer: 1,
-                                                    id,
-                                                    question,
-                                                });
+                                                if (selectedQuestions[id]?.answer === 1) removeBuildYourKitQuestion(id); // eslint-disable-line
+                                                else {
+                                                    setBuildYourKitQuestion({
+                                                        answer: 1,
+                                                        id,
+                                                        question,
+                                                    });
+                                                }
                                             }
                                         }}
                                     />
@@ -130,17 +138,23 @@ export default function CheckoutQuestions() {
                                         width={163}
                                         onClick={() => {
                                             if (locateYourHomeIsActive) {
-                                                setLocateYourHomeQuestion({
-                                                    answer: 2,
-                                                    id,
-                                                    question,
-                                                });
+                                                if (selectedQuestions[id]?.answer === 2) removeLocateYourHomeQuestion(id);
+                                                else {
+                                                    setLocateYourHomeQuestion({
+                                                        answer: 2,
+                                                        id,
+                                                        question,
+                                                    });
+                                                }
                                             } else {
-                                                setBuildYourKitQuestion({
-                                                    answer: 2,
-                                                    id,
-                                                    question,
-                                                });
+                                                if (selectedQuestions[id]?.answer === 2) removeBuildYourKitQuestion(id); // eslint-disable-line
+                                                else {
+                                                    setBuildYourKitQuestion({
+                                                        answer: 2,
+                                                        id,
+                                                        question,
+                                                    });
+                                                }
                                             }
                                         }}
                                     />

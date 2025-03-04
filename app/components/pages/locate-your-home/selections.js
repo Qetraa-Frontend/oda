@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-import Spinner from "@/app/components/shared/spinner";
+import { handleNumberInputLogic } from "@/app/lib/utils";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
+import { Input } from "@/app/ui/input";
 import {
     Select,
     SelectContent,
@@ -14,56 +14,18 @@ import {
     SelectValue,
 } from "@/app/ui/select";
 
-export default function LocateYourHomeSelections({ developers }) {
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
-
-    const [projects, setProjects] = useState([]);
-
-    const [unitAreas, setUnitAreas] = useState([]);
-
-    const [projectsLoading, setProjectsLoading] = useState(false);
-
-    const [unitAreasLoading, setUnitAreasLoading] = useState(false);
-
+export default function LocateYourHomeSelections({
+    developers,
+    unitTypes,
+}) {
     const {
         developer,
-        mode,
-        project,
         setDeveloper,
-        setProject,
         setUnitArea,
+        setUnitType,
         unitArea,
+        unitType,
     } = useLocateYourHomeStore();
-
-    useEffect(
-        () => {
-            if (developer?.id) {
-                setProjectsLoading(true);
-
-                fetch(`${backendUrl}Developer/${developer.id}/ProjectsIDAndNames`).then((response) => {
-                    setProjectsLoading(false);
-
-                    return response.json();
-                }).then((data) => setProjects(data));
-            }
-        },
-        [developer], // eslint-disable-line
-    );
-
-    useEffect(
-        () => {
-            if (project?.id) {
-                setUnitAreasLoading(true);
-
-                fetch(`${backendUrl}Project/by-id/${project.id}/available-apartment-spaces`).then((response) => {
-                    setUnitAreasLoading(false);
-
-                    return response.json();
-                }).then((data) => setUnitAreas(data));
-            }
-        },
-        [project], // eslint-disable-line
-    );
 
     return (
         <div className="container mx-auto pt-[47px] md:pt-[94px] pb-[50px] md:pb-[100px]">
@@ -80,7 +42,6 @@ export default function LocateYourHomeSelections({ developers }) {
                     <div className="relative z-50 flex flex-col gap-5 md:gap-10">
                         <Select
                             defaultValue={developer.id}
-                            disabled={mode === "edit"}
                             value={developer.id}
                             onValueChange={(value) => setDeveloper({
                                 id: value,
@@ -105,73 +66,48 @@ export default function LocateYourHomeSelections({ developers }) {
                             </SelectContent>
                         </Select>
                         <Select
-                            defaultValue={project.id}
-                            disabled={!developer?.id || projects.length === 0 || mode === "edit"}
-                            value={project.id}
-                            onValueChange={(value) => setProject({
+                            defaultValue={unitType.id}
+                            value={unitType.id}
+                            onValueChange={(value) => setUnitType({
                                 id: value,
-                                name: projects.find(({ projectid }) => projectid === value).projectname,
+                                name: unitTypes.find(({ unittypeid }) => unittypeid === value).unittypeName,
                             })}
                         >
                             <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
-                                <SelectValue placeholder="Project" />
-                                {projectsLoading && (
-                                    <Spinner
-                                        className="!w-[50px] absolute right-10"
-                                        color="text-white"
-                                        height="h-20"
-                                    />
-                                )}
+                                <SelectValue placeholder="Unit Type" />
                             </SelectTrigger>
                             <SelectContent>
-                                {projects.map(({
-                                    projectid,
-                                    projectname,
+                                {unitTypes.map(({
+                                    unittypeName,
+                                    unittypeid,
                                 }) => (
                                     <SelectItem
-                                        key={projectid}
-                                        value={projectid}
+                                        key={unittypeid}
+                                        value={unittypeid}
                                     >
-                                        {projectname}
+                                        {unittypeName}
                                     </SelectItem>
                                 ))}
                             </SelectContent>
                         </Select>
-                        {mode === "edit" && !localStorage.getItem("unitAreaId") ? null : ( // eslint-disable-line
-                            <Select
-                                defaultValue={mode === "edit" ? parseInt(localStorage.getItem("unitAreaId")) : unitArea.id} // eslint-disable-line
-                                disabled={!project?.id || unitAreas.length === 0 || mode === "edit"}
-                                value={mode === "edit" ? parseInt(localStorage.getItem("unitAreaId")) : unitArea.id} // eslint-disable-line
-                                onValueChange={(value) => setUnitArea({
-                                    id: value,
-                                    space: unitAreas.find(({ apartmentid }) => apartmentid === value).apartmentspace,
-                                })}
-                            >
-                                <SelectTrigger className="text-[500] text-[22px] md:text-[32px] border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full cursor-pointer primary-select">
-                                    <SelectValue placeholder="Unit Area" />
-                                    {unitAreasLoading && (
-                                        <Spinner
-                                            className="!w-[50px] absolute right-10"
-                                            color="text-white"
-                                            height="h-20"
-                                        />
-                                    )}
-                                </SelectTrigger>
-                                <SelectContent>
-                                    {unitAreas.map(({
-                                        apartmentid,
-                                        apartmentspace,
-                                    }) => (
-                                        <SelectItem
-                                            key={apartmentid}
-                                            value={apartmentid}
-                                        >
-                                            {apartmentspace}
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-                        )}
+                        <Input
+                            className="text-[500] text-[22px] md:text-[32px] !placeholder-black border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full"
+                            inputMode="numeric"
+                            pattern="[0-9]*"
+                            placeholder="Unit Area"
+                            type="number"
+                            value={unitArea}
+                            onChange={(e) => {
+                                const { value } = e.target;
+
+                                if (!handleNumberInputLogic(e)) return;
+
+                                setUnitArea(value);
+                            }}
+                            onKeyDown={(e) => {
+                                if (e.key === "-" || e.key === "e") e.preventDefault();
+                            }}
+                        />
                     </div>
                 </div>
             </div>

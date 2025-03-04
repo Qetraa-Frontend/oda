@@ -14,6 +14,7 @@ export default function CheckoutPaymentPlans({ paymentPlans }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
                 {paymentPlans.map(({
+                    description,
                     iconBase64,
                     installemntPlans,
                     paymentplanname,
@@ -35,13 +36,7 @@ export default function CheckoutPaymentPlans({ paymentPlans }) {
                                 />
                             </div>
                             <div>
-                                <h6 className="font-normal text-xs md:text-sm my-2 md:my-4">
-                                    Pay directly with
-                                    {" "}
-                                    {paymentplanname}
-                                    {" "}
-                                    & get instant voucher cards.
-                                </h6>
+                                <h6 className="font-normal text-xs md:text-sm my-2 md:my-4">{description}</h6>
                                 <div className="flex flex-wrap gap-1 md:gap-2 overflow-hidden">
                                     {installemntPlans.map(({
                                         adminfees,

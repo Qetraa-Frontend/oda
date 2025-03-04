@@ -22,6 +22,7 @@ export default async function Checkout() {
             const {
                 adminfees,
                 adminfeespercentage,
+                description,
                 downpayment,
                 downpaymentpercentage,
                 iconBase64,
@@ -34,6 +35,7 @@ export default async function Checkout() {
 
             if (!acc[paymentplanname]) {
                 acc[paymentplanname] = {
+                    description,
                     iconBase64,
                     installemntPlans: [],
                     paymentplanname,

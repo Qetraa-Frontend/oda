@@ -199,7 +199,6 @@ export default function BuildYourKitAddons({
                                                         EGP
                                                         <Input
                                                             className="w-[57px] h-[33px] rounded-lg border border-gray-300"
-                                                            defaultValue={0}
                                                             disabled={addons[0]?.addongroup === "Boilers" || (addons[0]?.addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addons[0]?.addongroup))}
                                                             inputMode="numeric"
                                                             pattern="[0-9]*"
@@ -319,7 +318,6 @@ export default function BuildYourKitAddons({
                                                                 EGP
                                                                 <Input
                                                                     className="w-[57px] h-[33px] rounded-lg border border-gray-300"
-                                                                    defaultValue={0}
                                                                     disabled={addongroup === "Boilers" || (addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addongroup))}
                                                                     inputMode="numeric"
                                                                     pattern="[0-9]*"
@@ -436,7 +434,6 @@ export default function BuildYourKitAddons({
                                                 </span>
                                                 <Input
                                                     className="w-[57px] h-[33px] rounded-lg border border-gray-300"
-                                                    defaultValue={0}
                                                     inputMode="numeric"
                                                     pattern="[0-9]*"
                                                     type="number"

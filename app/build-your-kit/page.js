@@ -18,7 +18,7 @@ export default async function BuildYourKit() {
     );
 
     const plansResponse = await fetch(
-        `${publicSiteUrl}api/plans`,
+        `${publicSiteUrl}api/plans/build-your-kit`,
         { cache: "no-store" },
     );
 

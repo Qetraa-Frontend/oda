@@ -67,9 +67,9 @@ export default function CartSummary({
         setIsActive: setLocateYourHomeIsActive,
         setMode: setLocateYourHomeMode,
         setPlan: setLocateYourHomePlan,
-        setProject: setLocateYourHomeProject,
         setQuestions: setLocateYourHomeQuestions,
         setUnitArea: setLocateYourHomeUnitArea,
+        setUnitType: setLocateYourHomeUnitType,
     } = useLocateYourHomeStore();
 
     const {
@@ -281,12 +281,9 @@ export default function CartSummary({
 
                 setLocateYourHomeDeveloper({ id: order.developerID });
 
-                setLocateYourHomeProject({ id: order.projectID });
+                setLocateYourHomeUnitType({ id: order.unittypeid });
 
-                setLocateYourHomeUnitArea({
-                    id: order.newApartmentID,
-                    space: order.apartmentSpace,
-                });
+                setLocateYourHomeUnitArea(order.apartmentSpace);
 
                 setLocateYourHomeQuestions(order.questions.reduce(
                     (acc, question) => {

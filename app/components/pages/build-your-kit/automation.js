@@ -105,6 +105,7 @@ export default function BuildYourKitAutomation({ automation }) {
                         apartmentId: null,
                         apartmentSpace: parseInt(unitArea),
                         apartmentType: 1,
+                        unittypeid: null,
                     },
                     automationID: selectedAutomation.id || null,
                     customerInfo: {
@@ -117,14 +118,14 @@ export default function BuildYourKitAutomation({ automation }) {
                     paymentPlanID: info.paymentPlan.id,
                     planID: plan.id,
                     projectID: null,
-                    questions: Object.values(questions).map(({
+                    questions: Object.keys(questions).length > 0 ? Object.values(questions).map(({
                         answer,
                         question,
                     }, index) => ({
                         answer,
                         name: question,
                         questionsID: index + 1,
-                    })),
+                    })) : {},
                 }),
                 headers: { "Content-Type": "application/json" },
                 method: "PUT",

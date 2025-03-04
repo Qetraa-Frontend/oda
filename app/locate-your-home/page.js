@@ -17,8 +17,13 @@ export default async function LocateYourHome() {
         { cache: "no-store" },
     );
 
+    const unitTypesResponse = await fetch(
+        `${publicSiteUrl}api/unit-types`,
+        { cache: "no-store" },
+    );
+
     const plansResponse = await fetch(
-        `${publicSiteUrl}api/plans`,
+        `${publicSiteUrl}api/plans/locate-your-home`,
         { cache: "no-store" },
     );
 
@@ -53,6 +58,8 @@ export default async function LocateYourHome() {
     );
 
     const developers = await developersResponse.json();
+
+    const unitTypes = await unitTypesResponse.json();
 
     const plans = await plansResponse.json();
 
@@ -98,7 +105,10 @@ export default async function LocateYourHome() {
     return (
         <div>
             <LocateYourHomeHero />
-            <LocateYourHomeSelections developers={developers} />
+            <LocateYourHomeSelections
+                developers={developers}
+                unitTypes={unitTypes}
+            />
             <LocateYourHomeMenu plans={plans} />
             <LocateYourHomePlans
                 plans={{
