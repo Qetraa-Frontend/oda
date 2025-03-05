@@ -18,14 +18,14 @@ export default function CheckoutPaymentPlans({ paymentPlans }) {
                     iconBase64,
                     installemntPlans,
                     paymentplanname,
-                }, index) => (
+                }) => (
                     <div
                         className="col-span-1 md:col-span-6 xl:col-span-4"
                         key={paymentplanname}
                     >
                         <div className="py-2 md:py-4 px-2 md:px-4 border border-gray-300 rounded-2xl min-w-full h-full overflow-hidden">
                             <div className="w-full bg-primary py-[10px] md:py-5 px-2 md:px-4 flex justify-between rounded-lg">
-                                <h5 className="font-medium text-lg md:text-2xl">{`Program ${String.fromCharCode(65 + index)}`}</h5>
+                                <h5 className="font-medium text-lg md:text-2xl">Program</h5>
                                 <Image
                                     alt="program"
                                     className="object-contain"
@@ -80,21 +80,21 @@ export default function CheckoutPaymentPlans({ paymentPlans }) {
                                         <li className="font-normal text-sm md:text-lg text-black">
                                             Down Payment:
                                             {" "}
-                                            <span className="font-semibold text-primary">{showDescriptions[paymentplanname]?.downpayment ? `${showDescriptions[paymentplanname].downpaymentpercentage}%` : `${0}%`}</span>
+                                            <span className="font-semibold">{showDescriptions[paymentplanname]?.downpayment ? `${showDescriptions[paymentplanname].downpaymentpercentage}%` : `${0}%`}</span>
                                         </li>
                                     )}
                                     {showDescriptions[paymentplanname] && (
                                         <li className="font-normal text-sm md:text-lg text-black">
                                             Admin Fees:
                                             {" "}
-                                            <span className="font-semibold text-primary">{showDescriptions[paymentplanname]?.adminfees ? `${showDescriptions[paymentplanname].adminfeespercentage}%` : `${0}%`}</span>
+                                            <span className="font-semibold">{showDescriptions[paymentplanname]?.adminfees ? `${showDescriptions[paymentplanname].adminfeespercentage}%` : `${0}%`}</span>
                                         </li>
                                     )}
                                     {showDescriptions[paymentplanname] && (
                                         <li className="font-normal text-sm md:text-lg text-black">
                                             Interest Rate:
                                             {" "}
-                                            <span className="font-semibold text-primary">{showDescriptions[paymentplanname]?.interestrate ? `${showDescriptions[paymentplanname].interestrateperyearpercentage}%` : `${0}%`}</span>
+                                            <span className="font-semibold">{showDescriptions[paymentplanname]?.interestrate ? `${showDescriptions[paymentplanname].interestrateperyearpercentage}%` : `${0}%`}</span>
                                         </li>
                                     )}
                                 </ul>

@@ -93,6 +93,8 @@ export default function LocateYourHomeSelections({
                         <Input
                             className="text-[500] text-[22px] md:text-[32px] !placeholder-black border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full"
                             inputMode="numeric"
+                            max={1500}
+                            min={50}
                             pattern="[0-9]*"
                             placeholder="Unit Area"
                             type="number"
@@ -101,6 +103,20 @@ export default function LocateYourHomeSelections({
                                 const { value } = e.target;
 
                                 if (!handleNumberInputLogic(e)) return;
+
+                                if (Number(value) < 50) {
+                                    e.target.value == 50; // eslint-disable-line
+
+                                    setUnitArea(50);
+
+                                    return;
+                                } else if (Number(value) > 1500) { // eslint-disable-line
+                                    e.target.value == 500; // eslint-disable-line
+
+                                    setUnitArea(1500);
+
+                                    return;
+                                }
 
                                 setUnitArea(value);
                             }}

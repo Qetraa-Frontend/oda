@@ -297,93 +297,91 @@ export default function BuildYourKitAutomation({ automation }) {
                             if (currentAutomation?.features) currentAutomationFeatures = currentAutomation.features;
 
                             return (
-                                (
-                                    <div
-                                        className={`${formattedAutomationDetails.automationid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[161px] h-[94%] border border-gray-300 rounded-2xl text-center pt-2 md:pt-4 px-2 md:px-4 hover:bg-primary transition-all duration-1000`}
-                                        key={formattedAutomationDetails.automationid}
-                                    >
-                                        <div className="relative top-8 md:top-0">
-                                            <div className="xl:hidden absolute right-[2px] w-full flex justify-between">
-                                                <ChevronLeft
-                                                    className={`${currentAutomation?.details.automationid === 1 || !currentAutomation?.details?.automationid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
-                                                    size={30}
-                                                    onClick={() => (currentAutomation?.details.automationid > 1) && setCurrentAutomation({
-                                                        details: formattedAutomation.find(({ details }) => details.automationid === (currentAutomation?.details.automationid || 1) - 1).details,
-                                                        features: [
-                                                            {
-                                                                features: formattedAutomation.find(({ details }) => details.automationid === (currentAutomation?.details.automationid || 1) - 1).features,
-                                                                title: "Features",
-                                                            },
-                                                        ],
-                                                    })}
-                                                />
-                                                <ChevronRight
-                                                    className={`${currentAutomation?.details.automationid === formattedAutomation.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
-                                                    size={30}
-                                                    onClick={() => currentAutomation?.details.automationid !== formattedAutomation.length && setCurrentAutomation({
-                                                        details: formattedAutomation.find(({ details }) => details.automationid === (currentAutomation?.details.automationid || 1) + 1).details,
-                                                        features: [
-                                                            {
-                                                                features: formattedAutomation.find(({ details }) => details.automationid === (currentAutomation?.details.automationid || 1) + 1).features,
-                                                                title: "Features",
-                                                            },
-                                                        ],
-                                                    })}
-                                                />
-                                            </div>
-                                            <h5 className="font-semibold text-lg md:text-2xl">{currentAutomation?.details?.automationname || formattedAutomationDetails?.automationname}</h5>
-                                            <div className="flex flex-col justify-center items-center relative top-2">
-                                                {currentAutomationFeatures[0].features.map(({ description }, indx) => (
-                                                    <div
-                                                        className="flex items-center gap-1 h-[55px]"
+                                <div
+                                    className={`${formattedAutomationDetails.automationid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[161px] h-[94%] border border-gray-300 rounded-2xl text-center pt-2 md:pt-4 px-2 md:px-4 hover:bg-primary ${selectedAutomation.id === formattedAutomationDetails.automationid ? "bg-primary" : ""} transition-all duration-1000`}
+                                    key={formattedAutomationDetails.automationid}
+                                >
+                                    <div className="relative top-8 md:top-0">
+                                        <div className="xl:hidden absolute right-[2px] w-full flex justify-between">
+                                            <ChevronLeft
+                                                className={`${currentAutomation?.details.automationid === 1 || !currentAutomation?.details?.automationid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                                size={30}
+                                                onClick={() => (currentAutomation?.details.automationid > 1) && setCurrentAutomation({
+                                                    details: formattedAutomation.find(({ details }) => details.automationid === (currentAutomation?.details.automationid || 1) - 1).details,
+                                                    features: [
+                                                        {
+                                                            features: formattedAutomation.find(({ details }) => details.automationid === (currentAutomation?.details.automationid || 1) - 1).features,
+                                                            title: "Features",
+                                                        },
+                                                    ],
+                                                })}
+                                            />
+                                            <ChevronRight
+                                                className={`${currentAutomation?.details.automationid === formattedAutomation.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                                size={30}
+                                                onClick={() => currentAutomation?.details.automationid !== formattedAutomation.length && setCurrentAutomation({
+                                                    details: formattedAutomation.find(({ details }) => details.automationid === (currentAutomation?.details.automationid || 1) + 1).details,
+                                                    features: [
+                                                        {
+                                                            features: formattedAutomation.find(({ details }) => details.automationid === (currentAutomation?.details.automationid || 1) + 1).features,
+                                                            title: "Features",
+                                                        },
+                                                    ],
+                                                })}
+                                            />
+                                        </div>
+                                        <h5 className="font-semibold text-lg md:text-2xl">{currentAutomation?.details?.automationname || formattedAutomationDetails?.automationname}</h5>
+                                        <div className="flex flex-col justify-center items-center relative top-2">
+                                            {currentAutomationFeatures[0].features.map(({ description }, indx) => (
+                                                <div
+                                                    className="flex items-center gap-1 h-[55px]"
                                                     key={indx} // eslint-disable-line
-                                                    >
-                                                        {description ? (
-                                                            <Check
-                                                                className="rounded-full border border-black p-1 md:p-2"
-                                                                size={35}
-                                                            />
-                                                        ) : (
-                                                            <X
-                                                                className="rounded-full border border-destructive text-destructive p-1 md:p-2"
-                                                                size={35}
-                                                            />
-                                                        )}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                            <div className="relative top-6">
-                                                <Checkbox
-                                                    checked={selectedAutomation.id === formattedAutomationDetails.automationid}
-                                                    className="w-8 h-8 border border-black"
-                                                    onCheckedChange={(value) => {
-                                                        if (value) {
-                                                            setAutomation({
-                                                                id: formattedAutomationDetails.automationid,
-                                                                name: formattedAutomationDetails.automationname,
-                                                            });
-                                                        } else {
-                                                            setAutomation({
-                                                                id: "",
-                                                                name: "",
-                                                            });
-                                                        }
-                                                    }}
-                                                />
-                                            </div>
+                                                >
+                                                    {description ? (
+                                                        <Check
+                                                            className="rounded-full border border-black p-1 md:p-2"
+                                                            size={35}
+                                                        />
+                                                    ) : (
+                                                        <X
+                                                            className="rounded-full border border-destructive text-destructive p-1 md:p-2"
+                                                            size={35}
+                                                        />
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="relative top-6">
+                                            <Checkbox
+                                                checked={selectedAutomation.id === formattedAutomationDetails.automationid}
+                                                className="w-8 h-8 border border-black"
+                                                onCheckedChange={(value) => {
+                                                    if (value) {
+                                                        setAutomation({
+                                                            id: formattedAutomationDetails.automationid,
+                                                            name: formattedAutomationDetails.automationname,
+                                                        });
+                                                    } else {
+                                                        setAutomation({
+                                                            id: "",
+                                                            name: "",
+                                                        });
+                                                    }
+                                                }}
+                                            />
                                         </div>
                                     </div>
-                                )
+                                </div>
                             );
                         })}
                     </div>
                 </motion.div>
             </div>
-            <div className="container mt-10 md:mt-[550px] xl:mt-[430px] flex justify-end">
+            <div className="container mt-10 md:mt-[550px] xl:mt-[430px] sm:flex justify-end">
                 <div className="flex flex-col gap-2">
                     <Button
                         className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat mb-10 md:mb-0"
-                        disabled={!plan.id || !address || !unitArea}
+                        disabled={!plan.id || !unitArea}
                         onClick={() => {
                             if (mode === "edit") saveOrderHandler();
                             else {

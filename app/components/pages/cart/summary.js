@@ -405,7 +405,7 @@ export default function CartSummary({
                     href="/checkout"
                     prefetch={false}
                 >
-                    Edit Info & Payment Method
+                    Edit Payment Program
                     <Pencil size={30} />
                 </Link>
             </div>
@@ -997,10 +997,10 @@ export default function CartSummary({
                                 </div>
                             )}
                             <div className="mt-2 md:mt-4">
-                                <h6 className="font-semibold text-lg md:text-2xl">Payment Programme</h6>
+                                <h6 className="font-semibold text-lg md:text-2xl">Payment Program</h6>
                                 <div className="w-full min-h-[46px] bg-primary px-2 py-2 md:px-4 flex items-center justify-between flex-wrap gap-2 rounded-lg mt-2">
                                     <span className="font-normal text-base md:text-xl flex flex-wrap gap-2 md:gap-3">
-                                        <span>{`Program ${order.paymentDTO.paymentplanname === "Oda" ? "A" : order.paymentDTO.paymentplanname === "SEVEN" ? "B" : "C"}`}</span> {/* eslint-disable-line */}
+                                        <span>Program</span>
                                         <span className="font-medium">{order.paymentDTO.paymentplanname}</span>
                                     </span>
                                     <span className="font-normal text-base md:text-xl">{`${order.paymentDTO.numberofinstallmentmonths} Months`}</span>
@@ -1101,7 +1101,7 @@ export default function CartSummary({
                                 disabled={loading || confirmLoading}
                                 onClick={confirmOrderHandler}
                             >
-                                {confirmLoading ? <Spinner color="text-black" /> : "Confirm Order"}
+                                {confirmLoading ? <Spinner color="text-black" /> : "Place Order"}
                             </Button>
                             {confirmResponseMsg.text && (
                                 <span className={`font-bold text-xs md:text-base ${confirmResponseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>

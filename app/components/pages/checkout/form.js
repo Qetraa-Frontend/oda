@@ -322,7 +322,7 @@ export default function CheckoutForm({ paymentPlans }) {
                                 className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full md:w-[370px] hover:animate-heartBeat"
                                 disabled={loading}
                             >
-                                {loading ? <Spinner color="text-black" /> : mode === "edit" ? "Save" : "Submit"} {/* eslint-disable-line */}
+                                {loading ? <Spinner color="text-black" /> : mode === "edit" ? "Save" : "Checkout"} {/* eslint-disable-line */}
                             </Button>
                             {responseMsg.text && (
                                 <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>

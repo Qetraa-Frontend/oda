@@ -197,52 +197,54 @@ export default function BuildYourKitAddons({
                                                         {addons[0]?.price}
                                                         {" "}
                                                         EGP
-                                                        <Input
-                                                            className="w-[57px] h-[33px] rounded-lg border border-gray-300"
-                                                            disabled={addons[0]?.addongroup === "Boilers" || (addons[0]?.addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addons[0]?.addongroup))}
-                                                            inputMode="numeric"
-                                                            pattern="[0-9]*"
-                                                            type="number"
-                                                            value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity || 0}
-                                                            onChange={(e) => {
-                                                                const { value } = e.target;
+                                                        {addons[0]?.addongroup !== "Boilers" && (
+                                                            <Input
+                                                                className="w-[57px] h-[33px] rounded-lg border border-gray-300"
+                                                                disabled={addons[0]?.addongroup === "Boilers" || (addons[0]?.addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addons[0]?.addongroup))}
+                                                                inputMode="numeric"
+                                                                pattern="[0-9]*"
+                                                                type="number"
+                                                                value={selectedAddons.find(({ id }) => id === addons[0]?.addonid)?.quantity || 0}
+                                                                onChange={(e) => {
+                                                                    const { value } = e.target;
 
-                                                                if (!handleNumberInputLogic(e)) return;
+                                                                    if (!handleNumberInputLogic(e)) return;
 
-                                                                if (value === "") {
-                                                                    removeAddon(addons[0]?.addonid);
+                                                                    if (value === "") {
+                                                                        removeAddon(addons[0]?.addonid);
 
-                                                                    setTimeout(
-                                                                        () => {
-                                                                            e.target.value = "";
-                                                                        },
-                                                                        [50],
-                                                                    );
+                                                                        setTimeout(
+                                                                            () => {
+                                                                                e.target.value = "";
+                                                                            },
+                                                                            [50],
+                                                                        );
 
-                                                                    return;
-                                                                }
+                                                                        return;
+                                                                    }
 
-                                                                if (!selectedAddons.find(({ id }) => id === addons[0]?.addonid)) {
-                                                                    setAddon({
-                                                                        group: addons[0]?.addongroup,
-                                                                        id: addons[0]?.addonid,
-                                                                        name: addons[0]?.addonname,
-                                                                        price: addons[0].price * parseInt(value),
-                                                                        quantity: parseInt(value),
-                                                                        unitOrMeter: "Unit",
-                                                                    });
-                                                                } else {
-                                                                    setAddonQuantity(
-                                                                        parseInt(value),
-                                                                        addons[0].price * parseInt(value),
-                                                                        addons[0]?.addonid,
-                                                                    );
-                                                                }
-                                                            }}
-                                                            onKeyDown={(e) => {
-                                                                if (e.key === "-" || e.key === "e") e.preventDefault();
-                                                            }}
-                                                        />
+                                                                    if (!selectedAddons.find(({ id }) => id === addons[0]?.addonid)) {
+                                                                        setAddon({
+                                                                            group: addons[0]?.addongroup,
+                                                                            id: addons[0]?.addonid,
+                                                                            name: addons[0]?.addonname,
+                                                                            price: addons[0].price * parseInt(value),
+                                                                            quantity: parseInt(value),
+                                                                            unitOrMeter: "Unit",
+                                                                        });
+                                                                    } else {
+                                                                        setAddonQuantity(
+                                                                            parseInt(value),
+                                                                            addons[0].price * parseInt(value),
+                                                                            addons[0]?.addonid,
+                                                                        );
+                                                                    }
+                                                                }}
+                                                                onKeyDown={(e) => {
+                                                                    if (e.key === "-" || e.key === "e") e.preventDefault();
+                                                                }}
+                                                            />
+                                                        )}
                                                     </span>
                                                 )}
                                             </div>
@@ -316,52 +318,54 @@ export default function BuildYourKitAddons({
                                                                 {price}
                                                                 {" "}
                                                                 EGP
-                                                                <Input
-                                                                    className="w-[57px] h-[33px] rounded-lg border border-gray-300"
-                                                                    disabled={addongroup === "Boilers" || (addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addongroup))}
-                                                                    inputMode="numeric"
-                                                                    pattern="[0-9]*"
-                                                                    type="number"
-                                                                    value={selectedAddons.find(({ id }) => id === addonid)?.quantity || 0}
-                                                                    onChange={(e) => {
-                                                                        const { value } = e.target;
+                                                                {addongroup !== "Boilers" && (
+                                                                    <Input
+                                                                        className="w-[57px] h-[33px] rounded-lg border border-gray-300"
+                                                                        disabled={addongroup === "Boilers" || (addongroup === "Heaters" && checkBoilerAndHeaterAvailability(addongroup))}
+                                                                        inputMode="numeric"
+                                                                        pattern="[0-9]*"
+                                                                        type="number"
+                                                                        value={selectedAddons.find(({ id }) => id === addonid)?.quantity || 0}
+                                                                        onChange={(e) => {
+                                                                            const { value } = e.target;
 
-                                                                        if (!handleNumberInputLogic(e)) return;
+                                                                            if (!handleNumberInputLogic(e)) return;
 
-                                                                        if (value === "") {
-                                                                            removeAddon(addonid);
+                                                                            if (value === "") {
+                                                                                removeAddon(addonid);
 
-                                                                            setTimeout(
-                                                                                () => {
-                                                                                    e.target.value = "";
-                                                                                },
-                                                                                [50],
-                                                                            );
+                                                                                setTimeout(
+                                                                                    () => {
+                                                                                        e.target.value = "";
+                                                                                    },
+                                                                                    [50],
+                                                                                );
 
-                                                                            return;
-                                                                        }
+                                                                                return;
+                                                                            }
 
-                                                                        if (!selectedAddons.find(({ id }) => id === addonid)) {
-                                                                            setAddon({
-                                                                                group: addongroup,
-                                                                                id: addonid,
-                                                                                name: addonname,
-                                                                                price: price * parseInt(value),
-                                                                                quantity: parseInt(value),
-                                                                                unitOrMeter: "Unit",
-                                                                            });
-                                                                        } else {
-                                                                            setAddonQuantity(
-                                                                                parseInt(value),
-                                                                                price * parseInt(value),
-                                                                                addonid,
-                                                                            );
-                                                                        }
-                                                                    }}
-                                                                    onKeyDown={(e) => {
-                                                                        if (e.key === "-" || e.key === "e") e.preventDefault();
-                                                                    }}
-                                                                />
+                                                                            if (!selectedAddons.find(({ id }) => id === addonid)) {
+                                                                                setAddon({
+                                                                                    group: addongroup,
+                                                                                    id: addonid,
+                                                                                    name: addonname,
+                                                                                    price: price * parseInt(value),
+                                                                                    quantity: parseInt(value),
+                                                                                    unitOrMeter: "Unit",
+                                                                                });
+                                                                            } else {
+                                                                                setAddonQuantity(
+                                                                                    parseInt(value),
+                                                                                    price * parseInt(value),
+                                                                                    addonid,
+                                                                                );
+                                                                            }
+                                                                        }}
+                                                                        onKeyDown={(e) => {
+                                                                            if (e.key === "-" || e.key === "e") e.preventDefault();
+                                                                        }}
+                                                                    />
+                                                                )}
                                                             </span>
                                                         )}
                                                     </div>
@@ -389,7 +393,7 @@ export default function BuildYourKitAddons({
                                         type: "spring",
                                     }}
                                 >
-                                    <div className="flex items-center lg:w-1/2">
+                                    <div className="flex items-center lg:w-1/3">
                                         {selectedAirConditioningAddons.length > 0 ? (
                                             <Check
                                                 className="opacity-70 cursor-pointer w-[30px] h-[30px] md:w-[60px] md:h-[60px]"
@@ -410,7 +414,7 @@ export default function BuildYourKitAddons({
                                                 }}
                                             />
                                         )}
-                                        <div className="lg:w-[225px]">
+                                        <div className="lg:w-[150px]">
                                             <h6 className="font-semibold text-base md:text-[20px] mb-1 md:mb-2">Air Conditions</h6>
                                             <p className="font-normal text-xs md:text-base">{airConditioningAddons[0]?.description}</p>
                                         </div>
@@ -426,11 +430,13 @@ export default function BuildYourKitAddons({
                                                 className="flex gap-1"
                                                 key={addonid}
                                             >
-                                                <span className="font-normal text-xs md:text-base border border-gray-300 min-w-[120px] sm:min-w-[154px] rounded-2xl flex items-center justify-center">
-                                                    {addonname}
-                                                    {" "}
+                                                <span className="font-normal text-xs md:text-base border border-gray-300 w-fit px-2 rounded-2xl flex items-center justify-center">{addonname}</span>
+                                                <span className="font-normal text-xs md:text-base border border-gray-300 w-fit px-2 rounded-2xl flex items-center justify-center">
                                                     +
                                                     {price}
+                                                    {" "}
+                                                    EGP
+                                                    \Unit
                                                 </span>
                                                 <Input
                                                     className="w-[57px] h-[33px] rounded-lg border border-gray-300"

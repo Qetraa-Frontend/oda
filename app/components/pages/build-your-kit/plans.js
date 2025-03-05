@@ -105,7 +105,7 @@ export default function BuildYourKitPlans({ plans }) {
                                 {formattedPlans[0]?.foundation.map(({ plandetailsname }, index) => (
                                     <tr
                                         className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
-                                        key={index} // eslint-disable-line
+                                                        key={index} // eslint-disable-line
                                     >
                                         <td
                                             className="font-normal text-lg md:text-2xl px-2 md:px-4"
@@ -132,7 +132,7 @@ export default function BuildYourKitPlans({ plans }) {
                                 {formattedPlans[0]?.decoration.map(({ plandetailsname }, index) => (
                                     <tr
                                         className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
-                                        key={index} // eslint-disable-line
+                                                        key={index} // eslint-disable-line
                                     >
                                         <td
                                             className="font-normal text-lg md:text-2xl px-2 md:px-4"
@@ -188,42 +188,42 @@ export default function BuildYourKitPlans({ plans }) {
                             return (
                                 (
                                     <div
-                                        className={`${formattedPlanDetails.planid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center pt-8 px-4 md:px-8 hover:bg-primary ${plan.id === (currentPlan?.details.planid || formattedPlanDetails.planid) ? "bg-primary" : ""} transition-all duration-1000`}
+                                        className={`${formattedPlanDetails.planid !== 4 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center pt-8 px-4 md:px-8 hover:bg-primary ${plan.id === (currentPlan?.details.planid || formattedPlanDetails.planid) ? "bg-primary" : ""} transition-all duration-1000`}
                                         key={formattedPlanDetails.planid}
                                     >
                                         <div className="xl:hidden absolute top-8 right-[2px] w-full flex justify-between">
                                             <ChevronLeft
-                                                className={`${currentPlan?.details.planid === 1 || !currentPlan?.details?.planid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                                className={`${currentPlan?.details.planid === 4 || !currentPlan?.details?.planid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
                                                 size={30}
-                                                onClick={() => (currentPlan?.details.planid > 1) && setCurrentPlan({
+                                                onClick={() => (currentPlan?.details.planid > 4) && setCurrentPlan({
                                                     departments: [
                                                         {
-                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).foundation,
+                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) - 1).foundation,
                                                             title: "Foundation",
                                                         },
                                                         {
-                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).decoration,
+                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) - 1).decoration,
                                                             title: "Decoration",
                                                         },
                                                     ],
-                                                    details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).details,
+                                                    details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) - 1).details,
                                                 })}
                                             />
                                             <ChevronRight
-                                                className={`${currentPlan?.details.planid === formattedPlans.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                                className={`${currentPlan?.details.planid === formattedPlans.length + 3 ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
                                                 size={30}
-                                                onClick={() => currentPlan?.details.planid !== formattedPlans.length && setCurrentPlan({
+                                                onClick={() => currentPlan?.details.planid !== formattedPlans.length + 3 && setCurrentPlan({
                                                     departments: [
                                                         {
-                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).foundation,
+                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) + 1).foundation,
                                                             title: "Foundation",
                                                         },
                                                         {
-                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).decoration,
+                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) + 1).decoration,
                                                             title: "Decoration",
                                                         },
                                                     ],
-                                                    details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).details,
+                                                    details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) + 1).details,
                                                 })}
                                             />
                                         </div>
@@ -235,7 +235,7 @@ export default function BuildYourKitPlans({ plans }) {
                                             }, i) => (
                                                 <div
                                                     className="flex items-center gap-1 h-20"
-                                                    key={i} // eslint-disable-line
+                                                                    key={i} // eslint-disable-line
                                                 >
                                                     {description ? <h6 className="font-medium text-xs md:text-base">{description}</h6> : Array.from(
                                                         { length: stars },
@@ -243,7 +243,7 @@ export default function BuildYourKitPlans({ plans }) {
                                                     ).map((_, indx) => (
                                                         <Check
                                                             className="rounded-full border border-black p-1 md:p-2"
-                                                            key={indx} // eslint-disable-line
+                                                                            key={indx} // eslint-disable-line
                                                             size={35}
                                                         />
                                                     ))}
@@ -257,7 +257,7 @@ export default function BuildYourKitPlans({ plans }) {
                                             }, i) => (
                                                 <div
                                                     className="flex items-center gap-1 h-20"
-                                                    key={i} // eslint-disable-line
+                                                                    key={i} // eslint-disable-line
                                                 >
                                                     {description ? <h6 className="font-medium text-xs md:text-base">{description}</h6> : Array.from(
                                                         { length: stars },
@@ -265,7 +265,7 @@ export default function BuildYourKitPlans({ plans }) {
                                                     ).map((_, indx) => (
                                                         <Check
                                                             className="rounded-full border border-black p-1 md:p-2"
-                                                            key={indx} // eslint-disable-line
+                                                                            key={indx} // eslint-disable-line
                                                             size={35}
                                                         />
                                                     ))}
@@ -274,13 +274,13 @@ export default function BuildYourKitPlans({ plans }) {
                                         </div>
                                         <div className="relative top-[195px]">
                                             <Checkbox
-                                                checked={plan.id === formattedPlanDetails.planid}
+                                                checked={plan.id === (currentPlan?.details.planid || formattedPlanDetails.planid)}
                                                 className="w-8 h-8 border border-black"
                                                 onCheckedChange={(value) => {
                                                     if (value) {
                                                         setPlan({
-                                                            id: formattedPlanDetails.planid,
-                                                            name: formattedPlanDetails.planname,
+                                                            id: currentPlan?.details.planid || formattedPlanDetails.planid,
+                                                            name: currentPlan?.details.planname || formattedPlanDetails.planname,
                                                         });
                                                     } else {
                                                         setPlan({

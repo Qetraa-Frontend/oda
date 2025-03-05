@@ -11,7 +11,6 @@ export default function FaqsHero() {
                     <span className="font-semibold text-[40px] md:text-[64px] normal-case">How Oda may assist you ?</span>
                 </>
             )}
-            withSearchInput
         />
     );
 }

@@ -31,6 +31,8 @@ export default function BuildYourKitSelections() {
                         <Input
                             className="rounded-lg bg-white bg-opacity-60 h-14"
                             inputMode="numeric"
+                            max={1500}
+                            min={50}
                             pattern="[0-9]*"
                             type="number"
                             value={unitArea}
@@ -38,6 +40,20 @@ export default function BuildYourKitSelections() {
                                 const { value } = e.target;
 
                                 if (!handleNumberInputLogic(e)) return;
+
+                                if (Number(value) < 50) {
+                                    e.target.value == 50; // eslint-disable-line
+
+                                    setUnitArea(50);
+
+                                    return;
+                                } else if (Number(value) > 1500) { // eslint-disable-line
+                                    e.target.value == 500; // eslint-disable-line
+
+                                    setUnitArea(1500);
+
+                                    return;
+                                }
 
                                 setUnitArea(value);
                             }}
