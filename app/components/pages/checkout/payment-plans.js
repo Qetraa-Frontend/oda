@@ -103,7 +103,7 @@ export default function CheckoutPaymentPlans({ paymentPlans }) {
                     </div>
                 ))}
             </div>
-            <p className="font-semibold text-lg md:text-2xl mt-8 md:mt-16">*To guarantee defect-free installations, Payment plans with ODA enable you to complete the final 5% of the total payment up to 3 months after project delivery.</p>
+            <p className="font-semibold text-lg md:text-2xl mt-8 md:mt-16">*To guarantee defect-free installations, Payment plans with ODA enable you to complete the final 5% of the total payment up to 1 month after project delivery.</p>
         </div>
     );
 }

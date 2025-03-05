@@ -19,7 +19,7 @@ export default async function WhyOda() {
     );
 
     const plansResponse = await fetch(
-        `${publicSiteUrl}api/plans`,
+        `${publicSiteUrl}api/plans/locate-your-home`,
         { cache: "no-store" },
     );
 
@@ -71,6 +71,7 @@ export default async function WhyOda() {
             const {
                 adminfees,
                 adminfeespercentage,
+                description,
                 downpayment,
                 downpaymentpercentage,
                 iconBase64,
@@ -83,6 +84,7 @@ export default async function WhyOda() {
 
             if (!acc[paymentplanname]) {
                 acc[paymentplanname] = {
+                    description,
                     iconBase64,
                     installemntPlans: [],
                     paymentplanname,

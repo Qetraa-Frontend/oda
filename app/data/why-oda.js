@@ -372,34 +372,34 @@ export const plans2 = [
 
 export const plansContent = [
     {
-        description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
+        description: "A complete, pre-assembled homeowners kit with guaranteed price protection, ensuring you get the best value without unexpected cost increases.",
         id: 1,
-        title: "Free Ready- Made Design",
+        title: "Ready-Made Homeowners Kit, Price Protected.",
     },
     {
-        description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
+        description: "Access professional, ODA-certified assistance at any time of the day or night, providing expert guidance and support whenever you need it.",
         id: 2,
-        title: "Dedicated Project Manager",
+        title: "ODA Certified Assistance, 24/7.",
     },
     {
-        description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
+        description: "Customize your plan with a variety of add-ons, all with transparent pricing—no hidden fees, just clear and flexible options to meet your needs.",
         id: 3,
-        title: "Extended Equipment warrantry",
+        title: "Tailor Add-ons Menu, No Hidden Costs.",
     },
     {
-        description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
+        description: "A technology-driven process ensures smooth, hassle-free delivery, leveraging automation and advanced logistics for a seamless experience.",
         id: 4,
-        title: "Discounted Add On Services",
+        title: "Tech-Enabled Process, Seamless Delivery.",
     },
     {
-        description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
+        description: "Choose from multiple financing options to suit your budget, with redeemable vouchers that provide additional savings and benefits.",
         id: 5,
-        title: "Discounted Maintenance Plans",
+        title: "Flexible Financing Options, Redeemable Vouchers.",
     },
     {
-        description: "Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.",
+        description: "Real-time visual monitoring powered by big data and AI, offering enhanced security, insights, and proactive decision-making capabilities.",
         id: 6,
-        title: "Flexible Financing Options",
+        title: "Live Visual Monitoring, Big Data & AI Driven.",
     },
 ];
 

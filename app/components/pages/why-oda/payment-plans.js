@@ -42,17 +42,18 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
                     {paymentPlans.map(({
+                        description,
                         iconBase64,
                         installemntPlans,
                         paymentplanname,
-                    }, index) => (
+                    }) => (
                         <div
                             className="col-span-1 md:col-span-6 xl:col-span-4"
                             key={paymentplanname}
                         >
                             <div className="py-2 md:py-4 px-2 md:px-4 border border-gray-300 rounded-2xl min-w-full h-full overflow-hidden">
                                 <div className="w-full bg-primary py-[10px] md:py-5 px-2 md:px-4 flex justify-between rounded-lg">
-                                    <h5 className="font-medium text-lg md:text-2xl">{`Program ${String.fromCharCode(65 + index)}`}</h5>
+                                    <h5 className="font-medium text-lg md:text-2xl">Program</h5>
                                     <Image
                                         alt="program"
                                         className="object-contain"
@@ -63,13 +64,7 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
                                     />
                                 </div>
                                 <div>
-                                    <h6 className="font-normal text-xs md:text-sm my-2 md:my-4">
-                                        Pay directly with
-                                        {" "}
-                                        {paymentplanname}
-                                        {" "}
-                                        & get instant voucher cards.
-                                    </h6>
+                                    <h6 className="font-normal text-xs md:text-sm my-2 md:my-4">{description}</h6>
                                     <div className="flex flex-wrap gap-1 md:gap-2 overflow-hidden">
                                         {installemntPlans.map(({
                                             adminfees,
@@ -113,21 +108,21 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
                                             <li className="font-normal text-sm md:text-lg text-black">
                                                 Down Payment:
                                                 {" "}
-                                                <span className="font-semibold text-primary">{showDescriptions[paymentplanname]?.downpayment ? `${showDescriptions[paymentplanname].downpaymentpercentage}%` : `${0}%`}</span>
+                                                <span className="font-semibold">{showDescriptions[paymentplanname]?.downpayment ? `${showDescriptions[paymentplanname].downpaymentpercentage}%` : `${0}%`}</span>
                                             </li>
                                         )}
                                         {showDescriptions[paymentplanname] && (
                                             <li className="font-normal text-sm md:text-lg text-black">
                                                 Admin Fees:
                                                 {" "}
-                                                <span className="font-semibold text-primary">{showDescriptions[paymentplanname]?.adminfees ? `${showDescriptions[paymentplanname].adminfeespercentage}%` : `${0}%`}</span>
+                                                <span className="font-semibold">{showDescriptions[paymentplanname]?.adminfees ? `${showDescriptions[paymentplanname].adminfeespercentage}%` : `${0}%`}</span>
                                             </li>
                                         )}
                                         {showDescriptions[paymentplanname] && (
                                             <li className="font-normal text-sm md:text-lg text-black">
                                                 Interest Rate:
                                                 {" "}
-                                                <span className="font-semibold text-primary">{showDescriptions[paymentplanname]?.interestrate ? `${showDescriptions[paymentplanname].interestrateperyearpercentage}%` : `${0}%`}</span>
+                                                <span className="font-semibold">{showDescriptions[paymentplanname]?.interestrate ? `${showDescriptions[paymentplanname].interestrateperyearpercentage}%` : `${0}%`}</span>
                                             </li>
                                         )}
                                     </ul>
@@ -137,7 +132,7 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
                     ))}
                 </div>
             </motion.div>
-            <p className="font-semibold text-lg md:text-2xl mt-8 md:mt-16">*To guarantee defect-free installations, Payment plans with ODA enable you to complete the final 5% of the total payment up to 3 months after project delivery.</p>
+            <p className="font-semibold text-lg md:text-2xl mt-8 md:mt-16">*To guarantee defect-free installations, Payment plans with ODA enable you to complete the final 5% of the total payment up to 1 month after project delivery.</p>
         </div>
     );
 }

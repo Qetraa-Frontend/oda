@@ -59,7 +59,7 @@ export default function WhyOdaPlansContent() {
                             type: "spring",
                         }}
                     >
-                        <span className="font-bold text-lg md:text-2xl">What You Get With Oda</span>
+                        <span className="font-bold text-lg md:text-2xl">We design & built hassle-free finishing packages</span>
                         <br />
                         {" "}
                         All Our Plans Include
@@ -89,7 +89,7 @@ export default function WhyOdaPlansContent() {
                                     {id}
                                 </span>
                                 <div className="mt-16">
-                                    <h5 className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl text-white">{title}</h5>
+                                    <h5 className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl text-white min-h-16">{title}</h5>
                                     <p className="font-bold font-nanum-myeongjo text-xs md:text-sm text-white py-7 md:py-14">{description}</p>
                                 </div>
                             </motion.div>
