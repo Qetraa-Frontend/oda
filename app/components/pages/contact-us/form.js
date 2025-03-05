@@ -6,7 +6,6 @@ import { Asterisk } from "lucide-react";
 import { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
-import Social from "@/app/components/shared/social";
 import Spinner from "@/app/components/shared/spinner";
 import { contactUsForm } from "@/app/data/forms/contact-us";
 import { contactUsFormSchema } from "@/app/schemas/contact-us";
@@ -77,7 +76,7 @@ export default function ContactUsForm() {
             >
                 <motion.div
                     animate={isInView && { x: 0 }}
-                    className="col-span-1 md:col-span-6"
+                    className="col-span-1 md:col-span-6 flex items-center"
                     initial={{ x: "-100vw" }}
                     transition={{
                         damping: 10,
@@ -90,11 +89,6 @@ export default function ContactUsForm() {
                     <h2 className="font-extrabold font-nanum-myeongjo text-6xl lg:text-8xl">
                         Let&apos;s Talk
                     </h2>
-                    <p className="font-bold font-nanum-myeongjo opacity-65 text-[22px] lg:text-[32px] lg:leading-[40px] mt-5 lg:mt-10">Got a unit on your mind ? Let’s discuss about the details.</p>
-                    <div className="mt-10 lg:mt-20">
-                        <span className="font-extrabold font-nanum-myeongjo text-[22px] lg:text-[32px]">Call Us</span>
-                        <Social />
-                    </div>
                 </motion.div>
                 <motion.div
                     animate={isInView && { x: 0 }}

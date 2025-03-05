@@ -12,7 +12,7 @@ import {
 } from "react-leaflet";
 
 export default function ContactUsMap() {
-    const position = [30.0729, 31.0199];
+    const position = [30.068882, 31.221696];
 
     return (
         <div className="container mx-auto">
