@@ -438,7 +438,7 @@ export default function CartSummary({
                                     <thead>
                                         <tr className="bg-primary h-20">
                                             <th
-                                                className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4"
+                                                className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4 relative z-50"
                                                 colSpan="3"
                                             >
                                                 Foundation
@@ -452,10 +452,10 @@ export default function CartSummary({
                                                 key={index} // eslint-disable-line
                                             >
                                                 <td
-                                                    className="font-normal text-lg md:text-2xl px-2 md:px-4"
+                                                    className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                                     colSpan={3}
                                                 >
-                                                    <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block">{plandetailsname}</h5>
+                                                    <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
                                                 </td>
                                             </tr>
                                         ))}
@@ -463,7 +463,7 @@ export default function CartSummary({
                                     <thead>
                                         <tr className="bg-primary h-20">
                                             <th
-                                                className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4"
+                                                className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4 relative z-50"
                                                 colSpan="3"
                                             >
                                                 Decoration
@@ -477,19 +477,19 @@ export default function CartSummary({
                                                 key={index} // eslint-disable-line
                                             >
                                                 <td
-                                                    className="font-normal text-lg md:text-2xl px-2 md:px-4"
+                                                    className={`font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4 ${index === plans[order.planID].decoration.length - 1 ? "rounded-br-xl" : ""}`}
                                                     colSpan={3}
                                                 >
-                                                    <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block">{plandetailsname}</h5>
+                                                    <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
                                                 </td>
                                             </tr>
                                         ))}
                                     </tbody>
                                 </table>
                                 <div className="flex flex-wrap gap-4 md:gap-8 justify-end absolute -top-0 right-0 w-full h-full">
-                                    <div className="relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center pt-8 px-4 md:px-8 hover:bg-primary transition-all duration-1000">
-                                        <h5 className="font-semibold text-lg md:text-2xl uppercase">{plans[order.planID].details.planname}</h5>
-                                        <div className="flex flex-col justify-center items-center relative top-24">
+                                    <div className="relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center px-4 md:px-8 hover:bg-primary transition-all duration-1000">
+                                        <h5 className="font-semibold text-base md:text-xl uppercase h-20 flex items-center justify-center">{plans[order.planID].details.planname}</h5>
+                                        <div className="flex flex-col justify-center items-center relative top-[78px]">
                                             {plans[order.planID].foundation.map(({
                                                 description,
                                                 stars,
@@ -498,7 +498,7 @@ export default function CartSummary({
                                                     className="flex items-center gap-1 h-20"
                                                     key={i} // eslint-disable-line
                                                 >
-                                                    {description ? <h6 className="font-medium text-xs md:text-base">{description}</h6> : Array.from(
+                                                    {description ? <h6 className="font-medium text-xs sm:text-sm md:text-base">{description}</h6> : Array.from(
                                                         { length: stars },
                                                         (_, index) => index + 1,
                                                     ).map((_, indx) => (
@@ -511,7 +511,7 @@ export default function CartSummary({
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className="flex flex-col justify-center items-center relative top-44">
+                                        <div className="flex flex-col justify-center items-center relative top-[157px]">
                                             {plans[order.planID].decoration.map(({
                                                 description,
                                                 stars,
@@ -520,7 +520,7 @@ export default function CartSummary({
                                                     className="flex items-center gap-1 h-20"
                                                     key={i} // eslint-disable-line
                                                 >
-                                                    {description ? <h6 className="font-medium text-xs md:text-base">{description}</h6> : Array.from(
+                                                    {description ? <h6 className="font-medium text-xs sm:text-sm md:text-base">{description}</h6> : Array.from(
                                                         { length: stars },
                                                         (_, index) => index + 1,
                                                     ).map((_, indx) => (
@@ -614,33 +614,35 @@ export default function CartSummary({
                                                         <>
                                                             <div className="flex flex-wrap gap-2 justify-between items-center">
                                                                 <div className="flex gap-2">
-                                                                    <Input
-                                                                        className="w-[57px] h-[33px] rounded-lg border border-gray-300"
-                                                                        defaultValue={quantity}
-                                                                        disabled={loading || addongroup === "Boilers"}
-                                                                        id={`addon_input_${addonID}`}
-                                                                        inputMode="numeric"
-                                                                        pattern="[0-9]*"
-                                                                        type="number"
-                                                                        onChange={(e) => {
-                                                                            const { value } = e.target;
+                                                                    {addongroup !== "Boilers" && (
+                                                                        <Input
+                                                                            className="w-[57px] h-[33px] rounded-lg border border-gray-300"
+                                                                            defaultValue={quantity}
+                                                                            disabled={loading || addongroup === "Boilers"}
+                                                                            id={`addon_input_${addonID}`}
+                                                                            inputMode="numeric"
+                                                                            pattern="[0-9]*"
+                                                                            type="number"
+                                                                            onChange={(e) => {
+                                                                                const { value } = e.target;
 
-                                                                            if (!handleNumberInputLogic(e)) return;
+                                                                                if (!handleNumberInputLogic(e)) return;
 
-                                                                            if (value !== "") {
-                                                                                updateCartHandler(
-                                                                                    "addon",
-                                                                                    addonID,
-                                                                                    parseInt(value),
-                                                                                    false,
-                                                                                    quantity,
-                                                                                );
-                                                                            }
-                                                                        }}
-                                                                        onKeyDown={(e) => {
-                                                                            if (e.key === "-" || e.key === "e") e.preventDefault();
-                                                                        }}
-                                                                    />
+                                                                                if (value !== "") {
+                                                                                    updateCartHandler(
+                                                                                        "addon",
+                                                                                        addonID,
+                                                                                        parseInt(value),
+                                                                                        false,
+                                                                                        quantity,
+                                                                                    );
+                                                                                }
+                                                                            }}
+                                                                            onKeyDown={(e) => {
+                                                                                if (e.key === "-" || e.key === "e") e.preventDefault();
+                                                                            }}
+                                                                        />
+                                                                    )}
                                                                     <div className="flex flex-nowrap items-center gap-2">
                                                                         <Button
                                                                             className="font-medium text-xs md:text-base border border-gray-300 w-[106px] h-[33px] rounded-lg flex gap-1 items-center justify-center bg-transparent text-black hover:bg-primary hover:text-black transition-all duration-500"
@@ -689,7 +691,7 @@ export default function CartSummary({
                                                     </div>
                                                     <div className="w-full py-2 md:py-4 mt-3 md:mt-6">
                                                         <div className="flex flex-wrap gap-2 justify-between items-center">
-                                                            <div className="flex flex-wrap gap-2 items-center lg:w-[78%]">
+                                                            <div className="flex flex-wrap gap-2 sm:gap-4 items-center lg:w-[78%]">
                                                                 {airConditioningAddons.map(({
                                                                     addonID,
                                                                     addonName,

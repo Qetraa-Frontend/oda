@@ -94,7 +94,7 @@ export default function BuildYourKitPlans({ plans }) {
                             <thead>
                                 <tr className="bg-primary h-20">
                                     <th
-                                        className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4"
+                                        className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4 relative z-50"
                                         colSpan="3"
                                     >
                                         Foundation
@@ -105,13 +105,13 @@ export default function BuildYourKitPlans({ plans }) {
                                 {formattedPlans[0]?.foundation.map(({ plandetailsname }, index) => (
                                     <tr
                                         className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
-                                                        key={index} // eslint-disable-line
+                                        key={index} // eslint-disable-line
                                     >
                                         <td
-                                            className="font-normal text-lg md:text-2xl px-2 md:px-4"
+                                            className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                             colSpan={3}
                                         >
-                                            <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block">{plandetailsname}</h5>
+                                            <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
                                         </td>
                                     </tr>
                                 ))}
@@ -121,7 +121,7 @@ export default function BuildYourKitPlans({ plans }) {
                             <thead>
                                 <tr className="bg-primary h-20">
                                     <th
-                                        className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4"
+                                        className="font-semibold text-[22px] md:text-[32px] text-left px-2 md:px-4 relative z-50"
                                         colSpan="3"
                                     >
                                         Decoration
@@ -132,13 +132,13 @@ export default function BuildYourKitPlans({ plans }) {
                                 {formattedPlans[0]?.decoration.map(({ plandetailsname }, index) => (
                                     <tr
                                         className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
-                                                        key={index} // eslint-disable-line
+                                            key={index} // eslint-disable-line
                                     >
                                         <td
-                                            className="font-normal text-lg md:text-2xl px-2 md:px-4"
+                                            className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                             colSpan={3}
                                         >
-                                            <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block">{plandetailsname}</h5>
+                                            <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
                                         </td>
                                     </tr>
                                 ))}
@@ -186,14 +186,14 @@ export default function BuildYourKitPlans({ plans }) {
                             if (currentPlan?.departments) currentPlanDepartments = currentPlan.departments;
 
                             return (
-                                (
-                                    <div
-                                        className={`${formattedPlanDetails.planid !== 4 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center pt-8 px-4 md:px-8 hover:bg-primary ${plan.id === (currentPlan?.details.planid || formattedPlanDetails.planid) ? "bg-primary" : ""} transition-all duration-1000`}
-                                        key={formattedPlanDetails.planid}
-                                    >
-                                        <div className="xl:hidden absolute top-8 right-[2px] w-full flex justify-between">
+                                <div
+                                    className={`${formattedPlanDetails.planid !== 4 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center px-2 md:px-4 hover:bg-primary ${plan.id === (currentPlan?.details.planid || formattedPlanDetails.planid) ? "bg-primary" : ""} transition-all duration-1000`}
+                                    key={formattedPlanDetails.planid}
+                                >
+                                    <div className="xl:hidden absolute h-20 right-[2px] w-full flex items-center">
+                                        <div className="flex justify-between w-full">
                                             <ChevronLeft
-                                                className={`${currentPlan?.details.planid === 4 || !currentPlan?.details?.planid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                                className={`${currentPlan?.details.planid === 4 || !currentPlan?.details?.planid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"} relative right-1`}
                                                 size={30}
                                                 onClick={() => (currentPlan?.details.planid > 4) && setCurrentPlan({
                                                     departments: [
@@ -210,7 +210,7 @@ export default function BuildYourKitPlans({ plans }) {
                                                 })}
                                             />
                                             <ChevronRight
-                                                className={`${currentPlan?.details.planid === formattedPlans.length + 3 ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"}`}
+                                                className={`${currentPlan?.details.planid === formattedPlans.length + 3 ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"} relative left-1`}
                                                 size={30}
                                                 onClick={() => currentPlan?.details.planid !== formattedPlans.length + 3 && setCurrentPlan({
                                                     departments: [
@@ -227,72 +227,72 @@ export default function BuildYourKitPlans({ plans }) {
                                                 })}
                                             />
                                         </div>
-                                        <h5 className="font-semibold text-lg md:text-2xl uppercase">{currentPlan?.details?.planname || formattedPlanDetails?.planname}</h5>
-                                        <div className="flex flex-col justify-center items-center relative top-24">
-                                            {currentPlanDepartments[0].features.map(({
-                                                description,
-                                                stars,
-                                            }, i) => (
-                                                <div
-                                                    className="flex items-center gap-1 h-20"
-                                                                    key={i} // eslint-disable-line
-                                                >
-                                                    {description ? <h6 className="font-medium text-xs md:text-base">{description}</h6> : Array.from(
-                                                        { length: stars },
-                                                        (_, index) => index + 1,
-                                                    ).map((_, indx) => (
-                                                        <Check
-                                                            className="rounded-full border border-black p-1 md:p-2"
-                                                                            key={indx} // eslint-disable-line
-                                                            size={35}
-                                                        />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <div className="flex flex-col justify-center items-center relative top-44">
-                                            {currentPlanDepartments[1].features.map(({
-                                                description,
-                                                stars,
-                                            }, i) => (
-                                                <div
-                                                    className="flex items-center gap-1 h-20"
-                                                                    key={i} // eslint-disable-line
-                                                >
-                                                    {description ? <h6 className="font-medium text-xs md:text-base">{description}</h6> : Array.from(
-                                                        { length: stars },
-                                                        (_, index) => index + 1,
-                                                    ).map((_, indx) => (
-                                                        <Check
-                                                            className="rounded-full border border-black p-1 md:p-2"
-                                                                            key={indx} // eslint-disable-line
-                                                            size={35}
-                                                        />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <div className="relative top-[195px]">
-                                            <Checkbox
-                                                checked={plan.id === (currentPlan?.details.planid || formattedPlanDetails.planid)}
-                                                className="w-8 h-8 border border-black"
-                                                onCheckedChange={(value) => {
-                                                    if (value) {
-                                                        setPlan({
-                                                            id: currentPlan?.details.planid || formattedPlanDetails.planid,
-                                                            name: currentPlan?.details.planname || formattedPlanDetails.planname,
-                                                        });
-                                                    } else {
-                                                        setPlan({
-                                                            id: "",
-                                                            name: "",
-                                                        });
-                                                    }
-                                                }}
-                                            />
-                                        </div>
                                     </div>
-                                )
+                                    <h5 className="font-semibold text-base md:text-xl uppercase h-20 flex items-center justify-center">{currentPlan?.details?.planname || formattedPlanDetails?.planname}</h5>
+                                    <div className="flex flex-col justify-center items-center relative top-[78px]">
+                                        {currentPlanDepartments[0].features.map(({
+                                            description,
+                                            stars,
+                                        }, i) => (
+                                            <div
+                                                className="flex items-center gap-1 h-20"
+                                                        key={i} // eslint-disable-line
+                                            >
+                                                {description ? <h6 className="font-medium text-xs sm:text-sm md:text-base">{description}</h6> : Array.from(
+                                                    { length: stars },
+                                                    (_, index) => index + 1,
+                                                ).map((_, indx) => (
+                                                    <Check
+                                                        className="rounded-full border border-black p-1 md:p-2"
+                                                                key={indx} // eslint-disable-line
+                                                        size={35}
+                                                    />
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="flex flex-col justify-center items-center relative top-[157px]">
+                                        {currentPlanDepartments[1].features.map(({
+                                            description,
+                                            stars,
+                                        }, i) => (
+                                            <div
+                                                className="flex items-center gap-1 h-20"
+                                                key={i} // eslint-disable-line
+                                            >
+                                                {description ? <h6 className="font-medium text-xs sm:text-sm md:text-base">{description}</h6> : Array.from(
+                                                    { length: stars },
+                                                    (_, index) => index + 1,
+                                                ).map((_, indx) => (
+                                                    <Check
+                                                        className="rounded-full border border-black p-1 md:p-2"
+                                                                key={indx} // eslint-disable-line
+                                                        size={35}
+                                                    />
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="relative top-[195px]">
+                                        <Checkbox
+                                            checked={plan.id === (currentPlan?.details.planid || formattedPlanDetails.planid)}
+                                            className="w-8 h-8 border border-black"
+                                            onCheckedChange={(value) => {
+                                                if (value) {
+                                                    setPlan({
+                                                        id: currentPlan?.details.planid || formattedPlanDetails.planid,
+                                                        name: currentPlan?.details.planname || formattedPlanDetails.planname,
+                                                    });
+                                                } else {
+                                                    setPlan({
+                                                        id: "",
+                                                        name: "",
+                                                    });
+                                                }
+                                            }}
+                                        />
+                                    </div>
+                                </div>
                             );
                         })}
                     </motion.div>
