@@ -36,24 +36,23 @@ export default function BuildYourKitSelections() {
                             pattern="[0-9]*"
                             type="number"
                             value={unitArea}
-                            onChange={(e) => {
+                            onBlur={(e) => {
                                 const { value } = e.target;
-
-                                if (!handleNumberInputLogic(e)) return;
 
                                 if (Number(value) < 50) {
                                     e.target.value == 50; // eslint-disable-line
 
                                     setUnitArea(50);
-
-                                    return;
                                 } else if (Number(value) > 1500) { // eslint-disable-line
-                                    e.target.value == 500; // eslint-disable-line
+                                    e.target.value == 1500; // eslint-disable-line
 
                                     setUnitArea(1500);
-
-                                    return;
                                 }
+                            }}
+                            onChange={(e) => {
+                                const { value } = e.target;
+
+                                if (!handleNumberInputLogic(e)) return;
 
                                 setUnitArea(value);
                             }}

@@ -1,4 +1,4 @@
-export const contactUsForm = [
+export const contactUsFormData = [
     {
         id: 1,
         label: "Name",

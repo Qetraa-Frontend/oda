@@ -6,7 +6,8 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import Spinner from "@/app/components/shared/spinner";
-import { odaAmbassadorForm } from "@/app/data/forms/oda-ambassador";
+import { odaAmbassadorFormData } from "@/app/data/forms/oda-ambassador";
+import { handleNumberInputLogic } from "@/app/lib/utils";
 import { odaAmbassadorFormSchema } from "@/app/schemas/oda-ambassador";
 import { Button } from "@/app/ui/button";
 import { Input } from "@/app/ui/input";
@@ -18,8 +19,14 @@ import {
     SelectValue,
 } from "@/app/ui/select";
 
-export default function OdaAmbassadorForm() {
+export default function OdaAmbassadorForm({ developers }) {
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
     const [loading, setLoading] = useState(false);
+
+    const [unitArea, setUnitArea] = useState("");
+
+    const [budget, setBudget] = useState("");
 
     const [responseMsg, setResponseMsg] = useState({
         text: "",
@@ -47,7 +54,16 @@ export default function OdaAmbassadorForm() {
         resolver: zodResolver(odaAmbassadorFormSchema),
     });
 
-    const onSubmit = (data) => {
+    const onSubmit = ({
+        clientStatus,
+        developer,
+        ownerName,
+        ownerPhoneNumber,
+        referralEmail,
+        referralName,
+        referralPhoneNumber,
+        unitLocation,
+    }) => {
         setResponseMsg({
             text: "",
             type: null,
@@ -55,21 +71,56 @@ export default function OdaAmbassadorForm() {
 
         setLoading(true);
 
-        console.log(data);
-
-        setTimeout(
-            () => {
-                setLoading(false);
-
-                setResponseMsg({
-                    text: "Form submitted successfully!",
-                    type: "success",
-                });
-
-                reset();
+        fetch(
+            `${backendUrl}Odaambassador`,
+            {
+                body: JSON.stringify({
+                    ownerdeveloper: developer,
+                    ownername: ownerName,
+                    ownerphonenumber: ownerPhoneNumber,
+                    ownerselectbudget: parseInt(budget),
+                    ownerunitarea: unitArea < 50 ? 50 : unitArea > 1500 ? 1500 : parseInt(unitArea), // eslint-disable-line
+                    ownerunitlocation: unitLocation,
+                    referralclientstatue: clientStatus,
+                    referralemail: referralEmail,
+                    referralname: referralName,
+                    referralphonenumber: referralPhoneNumber,
+                }),
+                headers: { "Content-Type": "application/json" },
+                method: "POST",
             },
-            4000,
-        );
+        ).then((response) => response.json()).then(() => {
+            setLoading(false);
+
+            setResponseMsg({
+                text: "Form submitted successfully!",
+                type: "success",
+            });
+
+            reset({
+                budget: "",
+                clientStatus: "",
+                developer: "",
+                ownerName: "",
+                ownerPhoneNumber: "",
+                referralEmail: "",
+                referralName: "",
+                referralPhoneNumber: "",
+                unitArea: "",
+                unitLocation: "",
+            });
+
+            setUnitArea("");
+
+            setBudget("");
+        })["catch"](() => {
+            setLoading(false);
+
+            setResponseMsg({
+                text: "Failed to submit the form!",
+                type: "error",
+            });
+        });
     };
 
     return (
@@ -82,9 +133,10 @@ export default function OdaAmbassadorForm() {
                     <div className="mb-[76px] md:mb-[153px]">
                         <h2 className="font-semibold text-[40px] md:text-[64px] text-center mb-[44px] md:mb-[88px]">Owner Details</h2>
                         <div className="flex flex-col gap-3 md:gap-6 p-3 md:p-6 border border-black border-opacity-35 rounded-lg">
-                            {odaAmbassadorForm.ownerDetails.map(({
+                            {odaAmbassadorFormData.ownerDetails.map(({
                                 data,
                                 id,
+                                isAsync,
                                 label,
                                 name,
                                 type,
@@ -105,12 +157,49 @@ export default function OdaAmbassadorForm() {
                                             <Controller
                                                 control={control}
                                                 name={name}
-                                                render={({ field: inputProps }) => (
+                                                render={({ field: inputProps }) => (type === "number" ? (
+                                                    <Input
+                                                        inputMode="numeric"
+                                                        max={name === "unitArea" ? 1500 : Infinity}
+                                                        min={name === "unitArea" ? 50 : 0}
+                                                        pattern="[0-9]*"
+                                                        type="number"
+                                                        value={name === "unitArea" ? unitArea : budget}
+                                                        onBlur={(e) => {
+                                                            const { value } = e.target;
+
+                                                            if (name === "unitArea") {
+                                                                if (Number(value) < 50) {
+                                                                    e.target.value == 50; // eslint-disable-line
+
+                                                                    setUnitArea(50);
+                                                                } else if (Number(value) > 1500) { // eslint-disable-line
+                                                                    e.target.value == 1500; // eslint-disable-line
+
+                                                                    setUnitArea(1500);
+                                                                }
+                                                            }
+                                                        }}
+                                                        onChange={(e) => {
+                                                            const { value } = e.target;
+
+                                                            if (!handleNumberInputLogic(e)) return;
+
+                                                            inputProps.onChange(e);
+
+                                                            if (name === "unitArea") setUnitArea(value);
+                                                            else setBudget(value);
+                                                        }}
+                                                        onKeyDown={(e) => {
+                                                            if (e.key === "-" || e.key === "e") e.preventDefault();
+                                                        }}
+                                                    />
+                                                ) : (
                                                     <Input
                                                         {...inputProps}
                                                         type={type}
                                                     />
-                                                )}
+                                                ))}
                                             />
                                         ) : (
                                             <Controller
@@ -125,7 +214,14 @@ export default function OdaAmbassadorForm() {
                                                             <SelectValue />
                                                         </SelectTrigger>
                                                         <SelectContent>
-                                                            {data.map((option) => (
+                                                            {isAsync ? developers.map(({ developername }) => (
+                                                                <SelectItem
+                                                                    key={developername}
+                                                                    value={developername}
+                                                                >
+                                                                    {developername}
+                                                                </SelectItem>
+                                                            )) : data.map((option) => (
                                                                 <SelectItem
                                                                     key={option}
                                                                     value={option}
@@ -147,7 +243,7 @@ export default function OdaAmbassadorForm() {
                     <div>
                         <h2 className="font-semibold text-[40px] md:text-[64px] text-center mb-[44px] md:mb-[88px]">Referral Details</h2>
                         <div className="flex flex-col gap-3 md:gap-6 p-3 md:p-6 border border-black border-opacity-35 rounded-lg">
-                            {odaAmbassadorForm.referralDetails.map(({
+                            {odaAmbassadorFormData.referralDetails.map(({
                                 data,
                                 id,
                                 label,

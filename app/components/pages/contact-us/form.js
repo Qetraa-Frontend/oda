@@ -7,13 +7,15 @@ import { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import Spinner from "@/app/components/shared/spinner";
-import { contactUsForm } from "@/app/data/forms/contact-us";
+import { contactUsFormData } from "@/app/data/forms/contact-us";
 import { contactUsFormSchema } from "@/app/schemas/contact-us";
 import { Button } from "@/app/ui/button";
 import { Input } from "@/app/ui/input";
 import { Textarea } from "@/app/ui/textarea";
 
 export default function ContactUsForm() {
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
     const [loading, setLoading] = useState(false);
 
     const [responseMsg, setResponseMsg] = useState({
@@ -43,7 +45,12 @@ export default function ContactUsForm() {
         resolver: zodResolver(contactUsFormSchema),
     });
 
-    const onSubmit = (data) => {
+    const onSubmit = ({
+        comment,
+        email,
+        name,
+        phoneNumber,
+    }) => {
         setResponseMsg({
             text: "",
             type: null,
@@ -51,21 +58,41 @@ export default function ContactUsForm() {
 
         setLoading(true);
 
-        console.log(data);
-
-        setTimeout(
-            () => {
-                setLoading(false);
-
-                setResponseMsg({
-                    text: "Form submitted successfully!",
-                    type: "success",
-                });
-
-                reset();
+        fetch(
+            `${backendUrl}contactus`,
+            {
+                body: JSON.stringify({
+                    comments: comment || "",
+                    email,
+                    firstname: name,
+                    lastname: "",
+                    phonenumber: phoneNumber,
+                }),
+                headers: { "Content-Type": "application/json" },
+                method: "POST",
             },
-            4000,
-        );
+        ).then((response) => response.json()).then(() => {
+            setLoading(false);
+
+            setResponseMsg({
+                text: "Form submitted successfully!",
+                type: "success",
+            });
+
+            reset({
+                comment: "",
+                email: "",
+                name: "",
+                phoneNumber: "",
+            });
+        })["catch"](() => {
+            setLoading(false);
+
+            setResponseMsg({
+                text: "Failed to submit the form!",
+                type: "error",
+            });
+        });
     };
 
     return (
@@ -105,7 +132,7 @@ export default function ContactUsForm() {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="p-1 md:p-3 border border-black border-opacity-35 rounded-lg">
                             <div className="flex flex-col gap-3 md:gap-6">
-                                {contactUsForm.map(({
+                                {contactUsFormData.map(({
                                     id,
                                     isOptional,
                                     label,
@@ -159,7 +186,7 @@ export default function ContactUsForm() {
                                     ) : "Submit"}
                                 </Button>
                                 {responseMsg.text && (
-                                    <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
+                                    <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center sm:text-left`}>{responseMsg.text}</span>
                                 )}
                             </div>
                         </div>

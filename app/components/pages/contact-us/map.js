@@ -20,7 +20,7 @@ export default function ContactUsMap() {
                 <MapContainer
                     center={position}
                     className="absolute top-0 left-0 w-full h-full"
-                    zoom={11}
+                    zoom={100}
                     scrollWheelZoom
                 >
                     <TileLayer
