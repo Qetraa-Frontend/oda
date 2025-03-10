@@ -1019,6 +1019,7 @@ export default function CartSummary({
                                             {order.paymentDTO.adminfees ? order.paymentDTO?.adminfeesValue?.toLocaleString() : 0?.toLocaleString()}
                                             {" "}
                                             EGP
+                                            {order.paymentDTO.adminfees ? " - One Time" : ""}
                                         </span>
                                     </li>
                                     <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
@@ -1032,6 +1033,7 @@ export default function CartSummary({
                                             {order.paymentDTO.interestrate ? order.paymentDTO?.interestrateValue?.toLocaleString() : 0?.toLocaleString()}
                                             {" "}
                                             EGP
+                                            {order.paymentDTO.interestrate ? "/ Year" : ""}
                                         </span>
                                     </li>
                                     <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
