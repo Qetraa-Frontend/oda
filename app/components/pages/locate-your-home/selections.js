@@ -90,39 +90,42 @@ export default function LocateYourHomeSelections({
                                 ))}
                             </SelectContent>
                         </Select>
-                        <Input
-                            className="text-[500] text-[22px] md:text-[32px] !placeholder-black border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full"
-                            inputMode="numeric"
-                            max={1500}
-                            min={50}
-                            pattern="[0-9]*"
-                            placeholder="Unit Area"
-                            type="number"
-                            value={unitArea}
-                            onBlur={(e) => {
-                                const { value } = e.target;
+                        <div>
+                            <Input
+                                className="text-[500] text-[22px] md:text-[32px] !placeholder-black border-0 bg-primary rounded-2xl outline-none shadow-none px-3 h-20 w-full"
+                                inputMode="numeric"
+                                max={1500}
+                                min={50}
+                                pattern="[0-9]*"
+                                placeholder="Unit Area"
+                                type="number"
+                                value={unitArea}
+                                onBlur={(e) => {
+                                    const { value } = e.target;
 
-                                if (Number(value) < 50) {
-                                    e.target.value == 50; // eslint-disable-line
+                                    if (Number(value) < 50) {
+                                        e.target.value == 50; // eslint-disable-line
 
-                                    setUnitArea(50);
+                                        setUnitArea(50);
                                 } else if (Number(value) > 1500) { // eslint-disable-line
                                     e.target.value == 1500; // eslint-disable-line
 
-                                    setUnitArea(1500);
-                                }
-                            }}
-                            onChange={(e) => {
-                                const { value } = e.target;
+                                        setUnitArea(1500);
+                                    }
+                                }}
+                                onChange={(e) => {
+                                    const { value } = e.target;
 
-                                if (!handleNumberInputLogic(e)) return;
+                                    if (!handleNumberInputLogic(e)) return;
 
-                                setUnitArea(value);
-                            }}
-                            onKeyDown={(e) => {
-                                if (e.key === "-" || e.key === "e") e.preventDefault();
-                            }}
-                        />
+                                    setUnitArea(value);
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === "-" || e.key === "e") e.preventDefault();
+                                }}
+                            />
+                            {((Number(unitArea) < 50 || Number(unitArea) > 1500) && unitArea) && <span className="font-bold text-xs md:text-base text-red-500 block w-full md:w-fit mt-2">Unit Area Must be between 50 & 1500 M2</span>}
+                        </div>
                     </div>
                 </div>
             </div>

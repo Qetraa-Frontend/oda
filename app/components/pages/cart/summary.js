@@ -1050,12 +1050,7 @@ export default function CartSummary({
                                     </li>
                                     {order.paymentDTO.equalPayment ? (
                                         <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
-                                            <span className="font-normal text-base md:text-xl">
-                                                Installments:
-                                                {" "}
-                                                {order.paymentDTO.installmentDTO[0]?.installmentpercentage}
-                                                %
-                                            </span>
+                                            <span className="font-normal text-base md:text-xl">Installments:</span>
                                             <span className="font-normal text-xs md:text-base">
                                                 {order.paymentDTO.installmentDTO[0]?.installmentvalue.toLocaleString()}
                                                 {" "}

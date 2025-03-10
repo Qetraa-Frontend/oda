@@ -381,7 +381,7 @@ export default function BuildYourKitAutomation({ automation }) {
                 <div className="flex flex-col gap-2">
                     <Button
                         className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat mb-10 md:mb-0"
-                        disabled={!plan.id || !unitArea}
+                        disabled={!plan.id || !unitArea || Number(unitArea) < 50 || Number(unitArea) > 1500}
                         onClick={() => {
                             if (mode === "edit") saveOrderHandler();
                             else {
@@ -396,7 +396,7 @@ export default function BuildYourKitAutomation({ automation }) {
                         {mode === "edit" ? loading ? <Spinner color="text-black" /> : "Save" : "Add to Cart"} {/* eslint-disable-line */}
                     </Button>
                     {responseMsg.text && (
-                        <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
+                        <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-fit text-center`}>{responseMsg.text}</span>
                     )}
                 </div>
             </div>

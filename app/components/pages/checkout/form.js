@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { Asterisk } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import Spinner from "@/app/components/shared/spinner";
@@ -215,6 +215,20 @@ export default function CheckoutForm({ paymentPlans }) {
             });
         });
     };
+
+    useEffect(
+        () => {
+            if (mode === "edit") {
+                reset({
+                    email: info?.email,
+                    name: info?.name,
+                    paymentPlan: info?.paymentPlan.id,
+                    phoneNumber: info?.phoneNumber,
+                });
+            }
+        },
+        [mode], // eslint-disable-line
+    );
 
     return (
         <div
