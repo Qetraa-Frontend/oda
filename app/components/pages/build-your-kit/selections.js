@@ -61,7 +61,7 @@ export default function BuildYourKitSelections() {
                             }}
                         />
                     </div>
-                    {((Number(unitArea) < 50 || Number(unitArea) > 1500) && unitArea) && <span className="font-bold text-xs md:text-base text-red-500 block w-full md:w-fit mt-2 bg-white px-2 rounded-lg">Unit Area Must be between 50 & 1500 M2</span>}
+                    {((Number(unitArea) < 50 || Number(unitArea) > 1500) && unitArea) && <span className="font-bold text-xs md:text-base text-red-500 block w-full md:w-fit mt-2 bg-white px-2 rounded-lg">Unit Area must be between 50 & 1500 M2</span>}
                 </div>
             </div>
             <div className="relative max-w-[1206px] h-[252px] mx-auto px-5 lg:px-0">

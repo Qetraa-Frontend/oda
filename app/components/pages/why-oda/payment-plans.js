@@ -77,7 +77,7 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
                                             paymentplanid,
                                         }) => (
                                             <span
-                                                className={`font-medium text-xs md:text-base rounded-lg w-fit border ${showDescriptions[paymentplanname]?.numberofinstallmentmonths === numberofinstallmentmonths ? "border-primary text-primary" : "border-gray-300 hover:border-primary hover:text-primary"} p-2 cursor-pointer transition-all duration-1000`}
+                                                className={`font-medium text-xs md:text-base rounded-lg w-fit border ${showDescriptions[paymentplanname]?.numberofinstallmentmonths === numberofinstallmentmonths ? "border-primary text-black bg-primary" : "border-gray-300 hover:border-primary hover:text-black hover:bg-primary"} p-2 cursor-pointer transition-all duration-1000`}
                                                 key={numberofinstallmentmonths}
                                                 onClick={() => {
                                                     if (showDescriptions[paymentplanname]?.numberofinstallmentmonths === numberofinstallmentmonths) setShowDescriptions({});
