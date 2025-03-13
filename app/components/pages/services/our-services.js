@@ -5,7 +5,7 @@ import { Button } from "@/app/ui/button";
 
 export default function OurServices() {
     return (
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[0px] pt-[120px] lg:pt-60 pb-[65px] lg:pb-[131px]">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[0px] py-[65px] lg:py-[130px]">
             <div className="col-span-1 lg:col-span-6">
                 <Image
                     alt="service_1"
@@ -20,7 +20,7 @@ export default function OurServices() {
                 <div className="w-full lg:w-1/2">
                     <div className="px-4 lg:px-8 pt-[14px] lg:pt-7 h-[220px] lg:h-[278px]">
                         <h3 className="font-medium text-[22px] lg:text-[32px] leading-6 lg:leading-9">Locate Your Home</h3>
-                        <p className="font-medium opacity-60 text-xs lg:text-sm mb-[17px] lg:mb-[34px] mt-1 lg:mt-2">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                        <p className="font-medium opacity-60 text-xs lg:text-sm mb-[17px] lg:mb-[34px] mt-1 lg:mt-2">Select from Oda Real Estate partners, pick your Unit Type & Size, and choose one of Oda universal finishing packages.</p>
                         <Link
                             className="float-right"
                             href="/locate-your-home"
@@ -50,7 +50,7 @@ export default function OurServices() {
                     <div>
                         <div className="px-4 lg:px-8 pt-5 lg:pt-10 h-[220px] lg:h-[274px]">
                             <h3 className="font-medium text-[22px] lg:text-[32px] leading-6 lg:leading-9">Build Your Kit</h3>
-                            <p className="font-medium opacity-60 text-xs lg:text-sm mb-[17px] lg:mb-[34px] mt-1 lg:mt-2">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
+                            <p className="font-medium opacity-60 text-xs lg:text-sm mb-[17px] lg:mb-[34px] mt-1 lg:mt-2">Can’t find your Home?. Pick your Unit Location & Size, and choose one of Oda universal finishing packages.</p>
                             <Link
                                 className="float-right"
                                 href="/build-your-kit"
@@ -76,14 +76,13 @@ export default function OurServices() {
                 <div className="w-full lg:w-1/2">
                     <div className="px-4 lg:px-8 pt-[22px] lg:pt-[45px] h-[220px] lg:h-[274px]">
                         <h3 className="font-medium text-[22px] lg:text-[32px] leading-6 lg:leading-9">Need a Facelift</h3>
-                        <p className="font-medium opacity-60 text-xs lg:text-sm mb-[17px] lg:mb-[34px] mt-1 lg:mt-2">Lorem ipsum dolor sit amet consectetur. Id facilisi fringilla convallis vel nisl.</p>
-                        <Link
-                            className="float-right"
-                            href="/need-facelift"
-                            prefetch={false}
+                        <p className="font-medium opacity-60 text-xs lg:text-sm mb-[17px] lg:mb-[34px] mt-1 lg:mt-2">Looking for Home Renovations or Add-ons?. Customize your Unit rooms separately from Oda design & build kit Menu.</p>
+                        <Button
+                            className="font-semibold text-[13px] lg:text-[15px] !bg-primary text-black transition-all duration-1000 rounded-3xl py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat"
+                            disabled
                         >
-                            <Button className="font-semibold text-[13px] lg:text-[15px] !bg-primary text-black transition-all duration-1000 rounded-3xl py-1 md:py-2 px-4 md:px-8 hover:animate-heartBeat">Get Started</Button>
-                        </Link>
+                            Stay Tuned
+                        </Button>
                     </div>
                 </div>
             </div>

@@ -72,7 +72,7 @@ export default function WhyOdaPlansContent() {
                         }) => (
                             <motion.div
                                 animate={isInView && { x: 0 }}
-                                className={`col-span-1 xl:col-span-4 w-full min-h-[147px] md:min-h-[295px] p-2 md:p-4 relative ${id === 1 || id === 2 || id === 3 ? "xl:mb-14" : ""}`}
+                                className={`col-span-1 xl:col-span-4 w-full min-h-[100px] md:min-h-[200px] p-2 md:p-4 relative ${id === 1 || id === 2 || id === 3 ? "xl:mb-14" : ""}`}
                                 initial={{ x: isLg ? id === 1 || id === 2 || id === 5 || id === 6 ? "100vw" : "-100vw" : id === 1 || id === 2 || id === 3 ? "100vw" : "-100vw" }} // eslint-disable-line
                                 key={id}
                                 transition={{
@@ -90,7 +90,7 @@ export default function WhyOdaPlansContent() {
                                 </span>
                                 <div className="mt-16">
                                     <h5 className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl text-white min-h-16">{title}</h5>
-                                    <p className="font-bold font-nanum-myeongjo text-xs md:text-sm text-white py-7 md:py-14">{description}</p>
+                                    <p className="font-bold font-nanum-myeongjo text-sm md:text-lg text-white mt-3 md:mt-6">{description}</p>
                                 </div>
                             </motion.div>
                         ))}

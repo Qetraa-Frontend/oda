@@ -431,24 +431,28 @@ export const departments = [
 export const steps = [
     {
         alt: "step_1",
+        description: "Choose one of our packages and customize it with additional elements from our add-ons packages. Add your selections to your cart on the Oda App.",
         id: 1,
         imageSrc: "/images/pages/why-oda/how-it-works/step_1.webp",
         title: "Fill Up Your Cart",
     },
     {
         alt: "step_2",
+        description: "We'll match you with an interior design stylist who will collaborate with you to understand your ideas and style and plan your project.",
         id: 2,
         imageSrc: "/images/pages/why-oda/how-it-works/step_2.webp",
         title: "Meet Your Designer",
     },
     {
         alt: "step_3",
+        description: "Bring your vision to life by exploring colors, materials, textures, lightning, and layouts to create your perfect design.",
         id: 3,
         imageSrc: "/images/pages/why-oda/how-it-works/step_3.webp",
         title: "Co-Create Your Designs",
     },
     {
         alt: "step_4",
+        description: "Once you're satisfied with the design plan, we'll manage all logistics, including delivery, setup, styling workforce management, and purchase of materials and furniture.",
         id: 4,
         imageSrc: "/images/pages/why-oda/how-it-works/step_4.webp",
         title: "We'll Take Care Of the Rest",

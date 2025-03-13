@@ -7,7 +7,7 @@ export default function OrderConfirmed() {
                 alt="order_confirmed"
                 height={213}
                 loading="lazy"
-                src="/images/pages/cart/order_confirmed.webp"
+                src="/images/pages/cart/confirm_order.webp"
                 width={211}
             />
             <div className="mt-[27px] md:mt-[55px]">

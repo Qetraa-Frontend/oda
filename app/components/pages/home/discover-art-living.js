@@ -59,7 +59,7 @@ export default function HomeDiscoverArtLiving() {
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-8 sm:justify-items-center xl:justify-items-start relative left-6 sm:left-0">
                     <div className="col-span-1 flex flex-col gap-4 md:gap-8 xl:relative top-36">
                         <div className="w-20 h-20 bg-secondary xl:relative left-32" />
-                        <span className="font-bold text-[28px] md:text-[40px] rounded-[100px] uppercase bg-secondary text-center w-fit px-[6px] md:px-3 rotate-[17deg] xl:hover:animate-wiggleBottom cursor-default xl:relative top-8 left-8 my-4 md:my-0">MININAL</span>
+                        <span className="font-bold text-[28px] md:text-[40px] rounded-[100px] uppercase bg-secondary text-center w-fit px-[6px] md:px-3 rotate-[17deg] xl:hover:animate-wiggleBottom cursor-default xl:relative top-8 left-8 my-4 md:my-0">MINIMAL</span>
                         <div
                             className="relative xl:top-10 h-[150px] w-[150px] md:h-[207px] md:w-[207px]"
                             onMouseEnter={() => setImagesSrcs({

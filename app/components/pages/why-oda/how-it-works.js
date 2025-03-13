@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-import { steps } from "@/app/data/home";
+import { steps } from "@/app/data/why-oda";
 
 export default function HomeHowItWorks() {
     const [showDescriptions, setShowDescriptions] = useState({
