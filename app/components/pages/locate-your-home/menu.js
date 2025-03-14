@@ -58,7 +58,7 @@ export default function LocateYourHomeMenu({ plans }) {
                                 className="w-full col-span-1 xl:col-span-4"
                                 key={planid}
                             >
-                                <div className="bg-transparent px-4 md:px-8 pt-[13px] md:pt-[31px] pb-[13px] md:pb-[27px] rounded-2xl text-center border-black border-2 h-fit lg:h-full relative transition-all duration-1000">
+                                <div className="bg-transparent px-4 md:px-8 pt-[13px] md:pt-[31px] pb-[13px] md:pb-[27px] rounded-2xl text-center border-black border-2 h-fit md:h-full relative transition-all duration-1000">
                                     <Image
                                         alt={`plan_${planid}`}
                                         className="rounded-full mx-auto hover:opacity-70"

@@ -91,7 +91,7 @@ export default function WhyOdaFeatures({ plans }) {
                                         className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                         colSpan={3}
                                     >
-                                        <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
+                                        <h5 className="max-w-[230px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
                                     </td>
                                 </tr>
                             ))}
@@ -118,7 +118,7 @@ export default function WhyOdaFeatures({ plans }) {
                                         className={`font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4 ${index === formattedPlans[0].decoration.length - 1 ? "rounded-br-xl" : ""}`}
                                         colSpan={3}
                                     >
-                                        <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
+                                        <h5 className="max-w-[230px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
                                     </td>
                                 </tr>
                             ))}
@@ -164,42 +164,42 @@ export default function WhyOdaFeatures({ plans }) {
                                     <div className="xl:hidden absolute h-20 right-[2px] w-full flex items-center">
                                         <div className="flex justify-between w-full">
                                             <ChevronLeft
-                                                className={`${currentPlan?.details.planid === 4 || !currentPlan?.details?.planid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"} relative right-1`}
+                                                className={`${currentPlan?.details.planid === 1 || !currentPlan?.details?.planid ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"} relative right-1`}
                                                 size={30}
-                                                onClick={() => (currentPlan?.details.planid > 4) && setCurrentPlan({
+                                                onClick={() => (currentPlan?.details.planid > 1) && setCurrentPlan({
                                                     departments: [
                                                         {
-                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) - 1).foundation,
+                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).foundation,
                                                             title: "Foundation",
                                                         },
                                                         {
-                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) - 1).decoration,
+                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).decoration,
                                                             title: "Decoration",
                                                         },
                                                     ],
-                                                    details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) - 1).details,
+                                                    details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) - 1).details,
                                                 })}
                                             />
                                             <ChevronRight
-                                                className={`${currentPlan?.details.planid === formattedPlans.length + 3 ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"} relative left-1`}
+                                                className={`${currentPlan?.details.planid === formattedPlans.length ? "opacity-50 cursor-default" : "cursor-pointer opacity-100"} relative left-1`}
                                                 size={30}
-                                                onClick={() => currentPlan?.details.planid !== formattedPlans.length + 3 && setCurrentPlan({
+                                                onClick={() => currentPlan?.details.planid !== formattedPlans.length && setCurrentPlan({
                                                     departments: [
                                                         {
-                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) + 1).foundation,
+                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).foundation,
                                                             title: "Foundation",
                                                         },
                                                         {
-                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) + 1).decoration,
+                                                            features: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).decoration,
                                                             title: "Decoration",
                                                         },
                                                     ],
-                                                    details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 4) + 1).details,
+                                                    details: formattedPlans.find(({ details }) => details.planid === (currentPlan?.details.planid || 1) + 1).details,
                                                 })}
                                             />
                                         </div>
                                     </div>
-                                    <h5 className="font-semibold text-base md:text-xl uppercase h-20 flex items-center justify-center">{currentPlan?.details?.planname || formattedPlanDetails?.planname}</h5>
+                                    <h5 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl uppercase h-20 flex items-center justify-center">{currentPlan?.details?.planname || formattedPlanDetails?.planname}</h5>
                                     <div className="flex flex-col justify-center items-center relative top-[78px]">
                                         {currentPlanDepartments[0].features.map(({
                                             description,

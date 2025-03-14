@@ -76,21 +76,21 @@ export default async function LocateYourHome() {
     const plan3Details = await plan3DetailsResponse.json();
 
     const formattedPlan1Details = {
-        decoration: plan1Details.filter(({ plandetailstype }) => plandetailstype === 1),
+        decoration: plan1Details.filter(({ plandetailstype }) => plandetailstype === 1).sort((a, b) => a.plandetailsid - b.plandetailsid),
         details: plans[0],
-        foundation: plan1Details.filter(({ plandetailstype }) => plandetailstype === 0),
+        foundation: plan1Details.filter(({ plandetailstype }) => plandetailstype === 0).sort((a, b) => a.plandetailsid - b.plandetailsid),
     };
 
     const formattedPlan2Details = {
-        decoration: plan2Details.filter(({ plandetailstype }) => plandetailstype === 1),
+        decoration: plan2Details.filter(({ plandetailstype }) => plandetailstype === 1).sort((a, b) => a.plandetailsid - b.plandetailsid),
         details: plans[1],
-        foundation: plan2Details.filter(({ plandetailstype }) => plandetailstype === 0),
+        foundation: plan2Details.filter(({ plandetailstype }) => plandetailstype === 0).sort((a, b) => a.plandetailsid - b.plandetailsid),
     };
 
     const formattedPlan3Details = {
-        decoration: plan3Details.filter(({ plandetailstype }) => plandetailstype === 1),
+        decoration: plan3Details.filter(({ plandetailstype }) => plandetailstype === 1).sort((a, b) => a.plandetailsid - b.plandetailsid),
         details: plans[2],
-        foundation: plan3Details.filter(({ plandetailstype }) => plandetailstype === 0),
+        foundation: plan3Details.filter(({ plandetailstype }) => plandetailstype === 0).sort((a, b) => a.plandetailsid - b.plandetailsid),
     };
 
     const airConditioningAddons = addons.filter(({ addongroup }) => addongroup === "AirConditioning");

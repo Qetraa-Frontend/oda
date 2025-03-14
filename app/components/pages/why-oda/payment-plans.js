@@ -16,7 +16,7 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
 
     return (
         <div
-            className="container mx-auto pb-[122px] md:pb-[244px] pt-[103px] md:pt-[207px]"
+            className="container mx-auto py-[50px] md:py-[100px]"
             ref={ref}
         >
             <motion.div
@@ -51,7 +51,7 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
                             className="col-span-1 md:col-span-6 xl:col-span-4"
                             key={paymentplanname}
                         >
-                            <div className="py-2 md:py-4 px-2 md:px-4 border border-gray-300 rounded-2xl min-w-full h-full overflow-hidden">
+                            <div className={`py-2 md:py-4 px-2 md:px-4 border border-gray-300 rounded-2xl min-w-full ${showDescriptions[paymentplanname] ? "" : "max-h-[246px]"} h-full overflow-hidden`}>
                                 <div className="w-full bg-primary py-[10px] md:py-5 px-2 md:px-4 flex justify-between rounded-lg">
                                     <h5 className="font-medium text-lg md:text-2xl">Program</h5>
                                     <Image
@@ -66,7 +66,7 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
                                 <div>
                                     <h6 className="font-normal text-xs md:text-sm my-2 md:my-4">{description}</h6>
                                     <div className="flex flex-wrap gap-1 md:gap-2 overflow-hidden">
-                                        {installemntPlans.map(({
+                                        {installemntPlans.sort((a, b) => a.paymentplanid - b.paymentplanid).map(({
                                             adminfees,
                                             adminfeespercentage,
                                             downpayment,

@@ -239,7 +239,7 @@ export default function WhyOdaOurPlans({
                     ))}
                 </div>
                 <Link
-                    className="font-normal text-lg md:text-2xl underline float-right"
+                    className="font-normal text-lg md:text-2xl underline float-right z-50 relative"
                     href="#features"
                     prefetch={false}
                 >

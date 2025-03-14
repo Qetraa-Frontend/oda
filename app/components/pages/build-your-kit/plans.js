@@ -111,7 +111,7 @@ export default function BuildYourKitPlans({ plans }) {
                                             className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                             colSpan={3}
                                         >
-                                            <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
+                                            <h5 className="max-w-[230px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
                                         </td>
                                     </tr>
                                 ))}
@@ -138,7 +138,7 @@ export default function BuildYourKitPlans({ plans }) {
                                             className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                             colSpan={3}
                                         >
-                                            <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
+                                            <h5 className="max-w-[230px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
                                         </td>
                                     </tr>
                                 ))}
@@ -228,7 +228,7 @@ export default function BuildYourKitPlans({ plans }) {
                                             />
                                         </div>
                                     </div>
-                                    <h5 className="font-semibold text-base md:text-xl uppercase h-20 flex items-center justify-center">{currentPlan?.details?.planname || formattedPlanDetails?.planname}</h5>
+                                    <h5 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl uppercase h-20 flex items-center justify-center">{currentPlan?.details?.planname || formattedPlanDetails?.planname}</h5>
                                     <div className="flex flex-col justify-center items-center relative top-[78px]">
                                         {currentPlanDepartments[0].features.map(({
                                             description,

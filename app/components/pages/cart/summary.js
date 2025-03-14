@@ -607,7 +607,7 @@ export default function CartSummary({
                                                                 </span>
                                                             </div>
                                                             {responseMsg.text && targetUpdatedItem.id === addonID && targetUpdatedItem.type === "addon" && !loading && (
-                                                                <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
+                                                                <span className={`font-bold text-[10px] md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
                                                             )}
                                                         </>
                                                     ) : (
@@ -672,7 +672,7 @@ export default function CartSummary({
                                                                 </span>
                                                             </div>
                                                             {responseMsg.text && targetUpdatedItem.id === addonID && targetUpdatedItem.type === "addon" && !loading && (
-                                                                <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
+                                                                <span className={`font-bold text-[10px] md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
                                                             )}
                                                         </>
                                                     )}
@@ -767,7 +767,7 @@ export default function CartSummary({
                                                             </div>
                                                         </div>
                                                         {responseMsg.text && targetUpdatedItem.type === "airConditioningAddon" && !loading && (
-                                                            <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
+                                                            <span className={`font-bold text-[10px] md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
                                                         )}
                                                     </div>
                                                 </div>
@@ -812,7 +812,7 @@ export default function CartSummary({
                                                     )}
                                                 </div>
                                                 {responseMsg.text && targetUpdatedItem.id === addonPerRequestID && targetUpdatedItem.type === "addonPerRequest" && !loading && (
-                                                    <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
+                                                    <span className={`font-bold text-[10px] md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
                                                 )}
                                                 <hr className="mb-4 md:mb-8" />
                                             </div>
@@ -912,7 +912,7 @@ export default function CartSummary({
                                         )}
                                     </div>
                                     {responseMsg.text && targetUpdatedItem.type === "automation" && !loading && (
-                                        <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
+                                        <span className={`font-bold text-[10px] md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full mt-2 md:mt-4`}>{responseMsg.text}</span>
                                     )}
                                     <hr />
                                 </div>
@@ -1103,7 +1103,7 @@ export default function CartSummary({
                                 {confirmLoading ? <Spinner color="text-black" /> : "Place Order"}
                             </Button>
                             {confirmResponseMsg.text && (
-                                <span className={`font-bold text-xs md:text-base ${confirmResponseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
+                                <span className={`font-bold text-[10px] md:text-sm ${confirmResponseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center`}>{responseMsg.text}</span>
                             )}
                         </div>
                     </div>

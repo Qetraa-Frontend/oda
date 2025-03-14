@@ -12,7 +12,7 @@ export default function Social({ color }) {
                 <Mail size={20} />
                 <Link
                     className="font-normal text-xs md:text-base"
-                    href="info@oda-me.com"
+                    href="mailto:info@oda-me.com"
                     prefetch={false}
                     target="_blank"
                 >
@@ -41,7 +41,7 @@ export default function Social({ color }) {
                         width: 35,
                     }}
                 />
-                <SocialIcon
+                {/* <SocialIcon
                     bgColor="transparent"
                     className="font-normal text-xs md:text-base hover:text-primary transition-all duration-1000"
                     fgColor={color || "black"}
@@ -73,7 +73,7 @@ export default function Social({ color }) {
                         height: 35,
                         width: 35,
                     }}
-                />
+                /> */}
                 <SocialIcon
                     bgColor="transparent"
                     className="font-normal text-xs md:text-base hover:text-primary transition-all duration-1000"
@@ -90,7 +90,7 @@ export default function Social({ color }) {
                     className="font-normal text-xs md:text-base hover:text-primary transition-all duration-1000"
                     fgColor={color || "black"}
                     target="_blank"
-                    url="https://www.linkedin.com/company/odahomesolution"
+                    url="https://www.linkedin.com/company/theodahome/"
                     style={{
                         height: 35,
                         width: 35,

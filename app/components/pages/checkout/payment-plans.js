@@ -7,7 +7,7 @@ export default function CheckoutPaymentPlans({ paymentPlans }) {
     const [showDescriptions, setShowDescriptions] = useState({});
 
     return (
-        <div className="container mx-auto pt-[49px] md:pt-[98px]">
+        <div className="container mx-auto pt-[50px] md:pt-[100px]">
             <div className="text-center mb-[36px] md:mb-[72px]">
                 <h2 className="font-bold text-3xl md:text-5xl mb-2 md:mb-4">Give your Bank Account a Break</h2>
                 <h3 className="font-bold text-[22px] md:text-[32px] opacity-70">Take a look at the desired payment plans</h3>
@@ -38,7 +38,7 @@ export default function CheckoutPaymentPlans({ paymentPlans }) {
                             <div>
                                 <h6 className="font-normal text-xs md:text-sm my-2 md:my-4">{description}</h6>
                                 <div className="flex flex-wrap gap-1 md:gap-2 overflow-hidden">
-                                    {installemntPlans.map(({
+                                    {installemntPlans.sort((a, b) => a.paymentplanid - b.paymentplanid).map(({
                                         adminfees,
                                         adminfeespercentage,
                                         downpayment,

@@ -186,7 +186,7 @@ export default function ContactUsForm() {
                                     ) : "Submit"}
                                 </Button>
                                 {responseMsg.text && (
-                                    <span className={`font-bold text-xs md:text-base ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center sm:text-left`}>{responseMsg.text}</span>
+                                    <span className={`font-bold text-[10px] md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center sm:text-left`}>{responseMsg.text}</span>
                                 )}
                             </div>
                         </div>
