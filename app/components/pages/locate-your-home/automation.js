@@ -380,9 +380,9 @@ export default function LocateYourHomeAutomation({ automation }) {
                 </motion.div>
             </div>
             <div className="container mt-10 md:mt-[550px] xl:mt-[430px] sm:flex justify-end">
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 mb-10 md:mb-0">
                     <Button
-                        className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat mb-10 md:mb-0"
+                        className="font-semibold text-[22px] md:text-[32px] !bg-primary text-black transition-all duration-1000 rounded-3xl h-20 w-full sm:w-[370px]  hover:animate-heartBeat"
                         disabled={!plan.id || !developer.id || !unitType.id || !unitArea || Number(unitArea) < 50 || Number(unitArea) > 1500}
                         onClick={() => {
                             if (mode === "edit") saveOrderHandler();
@@ -398,7 +398,7 @@ export default function LocateYourHomeAutomation({ automation }) {
                         {mode === "edit" ? loading ? <Spinner color="text-black" /> : "Save" : "Add to Cart"} {/* eslint-disable-line */}
                     </Button>
                     {responseMsg.text && (
-                        <span className={`font-bold text-[10px] md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-fit text-center`}>{responseMsg.text}</span>
+                        <span className={`font-bold text-xs md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-fit text-center mt-2`}>{responseMsg.text}</span>
                     )}
                 </div>
             </div>

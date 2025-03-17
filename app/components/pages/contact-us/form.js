@@ -175,7 +175,7 @@ export default function ContactUsForm() {
                             </div>
                             <div className="flex flex-col gap-2 md:gap-4">
                                 <Button
-                                    className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl !bg-primary text-black transition-all duration-1000 rounded-[29px] w-full md:w-[227px] py-1 md:py-2 h-12 hover:animate-heartBeat disabled:opacity-60"
+                                    className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl !bg-primary text-black transition-all duration-1000 rounded-[29px] w-full md:w-[227px] py-1 md:py-2 h-12 hover:animate-heartBeat"
                                     disabled={loading}
                                 >
                                     {loading ? (
@@ -186,7 +186,7 @@ export default function ContactUsForm() {
                                     ) : "Submit"}
                                 </Button>
                                 {responseMsg.text && (
-                                    <span className={`font-bold text-[10px] md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center sm:text-left`}>{responseMsg.text}</span>
+                                    <span className={`font-bold text-xs md:text-sm ${responseMsg.type === "error" ? "text-red-500" : "text-green-500"} block w-full md:w-[371px] text-center sm:text-left`}>{responseMsg.text}</span>
                                 )}
                             </div>
                         </div>
