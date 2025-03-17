@@ -65,9 +65,9 @@ export default function BuildYourKitAddons({
     );
 
     const checkBoilerAndHeaterAvailability = (addonGroup) => {
-        if (addonGroup === "Boilers") return !!(selectedAddons.find(({ group }) => group === "SolarHeating") || selectedAddons.find(({ group }) => group === "Heaters"));
+        if (addonGroup === "Boilers") return !!selectedAddons.find(({ group }) => group === "Heaters");
 
-        if (addonGroup === "SolarHeating" || addonGroup === "Heaters") return !!selectedAddons.find(({ group }) => group === "Boilers");
+        if (addonGroup === "Heaters") return !!selectedAddons.find(({ group }) => group === "Boilers");
     };
 
     return (

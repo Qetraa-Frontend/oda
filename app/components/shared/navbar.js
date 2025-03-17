@@ -275,7 +275,6 @@ export default function Navbar() {
                                                 ))}
                                             </ul>
                                             <div>
-                                                <h6 className="inline-block font-medium text-2xl md:text-4xl text-gray-500">Our Services</h6>
                                                 <ul className="flex flex-col gap-5 md:gap-10 mt-5 md:mt-10">
                                                     {navbarLinks.rightColumn.services.map(({
                                                         id,

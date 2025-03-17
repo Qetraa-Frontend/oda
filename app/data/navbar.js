@@ -40,16 +40,21 @@ export const navbarLinks = {
         services: [
             {
                 id: 1,
+                text: "Our Services",
+                url: "/services",
+            },
+            {
+                id: 2,
                 text: "Locate Your Home",
                 url: "/locate-your-home",
             },
             {
-                id: 2,
+                id: 3,
                 text: "Build Your Kit",
                 url: "/build-your-kit",
             },
             /* {
-                id: 3,
+                id: 4,
                 text: "Need a Facelift",
                 url: "/need-facelift",
             }, */

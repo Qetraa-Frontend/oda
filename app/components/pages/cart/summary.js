@@ -976,11 +976,11 @@ export default function CartSummary({
                                                 addonPerRequestName,
                                             }) => (
                                                 <li
-                                                    className="flex justify-between border-b border-b-gray-300 pb-1"
+                                                    className="flex justify-between items-center border-b border-b-gray-300 pb-1"
                                                     key={addonPerRequestID}
                                                 >
                                                     <span className="font-normal text-lg md:text-2xl">{addonPerRequestName}</span>
-                                                    <span className="font-normal text-xs md:text-base border border-gray-300 rounded-xl px-2 w-fit lg:w-[140px] text-center xl:w-fit h-fit">Upon Request</span>
+                                                    <span className="font-normal text-xs md:text-base lg:text-sm xl:text-base border border-gray-300 rounded-xl px-2 lg:px-1 xl:px-2 w-fit lg:w-[145px] xl:w-fit h-fit text-center">Price Upon Request</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -990,13 +990,13 @@ export default function CartSummary({
                             {order.automationID && (
                                 <div className="mt-2 md:mt-4">
                                     <h6 className="font-semibold text-lg md:text-2xl">Automation</h6>
-                                    <div className="flex justify-between mt-2 md:mt-4">
+                                    <div className="flex justify-between items-center mt-2 md:mt-4">
                                         <span className="font-normal text-lg md:text-2xl">
                                             {order.automationID === 1 ? "Basic" : "Advanced"}
                                             {" "}
                                             Plan
                                         </span>
-                                        <span className="font-normal text-xs md:text-base border border-gray-300 rounded-xl px-2 w-fit lg:w-[140px] text-center xl:w-fit h-fit">Upon Request</span>
+                                        <span className="font-normal text-xs md:text-base lg:text-sm xl:text-base border border-gray-300 rounded-xl px-2 lg:px-1 xl:px-2 w-fit lg:w-[145px] xl:w-fit h-fit text-center">Price Upon Request</span>
                                     </div>
                                     <hr className="my-2 md:my-4" />
                                 </div>
@@ -1026,25 +1026,29 @@ export default function CartSummary({
                                             </span>
                                         </li>
                                     )}
-                                    {/* <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
-                                        <span className="font-normal text-base md:text-lg">
-                                            Interest Rate:
-                                            {" "}
-                                            {order.paymentDTO.interestrate ? order.paymentDTO.interestrateperyearpercentage : 0}
-                                            %
-                                        </span>
+                                    <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
+                                        <span className="font-normal text-base md:text-lg">Total Amount:</span>
                                         <span className="font-normal text-xs md:text-base">
-                                            {order.paymentDTO.interestrate ? order.paymentDTO?.interestrateValue?.toLocaleString() : 0?.toLocaleString()}
+                                            {order?.totalAmount_Addons_plan?.toLocaleString()}
                                             {" "}
                                             EGP
-                                            {order.paymentDTO.interestrate ? "/ Year" : ""}
                                         </span>
                                     </li>
-                                    */}
+                                    {order?.totalAmount !== order?.totalAmount_Addons_plan && (
+                                        <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
+                                            <span className="font-normal text-base md:text-lg">Total Amount + Interest:</span>
+                                            <span className="font-normal text-xs md:text-base">
+                                                {order?.totalAmount?.toLocaleString()}
+                                                {" "}
+                                                EGP
+                                            </span>
+                                        </li>
+                                    )}
                                     {order.paymentDTO.downpayment && (
                                         <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
                                             <span className="font-normal text-base md:text-lg">
                                                 Down Payment: 1st
+                                                {" "}
                                                 {order.paymentDTO.downpaymentpercentage}
                                                 %
                                             </span>
@@ -1055,22 +1059,6 @@ export default function CartSummary({
                                             </span>
                                         </li>
                                     )}
-                                    <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
-                                        <span className="font-normal text-base md:text-lg">Total Amount:</span>
-                                        <span className="font-normal text-xs md:text-base">
-                                            {order?.totalAmount_Addons_plan?.toLocaleString()}
-                                            {" "}
-                                            EGP
-                                        </span>
-                                    </li>
-                                    <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
-                                        <span className="font-normal text-base md:text-lg">Total Amount + Interest:</span>
-                                        <span className="font-normal text-xs md:text-base">
-                                            {order?.totalAmount?.toLocaleString()}
-                                            {" "}
-                                            EGP
-                                        </span>
-                                    </li>
                                     {order.paymentDTO.equalPayment ? (
                                         <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
                                             <span className="font-normal text-base md:text-lg">Installments:</span>

@@ -17,8 +17,8 @@ export const footerLinks = {
         },
         {
             id: 4,
-            text: "Build Your Kit",
-            url: "/build-your-kit",
+            text: "Our Services",
+            url: "/services",
         },
         /* {
             id: 5,
