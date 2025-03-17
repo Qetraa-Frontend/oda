@@ -20,6 +20,8 @@ import {
 } from "@/app/ui/sheet";
 
 export default function Navbar() {
+    const [openMenu, setOpenMenu] = useState(false);
+
     const [isSheetOpen, setIsSheetOpen] = useState(false);
 
     const [activeLinkId, setActiveLinkId] = useState({
@@ -84,7 +86,10 @@ export default function Navbar() {
                     >
                         Home
                     </Link>
-                    <DropdownMenu>
+                    <DropdownMenu
+                        open={openMenu}
+                        onOpenChange={setOpenMenu}
+                    >
                         <Link
                             className="font-normal text-base md:text-xl text-white hover:text-primary transition-all duration-1000 ml-4"
                             href="/services"
@@ -96,7 +101,7 @@ export default function Navbar() {
                             <ChevronDownIcon className="h-4 w-4" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => setOpenMenu(false)}>
                                 <Link
                                     className="font-normal text-sm md:text-lg"
                                     href="/locate-your-home"
@@ -105,7 +110,7 @@ export default function Navbar() {
                                     Locate Your Home
                                 </Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => setOpenMenu(false)}>
                                 <Link
                                     className="font-normal text-sm md:text-lg"
                                     href="/build-your-kit"
@@ -114,15 +119,17 @@ export default function Navbar() {
                                     Build Your Kit
                                 </Link>
                             </DropdownMenuItem>
-                            {/* <DropdownMenuItem>
-                                <Link
-                                    className="font-normal text-sm md:text-lg"
-                                    href="/need-facelift"
-                                    prefetch={false}
-                                >
-                                    Need a Facelift
-                                </Link>
-                            </DropdownMenuItem> */}
+                            {/*
+                                <DropdownMenuItem onClick={() => setOpenMenu(false)}>
+                                    <Link
+                                        className="font-normal text-sm md:text-lg"
+                                        href="/need-facelift"
+                                        prefetch={false}
+                                    >
+                                        Need a Facelift
+                                    </Link>
+                                </DropdownMenuItem>
+                            */}
                         </DropdownMenuContent>
                     </DropdownMenu>
                     <Link

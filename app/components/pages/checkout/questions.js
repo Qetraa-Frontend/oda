@@ -24,24 +24,22 @@ export default function CheckoutQuestions() {
 
     const selectedQuestions = locateYourHomeIsActive ? selectedLocateYourHomeQuestions : selectedBuildYourKitQuestions;
 
-    const ref1 = useRef(null);
-
-    const ref2 = useRef(null);
+    const ref = useRef(null);
 
     const isInView1 = useInView(
-        ref1,
+        ref,
         { once: true },
     );
 
     const isInView2 = useInView(
-        ref2,
+        ref,
         { once: true },
     );
 
     return (
         <div
             className="overflow-hidden"
-            ref={ref1}
+            ref={ref}
         >
             <motion.div
                 className="container mx-auto py-[42px] md:py-[85px] overflow-hidden"
@@ -63,10 +61,7 @@ export default function CheckoutQuestions() {
             >
                 <h2 className="font-bold text-3xl md:text-5xl text-center uppercase">Let&apos;s Discover More</h2>
             </motion.div>
-            <div
-                className="bg-[#222] min-h-[1000px] py-10 md:py-20 overflow-hidden"
-                ref={ref2}
-            >
+            <div className="bg-[#222] min-h-[1000px] py-10 md:py-20 overflow-hidden">
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-x-4 md:gap-x-8 gap-y-20 md:gap-y-40">
                     {questions.map(({
                         alt1,

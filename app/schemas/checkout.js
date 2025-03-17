@@ -15,7 +15,7 @@ export const checkoutFormSchema = z.object({
     paymentPlan: z.string().min(
         1,
         "Payment Method is required",
-    ),
+    ).or(z.number()),
     phoneNumber: z.
         string().
         regex(

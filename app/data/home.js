@@ -112,7 +112,7 @@ export const statics = [
     },
     {
         id: 3,
-        title: "Delivered Unites",
+        title: "Delivered Units",
         value: 143,
     },
     {

@@ -89,7 +89,7 @@ export default function WhyOdaPlansContent() {
                                     {id}
                                 </span>
                                 <div className="mt-16">
-                                    <h5 className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl text-white min-h-16">{title}</h5>
+                                    <h5 className="font-extrabold font-nanum-myeongjo text-lg md:text-2xl text-white sm:min-h-16">{title}</h5>
                                     <p className="font-bold font-nanum-myeongjo text-sm md:text-lg text-white mt-3 md:mt-6">{description}</p>
                                 </div>
                             </motion.div>

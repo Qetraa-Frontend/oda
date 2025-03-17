@@ -89,9 +89,9 @@ export default function CartSummary({
         setUnitArea: setBuildYourKitUnitArea,
     } = useBuildYourKitStore();
 
-    const airConditioningAddons = order.addons.filter(({ addongroup }) => addongroup === "AirConditioning");
+    const airConditioningAddons = order?.addons?.filter(({ addongroup }) => addongroup === "AirConditioning");
 
-    const otherAddons = order.addons.filter(({ addongroup }) => addongroup !== "AirConditioning");
+    const otherAddons = order?.addons?.filter(({ addongroup }) => addongroup !== "AirConditioning");
 
     const suffixes = ["th", "st", "nd", "rd"];
 
@@ -143,14 +143,17 @@ export default function CartSummary({
                         quantity: addonQuality,
                     })),
                     apartmentDTO: {
-                        apartmentAddress: buildYourKitIsActive ? order.apartmentAddress : null,
-                        apartmentId: locateYourHomeIsActive ? order.newApartmentID : null,
-                        apartmentSpace: order.apartmentSpace,
+                        apartmentAddress: buildYourKitIsActive ? order.apartmentDTO.apartmentAddress : null,
+                        apartmentId: locateYourHomeIsActive ? order.apartmentDTO.apartmentId : null,
+                        apartmentRooms: [],
+                        apartmentSpace: order.apartmentDTO.apartmentSpace,
                         apartmentType: locateYourHomeIsActive ? 0 : 1,
+                        unittypeName: "",
+                        unittypeid: locateYourHomeIsActive ? order.apartmentDTO.unittypeid : null,
                     },
                     automationID: type === "automation" && isRemoved ? null : order.automationID,
                     customerInfo: {
-                        address: buildYourKitIsActive ? order.apartmentAddress : null,
+                        address: buildYourKitIsActive ? order.apartmentDTO.apartmentAddress : null,
                         email: order.customerInfo.email,
                         firstname: order.customerInfo.firstname,
                         phonenumber: order.customerInfo.phonenumber,
@@ -225,12 +228,12 @@ export default function CartSummary({
 
     useEffect(
         () => {
-            if (order.apartmentType === 0) {
+            if (order.apartmentDTO.apartmentType === 0) {
                 if (!locateYourHomePlan.id) localStorage.removeItem("unitAreaId"); // eslint-disable-line
 
                 setLocateYourHomeMode("edit");
 
-                setLocateYourHomeIsActive(order.apartmentType === 0);
+                setLocateYourHomeIsActive(order.apartmentDTO.apartmentType === 0);
 
                 setLocateYourHomeBookingId(order.bookingID);
 
@@ -264,7 +267,7 @@ export default function CartSummary({
                     quantity,
                 })) : []);
 
-                setLocateYourHomeAddonsPerRequest(order.addonPerRequests.length > 0 ? order.addonPerRequests.map(({
+                setLocateYourHomeAddonsPerRequest(order?.addonPerRequests?.length > 0 ? order?.addonPerRequests?.map(({
                     addonPerRequestID,
                     addonPerRequestName,
                 }) => ({
@@ -281,9 +284,9 @@ export default function CartSummary({
 
                 setLocateYourHomeDeveloper({ id: order.developerID });
 
-                setLocateYourHomeUnitType({ id: order.unittypeid });
+                setLocateYourHomeUnitType({ id: order.apartmentDTO.unittypeid });
 
-                setLocateYourHomeUnitArea(order.apartmentSpace);
+                setLocateYourHomeUnitArea(order.apartmentDTO.apartmentSpace);
 
                 setLocateYourHomeQuestions(order.questions.reduce(
                     (acc, question) => {
@@ -309,7 +312,7 @@ export default function CartSummary({
             } else {
                 setBuildYourKitMode("edit");
 
-                setBuildYourKitIsActive(order.apartmentType === 1);
+                setBuildYourKitIsActive(order.apartmentDTO.apartmentType === 1);
 
                 setBuildYourKitBookingId(order.bookingID);
 
@@ -343,7 +346,7 @@ export default function CartSummary({
                     quantity,
                 })) : []);
 
-                setBuildYourKitAddonsPerRequest(order.addonPerRequests.length > 0 ? order.addonPerRequests.map(({
+                setBuildYourKitAddonsPerRequest(order?.addonPerRequests?.length > 0 ? order?.addonPerRequests?.map(({
                     addonPerRequestID,
                     addonPerRequestName,
                 }) => ({
@@ -358,7 +361,7 @@ export default function CartSummary({
 
                 setBuildYourKitPlan({ id: order.planID });
 
-                setBuildYourKitUnitArea(order.apartmentSpace);
+                setBuildYourKitUnitArea(order.apartmentDTO.apartmentSpace);
 
                 setBuildYourKitAddress(order.customerInfo.address);
 
@@ -417,7 +420,7 @@ export default function CartSummary({
                             <h5 className="font-normal text-2xl md:text-4xl">
                                 Your Have
                                 {" "}
-                                {1 + (order.addons ? order.addons.length : 0) + (order.addonPerRequests ? order.addonPerRequests.length : 0) + (order.automationID ? 1 : 0)}
+                                {1 + (order?.addons ? order.addons.length : 0) + (order?.addonPerRequests ? order.addonPerRequests.length : 0) + (order?.automationID ? 1 : 0)}
                                 {" "}
                                 Items
                             </h5>
@@ -556,7 +559,7 @@ export default function CartSummary({
                             <div className="flex justify-end">
                                 <div className="bg-white border border-gray-300 lg:border-none flex justify-center xl:justify-start w-full xl:min-w-[761px] p-2 md:p-4 rounded-2xl mt-[60px] md:mt-[96px] relative z-50">
                                     <div className="w-full xl:min-w-[761px] ">
-                                        {otherAddons.length > 0 && otherAddons.map(({
+                                        {otherAddons?.length > 0 && otherAddons.map(({
                                             addonID,
                                             addonName,
                                             addongroup,
@@ -680,7 +683,7 @@ export default function CartSummary({
                                                 <hr className="mb-4 md:mb-8" />
                                             </div>
                                         ))}
-                                        {airConditioningAddons.length > 0 && (
+                                        {airConditioningAddons?.length > 0 && (
                                             <div className="w-full xl:min-w-[638px]">
                                                 <div>
                                                     <div className="flex items-center min-h-[96px] w-full p-2 md:p-4 border rounded-2xl">
@@ -775,7 +778,7 @@ export default function CartSummary({
                                             </div>
 
                                         )}
-                                        {order?.addonPerRequests.length > 0 && order?.addonPerRequests.map(({
+                                        {order?.addonPerRequests?.length > 0 && order?.addonPerRequests?.map(({
                                             addonPerRequestDescription,
                                             addonPerRequestID,
                                             addonPerRequestName,
@@ -968,7 +971,7 @@ export default function CartSummary({
                                     )}
                                     {order?.addonPerRequests?.length > 0 && (
                                         <ul className="p-0 m-0 flex flex-col gap-2 md:gap-4 mt-2 md:mt-4">
-                                            {order?.addonPerRequests.map(({
+                                            {order?.addonPerRequests?.map(({
                                                 addonPerRequestID,
                                                 addonPerRequestName,
                                             }) => (
@@ -1008,22 +1011,23 @@ export default function CartSummary({
                                     <span className="font-normal text-base md:text-xl">{`${order.paymentDTO.numberofinstallmentmonths} Months`}</span>
                                 </div>
                                 <ul className="p-0 m-0 mt-0 md:mt-4 flex flex-col gap-2 md:gap-4">
-                                    <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
-                                        <span className="font-normal text-base md:text-xl">
-                                            Admin Fees:
-                                            {" "}
-                                            {order.paymentDTO.adminfees ? order.paymentDTO.adminfeespercentage : 0}
-                                            %
-                                        </span>
-                                        <span className="font-normal text-xs md:text-base">
-                                            {order.paymentDTO.adminfees ? order.paymentDTO?.adminfeesValue?.toLocaleString() : 0?.toLocaleString()}
-                                            {" "}
-                                            EGP
-                                            {order.paymentDTO.adminfees ? " - One Time" : ""}
-                                        </span>
-                                    </li>
-                                    <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
-                                        <span className="font-normal text-base md:text-xl">
+                                    {order.paymentDTO.adminfees && (
+                                        <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
+                                            <span className="font-normal text-base md:text-lg">
+                                                Admin Fees:
+                                                {" "}
+                                                {order.paymentDTO.adminfeespercentage}
+                                                %
+                                            </span>
+                                            <span className="font-normal text-xs md:text-base">
+                                                {order.paymentDTO?.adminfeesValue?.toLocaleString()}
+                                                {" "}
+                                                EGP - One Time
+                                            </span>
+                                        </li>
+                                    )}
+                                    {/* <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
+                                        <span className="font-normal text-base md:text-lg">
                                             Interest Rate:
                                             {" "}
                                             {order.paymentDTO.interestrate ? order.paymentDTO.interestrateperyearpercentage : 0}
@@ -1036,23 +1040,40 @@ export default function CartSummary({
                                             {order.paymentDTO.interestrate ? "/ Year" : ""}
                                         </span>
                                     </li>
+                                    */}
+                                    {order.paymentDTO.downpayment && (
+                                        <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
+                                            <span className="font-normal text-base md:text-lg">
+                                                Down Payment: 1st
+                                                {order.paymentDTO.downpaymentpercentage}
+                                                %
+                                            </span>
+                                            <span className="font-normal text-xs md:text-base">
+                                                {order.paymentDTO?.dpValue?.toLocaleString()}
+                                                {" "}
+                                                EGP
+                                            </span>
+                                        </li>
+                                    )}
                                     <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
-                                        <span className="font-normal text-base md:text-xl">
-                                            Down Payment:
-                                            {" "}
-                                            {order.paymentDTO.downpayment ? "1st " : ""}
-                                            {order.paymentDTO.downpayment ? order.paymentDTO.downpaymentpercentage : 0}
-                                            %
-                                        </span>
+                                        <span className="font-normal text-base md:text-lg">Total Amount:</span>
                                         <span className="font-normal text-xs md:text-base">
-                                            {order.paymentDTO.downpayment ? order.paymentDTO?.dpValue?.toLocaleString() : 0?.toLocaleString()}
+                                            {order?.totalAmount_Addons_plan?.toLocaleString()}
+                                            {" "}
+                                            EGP
+                                        </span>
+                                    </li>
+                                    <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
+                                        <span className="font-normal text-base md:text-lg">Total Amount + Interest:</span>
+                                        <span className="font-normal text-xs md:text-base">
+                                            {order?.totalAmount?.toLocaleString()}
                                             {" "}
                                             EGP
                                         </span>
                                     </li>
                                     {order.paymentDTO.equalPayment ? (
                                         <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
-                                            <span className="font-normal text-base md:text-xl">Installments:</span>
+                                            <span className="font-normal text-base md:text-lg">Installments:</span>
                                             <span className="font-normal text-xs md:text-base">
                                                 {order.paymentDTO.installmentDTO[0]?.installmentvalue.toLocaleString()}
                                                 {" "}
@@ -1070,7 +1091,7 @@ export default function CartSummary({
                                                     className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1"
                                                     key={installmentmonth} // eslint-disable-line
                                                 >
-                                                    <span className="font-normal text-base md:text-xl">
+                                                    <span className="font-normal text-base md:text-lg">
                                                         {installmentmonth === 1 ? "Installments:" : ""}
                                                         {" "}
                                                         {installmentmonth + (suffixes[((installmentmonth % 100) - 20) % 10] || suffixes[installmentmonth % 100] || suffixes[0])}
@@ -1088,10 +1109,6 @@ export default function CartSummary({
                                         </ul>
                                     )}
                                 </ul>
-                            </div>
-                            <div className="flex flex-wrap items-center gap-2 justify-between mt-2 md:mt-4">
-                                <h6 className="font-semibold text-[22px] md:text-[32px]">Sub Total</h6>
-                                <span className="font-normal text-xs md:text-base">{`${order.totalAmount.toLocaleString()} EGP`}</span>
                             </div>
                         </div>
                         <div className="mt-5 md:mt-10 flex flex-col gap-2 justify-center">

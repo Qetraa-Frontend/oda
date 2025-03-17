@@ -126,7 +126,7 @@ export default function HomeWorkScopes() {
                                     </motion.div>
                                 </AnimatePresence>
                             </div>
-                            <div className="w-full lg:w-1/2 overflow-hidden relative h-[350px] sm:h-[466px] lg:h-[932px]">
+                            <div className={`w-full lg:w-1/2 overflow-hidden relative ${currentIndex === 3 ? "h-[450px]" : "h-[350px]"} sm:h-[466px] lg:h-[932px]`}>
                                 <AnimatePresence mode="sync">
                                     <motion.div
                                         animate={{ x: 0 }}

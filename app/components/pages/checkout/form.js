@@ -112,6 +112,12 @@ export default function CheckoutForm({ paymentPlans }) {
         paymentPlan,
         phoneNumber,
     }) => {
+        console.log(
+            email,
+            name,
+            paymentPlan,
+            phoneNumber,
+        );
         setResponseMsg({
             text: "",
             type: null,
@@ -164,8 +170,10 @@ export default function CheckoutForm({ paymentPlans }) {
                     apartmentDTO: {
                         apartmentAddress: buildYourKitIsActive ? buildYourKitAddress : null,
                         apartmentId: locateYourHomeIsActive ? locateYourHomeUnitType.id : null,
+                        apartmentRooms: [],
                         apartmentSpace: locateYourHomeIsActive ? parseInt(locateYourHomeUnitArea) : parseInt(buildYourKitUnitArea),
                         apartmentType: locateYourHomeIsActive ? 0 : 1,
+                        unittypeName: "",
                         unittypeid: locateYourHomeIsActive ? locateYourHomeUnitType.id : null,
                     },
                     automationID: locateYourHomeIsActive ? locateYourHomeAutomation.id || null : buildYourKitAutomation.id || null,

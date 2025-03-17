@@ -103,8 +103,10 @@ export default function BuildYourKitAutomation({ automation }) {
                     apartmentDTO: {
                         apartmentAddress: address,
                         apartmentId: null,
+                        apartmentRooms: [],
                         apartmentSpace: parseInt(unitArea),
                         apartmentType: 1,
+                        unittypeName: "",
                         unittypeid: null,
                     },
                     automationID: selectedAutomation.id || null,
@@ -298,7 +300,7 @@ export default function BuildYourKitAutomation({ automation }) {
 
                             return (
                                 <div
-                                    className={`${formattedAutomationDetails.automationid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[161px] h-[94%] border border-gray-300 rounded-2xl text-center pt-2 md:pt-4 px-2 md:px-4 hover:bg-primary ${selectedAutomation.id === formattedAutomationDetails.automationid ? "bg-primary" : ""} transition-all duration-1000`}
+                                    className={`${formattedAutomationDetails.automationid !== 1 ? "hidden xl:block" : ""} relative w-[140px] sm:w-[161px] h-[94%] border border-gray-300 rounded-2xl text-center pt-2 md:pt-4 hover:bg-primary ${selectedAutomation.id === formattedAutomationDetails.automationid ? "bg-primary" : ""} transition-all duration-1000`}
                                     key={formattedAutomationDetails.automationid}
                                 >
                                     <div className="relative top-8 md:top-0">
@@ -330,7 +332,7 @@ export default function BuildYourKitAutomation({ automation }) {
                                                 })}
                                             />
                                         </div>
-                                        <h5 className="font-semibold text-lg md:text-2xl">{currentAutomation?.details?.automationname || formattedAutomationDetails?.automationname}</h5>
+                                        <h5 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{currentAutomation?.details?.automationname || formattedAutomationDetails?.automationname}</h5>
                                         <div className="flex flex-col justify-center items-center relative top-2">
                                             {currentAutomationFeatures[0].features.map(({ description }, indx) => (
                                                 <div
