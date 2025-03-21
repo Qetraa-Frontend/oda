@@ -5,7 +5,9 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 export default function WhyOdaPaymentPlans({ paymentPlans }) {
-    const [showDescriptions, setShowDescriptions] = useState({});
+    const [showDescriptions, setShowDescriptions] = useState({
+        Oda: { ...paymentPlans[0].installemntPlans[0] },
+    });
 
     const ref = useRef(null);
 
@@ -16,7 +18,7 @@ export default function WhyOdaPaymentPlans({ paymentPlans }) {
 
     return (
         <div
-            className="container mx-auto py-[50px] md:py-[100px]"
+            className="container mx-auto py-12 md:py-24"
             ref={ref}
         >
             <motion.div

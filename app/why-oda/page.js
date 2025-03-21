@@ -5,7 +5,7 @@ const WhyOdaBuildingProject = dynamic(() => import("@/app/components/pages/why-o
 const WhyOdaFeatures = dynamic(() => import("@/app/components/pages/why-oda/features"));
 const WhyOdaHero = dynamic(() => import("@/app/components/pages/why-oda/hero"));
 const WhyOdaHowItWorks = dynamic(() => import("@/app/components/pages/why-oda/how-it-works"));
-const WhyOdaOurPlans = dynamic(() => import("@/app/components/pages/why-oda/our-plans"));
+const WhyOdaPlans = dynamic(() => import("@/app/components/pages/why-oda/plans"));
 const WhyOdaPlansContent = dynamic(() => import("@/app/components/pages/why-oda/plans-content"));
 
 export const metadata = { title: "Oda | Why Oda" };
@@ -112,7 +112,7 @@ export default async function WhyOda() {
             <WhyOdaHero />
             <WhyOdaBuildingProject />
             <WhyOdaHowItWorks />
-            <WhyOdaOurPlans
+            <WhyOdaPlans
                 plans={plans}
                 features={{
                     1: formattedPlan1Details,

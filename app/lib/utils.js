@@ -26,3 +26,9 @@ export const handleNumberInputLogic = (e) => {
 
     return true;
 };
+
+export const formatNumber = (number) => {
+    if (number % 1 === 0) return number.toLocaleString();
+
+    return number.toFixed(2).toLocaleString();
+};

@@ -100,12 +100,6 @@ export default function LocateYourHomeAddons({
                                     }}
                                 >
                                     <div className="flex items-center pl-5 md:pl-10">
-                                        <div className="flex-1 sm:flex-none">
-                                            <Plus
-                                                className="opacity-60 mt-10 md:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
-                                                size={96}
-                                            />
-                                        </div>
                                         <div className="relative z-50 mt-10 md:mt-20">
                                             <h2 className="font-bold text-3xl md:text-5xl mb-5 md:mb-10 !uppercase">Add-ons</h2>
                                             <p className="font-medium text-base md:text-xl !leading-loose">
@@ -167,14 +161,14 @@ export default function LocateYourHomeAddons({
                                                 {addons[0]?.unitormeter === 1 ? (
                                                     <span className="font-normal text-base md:text-xl">
                                                         +
-                                                        {addons[0]?.price}
+                                                        {addons[0]?.price?.toLocaleString()}
                                                         {" "}
                                                         EGP \m2
                                                     </span>
                                                 ) : (
                                                     <span className="font-normal text-base md:text-xl flex gap-2 items-center">
                                                         +
-                                                        {addons[0]?.price}
+                                                        {addons[0]?.price?.toLocaleString()}
                                                         {" "}
                                                         EGP
                                                         {addons[0]?.addongroup !== "Boilers" && (
@@ -288,14 +282,14 @@ export default function LocateYourHomeAddons({
                                                         {unitormeter === 1 ? (
                                                             <span className="font-normal text-base md:text-xl">
                                                                 +
-                                                                {price}
+                                                                {price?.toLocaleString()}
                                                                 {" "}
                                                                 EGP \m2
                                                             </span>
                                                         ) : (
                                                             <span className="font-normal text-base md:text-xl flex gap-2 items-center">
                                                                 +
-                                                                {price}
+                                                                {price?.toLocaleString()}
                                                                 {" "}
                                                                 EGP
                                                                 {addongroup !== "Boilers" && (
@@ -400,7 +394,7 @@ export default function LocateYourHomeAddons({
                                         </div>
                                     </div>
                                     <div className="flex flex-wrap gap-2 md:gap-4 items-center justify-center mt-2 md:mt-4">
-                                        {airConditioningAddons.map(({
+                                        {airConditioningAddons.sort((a, b) => a.addonid - b.addonid).map(({
                                             addongroup,
                                             addonid,
                                             addonname,
@@ -413,7 +407,7 @@ export default function LocateYourHomeAddons({
                                                 <span className="font-normal text-xs md:text-base border border-gray-300 w-fit px-2 rounded-2xl flex items-center justify-center">{addonname}</span>
                                                 <span className="font-normal text-xs md:text-base border border-gray-300 w-fit px-2 rounded-2xl flex items-center justify-center">
                                                     +
-                                                    {price}
+                                                    {price?.toLocaleString()}
                                                     {" "}
                                                     EGP
                                                     \Unit
@@ -487,15 +481,7 @@ export default function LocateYourHomeAddons({
                                 type: "spring",
                             }}
                         >
-                            <div className="flex items-center mb-5 md:mb-0 pl-5 md:pl-10">
-                                <Plus
-                                    className="opacity-60 mt-10 lg:mt-20 w-[48px] h-[48px] md:w-[96px] md:h-[96px]"
-                                    size={96}
-                                />
-                                <div className="relative z-50 mt-5 lg:mt-20">
-                                    <h2 className="font-bold text-3xl md:text-5xl !uppercase">Add-ons</h2>
-                                </div>
-                            </div>
+                            <h2 className="font-bold text-3xl md:text-5xl relative z-50 mt-5 lg:mt-20 mb-5 md:mb-0 pl-5 md:pl-10 !uppercase">Add-ons</h2>
                         </motion.div>
                         <div className="relative w-full overflow-visible h-fit pt-[87px] md:pt-[175px]">
                             <motion.div

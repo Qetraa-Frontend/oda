@@ -13,8 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { questions } from "@/app/data/questions";
-import { handleNumberInputLogic } from "@/app/lib/utils";
+import { formatNumber, handleNumberInputLogic } from "@/app/lib/utils";
 import { useBuildYourKitStore } from "@/app/store/build-your-kit";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 import { Button } from "@/app/ui/button";
@@ -152,6 +151,7 @@ export default function CartSummary({
                         unittypeid: locateYourHomeIsActive ? order.apartmentDTO.unittypeid : null,
                     },
                     automationID: type === "automation" && isRemoved ? null : order.automationID,
+                    customerAnswers: order?.customerAnswers,
                     customerInfo: {
                         address: buildYourKitIsActive ? order.apartmentDTO.apartmentAddress : null,
                         email: order.customerInfo.email,
@@ -162,14 +162,6 @@ export default function CartSummary({
                     paymentPlanID: order.paymentDTO.paymentplanid,
                     planID: order.planID,
                     projectID: locateYourHomeIsActive ? order.projectID : null,
-                    questions: order?.questions.map(({
-                        answer,
-                        questionsid,
-                    }) => ({
-                        answer,
-                        name: questions[questionsid - 1]?.question,
-                        questionsID: questionsid,
-                    })),
                 }),
                 headers: { "Content-Type": "application/json" },
                 method: "PUT",
@@ -228,6 +220,24 @@ export default function CartSummary({
 
     useEffect(
         () => {
+            const questions = {};
+
+            if (order.customerAnswers.length > 0) {
+                order.customerAnswers.forEach(({
+                    answerid,
+                    answertext,
+                    questionid,
+                    questiontext,
+                }) => {
+                    questions[questionid] = {
+                        answer: answerid,
+                        answerText: answertext,
+                        question: questionid,
+                        questionText: questiontext,
+                    };
+                });
+            }
+
             if (order.apartmentDTO.apartmentType === 0) {
                 if (!locateYourHomePlan.id) localStorage.removeItem("unitAreaId"); // eslint-disable-line
 
@@ -288,16 +298,7 @@ export default function CartSummary({
 
                 setLocateYourHomeUnitArea(order.apartmentDTO.apartmentSpace);
 
-                setLocateYourHomeQuestions(order.questions.reduce(
-                    (acc, question) => {
-                        acc[question.questionsid] = {
-                            answer: question.answer,
-                            question: questions[question.questionsid - 1]?.question,
-                        };
-                        return acc;
-                    },
-                    {},
-                ));
+                setLocateYourHomeQuestions(questions);
 
                 setLocateYourHomeInfo({
                     email: order.customerInfo.email,
@@ -365,16 +366,7 @@ export default function CartSummary({
 
                 setBuildYourKitAddress(order.customerInfo.address);
 
-                setBuildYourKitQuestions(order.questions.reduce(
-                    (acc, question) => {
-                        acc[question.questionsid] = {
-                            answer: question.answer,
-                            question: questions[question.questionsid - 1]?.question,
-                        };
-                        return acc;
-                    },
-                    {},
-                ));
+                setBuildYourKitQuestions(questions);
 
                 setBuildYourKitInfo({
                     address: order.customerInfo.address,
@@ -541,7 +533,7 @@ export default function CartSummary({
                             </div>
                             <div className="flex justify-end mt-5 md:mt-10">
                                 <span className="font-medium text-xs md:text-base">
-                                    {order.totalPlanPrice.toLocaleString()}
+                                    {formatNumber(order.totalPlanPrice)}
                                     {" "}
                                     EGP
                                 </span>
@@ -604,7 +596,7 @@ export default function CartSummary({
                                                                     )}
                                                                 </div>
                                                                 <span className="font-medium text-xs md:text-base">
-                                                                    {price.toLocaleString()}
+                                                                    {formatNumber(price)}
                                                                     {" "}
                                                                     EGP
                                                                 </span>
@@ -669,7 +661,7 @@ export default function CartSummary({
                                                                     </div>
                                                                 </div>
                                                                 <span className="font-medium text-xs md:text-base">
-                                                                    {price.toLocaleString()}
+                                                                    {formatNumber(price)}
                                                                     {" "}
                                                                     EGP
                                                                 </span>
@@ -754,10 +746,7 @@ export default function CartSummary({
                                                             </div>
                                                             <div className="flex flex-col justify-end items-center lg:w-[18%]">
                                                                 <span className="font-medium text-xs md:text-base">
-                                                                    {airConditioningAddons.reduce(
-                                                                        (sum, item) => sum + (item.price * item.quantity),
-                                                                        0,
-                                                                    ).toLocaleString()}
+                                                                    {formatNumber(order.totalAirconditionerPrice)}
                                                                     {" "}
                                                                     EGP
                                                                 </span>
@@ -929,7 +918,7 @@ export default function CartSummary({
                         <div className="mt-4 md:mt-8">
                             <div className="flex flex-wrap items-center gap-2 justify-between">
                                 <span className="font-normal text-lg md:text-2xl">{plans[order.planID].details.planname}</span>
-                                <span className="font-normal text-xs md:text-base">{`${order.totalPlanPrice.toLocaleString()} EGP`}</span>
+                                <span className="font-normal text-xs md:text-base">{`${formatNumber(order.totalPlanPrice)} EGP`}</span>
                             </div>
                             <hr className="my-2 md:my-4" />
                             {(order?.addons?.length > 0 || order?.addonPerRequests?.length > 0) && (
@@ -947,7 +936,7 @@ export default function CartSummary({
                                                     key={addonID}
                                                 >
                                                     <span className="font-normal text-lg md:text-2xl">{`Air Condition - ${addonName}`}</span>
-                                                    <span className="font-normal text-xs md:text-base">{`${price.toLocaleString()} EGP`}</span>
+                                                    <span className="font-normal text-xs md:text-base">{`${formatNumber(price)} EGP`}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -964,7 +953,7 @@ export default function CartSummary({
                                                     key={addonID}
                                                 >
                                                     <span className="font-normal text-lg md:text-2xl">{addonName}</span>
-                                                    <span className="font-normal text-xs md:text-base">{`${price.toLocaleString()} EGP`}</span>
+                                                    <span className="font-normal text-xs md:text-base">{`${formatNumber(price)} EGP`}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -1020,7 +1009,7 @@ export default function CartSummary({
                                                 %
                                             </span>
                                             <span className="font-normal text-xs md:text-base">
-                                                {order.paymentDTO?.adminfeesValue?.toLocaleString()}
+                                                {formatNumber(order.paymentDTO?.adminfeesValue)}
                                                 {" "}
                                                 EGP - One Time
                                             </span>
@@ -1029,7 +1018,7 @@ export default function CartSummary({
                                     <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
                                         <span className="font-normal text-base md:text-lg">Total Amount:</span>
                                         <span className="font-normal text-xs md:text-base">
-                                            {order?.totalAmount_Addons_plan?.toLocaleString()}
+                                            {formatNumber(order?.totalAmount_Addons_plan)}
                                             {" "}
                                             EGP
                                         </span>
@@ -1038,7 +1027,7 @@ export default function CartSummary({
                                         <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
                                             <span className="font-normal text-base md:text-lg">Total Amount + Interest:</span>
                                             <span className="font-normal text-xs md:text-base">
-                                                {order?.totalAmount?.toLocaleString()}
+                                                {formatNumber(order?.totalAmount)}
                                                 {" "}
                                                 EGP
                                             </span>
@@ -1053,7 +1042,7 @@ export default function CartSummary({
                                                 %
                                             </span>
                                             <span className="font-normal text-xs md:text-base">
-                                                {order.paymentDTO?.dpValue?.toLocaleString()}
+                                                {formatNumber(order.paymentDTO?.dpValue)}
                                                 {" "}
                                                 EGP
                                             </span>
@@ -1063,7 +1052,7 @@ export default function CartSummary({
                                         <li className="flex gap-2 justify-between flex-wrap items-center border-b border-b-gray-300 pb-1">
                                             <span className="font-normal text-base md:text-lg">Installments:</span>
                                             <span className="font-normal text-xs md:text-base">
-                                                {order.paymentDTO.installmentDTO[0]?.installmentvalue.toLocaleString()}
+                                                {formatNumber(order.paymentDTO.installmentDTO[0]?.installmentvalue)}
                                                 {" "}
                                                 EGP/ Month
                                             </span>
@@ -1088,7 +1077,7 @@ export default function CartSummary({
                                                         %
                                                     </span>
                                                     <span className="font-normal text-xs md:text-base">
-                                                        {installmentvalue.toLocaleString()}
+                                                        {formatNumber(installmentvalue)}
                                                         {" "}
                                                         EGP
                                                     </span>

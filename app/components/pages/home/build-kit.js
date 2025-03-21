@@ -44,10 +44,10 @@ export default function HomeBuildKit() {
                     type: "spring",
                 }}
             >
-                <h2 className="font-bold text-3xl lg:text-5xl lg:!leading-relaxed">Our Services</h2>
-                <p className="font-normal opacity-65 text-[22px] lg:text-[32px] lg:leading-[1.4] my-4 lg:my-8 py-4 lg:py-8">Choose one of our packages and customize it with additional elements from our add-ons menu</p>
+                <h2 className="font-bold text-3xl lg:text-5xl lg:!leading-relaxed">Why Oda?</h2>
+                <p className="font-normal opacity-65 text-[22px] lg:text-[32px] lg:leading-[1.4] my-4 lg:my-8 py-4 lg:py-8">From understanding your needs to providing tailored solutions, we strive to create an experience that is seamless and awesome. Here’s why Oda is the perfect destination for your journey.</p>
                 <Link
-                    href="/services"
+                    href="/why-oda"
                     prefetch={false}
                 >
                     <div className="relative inline-block">

@@ -4,11 +4,10 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-import { questions } from "@/app/data/questions";
 import { useBuildYourKitStore } from "@/app/store/build-your-kit";
 import { useLocateYourHomeStore } from "@/app/store/locate-your-home";
 
-export default function CheckoutQuestions() {
+export default function CheckoutQuestions({ questions }) {
     const {
         isActive: locateYourHomeIsActive,
         questions: selectedLocateYourHomeQuestions,
@@ -64,99 +63,104 @@ export default function CheckoutQuestions() {
             <div className="bg-[#222] min-h-[1000px] py-10 md:py-20 overflow-hidden">
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-x-4 md:gap-x-8 gap-y-20 md:gap-y-40">
                     {questions.map(({
-                        alt1,
-                        alt2,
-                        id,
-                        imageSrc1,
-                        imageSrc2,
-                        question,
-                    }) => (
-                        <div
-                            className="col-span-1 md:col-span-6 xl:col-span-4 mx-auto xl:mx-0"
-                            key={id}
-                        >
-                            <motion.div
-                                className={`py-3 md:py-6 px-2 md:px-4 border ${selectedQuestions[id] ? "border-primary" : "border-white"} hover:border-primary rounded-lg w-fit transition-all duration-1000`}
-                                animate={isInView2 && {
-                                    opacity: 1,
-                                    y: 0,
-                                }}
-                                initial={{
-                                    opacity: 0,
-                                    y: "100vh",
-                                }}
-                                transition={{
-                                    damping: 10,
-                                    duration: 2,
-                                    ease: "easeIn",
-                                    stiffness: 33,
-                                    type: "spring",
-                                }}
+                        answers: fetchedAnswers,
+                        questionid,
+                        questiontext,
+                    }) => {
+                        const answers = fetchedAnswers.sort((a, b) => a.answerid - b.answerid);
+
+                        return (
+                            <div
+                                className="col-span-1 md:col-span-6 xl:col-span-4 mx-auto xl:mx-0"
+                                key={questionid}
                             >
-                                <h5 className="font-bold font-nanum-myeongjo text-base md:text-xl text-white mb-5 md:mb-10">{question}</h5>
-                                <div className="flex justify-center gap-4 lg:gap-8">
-                                    <Image
-                                        alt={alt1}
-                                        className={`rounded-lg h-[199px] cursor-pointer border-[3px] ${selectedQuestions[id]?.answer === 1 ? "border-primary" : "border-transparent"}`}
-                                        height={199}
-                                        loading="lazy"
-                                        src={imageSrc1}
-                                        width={163}
-                                        onClick={() => {
-                                            if (locateYourHomeIsActive) {
-                                                if (selectedQuestions[id]?.answer === 1) removeLocateYourHomeQuestion(id);
-                                                else {
-                                                    setLocateYourHomeQuestion({
-                                                        answer: 1,
-                                                        id,
-                                                        question,
-                                                    });
+                                <motion.div
+                                    className={`py-3 md:py-6 px-2 md:px-4 border ${selectedQuestions[questionid] ? "border-primary" : "border-white"} hover:border-primary rounded-lg w-fit transition-all duration-1000`}
+                                    animate={isInView2 && {
+                                        opacity: 1,
+                                        y: 0,
+                                    }}
+                                    initial={{
+                                        opacity: 0,
+                                        y: "100vh",
+                                    }}
+                                    transition={{
+                                        damping: 10,
+                                        duration: 2,
+                                        ease: "easeIn",
+                                        stiffness: 33,
+                                        type: "spring",
+                                    }}
+                                >
+                                    <h5 className="font-bold font-nanum-myeongjo text-base md:text-xl text-white mb-5 md:mb-10">{questiontext}</h5>
+                                    <div className="flex justify-center gap-4 lg:gap-8">
+                                        <Image
+                                            alt={answers[0]?.answertext}
+                                            className={`rounded-lg h-[199px] cursor-pointer border-[3px] ${selectedQuestions[questionid]?.answer === answers[0]?.answerid ? "border-primary" : "border-transparent"}`}
+                                            height={199}
+                                            loading="lazy"
+                                            src={`data:image/png;base64, ${answers[0]?.answerPhotoBase64}`}
+                                            width={163}
+                                            onClick={() => {
+                                                if (locateYourHomeIsActive) {
+                                                    if (selectedQuestions[questionid]?.answer === answers[0]?.answerid) removeLocateYourHomeQuestion(questionid);
+                                                    else {
+                                                        setLocateYourHomeQuestion({
+                                                            answer: answers[0]?.answerid,
+                                                            answerText: answers[0]?.answertext,
+                                                            question: questionid,
+                                                            questionText: questiontext,
+                                                        });
+                                                    }
+                                                } else {
+                                                    if (selectedQuestions[questionid]?.answer === answers[0]?.answerid) removeBuildYourKitQuestion(questionid); // eslint-disable-line
+                                                    else {
+                                                        setBuildYourKitQuestion({
+                                                            answer: answers[0]?.answerid,
+                                                            answerText: answers[0]?.answertext,
+                                                            question: questionid,
+                                                            questionText: questiontext,
+                                                        });
+                                                    }
                                                 }
-                                            } else {
-                                                if (selectedQuestions[id]?.answer === 1) removeBuildYourKitQuestion(id); // eslint-disable-line
-                                                else {
-                                                    setBuildYourKitQuestion({
-                                                        answer: 1,
-                                                        id,
-                                                        question,
-                                                    });
+                                            }}
+                                        />
+                                        <Image
+                                            alt={answers[1]?.answertext}
+                                            className={`rounded-lg h-[199px] cursor-pointer border-[3px] ${selectedQuestions[questionid]?.answer === answers[1]?.answerid ? "border-primary" : "border-transparent"}`}
+                                            height={199}
+                                            loading="lazy"
+                                            src={`data:image/png;base64, ${answers[1]?.answerPhotoBase64}`}
+                                            width={163}
+                                            onClick={() => {
+                                                if (locateYourHomeIsActive) {
+                                                    if (selectedQuestions[questionid]?.answer === answers[1]?.answerid) removeLocateYourHomeQuestion(questionid);
+                                                    else {
+                                                        setLocateYourHomeQuestion({
+                                                            answer: answers[1]?.answerid,
+                                                            answerText: answers[1]?.answertext,
+                                                            question: questionid,
+                                                            questionText: questiontext,
+                                                        });
+                                                    }
+                                                } else {
+                                                    if (selectedQuestions[questionid]?.answer === answers[1]?.answerid) removeBuildYourKitQuestion(questionid); // eslint-disable-line
+                                                    else {
+                                                        setBuildYourKitQuestion({
+                                                            answer: answers[1]?.answerid,
+                                                            answerText: answers[1]?.answertext,
+                                                            question: questionid,
+                                                            questionText: questiontext,
+                                                        });
+                                                    }
                                                 }
-                                            }
-                                        }}
-                                    />
-                                    <Image
-                                        alt={alt2}
-                                        className={`rounded-lg h-[199px] cursor-pointer border-[3px] ${selectedQuestions[id]?.answer === 2 ? "border-primary" : "border-transparent"}`}
-                                        height={199}
-                                        loading="lazy"
-                                        src={imageSrc2}
-                                        width={163}
-                                        onClick={() => {
-                                            if (locateYourHomeIsActive) {
-                                                if (selectedQuestions[id]?.answer === 2) removeLocateYourHomeQuestion(id);
-                                                else {
-                                                    setLocateYourHomeQuestion({
-                                                        answer: 2,
-                                                        id,
-                                                        question,
-                                                    });
-                                                }
-                                            } else {
-                                                if (selectedQuestions[id]?.answer === 2) removeBuildYourKitQuestion(id); // eslint-disable-line
-                                                else {
-                                                    setBuildYourKitQuestion({
-                                                        answer: 2,
-                                                        id,
-                                                        question,
-                                                    });
-                                                }
-                                            }
-                                        }}
-                                    />
-                                </div>
-                            </motion.div>
-                        </div>
-                    ))}
+                                            }}
+                                        />
+                                    </div>
+                                </motion.div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>

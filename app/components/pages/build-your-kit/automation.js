@@ -5,7 +5,6 @@ import {
     Check,
     ChevronLeft,
     ChevronRight,
-    Plus,
     X,
 } from "lucide-react";
 import Image from "next/image";
@@ -110,6 +109,13 @@ export default function BuildYourKitAutomation({ automation }) {
                         unittypeid: null,
                     },
                     automationID: selectedAutomation.id || null,
+                    customerAnswers: Object.keys(questions).length > 0 ? Object.values(questions).map(({
+                        answer,
+                        question,
+                    }) => ({
+                        answerid: answer,
+                        questionid: question,
+                    })) : [],
                     customerInfo: {
                         address,
                         email: info.email,
@@ -120,14 +126,6 @@ export default function BuildYourKitAutomation({ automation }) {
                     paymentPlanID: info.paymentPlan.id,
                     planID: plan.id,
                     projectID: null,
-                    questions: Object.keys(questions).length > 0 ? Object.values(questions).map(({
-                        answer,
-                        question,
-                    }, index) => ({
-                        answer,
-                        name: question,
-                        questionsID: index + 1,
-                    })) : {},
                 }),
                 headers: { "Content-Type": "application/json" },
                 method: "PUT",
@@ -190,13 +188,7 @@ export default function BuildYourKitAutomation({ automation }) {
                 >
                     <div>
                         <span className="font-medium text-base md:text-[20px] mb-2 md:mb-4 inline-block ml-2 md:ml-4">Add-on</span>
-                        <div className="flex items-center mb-2">
-                            <Plus
-                                className="opacity-60 w-[30px] h-[30px] md:w-[60px] md:h-[60px]"
-                                size={96}
-                            />
-                            <h2 className="font-semibold text-[22px] md:text-[32px] !uppercase">Automation</h2>
-                        </div>
+                        <h2 className="font-semibold text-[22px] md:text-[32px] !uppercase mb-2">Automation</h2>
                         <p className="font-semibold text-base md:text-[20px] !leading-loose lg:w-3/4">
                             Enhance what you love most about your home
                             with a seamless automation experience using

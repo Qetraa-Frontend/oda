@@ -22,7 +22,7 @@ export default function WhyOdaOurPlans({
     });
 
     return (
-        <div className="pb-10 md:pb-20 pt-[110px] md:pt-[220px] relative">
+        <div className="py-12 md:py-24 relative">
             <Image
                 alt="our_plans_bg"
                 layout="fill"
@@ -31,10 +31,7 @@ export default function WhyOdaOurPlans({
                 src="/images/pages/why-oda/our-plans/plans_bg.webp"
             />
             <div className="container mx-auto">
-                <div className="mb-12 md:mb-24 relative z-50">
-                    <h2 className="font-bold text-[32px] md:text-[64px] mb-s md:mb-5">Our Plans</h2>
-                    <h3 className="font-medium text-2xl md:text-4xl">Choose your desired pricing plan</h3>
-                </div>
+                <h2 className="font-bold text-[32px] md:text-[64px] mb-6 md:mb-12 relative z-50">Our Plans</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-4 xl:gap-8 justify-items-center xl:justify-items-start mb-5 md:mb-10">
                     {plans.map(({
                         description,

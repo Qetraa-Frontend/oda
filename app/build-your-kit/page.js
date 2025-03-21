@@ -2,8 +2,8 @@ import dynamic from "next/dynamic";
 
 const BuildYourKitHero = dynamic(() => import("@/app/components/pages/build-your-kit/hero"));
 const BuildYourKitSelections = dynamic(() => import("@/app/components/pages/build-your-kit/selections"));
-const BuildYourKitMenu = dynamic(() => import("@/app/components/pages/build-your-kit/menu"));
 const BuildYourKitPlans = dynamic(() => import("@/app/components/pages/build-your-kit/plans"));
+const BuildYourKitFeatures = dynamic(() => import("@/app/components/pages/build-your-kit/features"));
 const BuildYourKitAddons = dynamic(() => import("@/app/components/pages/build-your-kit/addons"));
 const BuildYourKitAutomation = dynamic(() => import("@/app/components/pages/build-your-kit/automation"));
 
@@ -99,8 +99,8 @@ export default async function BuildYourKit() {
         <div>
             <BuildYourKitHero />
             <BuildYourKitSelections developers={developers} />
-            <BuildYourKitMenu plans={plans} />
-            <BuildYourKitPlans
+            <BuildYourKitPlans plans={plans} />
+            <BuildYourKitFeatures
                 plans={{
                     plan1: formattedPlan1Details,
                     plan2: formattedPlan2Details,

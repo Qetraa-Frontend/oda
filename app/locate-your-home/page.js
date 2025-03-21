@@ -2,8 +2,8 @@ import dynamic from "next/dynamic";
 
 const LocateYourHomeHero = dynamic(() => import("@/app/components/pages/locate-your-home/hero"));
 const LocateYourHomeSelections = dynamic(() => import("@/app/components/pages/locate-your-home/selections"));
-const LocateYourHomeMenu = dynamic(() => import("@/app/components/pages/locate-your-home/menu"));
 const LocateYourHomePlans = dynamic(() => import("@/app/components/pages/locate-your-home/plans"));
+const LocateYourHomeFeatures = dynamic(() => import("@/app/components/pages/locate-your-home/features"));
 const LocateYourHomeAddons = dynamic(() => import("@/app/components/pages/locate-your-home/addons"));
 const LocateYourHomeAutomation = dynamic(() => import("@/app/components/pages/locate-your-home/automation"));
 
@@ -109,8 +109,8 @@ export default async function LocateYourHome() {
                 developers={developers}
                 unitTypes={unitTypes}
             />
-            <LocateYourHomeMenu plans={plans} />
-            <LocateYourHomePlans
+            <LocateYourHomePlans plans={plans} />
+            <LocateYourHomeFeatures
                 plans={{
                     plan1: formattedPlan1Details,
                     plan2: formattedPlan2Details,

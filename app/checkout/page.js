@@ -10,12 +10,19 @@ export const metadata = { title: "Oda | Checkout" };
 export default async function Checkout() {
     const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
+    const questionsResponse = await fetch(
+        `${publicSiteUrl}api/questions`,
+        { cache: "no-store" },
+    );
+
     const paymentPlansResponse = await fetch(
         `${publicSiteUrl}api/payment-plans`,
         { cache: "no-store" },
     );
 
     const paymentPlans = await paymentPlansResponse.json();
+
+    const questions = await questionsResponse.json();
 
     const formattedPaymentPlans = paymentPlans.reduce(
         (acc, payment) => {
@@ -61,7 +68,7 @@ export default async function Checkout() {
     return (
         <div>
             <CheckoutHero />
-            <CheckoutQuestions />
+            <CheckoutQuestions questions={questions.sort((a, b) => a.questionid - b.questionid)} />
             <CheckoutPaymentPlans paymentPlans={Object.values(formattedPaymentPlans)} />
             <CheckoutForm paymentPlans={paymentPlans} />
         </div>

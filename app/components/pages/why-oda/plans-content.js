@@ -35,14 +35,14 @@ export default function WhyOdaPlansContent() {
     );
 
     return (
-        <div className="bg-[#222] pt-[62px] md:pt-[124px] pb-[27px] md:pb-[55px] overflow-hidden">
+        <div className="bg-[#222] py-12 md:py-24 overflow-hidden">
             <div
                 className="container mx-auto"
                 ref={ref}
             >
                 <div>
                     <motion.h2
-                        className="font-semibold text-3xl md:text-5xl text-white text-center !leading-relaxed mb-[63px] md:mb-[126px]"
+                        className="font-semibold text-2xl sm:text-3xl md:text-5xl text-white text-center !leading-relaxed mb-6 md:mb-12"
                         animate={isInView && {
                             opacity: 1,
                             y: 0,
@@ -59,7 +59,7 @@ export default function WhyOdaPlansContent() {
                             type: "spring",
                         }}
                     >
-                        <span className="font-bold text-lg md:text-2xl">We design & built hassle-free finishing packages</span>
+                        <span className="font-bold text-base sm:text-lg md:text-2xl">We design & built hassle-free finishing packages</span>
                         <br />
                         {" "}
                         All Our Plans Include

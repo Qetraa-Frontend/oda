@@ -42,7 +42,7 @@ export const steps = [
     },
     {
         alt: "step_3",
-        description: "Bring your vision to life by exploring colors, materials, textures, lightning, and layouts to create your perfect design.",
+        description: "Bring your vision to life by exploring colors, materials, textures, lightning and layouts to create your perfect design.",
         id: 3,
         imageSrc: "/images/pages/home/how-it-works/step_3.webp",
         title: "Co-Create Your Designs",

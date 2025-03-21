@@ -59,7 +59,7 @@ export default function HomeHero() {
     return (
         <Hero
             backgroundImageSrc={`/images/pages/home/hero/hero_${activeSlideIndex + 1}.webp`}
-            buttonLink="/about-us"
+            buttonLink="/services"
             buttonText="Learn More"
             buttonTopSpace="mt-12 md:mt-24"
             description="To a beautifully finished home with Oda’s expertly crafted packages."

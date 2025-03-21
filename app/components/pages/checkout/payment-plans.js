@@ -4,7 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function CheckoutPaymentPlans({ paymentPlans }) {
-    const [showDescriptions, setShowDescriptions] = useState({});
+    const [showDescriptions, setShowDescriptions] = useState({
+        Oda: { ...paymentPlans[0].installemntPlans[0] },
+    });
 
     return (
         <div className="container mx-auto pt-[50px] md:pt-[100px]">

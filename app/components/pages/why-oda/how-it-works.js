@@ -22,7 +22,7 @@ export default function HomeHowItWorks() {
     );
 
     return (
-        <div className="bg-[#222] pt-[42px] md:pt-[85px] pb-[60px] lg:pb-[120px]">
+        <div className="bg-[#222] py-12 md:py-24">
             <div
                 className="container mx-auto"
                 ref={ref}

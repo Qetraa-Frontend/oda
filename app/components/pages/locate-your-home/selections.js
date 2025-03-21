@@ -52,7 +52,7 @@ export default function LocateYourHomeSelections({
                                 <SelectValue placeholder="Developer" />
                             </SelectTrigger>
                             <SelectContent>
-                                {developers.map(({
+                                {developers.filter(({ developername }) => developername !== "Other").map(({
                                     developerid,
                                     developername,
                                 }) => (
@@ -135,7 +135,7 @@ export default function LocateYourHomeSelections({
                     href="/build-your-kit"
                     prefetch={false}
                 >
-                    Can&apos;t find your Unit?
+                    Cant find your unit ? Build your own kit...
                 </Link>
             </div>
         </div>

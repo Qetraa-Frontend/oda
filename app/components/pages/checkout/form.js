@@ -112,12 +112,6 @@ export default function CheckoutForm({ paymentPlans }) {
         paymentPlan,
         phoneNumber,
     }) => {
-        console.log(
-            email,
-            name,
-            paymentPlan,
-            phoneNumber,
-        );
         setResponseMsg({
             text: "",
             type: null,
@@ -177,6 +171,13 @@ export default function CheckoutForm({ paymentPlans }) {
                         unittypeid: locateYourHomeIsActive ? locateYourHomeUnitType.id : null,
                     },
                     automationID: locateYourHomeIsActive ? locateYourHomeAutomation.id || null : buildYourKitAutomation.id || null,
+                    customerAnswers: Object.keys(questions).length > 0 ? Object.values(questions).map(({
+                        answer,
+                        question,
+                    }) => ({
+                        answerid: answer,
+                        questionid: question,
+                    })) : [],
                     customerInfo: {
                         address: buildYourKitIsActive ? buildYourKitAddress : null,
                         email,
@@ -186,14 +187,6 @@ export default function CheckoutForm({ paymentPlans }) {
                     developerID: locateYourHomeIsActive ? locateYourHomeDeveloper.id : null,
                     paymentPlanID: parseInt(paymentPlan),
                     planID: locateYourHomeIsActive ? locateYourHomePlan.id : buildYourKitPlan.id,
-                    questions: Object.values(questions).map(({
-                        answer,
-                        question,
-                    }, index) => ({
-                        answer,
-                        name: question,
-                        questionsID: index + 1,
-                    })),
                 }),
                 headers: { "Content-Type": "application/json" },
                 method: mode === "edit" ? "PUT" : "POST",
