@@ -273,6 +273,18 @@ button[role="combobox"] svg {
     }
 }
 
+@media (max-width: 400px) {
+    .plan-details-name {
+        max-width: 190px!important;
+    }
+}
+
+@media (max-width: 370px) {
+    .plan-details-name {
+        max-width: 160px!important;
+    }
+}
+
 a.social-icon svg g {
     transition: all;
     transition-duration: 1000ms;
@@ -288,8 +300,6 @@ button[role="combobox"].primary-select svg {
     height: 25px!important;
     opacity: 100%!important;
 }
-
-
 
 @layer base {
   * {

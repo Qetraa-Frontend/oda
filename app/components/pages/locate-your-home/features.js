@@ -111,7 +111,7 @@ export default function LocateYourHomeFeatures({ plans }) {
                                             className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                             colSpan={3}
                                         >
-                                            <h5 className="max-w-[230px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
+                                            <h5 className="max-w-[230px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50 plan-details-name">{plandetailsname}</h5>
                                         </td>
                                     </tr>
                                 ))}
@@ -138,7 +138,7 @@ export default function LocateYourHomeFeatures({ plans }) {
                                             className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                             colSpan={3}
                                         >
-                                            <h5 className="max-w-[230px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
+                                            <h5 className="max-w-[230px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50 plan-details-name">{plandetailsname}</h5>
                                         </td>
                                     </tr>
                                 ))}

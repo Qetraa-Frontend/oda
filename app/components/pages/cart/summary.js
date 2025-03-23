@@ -217,17 +217,9 @@ export default function CartSummary({
             });
         });
     };
-    console.log(
-        order,
-        plans,
-        order.apartmentDTO.apartmentType === 1,
-        locateYourHomeIsActive,
-        buildYourKitIsActive,
-        order.planID - (buildYourKitIsActive ? 3 : 0),
-    );
+
     useEffect(
         () => {
-            console.log("hellloooo");
             const questions = {};
 
             if (order.customerAnswers.length > 0) {
@@ -247,7 +239,6 @@ export default function CartSummary({
             }
 
             if (order.apartmentDTO.apartmentType === 0) {
-                console.log("locate");
                 if (!locateYourHomePlan.id) localStorage.removeItem("unitAreaId"); // eslint-disable-line
 
                 setLocateYourHomeMode("edit");
@@ -320,7 +311,6 @@ export default function CartSummary({
                     phoneNumber: order.customerInfo.phonenumber,
                 });
             } else {
-                console.log("build");
                 setBuildYourKitMode("edit");
 
                 setBuildYourKitIsActive(true);
@@ -460,7 +450,7 @@ export default function CartSummary({
                                                     className="font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4"
                                                     colSpan={3}
                                                 >
-                                                    <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
+                                                    <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50 plan-details-name">{plandetailsname}</h5>
                                                 </td>
                                             </tr>
                                         ))}
@@ -485,7 +475,7 @@ export default function CartSummary({
                                                     className={`font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4 ${index === plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.decoration.length - 1 ? "rounded-br-xl" : ""}`} // eslint-disable-line
                                                     colSpan={3}
                                                 >
-                                                    <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
+                                                    <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50 plan-details-name">{plandetailsname}</h5>
                                                 </td>
                                             </tr>
                                         ))}
@@ -495,7 +485,7 @@ export default function CartSummary({
                                     <div className="relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center px-4 md:px-8 hover:bg-primary transition-all duration-1000">
                                         <h5 className="font-semibold text-base md:text-xl uppercase h-20 flex items-center justify-center">{plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.details?.planname}</h5>
                                         <div className="flex flex-col justify-center items-center relative top-[78px]">
-                                            {plans?.[order.planID]?.foundation.map(({
+                                            {plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.foundation.map(({
                                                 description,
                                                 stars,
                                             }, i) => (
