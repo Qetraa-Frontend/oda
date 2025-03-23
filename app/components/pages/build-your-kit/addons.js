@@ -424,8 +424,8 @@ export default function BuildYourKitAddons({
                                                 className="flex gap-1"
                                                 key={addonid}
                                             >
-                                                <span className="font-normal text-xs md:text-base border border-gray-300 w-fit px-2 rounded-2xl flex items-center justify-center">{addonname}</span>
-                                                <span className="font-normal text-xs md:text-base border border-gray-300 w-fit px-2 rounded-2xl flex items-center justify-center">
+                                                <span className="font-normal text-xs md:text-base border border-gray-300 w-fit px-1 rounded-lg flex items-center justify-center">{addonname}</span>
+                                                <span className="font-normal text-xs md:text-base border border-gray-300 w-fit px-1 rounded-lg flex items-center justify-center">
                                                     +
                                                     {price?.toLocaleString()}
                                                     {" "}

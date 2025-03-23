@@ -110,9 +110,9 @@ export default async function BuildYourKit() {
                 }}
             />
             <BuildYourKitAddons
-                addons={otherAddons}
-                addonsPerRequest={addonsPerRequest}
-                airConditioningAddons={airConditioningAddons}
+                addons={otherAddons.sort((a, b) => a.addonid - b.addonid)}
+                addonsPerRequest={addonsPerRequest.sort((a, b) => a.addonid - b.addonid)}
+                airConditioningAddons={airConditioningAddons.sort((a, b) => a.addonid - b.addonid)}
             />
             <BuildYourKitAutomation automation={formattedAutomation} />
         </div>
