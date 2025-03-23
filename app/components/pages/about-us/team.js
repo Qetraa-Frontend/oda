@@ -61,11 +61,11 @@ export default function AboutUsOurVision() {
                         }}
                     >
                         <Image
-                            alt="ceo_1"
+                            alt="ceo"
                             className="rounded-lg mx-auto"
                             height={445}
                             loading="lazy"
-                            src="/images/pages/about-us/team/ceo_2.webp"
+                            src="/images/pages/about-us/team/ceo.webp"
                             width={573}
                         />
                     </motion.div>

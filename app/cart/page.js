@@ -46,33 +46,50 @@ export default async function Cart({ searchParams }) {
         { cache: "no-store" },
     );
 
+    const plan4DetailsResponse = await fetch(
+        `${publicSiteUrl}api/plans/4`,
+        { cache: "no-store" },
+    );
+
+    const plan5DetailsResponse = await fetch(
+        `${publicSiteUrl}api/plans/5`,
+        { cache: "no-store" },
+    );
+
+    const plan6DetailsResponse = await fetch(
+        `${publicSiteUrl}api/plans/6`,
+        { cache: "no-store" },
+    );
+
     const order = await orderResponse.json();
 
     const plans = await plansResponse.json();
 
     const automation = await automationResponse.json();
 
-    const plan1Details = await plan1DetailsResponse.json();
+    const plan1Details = order.apartmentDTO.apartmentType === 0 ? await plan1DetailsResponse.json() : await plan4DetailsResponse.json();
 
-    const plan2Details = await plan2DetailsResponse.json();
+    const plan2Details = order.apartmentDTO.apartmentType === 0 ? await plan2DetailsResponse.json() : await plan5DetailsResponse.json();
 
-    const plan3Details = await plan3DetailsResponse.json();
+    const plan3Details = order.apartmentDTO.apartmentType === 0 ? await plan3DetailsResponse.json() : await plan6DetailsResponse.json();
+
+    const sortedPlans = plans.sort((a, b) => a.planid - b.planid);
 
     const formattedPlan1Details = {
         decoration: plan1Details.filter(({ plandetailstype }) => plandetailstype === 1),
-        details: plans[0],
+        details: sortedPlans[order.apartmentDTO.apartmentType === 0 ? 0 : 3],
         foundation: plan1Details.filter(({ plandetailstype }) => plandetailstype === 0),
     };
 
     const formattedPlan2Details = {
         decoration: plan2Details.filter(({ plandetailstype }) => plandetailstype === 1),
-        details: plans[1],
+        details: sortedPlans[order.apartmentDTO.apartmentType === 0 ? 1 : 4],
         foundation: plan2Details.filter(({ plandetailstype }) => plandetailstype === 0),
     };
 
     const formattedPlan3Details = {
         decoration: plan3Details.filter(({ plandetailstype }) => plandetailstype === 1),
-        details: plans[2],
+        details: sortedPlans[order.apartmentDTO.apartmentType === 0 ? 2 : 5],
         foundation: plan3Details.filter(({ plandetailstype }) => plandetailstype === 0),
     };
 

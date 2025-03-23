@@ -75,21 +75,23 @@ export default async function LocateYourHome() {
 
     const plan3Details = await plan3DetailsResponse.json();
 
+    const sortedPlans = plans.sort((a, b) => a.planid - b.planid);
+
     const formattedPlan1Details = {
         decoration: plan1Details.filter(({ plandetailstype }) => plandetailstype === 1).sort((a, b) => a.plandetailsid - b.plandetailsid),
-        details: plans[0],
+        details: sortedPlans[0],
         foundation: plan1Details.filter(({ plandetailstype }) => plandetailstype === 0).sort((a, b) => a.plandetailsid - b.plandetailsid),
     };
 
     const formattedPlan2Details = {
         decoration: plan2Details.filter(({ plandetailstype }) => plandetailstype === 1).sort((a, b) => a.plandetailsid - b.plandetailsid),
-        details: plans[1],
+        details: sortedPlans[1],
         foundation: plan2Details.filter(({ plandetailstype }) => plandetailstype === 0).sort((a, b) => a.plandetailsid - b.plandetailsid),
     };
 
     const formattedPlan3Details = {
         decoration: plan3Details.filter(({ plandetailstype }) => plandetailstype === 1).sort((a, b) => a.plandetailsid - b.plandetailsid),
-        details: plans[2],
+        details: sortedPlans[2],
         foundation: plan3Details.filter(({ plandetailstype }) => plandetailstype === 0).sort((a, b) => a.plandetailsid - b.plandetailsid),
     };
 

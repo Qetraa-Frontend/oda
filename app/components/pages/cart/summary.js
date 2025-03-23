@@ -217,9 +217,17 @@ export default function CartSummary({
             });
         });
     };
-
+    console.log(
+        order,
+        plans,
+        order.apartmentDTO.apartmentType === 1,
+        locateYourHomeIsActive,
+        buildYourKitIsActive,
+        order.planID - (buildYourKitIsActive ? 3 : 0),
+    );
     useEffect(
         () => {
+            console.log("hellloooo");
             const questions = {};
 
             if (order.customerAnswers.length > 0) {
@@ -239,11 +247,12 @@ export default function CartSummary({
             }
 
             if (order.apartmentDTO.apartmentType === 0) {
+                console.log("locate");
                 if (!locateYourHomePlan.id) localStorage.removeItem("unitAreaId"); // eslint-disable-line
 
                 setLocateYourHomeMode("edit");
 
-                setLocateYourHomeIsActive(order.apartmentDTO.apartmentType === 0);
+                setLocateYourHomeIsActive(true);
 
                 setLocateYourHomeBookingId(order.bookingID);
 
@@ -311,9 +320,10 @@ export default function CartSummary({
                     phoneNumber: order.customerInfo.phonenumber,
                 });
             } else {
+                console.log("build");
                 setBuildYourKitMode("edit");
 
-                setBuildYourKitIsActive(order.apartmentDTO.apartmentType === 1);
+                setBuildYourKitIsActive(true);
 
                 setBuildYourKitBookingId(order.bookingID);
 
@@ -441,7 +451,7 @@ export default function CartSummary({
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {plans[order.planID].foundation.map(({ plandetailsname }, index) => (
+                                        {plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.foundation.map(({ plandetailsname }, index) => (
                                             <tr
                                                 className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
                                                 key={index} // eslint-disable-line
@@ -466,13 +476,13 @@ export default function CartSummary({
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {plans[order.planID].decoration.map(({ plandetailsname }, index) => (
+                                        {plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.decoration.map(({ plandetailsname }, index) => (
                                             <tr
                                                 className={index % 2 === 0 ? "bg-[#E3E4E4] h-20 w-full" : "bg-white h-20 w-full"}
                                                 key={index} // eslint-disable-line
                                             >
                                                 <td
-                                                    className={`font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4 ${index === plans[order.planID].decoration.length - 1 ? "rounded-br-xl" : ""}`}
+                                                    className={`font-normal text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-2 md:px-4 ${index === plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.decoration.length - 1 ? "rounded-br-xl" : ""}`} // eslint-disable-line
                                                     colSpan={3}
                                                 >
                                                     <h5 className="max-w-[220px] sm:max-w-[320px] md:max-w-[484px] break-words block relative z-50">{plandetailsname}</h5>
@@ -483,9 +493,9 @@ export default function CartSummary({
                                 </table>
                                 <div className="flex flex-wrap gap-4 md:gap-8 justify-end absolute -top-0 right-0 w-full h-full">
                                     <div className="relative w-[140px] sm:w-[209px] h-full border border-black rounded-2xl text-center px-4 md:px-8 hover:bg-primary transition-all duration-1000">
-                                        <h5 className="font-semibold text-base md:text-xl uppercase h-20 flex items-center justify-center">{plans[order.planID].details.planname}</h5>
+                                        <h5 className="font-semibold text-base md:text-xl uppercase h-20 flex items-center justify-center">{plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.details?.planname}</h5>
                                         <div className="flex flex-col justify-center items-center relative top-[78px]">
-                                            {plans[order.planID].foundation.map(({
+                                            {plans?.[order.planID]?.foundation.map(({
                                                 description,
                                                 stars,
                                             }, i) => (
@@ -507,7 +517,7 @@ export default function CartSummary({
                                             ))}
                                         </div>
                                         <div className="flex flex-col justify-center items-center relative top-[157px]">
-                                            {plans[order.planID].decoration.map(({
+                                            {plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.decoration.map(({
                                                 description,
                                                 stars,
                                             }, i) => (
@@ -917,7 +927,7 @@ export default function CartSummary({
                         <h5 className="font-semibold text-[22px] md:text-[32px]">Order Summary</h5>
                         <div className="mt-4 md:mt-8">
                             <div className="flex flex-wrap items-center gap-2 justify-between">
-                                <span className="font-normal text-lg md:text-2xl">{plans[order.planID].details.planname}</span>
+                                <span className="font-normal text-lg md:text-2xl">{plans?.[order.planID - (buildYourKitIsActive ? 3 : 0)]?.details?.planname}</span>
                                 <span className="font-normal text-xs md:text-base">{`${formatNumber(order.totalPlanPrice)} EGP`}</span>
                             </div>
                             <hr className="my-2 md:my-4" />
