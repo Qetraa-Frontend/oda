@@ -69,7 +69,9 @@ export default function LocateYourHomePlans({ plans }) {
                                         <div className="my-5 md:my-10">
                                             <h5 className="font-medium text-base md:text-xl mb-3 md:mb-6">Starting From</h5>
                                             <span className="font-normal text-lg md:text-2xl">
-                                                {pricepermeter}
+                                                {pricepermeter.toLocaleString()}
+                                                {" "}
+                                                EGP
                                                 {" "}
                                                 | M2
                                             </span>

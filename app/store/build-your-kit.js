@@ -160,9 +160,11 @@ export const useBuildYourKitStore = create((set, get) => ({
         ...get(),
         questions: {
             ...get().questions,
-            [question.id]: {
+            [question.question]: {
                 answer: question.answer,
+                answerText: question.answerText,
                 question: question.question,
+                questionText: question.questionText,
             },
         },
     }),

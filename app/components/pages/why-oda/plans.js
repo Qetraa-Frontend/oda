@@ -128,7 +128,7 @@ export default function WhyOdaOurPlans({
                                                         ).map((_, indx) => (
                                                             <Check
                                                                 className="rounded-full border border-black p-1 md:p-2"
-                                                        key={indx} // eslint-disable-line
+                                                                key={indx} // eslint-disable-line
                                                                 size={35}
                                                             />
                                                         ))}
